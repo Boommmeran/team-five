@@ -1,7 +1,17 @@
+import { lazy } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Layout from 'components/Layout';
+
+const WelcomePage = lazy(() => import('pages/WelcomePage'));
+const HomePage = lazy(() => import('pages/HomePage'));
+
 export const App = () => {
   return (
-    <div>
-      Team-five
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<WelcomePage />} />
+        <Route index element={<HomePage />} />
+      </Route>
+    </Routes>
   );
 };
