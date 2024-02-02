@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from 'components/Layout';
+// import { Sidebar } from './SideBar';
 
 const WelcomePage = lazy(() => import('pages/WelcomePage'));
 const HomePage = lazy(() => import('pages/HomePage'));
