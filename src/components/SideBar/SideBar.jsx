@@ -3,10 +3,12 @@ import { Icon } from "components/Icon"
 export const Sidebar = () => {
     return (
       <>
-        <div style={{ stroke: 'black' }}>
-          <Icon name="lightning" />
+        <div>
+          <div style={{ stroke: 'black' }}>
+            <Icon name="lightning" />
+          </div>
+          <h2>TaskPro</h2>
         </div>
-        <h2>TaskPro</h2>
         <h3>My boards</h3>
         <p>Create a new board</p>
         <button type="button" style={{ stroke: 'black' }}>
@@ -16,14 +18,21 @@ export const Sidebar = () => {
           <p>Board list</p>
         </li>
         <div>
-          <p>Cactus</p>
+          <img src="https://res.cloudinary.com/dt7u6ic1c/image/upload/v1706907537/sidebar-img-1x.jpg" alt="cute little cactus"></img>
           <p>
             If you need help with TaskPro, check out our support resources or
             reach out to our customer support team.
           </p>
-          <div>
-            <Icon />
+          <div style={{ stroke: 'black' }}>
+            <Icon name="help" />
           </div>
+          <p>Need help?</p>
+        </div>
+        <div>
+          <div style={{ stroke: 'black' }}>
+            <Icon name="login" />
+          </div>
+          <p>Log out</p>
         </div>
       </>
     );
