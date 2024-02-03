@@ -11,6 +11,7 @@ const theme = {
     whiteColor: '#FFFFFF',
     blackColor: '#161616',
     darkThemePrimary: '#1F1F1F',
+    darkThemeSecondary: '#121212',
     ligthThemePrimary: '#F6F6F7',
     ligthThemeSecondary: '#FCFCFC',
     violetThemeAccent: '#5255BC',
@@ -21,10 +22,10 @@ const theme = {
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ThemeProvider theme={{ theme }}>
+    <ThemeProvider theme={ theme }>
       <BrowserRouter basename="/team-five">
         <App />
-        <GlobalStyles />{' '}
+        <GlobalStyles />
       </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>
