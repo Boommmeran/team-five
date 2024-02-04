@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from 'components/GlobalStyles';
 import { BrowserRouter } from 'react-router-dom';
 
-const theme = {
+export const theme = {
   colors: {
     accent: '#BEDBB0',
     whiteColor: '#FFFFFF',
