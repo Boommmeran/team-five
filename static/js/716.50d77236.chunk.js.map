@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/716.50d77236.chunk.js","mappings":"0GAAe,SAASA,IAExB,C","sources":["pages/WelcomePage/WelcomePage.jsx"],"sourcesContent":["export default function WelcomePage() {\n\n};"],"names":["WelcomePage"],"sourceRoot":""}
