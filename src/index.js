@@ -8,13 +8,13 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 import { persistor, store } from './redux/store.js';
 
-
-const theme = {
+export const theme = {
   colors: {
     accent: '#BEDBB0',
     whiteColor: '#FFFFFF',
     blackColor: '#161616',
     darkThemePrimary: '#1F1F1F',
+    darkThemeSecondary: '#121212',
     ligthThemePrimary: '#F6F6F7',
     ligthThemeSecondary: '#FCFCFC',
     violetThemeAccent: '#5255BC',
@@ -25,7 +25,7 @@ const theme = {
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ThemeProvider theme={{ theme }}>
+    <ThemeProvider theme={ theme }>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           {' '}
