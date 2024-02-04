@@ -1,7 +1,7 @@
 import {
   Container,
   Name,
-    Avatar,
+  Avatar,
   Button,
 } from '../../components/UserInfo/UserInfo.styled';
 import { EditProfile } from '../EditProfile/EditProfile';
@@ -15,9 +15,9 @@ const customStyles = {
     right: 'auto',
     bottom: 'auto',
     marginRight: '-50%',
+    padding: '0',
     transform: 'translate(-50%, -50%)',
     boxShadow: '0px 4px 16px 0px #1616160D',
-
   },
   overlay: {
     background: 'rgba(0,0,0,0.5)',
@@ -38,15 +38,11 @@ export const UserInfo = () => {
   };
   return (
     <Container>
-      <Name>Name</Name>
-      <Avatar src="" alt="avatar" onClick={openModal} />
-      <Modal
-        isOpen={isModalOpen}
-        style={customStyles}
-        contentLabel="Modal"
-      >
-              <EditProfile />
-              <Button onClick={closeModal}>X</Button>
+      <Name>name</Name>
+      <Avatar src="" alt="image user" onClick={openModal} />
+      <Modal isOpen={isModalOpen} style={customStyles} contentLabel="Modal">
+        <EditProfile />
+        <Button onClick={closeModal}>X</Button>
       </Modal>
     </Container>
   );

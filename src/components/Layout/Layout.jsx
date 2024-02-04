@@ -1,7 +1,16 @@
-import { Header } from "components/Header/Header";
+import { Suspense } from 'react';
+import { Outlet } from 'react-router';
+import { Container } from './Layout.styled';
 
 export const Layout = () => {
-    return (<div>
-    <Header/>
-</div>)
+  return (
+    <Container>
+      <main>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Outlet />
+        </Suspense>
+      </main>
+    </Container>
+  );
 };
+
