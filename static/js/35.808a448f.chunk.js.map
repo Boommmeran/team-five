@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/35.808a448f.chunk.js","mappings":"gMAEe,SAASA,IACpB,OACIC,EAAAA,EAAAA,KAACC,EAAAA,QAAO,GAEhB,C","sources":["pages/HomePage/HomePage.jsx"],"sourcesContent":["import { Sidebar } from \"components/SideBar\";\n\nexport default function HomePage() {\n    return(\n        <Sidebar />\n    )\n}\n"],"names":["HomePage","_jsx","Sidebar"],"sourceRoot":""}

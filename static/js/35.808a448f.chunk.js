@@ -1,0 +1,2 @@
+(self.webpackChunkteam_five=self.webpackChunkteam_five||[]).push([[35],{8652:function(){},2035:function(e,n,t){"use strict";t.r(n),t.d(n,{default:function(){return i}});var u=t(8652),f=t(184);function i(){return(0,f.jsx)(u.Sidebar,{})}}}]);
+//# sourceMappingURL=35.808a448f.chunk.js.map
