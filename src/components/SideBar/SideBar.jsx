@@ -58,8 +58,9 @@ export const Sidebar = () => {
           alt="cute little cactus"
         ></img>
         <p>
-          If you need help with <span style={{color: theme.colors.accent}}>TaskPro</span>, check out our
-          support resources or reach out to our customer support team.
+          If you need help with{' '}
+          <span style={{ color: theme.colors.accent }}>TaskPro</span>, check out
+          our support resources or reach out to our customer support team.
         </p>
         <NeedHelpBtn type="button">
           <div style={{ stroke: theme.colors.whiteColor }}>
