@@ -8,27 +8,41 @@ import PoppinsRegularWoff from '../fonts/Poppins-Regular.woff';
 import PoppinsSemiBoldWoff from '../fonts/Poppins-SemiBold.woff';
 
 export const GlobalStyles = createGlobalStyle`
-  @font-face {
-    font-family: 'Poppins-Regular';
-    src: local('Poppins-Regular'), url(${PoppinsRegularTtf}) format('ttf'), url(${PoppinsRegularWoff}) format('woff');
-    font-weight: 400;
-    font-style: normal;
-  }
 
-  @font-face {
-    font-family: 'Poppins-Medium';
-    src: local('Poppins-Medium'), url(${PoppinsMediumTtf}) format('ttf'), url(${PoppinsMediumWoff}) format('woff');
-    font-weight: 500;
-    font-style: normal;
-  }
+:root {
+  --accent: ${({ theme }) => theme.accent};
+  --hover: ${({ theme }) => theme.hover};
+  --transition: ${({ theme }) => theme.transition};
+  --headerBgColor: ${({ theme }) => theme.headerBgColor};
+  --primaryBgColor: ${({ theme }) => theme.primaryBgColor};
+  --secondaryBgColor: ${({ theme }) => theme.secondaryBgColor};
+  --primaryTextColor: ${({ theme }) => theme.primaryTextColor};
+  --secondaryTextColor: ${({ theme }) => theme.secondaryTextColor};
+  --nonAccentTextColor: ${({ theme }) => theme.nonAccentTextColor};
+  --btnPlus: ${({ theme }) => theme.btnPlus};
+  --btnPlusHover: ${({ theme }) => theme.btnPlusHover};
+}
 
-  @font-face {
-    font-family: 'Poppins-SemiBold';
-    src: local('Poppins-SemiBold'), url(${PoppinsSemiBoldTtf}) format('ttf'), url(${PoppinsSemiBoldWoff}) format('woff');
-    font-weight: 500;
-    font-style: normal;
-  }
+@font-face {
+  font-family: 'Poppins-Regular';
+  src: local('Poppins-Regular'), url(${PoppinsRegularTtf}) format('ttf'), url(${PoppinsRegularWoff}) format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: 'Poppins-Medium';
+  src: local('Poppins-Medium'), url(${PoppinsMediumTtf}) format('ttf'), url(${PoppinsMediumWoff}) format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins-SemiBold';
+  src: local('Poppins-SemiBold'), url(${PoppinsSemiBoldTtf}) format('ttf'), url(${PoppinsSemiBoldWoff}) format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
 
 body {
   font-family: 'Poppins-Regular', sans-serif;
