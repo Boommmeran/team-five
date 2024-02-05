@@ -7,22 +7,9 @@ import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 import { persistor, store } from './redux/store.js';
+import themeSchemes from './styles/themeSchemes.json';
 
-export const theme = {
-  colors: {
-    accent: '#BEDBB0',
-    accentHover: '#9dc888',
-    whiteColor: '#FFFFFF',
-    blackColor: '#161616',
-    darkThemePrimary: '#1F1F1F',
-    darkThemeSecondary: '#121212',
-    ligthThemePrimary: '#F6F6F7',
-    ligthThemeSecondary: '#FCFCFC',
-    violetThemeAccent: '#5255BC',
-    violetThemePrimary: '#D9D9D9',
-    violetThemeSecondary: '#B8BCFD',
-  },
-};
+const theme = themeSchemes['dark'];
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
