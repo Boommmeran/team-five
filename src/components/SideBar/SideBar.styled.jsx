@@ -3,9 +3,10 @@ import styled from 'styled-components';
 export const SidebarContainer = styled.div`
   width: 225px;
   padding: 14px;
-  color: ${({ theme }) => theme.colors.whiteColor};
-  background-color: ${({ theme }) => theme.colors.darkThemeSecondary};
+  color: var(--primaryTextColor);
   letter-spacing: -0.02em;
+  text-align: left;
+  background-color: var(--primaryBgColor);
 `;
 
 export const Logo = styled.div`
@@ -25,10 +26,9 @@ export const BoardContainer = styled.div`
     margin-bottom: 8px;
     font-size: 12px;
     font-family: 'Poppins-Regular';
-    color: ${({ theme }) => theme.colors.whiteColor};
     opacity: 50%;
   }
-`;
+  `;
 
 export const BoardCreationBlock = styled.div`
   display: flex;
@@ -43,16 +43,16 @@ export const BoardCreationBlock = styled.div`
 export const BtnCreate = styled.button`
   width: 40px;
   height: 36px;
-  background-color: ${({ theme }) => theme.colors.accent};
+  background-color: var(--btnPlus);
   border: none;
   border-radius: 6px;
-  stroke: ${({ theme }) => theme.colors.darkThemeSecondary};
-  transition: 0.3s ease;
+  stroke: var(--primaryBgColor);
+  transition: var(--transition);
 
   &:hover,
   &:focus,
   &:active {
-    background-color: ${({ theme }) => theme.colors.accentHover};
+    background-color: var(--btnPlusHover);
   }
 `;
 
@@ -79,9 +79,9 @@ export const BoardItem = styled.li`
   padding: 0 14px 0 14px;
   display: flex;
   align-items: center;
-  stroke: ${({ theme }) => theme.colors.whiteColor};
+  stroke: var(--primaryTextColor);
   opacity: 0.5;
-  transition: 0.3s ease;
+  transition: var(--transition);
 
   p {
     margin-left: 4px;
@@ -92,7 +92,7 @@ export const BoardItem = styled.li`
   &:hover,
   &:focus,
   &:active {
-    background-color: ${({ theme }) => theme.colors.darkThemePrimary};
+    background-color: var(--secondaryBgColor);
     opacity: 1;
 
     > ${ControlIconsContainer} {
@@ -107,7 +107,7 @@ export const NeedHelpBlock = styled.div`
   margin-bottom: 24px;
   font-size: 12px;
   border-radius: 8px;
-  background-color: ${({ theme }) => theme.colors.darkThemePrimary};
+  background-color: var(--secondaryBgColor);
 
   p {
     margin-top: 14px;
@@ -127,7 +127,7 @@ export const NeedHelpBtn = styled.button`
 
   span {
     margin-left: 8px;
-    color: ${({ theme }) => theme.colors.whiteColor};
+    color: var(--primaryTextColor);
     font-family: 'Poppins-Medium';
   }
 `;
@@ -141,17 +141,17 @@ export const LogOut = styled.button`
   align-items: center;
   font-family: 'Poppins-Medium';
   font-size: 14px;
-  stroke: ${({ theme }) => theme.colors.accent};
-  transition: 0.3s ease;
+  stroke: var(--accent);
+  transition: var(--transition);
 
   p {
     margin-left: 14px;
-    color: ${({ theme }) => theme.colors.whiteColor};
+    color: var(--primaryTextColor);
   }
 
   &:hover,
   &:focus,
   &:active {
-    stroke: ${({ theme }) => theme.colors.accentHover};
+    stroke: var(--hover);
   }
 `;
