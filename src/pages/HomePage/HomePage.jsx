@@ -1,1 +1,4 @@
-export default function HomePage() {}
+import { ScreensPage } from 'components/ScreensPage';
+export default function HomePage() {
+  return <ScreensPage />;
+}
