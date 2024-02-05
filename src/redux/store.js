@@ -12,7 +12,7 @@ import {
 
 import storage from 'redux-persist/lib/storage';
 
-import { authSlice } from './slices.js/authSlice';
+import { authSlice } from './auth/authSlice';
 
 const authPersistConfig = {
   key: 'auth',

@@ -1,4 +1,4 @@
-import { registerUser, logInUser, logOut, refreshing } from '../authOperation';
+import { registerUser, logInUser, logOut, refreshing } from './authOperation';
 
 import { createSlice } from '@reduxjs/toolkit';
 

@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { logInUser } from '../../redux/authOperation';
+import { logInUser } from '../../redux/auth/authOperation';
 
 export default function LoginForm() {
   const dispatch = useDispatch();

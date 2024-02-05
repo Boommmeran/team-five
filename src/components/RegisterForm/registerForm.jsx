@@ -1,13 +1,10 @@
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { registerUser } from '../../redux/authOperation';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
+import { registerUser } from '../../redux/auth/authOperation';
 
-const eye = <FontAwesomeIcon icon={faEye} />;
-const eyeSlash = <FontAwesomeIcon icon={faEyeSlash} />;
+import { useState } from 'react';
+import { Icon } from 'components/Icon';
 
 export default function RegisterForm() {
   const [passwordShown, setPasswordShown] = useState(false);
@@ -63,7 +60,7 @@ export default function RegisterForm() {
           ></input>
         </label>
         <div>{errors?.email && <p>{errors?.email?.message || 'Error'}</p>}</div>
-        <label>
+        <label style={{ stroke: 'red' }}>
           Password
           <input
             name="password"
@@ -76,13 +73,12 @@ export default function RegisterForm() {
               },
             })}
           ></input>
-          <i
+          <Icon
             onClick={() => {
               setPasswordShown(!passwordShown);
             }}
-          >
-            {passwordShown ? eye : eyeSlash}
-          </i>
+            name="eye"
+          />{' '}
         </label>
         <div>
           {errors?.password && <p>{errors?.password?.message || 'Error'}</p>}
