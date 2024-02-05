@@ -11,6 +11,7 @@ import { persistor, store } from './redux/store.js';
 export const theme = {
   colors: {
     accent: '#BEDBB0',
+    accentHover: '#9dc888',
     whiteColor: '#FFFFFF',
     blackColor: '#161616',
     darkThemePrimary: '#1F1F1F',
