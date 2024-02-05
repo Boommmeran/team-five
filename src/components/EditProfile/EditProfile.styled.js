@@ -22,7 +22,7 @@ export const Title = styled.h3`
   font-weight: 500;
   font-size: 18px;
   line-height: 1.5;
-  color: ${({ theme }) => theme.colors.blackColor};
+  color: var(--accent);
 `;
 export const StyledForm = styled(Form)`
   position: relative;
