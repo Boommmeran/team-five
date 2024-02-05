@@ -2,14 +2,12 @@ import { Icon } from 'components/Icon';
 import { theme } from '../../index.js';
 import {
   SidebarContainer,
-  SvgLightningContainer,
   Logo,
   BoardContainer,
   BoardList,
   BoardCreationBlock,
   BtnCreate,
   NeedHelpBlock,
-  StyledSpan,
   NeedHelpBtn,
   LogOut,
   BoardItem,
@@ -20,9 +18,7 @@ export const Sidebar = () => {
   return (
     <SidebarContainer>
       <Logo>
-        <SvgLightningContainer>
-          <Icon name="lightning" width="12" height="16" />
-        </SvgLightningContainer>
+        <Icon name="logo" width="32" height="32" />
         <h2>TaskPro</h2>
       </Logo>
       <BoardContainer>
@@ -62,7 +58,7 @@ export const Sidebar = () => {
           alt="cute little cactus"
         ></img>
         <p>
-          If you need help with <StyledSpan>TaskPro</StyledSpan>, check out our
+          If you need help with <span style={{color: theme.colors.accent}}>TaskPro</span>, check out our
           support resources or reach out to our customer support team.
         </p>
         <NeedHelpBtn type="button">

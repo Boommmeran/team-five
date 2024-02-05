@@ -8,23 +8,11 @@ export const SidebarContainer = styled.div`
   letter-spacing: -0.02em;
 `;
 
-export const SvgLightningContainer = styled.div`
-  width: 32px;
-  height: 32px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 8px;
-  border-radius: 8px;
-  background-color: ${({ theme }) => theme.colors.darkThemePrimary};
-  stroke: ${({ theme }) => theme.colors.whiteColor};
-  fill: ${({ theme }) => theme.colors.whiteColor};
-`;
-
 export const Logo = styled.div`
   font-family: 'Poppins-SemiBold';
   letter-spacing: -0.04em;
   display: flex;
+  column-gap: 8px;
   align-items: center;
   margin-bottom: 70px;
 `;
@@ -44,6 +32,7 @@ export const BoardContainer = styled.div`
 
 export const BoardCreationBlock = styled.div`
   display: flex;
+  justify-content: space-between;
   border-top: rgba(255, 255, 255, 0.1) solid 1px;
   border-bottom: rgba(255, 255, 255, 0.1) solid 1px;
   padding-top: 14px;
@@ -54,7 +43,6 @@ export const BoardCreationBlock = styled.div`
 export const BtnCreate = styled.button`
   width: 40px;
   height: 36px;
-  margin-left: 77px;
   background-color: ${({ theme }) => theme.colors.accent};
   border: none;
   border-radius: 6px;
@@ -75,6 +63,7 @@ margin-bottom: 40px;
 export const ControlIconsContainer = styled.div`
   margin-left: auto;
   display: none;
+  gap: 8px;
 
   button {
     margin: 0;
@@ -108,7 +97,6 @@ export const BoardItem = styled.li`
 
     > ${ControlIconsContainer} {
       display: flex;
-      gap: 8px;
     }
   }
 `;
@@ -127,10 +115,6 @@ export const NeedHelpBlock = styled.div`
     line-height: 1.33333;
     letter-spacing: 0;
   }
-`;
-
-export const StyledSpan = styled.span`
-  color: ${({ theme }) => theme.colors.accent};
 `;
 
 export const NeedHelpBtn = styled.button`
