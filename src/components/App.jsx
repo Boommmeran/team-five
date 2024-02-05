@@ -1,13 +1,12 @@
 import { lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-// import { Layout } from 'components/Layout';
+import { Layout } from 'components/Layout';
 import { useDispatch, useSelector } from 'react-redux';
 import { refreshing } from '../redux/authOperation';
 
 import { PrivateRoute } from './PrivateRoute';
 import AuthPage from 'pages/AuthPage';
 import { RestrictedRoute } from './RedirectRoute';
-import { Sidebar } from './SideBar';
 
 const WelcomePage = lazy(() => import('pages/WelcomePage'));
 const HomePage = lazy(() => import('pages/HomePage'));
@@ -24,7 +23,7 @@ export const App = () => {
     <div>Loading...</div>
   ) : (
     <Routes>
-      <Route path="/" element={<Sidebar />}>
+      <Route path="/" element={<Layout />}>
         <Route index element={<WelcomePage />} />
         <Route
           path="auth/:id"
