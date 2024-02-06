@@ -38,7 +38,7 @@ export const App = () => {
             />
             <Route
               path="/home"
-              element={<HomePage />}
+              element={<PrivateRoute component={<HomePage />} redirect="/" />}
             />
           </Route>
         </Routes>
