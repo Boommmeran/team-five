@@ -2,8 +2,8 @@ import React from 'react';
 import Modal from 'react-modal';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
-import Calendar from '../Сalendar';
-// import { Icon } from 'components/Icon';
+import { Calendar } from 'components/Сalendar';
+import { Icon } from 'components/Icon';
 import {
   ModalBody,
   Container,
@@ -28,7 +28,12 @@ const customStyles = {
     right: 'auto',
     bottom: 'auto',
     marginRight: '-50%',
+    padding: '0',
     transform: 'translate(-50%, -50%)',
+    boxShadow: '0px 4px 16px 0px #1616160D',
+  },
+  overlay: {
+    background: 'rgba(0,0,0,0.5)',
   },
 };
 
@@ -45,7 +50,7 @@ const FormCardSchema = Yup.object().shape({
 
 Modal.setAppElement('#root');
 
-export default function AddCardModal({ onAdd }) {
+export function AddCardModal({ onAdd }) {
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   function openModal() {
@@ -60,7 +65,7 @@ export default function AddCardModal({ onAdd }) {
     <>
       <AddCardButton onClick={openModal}>
         <StylePlus>
-          +{/* <Icon name="icon-plus" width="14" height="14" /> */}
+          <Icon name="plus" width="14" height="14" />
         </StylePlus>
         <p> Add another card</p>
       </AddCardButton>
@@ -75,7 +80,9 @@ export default function AddCardModal({ onAdd }) {
             <TitleModal>Add card</TitleModal>
             <CloseModal>
               <button type="button" onClick={closeModal}>
-                x{/* <Icon name="icon-close" width="18" height="18" /> */}
+                <div style={{ stroke: 'var(--primaryTextColor)' }}>
+                  <Icon name="close" width="18" height="18" />
+                </div>
               </button>
             </CloseModal>
             <Formik
@@ -122,7 +129,7 @@ export default function AddCardModal({ onAdd }) {
                 <Calendar />
                 <AddButton type="submit">
                   <StylePlus>
-                    +{/* <Icon name="icon-plus" width="14" height="14" /> */}
+                    <Icon name="plus" width="14" height="14" />
                   </StylePlus>
                   <p> Add</p>
                 </AddButton>
