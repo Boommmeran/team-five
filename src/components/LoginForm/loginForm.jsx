@@ -10,7 +10,7 @@ import {
   LoginStyled,
   StyledNavLinkLogin,
   WrapForLoginNav,
-} from './loginForm.styled';
+} from './LoginForm.styled';
 import { Icon } from 'components/Icon';
 
 export default function LoginForm() {

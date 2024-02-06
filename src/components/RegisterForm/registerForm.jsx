@@ -5,14 +5,13 @@ import { registerUser } from '../../redux/auth/authOperation';
 
 import { useState } from 'react';
 import { Icon } from 'components/Icon';
-import { LoginStyled } from 'components/LoginForm/loginForm.styled';
 import {
   IconStyledEye,
   LabelStyled,
   RegInputStyled,
   RegisterStyled,
   WrapForRegNav,
-} from './registerStyled';
+} from './RegisterForm.Styled';
 
 export default function RegisterForm() {
   const [passwordShown, setPasswordShown] = useState(false);

@@ -5,7 +5,7 @@ import {
   StyledNavLink,
   WrapForNav,
   WraperWelcome,
-} from './WelcomeForm.styled';
+} from './WelcomePage.styled';
 
 export default function WelcomePage() {
   return (
