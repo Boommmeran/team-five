@@ -37,7 +37,7 @@ const EditProfileSchema = Yup.object().shape({
     .required('this field is required required'),
 });
 
- export const EditProfile = () => {
+export const EditProfile = () => {
   return (
     <Container>
       <Title>Edit profile</Title>

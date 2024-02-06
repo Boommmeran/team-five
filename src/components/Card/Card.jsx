@@ -1,6 +1,6 @@
 import { CardBody,CardDetals,Priority ,PriorityDetals} from './Card.styled';
 
-export default function Сard() {
+export default function Card() {
   return (
     <CardBody>
       <h4>Quiz Creation</h4>

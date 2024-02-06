@@ -1,1 +1,1 @@
-export { default } from  './Сalendar';
+export { default } from  './Calendar';
