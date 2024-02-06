@@ -4,7 +4,6 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 
 import { Button, Label, StyledField, StyledForm } from './Modal.styled';
-
 import { customStyles } from './Modal.styled';
 import { theme } from '../../index.js';
 import { Icon } from 'components/Icon';
