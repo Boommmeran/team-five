@@ -5,6 +5,7 @@ import {
   Container,
   Title,
 } from 'components/EditProfile/EditProfile.styled';
+import { sendDataEmail } from 'services/sendDataEmail';
 
 const initialValues = {
   emailForSupport: '',
@@ -20,6 +21,7 @@ const builderSchema = Yup.object().shape({
 
 export const SendEmail = () => {
   const onSubmit = (data, form) => {
+    sendDataEmail(data);
     form.resetForm();
   };
 
@@ -32,10 +34,14 @@ export const SendEmail = () => {
         onSubmit={onSubmit}
       >
         <Form>
-          <Field name="name" placeholder="Email address" />
-          <ErrorMessage component="p" name="name" />
-          <Field type="tel" name="number" placeholder="Comment" />
-          <ErrorMessage component="p" name="number" />
+          <Field
+            type="email"
+            name="emailForSupport"
+            placeholder="Email address"
+          />
+          <ErrorMessage component="p" name="email" />
+          <Field type="text" name="textMessage" placeholder="Comment" />
+          <ErrorMessage component="p" name="comment" />
           <Button type="submit">Send</Button>
         </Form>
       </Formik>
