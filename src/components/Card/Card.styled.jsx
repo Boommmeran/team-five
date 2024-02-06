@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const CardBody = styled.div`
- border: 2px solid #810e83;
+  border: 2px solid #810e83;
   max-width: 500px;
   display: flex;
   flex-direction: column;

@@ -50,7 +50,7 @@ export const MainDashboard = () => {
         contentLabel="Board Creation Modal"
         ariaHideApp={false}
       >
-       <BoardCreatingModal closeModal={closeModal}/>              
+      <BoardCreatingModal closeModal={closeModal}/>              
       </Modal>
     </>
   );

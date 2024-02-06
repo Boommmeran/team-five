@@ -1,6 +1,6 @@
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
-import Calendar from '../Сalendar'
+import Calendar from '../Calendar'
 import {StyledDescription} from './FormAddCard.styled'
 
 const FormCardSchema = Yup.object().shape({

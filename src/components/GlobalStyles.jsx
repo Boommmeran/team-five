@@ -40,7 +40,7 @@ export const GlobalStyles = createGlobalStyle`
 @font-face {
   font-family: 'Poppins-SemiBold';
   src: local('Poppins-SemiBold'), url(${PoppinsSemiBoldTtf}) format('ttf'), url(${PoppinsSemiBoldWoff}) format('woff');
-  font-weight: 500;
+  font-weight: 600;
   font-style: normal;
 }
 

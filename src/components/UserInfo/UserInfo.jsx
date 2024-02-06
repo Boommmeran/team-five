@@ -6,8 +6,8 @@ import {
 } from './UserInfo.styled';
 import { EditProfile } from 'components/EditProfile';
 import Modal from 'react-modal';
-import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useState } from 'react';
+// import { useDispatch } from 'react-redux';
 import { useAuth } from 'hooks';
 // import { updateAvatar } from 'redux/auth/authOperation';
 
@@ -31,7 +31,7 @@ Modal.setAppElement('#root');
 
 export const UserInfo = () => {
   const { user } = useAuth();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
