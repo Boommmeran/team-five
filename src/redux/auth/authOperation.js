@@ -63,3 +63,15 @@ export const refreshing = createAsyncThunk(
     }
   }
 );
+
+// export const updateAvatar = createAsyncThunk('/users/avatars', async (_, thunkAPI) => {
+//   try {
+
+//     const responce = await axios.get('http://res.cloudinary.com/dt7u6ic1c/image/upload/v1706799169/')
+//     
+
+//   }
+  // catch (error) {
+  //   console.log(error);
+  // }
+// });

@@ -12,25 +12,32 @@ import {
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
-
 const EditProfileSchema = Yup.object().shape({
   photo: Yup.string().url('invalid url'),
   name: Yup.string()
-    .min(4, '4 chars minimum')
-    .max(64, '64 chars maximum')
+    .min(2, '2 chars minimum')
+    .max(32, '32 chars maximum')
+    .matches(/^[a-zA-Z0-9!@#$%^&*(),.?":{}|<>]+$/, 'Invalin name ')
     .required('this field is required'),
-  email: Yup.string().email('Invalid email').required('this field is required'),
+  email: Yup.string()
+    .email('Invalid email')
+    .matches(
+      /^[a-zA-Z0-9!@#$%^&*(),.?":{}|<>]+@[a-zA-Z0-9]+\.[a-zA-Z]{2, }$/,
+      'Invalid email'
+    )
+    .required('this field is required'),
   password: Yup.string()
     .min(8, '8 chars minimum')
-    .max(64, '8 chars minimum')
+    .max(64, '64 chars maximum')
+    // .noWhitespace('Password must not contain spaces')
     .matches(
-      /^[a-zA-Z0-9!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]+$/,
+      /^[a-zA-Z0-9!@#$%^&*(),.?":{}|<>]+$/,
       'only latin letters, numbers and symbols'
     )
     .required('this field is required required'),
 });
 
-export const EditProfile = () => {
+ export const EditProfile = () => {
   return (
     <Container>
       <Title>Edit profile</Title>
@@ -74,3 +81,5 @@ export const EditProfile = () => {
     </Container>
   );
 };
+
+
