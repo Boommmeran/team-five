@@ -80,14 +80,14 @@ export default function RegisterForm() {
               },
             })}
           ></RegInputStyled>
-          <IconStyledEye
+          <i
             onClick={() => {
               setPasswordShown(!passwordShown);
             }}
           >
             {' '}
             <Icon name="eye" />
-          </IconStyledEye>{' '}
+          </i>
         </LabelStyled>
         <div>
           {errors?.password && <p>{errors?.password?.message || 'Error'}</p>}
@@ -104,6 +104,7 @@ export default function RegisterForm() {
             },
           })}
         /> */}
+
         <input type="submit" disabled={!isValid} />
       </form>
     </RegisterStyled>
