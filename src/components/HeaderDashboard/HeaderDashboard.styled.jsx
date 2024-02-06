@@ -19,6 +19,8 @@ export const FilterBtn = styled.button`
     width: 16px;
     height: 16px;
   }
+
+  cursor: pointer;
 `;
 
 export const BoardName = styled.h3`
