@@ -1,9 +1,25 @@
 import React from 'react';
 import Modal from 'react-modal';
-import FormAddCard from '../FormAddCard';
-import { ModalBody } from './AddCardModal.styled.jsx';
-import { nanoid } from 'nanoid';
-import { useState, useEffect } from 'react';
+import { Formik, Field } from 'formik';
+import * as Yup from 'yup';
+import Calendar from '../Сalendar';
+// import { Icon } from 'components/Icon';
+import {
+  ModalBody,
+  Container,
+  TitleModal,
+  StyledDescription,
+  CloseModal,
+  TitleCard,
+  LabelColorStyle,
+  StyleRadioButton,
+  DeadlineStyle,
+  AddButton,
+  StylePlus,
+  AddCardButton,
+  RadioButton,
+  RadioButtonBlue,
+} from './AddCardModal.styled.jsx';
 
 const customStyles = {
   content: {
@@ -16,45 +32,24 @@ const customStyles = {
   },
 };
 
-// const exemplCards = [
-//   {
-//     id: 'id-1',
-//     title: 'First Card',
-//     text: 'My first Card',
-//     priority: 'without',
-//     deadline: 'Today, March 8',
-//     owner: '',
-//   },
-// ];
+const FormCardSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required'),
+  number: Yup.string()
+    .min(2, 'Too Short!')
+    .max(500, 'Too Long!')
+    .required('Required'),
+});
 
 Modal.setAppElement('#root');
 
-export default function AddCardModal() {
-  let subtitle;
+export default function AddCardModal({ onAdd }) {
   const [modalIsOpen, setIsOpen] = React.useState(false);
-
-  // const [cards, setCards] = useState(() => {
-  //   return JSON.parse(window.localStorage.getItem('cards')) ?? exemplCard;
-  // });
-
-  // useEffect(() => {
-  //   window.localStorage.setItem('cards', JSON.stringify(cards));
-  // }, [cards]);
-
-  // const addCards = newCards => {
-  
-  //   return setCards(prevState => [
-  //     ...prevState,
-  //     { ...newCards, id: nanoid() },
-  //   ]);
-  // };
 
   function openModal() {
     setIsOpen(true);
-  }
-
-  function afterOpenModal() {
-    subtitle.style.color = '#f00';
   }
 
   function closeModal() {
@@ -62,22 +57,80 @@ export default function AddCardModal() {
   }
 
   return (
-    <div>
-      <button onClick={openModal}>Add another card</button>
+    <>
+      <AddCardButton onClick={openModal}>
+        <StylePlus>
+          +{/* <Icon name="icon-plus" width="14" height="14" /> */}
+        </StylePlus>
+        <p> Add another card</p>
+      </AddCardButton>
       <Modal
         isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <ModalBody>
-          <h2 ref={_subtitle => (subtitle = _subtitle)}>Add card</h2>
-          <button onClick={closeModal}>close</button>
-          <FormAddCard />
-          {/* <FormAddCard onAdd={addCards} /> */}
-        </ModalBody>
+        <Container>
+          <ModalBody>
+            <TitleModal>Add card</TitleModal>
+            <CloseModal>
+              <button type="button" onClick={closeModal}>
+                x{/* <Icon name="icon-close" width="18" height="18" /> */}
+              </button>
+            </CloseModal>
+            <Formik
+              initialValues={{
+                title: '',
+                description: '',
+                colorPicker: '',
+                dealline: '',
+              }}
+              validationSchema={FormCardSchema}
+              onSubmit={(values, actions) => {
+                onAdd(values);
+                actions.resetForm();
+              }}
+            >
+              <>
+                <label></label>
+                <TitleCard type="text" name="title" placeholder="Title" />
+                <label></label>
+                <StyledDescription
+                  type="textarea"
+                  name="description"
+                  placeholder="Description"
+                />
+                <LabelColorStyle id="colorCard-radio-group">
+                  Label color
+                </LabelColorStyle>
+                <StyleRadioButton role="group" aria-labelledby="my-radio-group">
+                  <RadioButtonBlue>
+                    <RadioButton type="radio" name="colorPicker" value="Blue" />
+                  </RadioButtonBlue>
+                  <label>
+                    <Field type="radio" name="colorPicker" value="Red" />
+                  </label>
+                  <label>
+                    <Field type="radio" name="colorPicker" value="Green" />
+                  </label>
+                  <label>
+                    <Field type="radio" name="colorPicker" value="Grey" />
+                  </label>
+                  {/* <div>Picked: {values.picked}</div> */}
+                </StyleRadioButton>
+                <DeadlineStyle>Deadline</DeadlineStyle>
+                <Calendar />
+                <AddButton type="submit">
+                  <StylePlus>
+                    +{/* <Icon name="icon-plus" width="14" height="14" /> */}
+                  </StylePlus>
+                  <p> Add</p>
+                </AddButton>
+              </>
+            </Formik>
+          </ModalBody>
+        </Container>
       </Modal>
-    </div>
+    </>
   );
 }

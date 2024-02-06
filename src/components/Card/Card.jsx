@@ -1,27 +1,61 @@
-import { CardBody,CardDetals,Priority ,PriorityDetals} from './Card.styled';
+import { Icon } from 'components/Icon';
+import {
+  CardBody,
+  CardDetals,
+  Priority,
+  PriorityDetals,
+  CardColor,
+  CardTitle,
+  CardDescription,
+  CardSolid,
+  PriorityTitle,
+  PriorityTipe,
+  PriorityColor,
+  Deadline,
+  DeadlineTitle,
+  DeadlineDate,
+  CardButtons,
+  CardInformation,
+} from './Card.styled';
 
 export default function Сard() {
   return (
     <CardBody>
-      <h4>Quiz Creation</h4>
-      <p>Create engaging and interactive quizzes using Kahoot's intuitive quiz builder. Design questions, provide multiple-choice answers, and include multimedia elements such as images and videos. </p>
-      <p>_________________________________</p>
+      <CardColor></CardColor>
+      <CardTitle>Quiz Creation</CardTitle>
+      <CardDescription>
+        Create engaging and interactive quizzes using Kahoot's intuitive quiz
+        builder. Design questions,
+      </CardDescription>
+      <CardSolid></CardSolid>
       <CardDetals>
-        <Priority>
-          <p> Priority</p>
-        <PriorityDetals>
-        <p>0</p> 
-          <p>without</p>
-        </PriorityDetals>
-        </Priority>
-        <div>
-          <p>Deadline</p>
-          <p>14/02/2024</p>
-        </div>
-        <p>bell</p>
-        <p>move</p>
-        <p>edit</p>
-        <p>delete</p>
+        <CardInformation>
+          <Priority>
+            <PriorityTitle> Priority</PriorityTitle>
+            <PriorityDetals>
+              <PriorityColor></PriorityColor>
+              <PriorityTipe>Without</PriorityTipe>
+            </PriorityDetals>
+          </Priority>
+          <Deadline>
+            <DeadlineTitle>Deadline</DeadlineTitle>
+            <DeadlineDate>14/02/2024</DeadlineDate>
+          </Deadline>
+        </CardInformation>
+        <CardButtons>
+          <button type="button">
+            <Icon name="icon-bell" width="16" height="16" />
+          </button>
+          <button type="button">
+            <Icon name="icon-puzzle" width="16" height="16" />
+          </button>
+          <button type="button">
+            <Icon name="pencil" width="16" height="16" />
+          </button>
+          <button type="button">
+            <Icon name="trash" width="16" height="16" />
+          </button>
+        </CardButtons>
       </CardDetals>
     </CardBody>
   );
