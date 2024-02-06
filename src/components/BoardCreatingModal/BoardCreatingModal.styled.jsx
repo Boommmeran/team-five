@@ -27,6 +27,8 @@ export const CloseBtn = styled.button`
   border: none;
   outline: none;
   background-color: inherit;
+
+  cursor: pointer;
 `;
 
 export const FormWrap = styled(Form)`
@@ -42,7 +44,7 @@ export const Input = styled(Field)`
     padding: 14px 0 14px 18px;
     margin-bottom: 24px;
 
-    border: 1px solid rgba(0 0 0 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.4);
     border-radius: 8px;
 `
 export const Text = styled.p`

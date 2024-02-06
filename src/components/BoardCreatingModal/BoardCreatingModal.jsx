@@ -35,7 +35,7 @@ export const BoardCreatingModal = ({ closeModal }) => {
       </CloseBtn>
       <Formik initialValues={initialValues} validationSchema={schema} onSubmit={onSubmit}>
         <FormWrap>
-          <Input type="text" placeholder="title" name="boardTitle" />
+          <Input type="text" placeholder="Title" name="boardTitle" />
           <Text>Icons</Text>
           <Text>Backgrounds</Text>
           <AddBtn type='submit'>
