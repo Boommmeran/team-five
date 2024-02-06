@@ -24,16 +24,16 @@ export const App = () => {
   ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<WelcomePage />} />
+        <Route path="/welcome" element={<WelcomePage />} />
         <Route
           path="auth/:id"
-          element={
-            <RestrictedRoute component={<AuthPage />} redirect="/home" />
-          }
+          element={<RestrictedRoute component={<AuthPage />} redirect="/" />}
         />
         <Route
-          path="/home"
-          element={<PrivateRoute component={<HomePage />} redirect="/" />}
+          index
+          element={
+            <PrivateRoute component={<HomePage />} redirect="/welcome" />
+          }
         />
       </Route>
     </Routes>

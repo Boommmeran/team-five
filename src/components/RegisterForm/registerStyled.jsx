@@ -4,9 +4,9 @@ import styled from 'styled-components';
 export const LabelStyled = styled.label`
   position: relative;
 `;
-export const LoginStyled = styled.div`
+export const RegisterStyled = styled.div`
   border-radius: 8px;
-  height: 363px;
+  min-height: 363px;
   background-color: black;
   display: flex;
   flex-direction: column;
@@ -25,7 +25,7 @@ export const LoginStyled = styled.div`
     padding: 49px 42px 49px 42px;
   }
 `;
-export const LoginInputStyled = styled.input`
+export const RegInputStyled = styled.input`
   display: flex;
   width: 287px;
   height: 49px;
@@ -41,7 +41,7 @@ export const IconStyledEye = styled.i`
   top: 0;
   right: 0;
 `;
-export const StyledNavLinkLogin = styled(NavLink)`
+export const StyledNavLinkRegister = styled(NavLink)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,7 +49,7 @@ export const StyledNavLinkLogin = styled(NavLink)`
   color: rgba(255, 255, 255, 0.3);
   font-size: 18px;
 `;
-export const WrapForLoginNav = styled.div`
+export const WrapForRegNav = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
