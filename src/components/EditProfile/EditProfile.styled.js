@@ -6,7 +6,7 @@ export const Container = styled.div`
   padding: 24px;
   width: 100%;
   height: 440px;
-  background: ${({ theme }) => theme.colors.ligthThemeSecondary};
+  background: var(--ligthThemeSecondary);
 
   @media only screen and (min-width: 375px) {
     width: 335px;
@@ -22,13 +22,13 @@ export const Title = styled.h3`
   font-weight: 500;
   font-size: 18px;
   line-height: 1.5;
-  color: var(--accent);
+  color: var(--blackColor);
 `;
 export const StyledForm = styled(Form)`
   position: relative;
   display: flex;
   flex-direction: column;
-  background: ${({ theme }) => theme.colors.ligthThemeSecondary};
+  background: var(--ligthThemeSecondary);
 `;
 
 export const AvatarField = styled(Field)`
@@ -48,15 +48,15 @@ export const StyledField = styled(Field)`
   width: 100%;
   outline: transparent;
   outline-offset: -1px;
-  border: 1px solid ${({ theme }) => theme.colors.accent};
+  border: 1px solid var(--accent);
   border-radius: 8px;
 
   font-size: 14px;
   font-weight: 400px;
   line-height: 1.5;
-  color: ${prop => prop.theme.colors.blackColor};
+  color: var(--blackColor);
   &::placeholder {
-    background: ${({ theme }) => theme.colors.whiteColor};
+    background: var(-whiteColor);
   }
 `;
 export const LastField = styled(Field)`
@@ -65,22 +65,22 @@ export const LastField = styled(Field)`
   width: 100%;
   outline: transparent;
   outline-offset: -1px;
-  border: 1px solid ${({ theme }) => theme.colors.accent};
+  border: 1px solid var(--accent);
   border-radius: 8px;
 
   font-size: 14px;
   font-weight: 400px;
   line-height: 1.5;
-  color: ${({ theme }) => theme.colors.blackColor};
+  color: var(--blackColor);
 `;
 
 export const Button = styled.button`
   width: 100%;
-  background: ${({ theme }) => theme.colors.accent};
+  background: var(--accent);
   border: 0;
   border-radius: 8px;
   padding: 14px 126px;
-  color: ${({ theme }) => theme.colors.blackColor};
+  color: var(--blackColor);
   font-size: 14px;
   font-weight: 500;
   line-height: 1.5;
@@ -93,10 +93,10 @@ export const ButtonAvatar = styled.button`
 
   width: 24px;
   height: 24px;
-  background: ${({ theme }) => theme.colors.accent};
+  background: var(--accent);
   border-radius: 8px;
   border: 0;
-  stroke: ${({ theme }) => theme.colors.blackColor};
+  stroke: var(--blackColor);
 
   @media only screen and (min-width: 768px) {
     right: 186px;

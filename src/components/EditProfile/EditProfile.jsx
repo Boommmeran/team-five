@@ -29,7 +29,7 @@ const EditProfileSchema = Yup.object().shape({
   password: Yup.string()
     .min(8, '8 chars minimum')
     .max(64, '64 chars maximum')
-    .noWhitespace('Password must not contain spaces')
+    // .noWhitespace('Password must not contain spaces')
     .matches(
       /^[a-zA-Z0-9!@#$%^&*(),.?":{}|<>]+$/,
       'only latin letters, numbers and symbols'

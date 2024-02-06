@@ -14,6 +14,7 @@ export const useAuth = () => {
   const email = useSelector(selectEmail);
   const theme = useSelector(selectTheme);
 
+
   return {
     isLoggedIn,
     isRefreshing,

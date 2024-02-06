@@ -12,7 +12,7 @@ export const Name = styled.p`
   font-weight: 500;
   font-size: 14px;
   line-height: 1.5;
-  color: ${({ theme }) => theme.colors.blackColor};
+  color: var(--blackColor);
 `;
 
 export const Avatar = styled.img`
@@ -26,7 +26,7 @@ export const Button = styled.button`
   position: absolute;
   top: 14px;
   right: 14px;
-  background: ${({ theme }) => theme.colors.whiteColor};
+  background: var(--whiteColor);
   border: 0;
   cursor: pointer;
 `;
