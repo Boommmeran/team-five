@@ -12,21 +12,22 @@ export const Name = styled.p`
   font-weight: 500;
   font-size: 14px;
   line-height: 1.5;
-  color: ${({ theme }) => theme.colors.blackColor};
+  color: var(--primaryTextColor);
 `;
 
 export const Avatar = styled.img`
   width: 32px;
   height: 32px;
-  border: 1px solid grey;
   cursor: pointer;
+  border: 1px solid black;
 `;
 
 export const Button = styled.button`
   position: absolute;
   top: 14px;
   right: 14px;
-  background: ${({ theme }) => theme.colors.whiteColor};
+  color: var(--primaryTextColor);
+  background:var(--headerBgColor);
   border: 0;
   cursor: pointer;
 `;

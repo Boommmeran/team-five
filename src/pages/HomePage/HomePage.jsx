@@ -1,7 +1,13 @@
-import { Sidebar } from "components/SideBar";
+import { Header } from 'components/Header';
+import { Sidebar } from 'components/SideBar';
+import { ScreensPage } from 'components/ScreensPage';
 
 export default function HomePage() {
-    return(
-        <Sidebar />
-    )
+  return (
+    <div>
+      <Header />
+      <Sidebar />
+      <ScreensPage />
+    </div>
+  );
 }
