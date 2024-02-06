@@ -6,12 +6,12 @@ import { registerUser } from '../../redux/auth/authOperation';
 import { useState } from 'react';
 import { Icon } from 'components/Icon';
 import {
-  IconStyledEye,
+  // IconStyledEye,
   LabelStyled,
   RegInputStyled,
   RegisterStyled,
   WrapForRegNav,
-} from './RegisterForm.Styled';
+} from './RegisterForm.styled';
 
 export default function RegisterForm() {
   const [passwordShown, setPasswordShown] = useState(false);
@@ -22,7 +22,7 @@ export default function RegisterForm() {
     register,
     handleSubmit,
     // reset,
-    watch,
+    // watch,
     formState: { errors, isValid },
   } = useForm({ mode: 'onBlur' });
   const onSubmit = data => {
