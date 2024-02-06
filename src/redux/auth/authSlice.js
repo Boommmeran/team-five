@@ -8,6 +8,7 @@ export const authSlice = createSlice({
     user: {
       name: '',
       emai: '',
+      avatarUrl:'',
     },
     token: null,
     isLoggedIn: false,
@@ -46,4 +47,8 @@ export const authSlice = createSlice({
       .addCase(refreshing.rejected, state => {
         state.isRefreshing = false;
       }),
+      // .addCase(updateAvatar.fulfilled, (state, action) => {
+        
+      //   // state.avatarUrl = action.payload.avatarUrl;
+      //  }),
 });
