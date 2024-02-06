@@ -1,3 +1,5 @@
+import { useDispatch } from 'react-redux';
+import { logOut } from '../../redux/auth/authOperation.js';
 import { Icon } from 'components/Icon';
 import {
   SidebarContainer,
@@ -14,6 +16,12 @@ import {
 } from './SideBar.styled';
 
 export const Sidebar = () => {
+  const dispatch = useDispatch();
+
+  const handleLogOut = () => {
+    dispatch(logOut());
+  };
+
   return (
     <SidebarContainer>
       <Logo>
@@ -78,7 +86,7 @@ export const Sidebar = () => {
           <span>Need help?</span>
         </NeedHelpBtn>
       </NeedHelpBlock>
-      <LogOut type="button">
+      <LogOut type="button" onClick={handleLogOut}>
         <Icon name="login" width="32" height="32" />
         <p>Log out</p>
       </LogOut>

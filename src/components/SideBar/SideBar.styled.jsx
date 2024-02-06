@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const SidebarContainer = styled.div`
   width: 225px;
+  min-height: 100vh;
   padding: 14px;
   color: var(--primaryTextColor);
   letter-spacing: -0.02em;

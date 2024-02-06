@@ -3,10 +3,13 @@ import {
   Name,
   Avatar,
   Button,
-} from '../../components/UserInfo/UserInfo.styled';
-import { EditProfile } from '../EditProfile/EditProfile';
+} from './UserInfo.styled';
+import { EditProfile } from 'components/EditProfile';
 import Modal from 'react-modal';
 import { useState } from 'react';
+// import { useDispatch } from 'react-redux';
+import { useAuth } from 'hooks';
+// import { updateAvatar } from 'redux/auth/authOperation';
 
 const customStyles = {
   content: {
@@ -27,6 +30,8 @@ const customStyles = {
 Modal.setAppElement('#root');
 
 export const UserInfo = () => {
+  const { user } = useAuth();
+  // const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -36,9 +41,15 @@ export const UserInfo = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
+//   useEffect(() => {
+//     dispatch(updateAvatar());
+  
+// }, [dispatch])
+
   return (
     <Container>
-      <Name>name</Name>
+      <Name>{user.name}</Name>
       <Avatar src="" alt="image user" onClick={openModal} />
       <Modal isOpen={isModalOpen} style={customStyles} contentLabel="Modal">
         <EditProfile />

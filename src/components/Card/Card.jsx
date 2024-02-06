@@ -18,7 +18,7 @@ import {
   CardInformation,
 } from './Card.styled';
 
-export default function Сard() {
+export default function Card() {
   return (
     <CardBody>
       <CardColor></CardColor>
