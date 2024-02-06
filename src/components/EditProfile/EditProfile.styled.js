@@ -6,7 +6,7 @@ export const Container = styled.div`
   padding: 24px;
   width: 100%;
   height: 440px;
-  background: var(--ligthThemeSecondary);
+  background: var(--headerBgColor);
 
   @media only screen and (min-width: 375px) {
     width: 335px;
@@ -22,13 +22,13 @@ export const Title = styled.h3`
   font-weight: 500;
   font-size: 18px;
   line-height: 1.5;
-  color: var(--blackColor);
+  color: var(--primaryTextColor);
 `;
 export const StyledForm = styled(Form)`
   position: relative;
   display: flex;
   flex-direction: column;
-  background: var(--ligthThemeSecondary);
+  
 `;
 
 export const AvatarField = styled(Field)`
@@ -54,10 +54,7 @@ export const StyledField = styled(Field)`
   font-size: 14px;
   font-weight: 400px;
   line-height: 1.5;
-  color: var(--blackColor);
-  &::placeholder {
-    background: var(-whiteColor);
-  }
+  color: var(--primaryTextColor);
 `;
 export const LastField = styled(Field)`
   margin-bottom: 24px;
@@ -71,7 +68,7 @@ export const LastField = styled(Field)`
   font-size: 14px;
   font-weight: 400px;
   line-height: 1.5;
-  color: var(--blackColor);
+  color: var(--primaryTextColor);
 `;
 
 export const Button = styled.button`
@@ -80,7 +77,7 @@ export const Button = styled.button`
   border: 0;
   border-radius: 8px;
   padding: 14px 126px;
-  color: var(--blackColor);
+  color: var(--primaryTextColor);
   font-size: 14px;
   font-weight: 500;
   line-height: 1.5;
@@ -96,7 +93,7 @@ export const ButtonAvatar = styled.button`
   background: var(--accent);
   border-radius: 8px;
   border: 0;
-  stroke: var(--blackColor);
+  
 
   @media only screen and (min-width: 768px) {
     right: 186px;

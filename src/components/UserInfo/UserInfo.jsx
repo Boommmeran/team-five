@@ -3,8 +3,8 @@ import {
   Name,
   Avatar,
   Button,
-} from '../../components/UserInfo/UserInfo.styled';
-import { EditProfile } from '../EditProfile/EditProfile';
+} from './UserInfo.styled';
+import { EditProfile } from 'components/EditProfile';
 import Modal from 'react-modal';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
