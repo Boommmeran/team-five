@@ -13,14 +13,22 @@ export const GlobalStyles = createGlobalStyle`
   --accent: ${({ theme }) => theme.accent};
   --hover: ${({ theme }) => theme.hover};
   --transition: ${({ theme }) => theme.transition};
-  --headerBgColor: ${({ theme }) => theme.headerBgColor};
+  
   --primaryBgColor: ${({ theme }) => theme.primaryBgColor};
   --secondaryBgColor: ${({ theme }) => theme.secondaryBgColor};
+  --headerBgColor: ${({ theme }) => theme.headerBgColor};
+  --modalBgColor: ${({ theme }) => theme.modalBgColor};
+
   --primaryTextColor: ${({ theme }) => theme.primaryTextColor};
   --secondaryTextColor: ${({ theme }) => theme.secondaryTextColor};
-  --nonAccentTextColor: ${({ theme }) => theme.nonAccentTextColor};
+
+  --primaryOpacity: ${({ theme }) => theme.primaryOpacity};
+  --secondaryOpacity: ${({ theme }) => theme.secondaryOpacity};
+
   --btnPlus: ${({ theme }) => theme.btnPlus};
   --btnPlusHover: ${({ theme }) => theme.btnPlusHover};
+
+  --needHelpBg: ${({ theme }) => theme.needHelpBg};
 }
 
 @font-face {
