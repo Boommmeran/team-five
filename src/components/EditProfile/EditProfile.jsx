@@ -25,26 +25,21 @@ const EditProfileSchema = Yup.object().shape({
     .required('this field is required'),
   email: Yup.string()
     .email('Invalid email')
-    .matches(
-      /^[a-zA-Z0-9!@#$%^&*(),.?":{}|<>]+@[a-zA-Z0-9]+\.[a-zA-Z]{2, }$/,
-      'Invalid email'
-    )
     .required('this field is required'),
   password: Yup.string()
     .min(8, '8 chars minimum')
     .max(64, '64 chars maximum')
     .matches(
       /^[a-zA-Z0-9!@#$%^&*(),.?":{}|<>]+$/,
-      'only latin letters, numbers and symbols'
-    )
+      'only latin letters, numbers and symbols')
     .matches(/^\S*$/, 'password must not contain spaces')
-    .required('this field is required required'),
+    .required('this field is required '),
 });
 
 export const EditProfile = () => {
   const { user } = useAuth();
 
-return (
+  return (
     <Container>
       <Title>Edit profile</Title>
       <Formik
@@ -64,7 +59,7 @@ return (
 
           <ErrMsg name="name" component={'div'} />
           <label>
-            <StyledField id="name" name="name" placeholder={user.name} />
+            <StyledField id="name" name="name" placeholder={user.name} autocomplete="off" />
           </label>
 
           <ErrMsg name="email" component={'div'} />
@@ -74,24 +69,26 @@ return (
               name="email"
               placeholder={user.email}
               type="email"
+              autocomplete="off"
             />
           </label>
 
           <ErrMsg name="password" component={'div'} />
           <StyledLabel>
-            <Icon name="eye" />
-            <LastField
-              id="password"
-              name="password"
-              placeholder={user.password}
-            />
+            <Icon name="eye" stroke="var(--primaryTextColor)" />
+            <LastField id="password" name="password" placeholder="Password" autocomplete="off"/>
           </StyledLabel>
 
           <Button type="submit">Submit</Button>
         </StyledForm>
       </Formik>
       <ButtonAvatar>
-        <Icon name="plus" width="10px" height="10px" />
+        <Icon
+          name="plus"
+          width="10px"
+          height="10px"
+          stroke="var(--primaryTextColor)"
+        />
       </ButtonAvatar>
     </Container>
   );
