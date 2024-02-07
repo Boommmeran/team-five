@@ -3,54 +3,74 @@
     "accent": "#bedbb0",
     "hover": "#9dc888",
     "transition": "300ms cubic-bezier(0.4, 0, 0.2, 1);",
-    "headerBgColor": "#161616",
+
     "primaryBgColor": "#121212",
     "secondaryBgColor": "#1f1f1f",
+    "headerBgColor": "#161616",
     "modalBgColor": "#151515",
+
     "primaryTextColor": "#fff",
-    "secondaryTextColor": "rgba(255, 255, 255, 0.5)",
-    "nonAccentTextColor": "rgba(255, 255, 255, 0.5)",
+    "secondaryTextColor": "fff",
+
+    "primaryOpacity": "0.5",
+    "secondaryOpacity": "0.8",
+
     "btnPlus": "#bedbb0",
     "btnPlusHover": "#9dc888",
+
     "btnBgColor": "#bedbb0",
     "btnText": "#161616",
     "plusInBtn": "#fff",
-    "btnBgColorHover": "#9dc888"
+    "btnBgColorHover": "#9dc888",
+    "needHelpBg": "#1f1f1f"
   },
   "light": {
     "accent": "#bedbb0",
     "hover": "#9dc888",
     "transition": "300ms cubic-bezier(0.4, 0, 0.2, 1);",
-    "headerBgColor": "#fcfcfc",
+
     "primaryBgColor": "#fff",
     "secondaryBgColor": "#f6f6f7",
+    "headerBgColor": "#fcfcfc",
     "modalBgColor": "#fcfcfc",
+
     "primaryTextColor": "#161616",
-    "secondaryTextColor": "rgba(22, 22, 22, 0.7)",
-    "nonAccentTextColor": "rgba(22, 22, 22, 0.5)",
+    "secondaryTextColor": "#161616",
+
+    "primaryOpacity": "0.7",
+    "secondaryOpacity": "0.8",
+
     "btnPlus": "#bedbb0",
     "btnPlusHover": "#9dc888",
     "btnBgColor": "#bedbb0",
     "btnText": "#161616",
     "plusInBtn": "#fff",
-    "btnBgColorHover": "#9dc888"
+    "btnBgColorHover": "#9dc888",
+    "needHelpBg": "#f6f6f7"
   },
   "violet": {
     "accent": "#5255bc",
     "hover": "#7b7ede",
     "transition": "300ms cubic-bezier(0.4, 0, 0.2, 1);",
-    "headerBgColor": "#fff",
+
     "primaryBgColor": "#5255bc",
-    "secondaryBgColor": "rgba(236, 237, 253, 0.4)",
+    "secondaryBgColor": "#ecedfd",
+    "headerBgColor": "#fff",
     "modalBgColor": "#fcfcfc",
-    "primaryTextColor": "#161616",
-    "secondaryTextColor": "rgba(22, 22, 22, 0.7)",
-    "nonAccentTextColor": "rgba(255, 255, 255, 0.5)",
+
+    "primaryTextColor": "#fff",
+    "secondaryTextColor": "#161616",
+
+    "primaryOpacity": "0.7",
+    "secondaryOpacity": "0.8",
+
     "btnPlus": "#b8bcfd",
     "btnPlusHover": "#979cea",
     "btnBgColor": "#5255bc",
     "btnText": "#fff",
     "plusInBtn": "#161616",
-    "btnBgColorHover": "#7b7ede"
+    "btnBgColorHover": "#7b7ede",
+    "needHelpBg": "rgba(236, 237, 253, 0.4)"
+
   }
 }

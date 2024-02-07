@@ -1,4 +1,4 @@
-import { registerUser, logInUser, logOut, refreshing } from './authOperation';
+import { registerUser, logInUser, logOut, refreshing} from './authOperation';
 
 import { createSlice } from '@reduxjs/toolkit';
 
@@ -8,7 +8,7 @@ export const authSlice = createSlice({
     user: {
       name: '',
       emai: '',
-      avatarUrl:'',
+      // avatarUrl:'',
     },
     token: null,
     isLoggedIn: false,
@@ -48,7 +48,6 @@ export const authSlice = createSlice({
         state.isRefreshing = false;
       }),
       // .addCase(updateAvatar.fulfilled, (state, action) => {
-        
-      //   // state.avatarUrl = action.payload.avatarUrl;
+      //   state.avatarUrl = action.payload.avatarUrl;
       //  }),
 });
