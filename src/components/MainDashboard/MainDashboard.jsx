@@ -1,4 +1,8 @@
-import { StartText, BoardCreationBtn } from './MainDashboard.styled';
+import {
+  StartText,
+  BoardCreationBtn,
+  DashBoardWrap,
+} from './MainDashboard.styled';
 import { useParams } from 'react-router-dom';
 import { Board } from 'components/Board';
 import Modal from 'react-modal';
@@ -29,7 +33,7 @@ export const MainDashboard = () => {
   };
 
   return (
-    <>
+    <DashBoardWrap>
       {boardName ? (
         <Board />
       ) : (
@@ -43,6 +47,7 @@ export const MainDashboard = () => {
           effective collaboration among team members.
         </StartText>
       )}
+
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -50,8 +55,8 @@ export const MainDashboard = () => {
         contentLabel="Board Creation Modal"
         ariaHideApp={false}
       >
-      <BoardCreatingModal closeModal={closeModal}/>              
+        <BoardCreatingModal closeModal={closeModal} />
       </Modal>
-    </>
+    </DashBoardWrap>
   );
 };

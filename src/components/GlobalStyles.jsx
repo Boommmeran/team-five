@@ -28,8 +28,13 @@ export const GlobalStyles = createGlobalStyle`
   --btnPlus: ${({ theme }) => theme.btnPlus};
   --btnPlusHover: ${({ theme }) => theme.btnPlusHover};
 
+  --modalBgColor: ${({ theme }) => theme.modalBgColor};
+  --btnText: ${({ theme }) => theme.btnText};
+  --btnBgColor: ${({ theme }) => theme.btnBgColor};
+  --plusInBtn: ${({ theme }) => theme.plusInBtn};
+  --btnBgColorHover: ${({ theme }) => theme.btnBgColorHover};
   --needHelpBg: ${({ theme }) => theme.needHelpBg};
-}
+  }
 
 @font-face {
   font-family: 'Poppins-Regular';
