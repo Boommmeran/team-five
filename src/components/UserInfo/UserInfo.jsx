@@ -3,6 +3,7 @@ import { EditProfile } from 'components/EditProfile';
 import { Icon } from 'components/Icon';
 import Modal from 'react-modal';
 import { useState } from 'react';
+
 import { useAuth } from 'hooks';
 
 const customStyles = {

@@ -1,1 +1,1 @@
-export { default } from './registerForm.jsx';
+export * from './RegisterForm';

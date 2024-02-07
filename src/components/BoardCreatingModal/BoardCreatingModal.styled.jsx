@@ -27,27 +27,29 @@ export const CloseBtn = styled.button`
   border: none;
   outline: none;
   background-color: inherit;
+
+  cursor: pointer;
 `;
 
 export const FormWrap = styled(Form)`
-    font-size: 14;
-    font-weight: 500;
-    line-height: 1.5;
-    letter-spacing: -0.02em;
-`
+  font-size: 14;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+`;
 
 export const Input = styled(Field)`
-    width: 287px;
-    height: 49px;
-    padding: 14px 0 14px 18px;
-    margin-bottom: 24px;
+  width: 287px;
+  height: 49px;
+  padding: 14px 0 14px 18px;
+  margin-bottom: 24px;
 
-    border: 1px solid rgba(0 0 0 0.4);
-    border-radius: 8px;
-`
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+`;
 export const Text = styled.p`
-    margin-bottom: 24px;
-`
+  margin-bottom: 14px;
+`;
 
 export const IconWrap = styled.div`
   display: flex;
@@ -66,12 +68,65 @@ export const IconWrap = styled.div`
   }
 `;
 
+export const InvisibleInput = styled(Field)`
+position: absolute;
+top: 0;
+left: 0;
+margin: -1px;
+width: 1px;
+height: 1px;
+`;
+
+export const IconsListWrap = styled.ul`
+  display: flex;
+  gap: 8px;
+
+  margin-bottom: 24px;
+`;
+
+export const Label = styled.label`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+  background-color: inherit;
+
+  width: 18px;
+  height: 18px;
+
+  cursor: pointer;
+  > svg {
+    stroke: black;
+    opacity: 1;
+  }
+  :checked {
+    border: 1px solid red;
+    border-radius: 4px;
+  }
+`;
+
+export const Pic = styled.label`
+  width: 28px;
+  height: 28px;
+`
+
+export const BackgroundsPallet = styled.ul`
+  width: 252px;
+  height: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+`;
+
 export const AddBtn = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  
+
   min-width: 287px;
   height: 49px;
 

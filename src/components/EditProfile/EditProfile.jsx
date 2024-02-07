@@ -44,7 +44,7 @@ const EditProfileSchema = Yup.object().shape({
 export const EditProfile = () => {
   const { user } = useAuth();
 
-  return (
+return (
     <Container>
       <Title>Edit profile</Title>
       <Formik

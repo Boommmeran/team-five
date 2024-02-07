@@ -28,20 +28,20 @@ export const App = () => {
       <GlobalStyles theme={themes[theme]} />
       <Suspense fallback={null}>
         <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<WelcomePage />} />
-            <Route
-              path="auth/:id"
-              element={
-                <RestrictedRoute component={<AuthPage />} redirect="/home" />
-              }
-            />
-            <Route
-              path="/home"
-              element={<PrivateRoute component={<HomePage />} redirect="/" />}
-            />
-          </Route>
-        </Routes>
+      <Route path="/" element={<Layout />}>
+        <Route path="/welcome" element={<WelcomePage />} />
+        <Route
+          path="auth/:id"
+          element={<RestrictedRoute component={<AuthPage />} redirect="/" />}
+        />
+        <Route
+          index
+          element={
+            <PrivateRoute component={<HomePage />} redirect="/welcome" />
+          }
+        />
+      </Route>
+    </Routes>
       </Suspense>
     </>
   );

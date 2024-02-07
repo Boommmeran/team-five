@@ -128,9 +128,10 @@ export const StylePlus = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
   background: black;
   margin-right: 8px;
+  stroke: white;
+
 `;
 
 export const AddCardButton = styled.button`

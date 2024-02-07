@@ -18,6 +18,7 @@ import {
   CardInformation,
 } from './Card.styled';
 
+
 export default function Card() {
   return (
     <CardBody>
@@ -44,10 +45,10 @@ export default function Card() {
         </CardInformation>
         <CardButtons>
           <button type="button">
-            <Icon name="icon-bell" width="16" height="16" />
+            <Icon name="bell" width="16" height="16" />
           </button>
           <button type="button">
-            <Icon name="icon-puzzle" width="16" height="16" />
+            <Icon name="arrow-in-circle" width="16" height="16" />
           </button>
           <button type="button">
             <Icon name="pencil" width="16" height="16" />

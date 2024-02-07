@@ -5,8 +5,15 @@ import { registerUser } from '../../redux/auth/authOperation';
 
 import { useState } from 'react';
 import { Icon } from 'components/Icon';
+import {
+  // IconStyledEye,
+  LabelStyled,
+  RegInputStyled,
+  RegisterStyled,
+  WrapForRegNav,
+} from './RegisterForm.styled';
 
-export default function RegisterForm() {
+export const RegisterForm = () => {
   const [passwordShown, setPasswordShown] = useState(false);
 
   const dispatch = useDispatch();
@@ -15,7 +22,7 @@ export default function RegisterForm() {
     register,
     handleSubmit,
     // reset,
-    watch,
+    // watch,
     formState: { errors, isValid },
   } = useForm({ mode: 'onBlur' });
   const onSubmit = data => {
@@ -29,15 +36,15 @@ export default function RegisterForm() {
   };
 
   return (
-    <div>
-      <div>
+    <RegisterStyled>
+      <WrapForRegNav>
         <NavLink to="/auth/register">Registration</NavLink>
         <NavLink to="/auth/login">Login</NavLink>
-      </div>
+      </WrapForRegNav>
       <form onSubmit={handleSubmit(onSubmit)}>
         <label>
           Name
-          <input
+          <RegInputStyled
             {...register('name', {
               required: 'Required field',
               minLength: {
@@ -45,45 +52,47 @@ export default function RegisterForm() {
                 message: 'Name is too short',
               },
             })}
-          ></input>
+          ></RegInputStyled>
         </label>
         <div>{errors?.name && <p>{errors?.name?.message || 'Error'}</p>}</div>
         <label>
           Email
-          <input
+          <RegInputStyled
             name="email"
             type="email"
             {...register('email', {
               required: 'Required field',
               pattern: /^\S+@\S+$/i,
             })}
-          ></input>
+          ></RegInputStyled>
         </label>
         <div>{errors?.email && <p>{errors?.email?.message || 'Error'}</p>}</div>
-        <label style={{ stroke: 'red' }}>
+        <LabelStyled style={{ stroke: 'red' }}>
           Password
-          <input
+          <RegInputStyled
             name="password"
             type={passwordShown ? 'text' : 'password'}
             {...register('password', {
               required: 'Required field',
               minLength: {
-                value: 7,
+                value: 8,
                 message: 'Password is too short',
               },
             })}
-          ></input>
-          <Icon
+          ></RegInputStyled>
+          <i
             onClick={() => {
               setPasswordShown(!passwordShown);
             }}
-            name="eye"
-          />{' '}
-        </label>
+          >
+            {' '}
+            <Icon name="eye" />
+          </i>
+        </LabelStyled>
         <div>
           {errors?.password && <p>{errors?.password?.message || 'Error'}</p>}
         </div>
-        <input
+        {/* <RegInputStyled
           name="confirmPassword"
           type="password"
           {...register('confirm_password', {
@@ -94,9 +103,10 @@ export default function RegisterForm() {
               }
             },
           })}
-        />
+        /> */}
+
         <input type="submit" disabled={!isValid} />
       </form>
-    </div>
+    </RegisterStyled>
   );
 }
