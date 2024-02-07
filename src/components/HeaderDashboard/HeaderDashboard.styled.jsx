@@ -47,13 +47,20 @@ export const FilterBtn = styled.button`
   border: none;
 
   color: var(--secondaryTextColor);
+  opacity: 0.8;
   background-color: inherit;
 
   stroke: var(--secondaryTextColor);
+  stroke-opacity: 0.8;
+  transition: opacity var(--transition);
   > svg {
     width: 16px;
     height: 16px;
   }
 
   cursor: pointer;
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
 `;

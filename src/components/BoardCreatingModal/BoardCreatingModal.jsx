@@ -15,6 +15,8 @@ import {
   BackgroundsPallet,
   Label,
   Pic,
+  LabelPic,
+  Div,
 } from './BoardCreatingModal.styled';
 import { Formik } from 'formik';
 
@@ -93,16 +95,19 @@ export const BoardCreatingModal = ({ closeModal }) => {
 
           <Text>Backgrounds</Text>
           <BackgroundsPallet>
-            {backgroundsArr.map(el =>{ 
-              const imgPath = `some path`
+            {backgroundsArr.map(el => {
+              // const imgPath = `some path{el}`;
               return (
-              <li key={el}>
-                <Pic>
-                  <img src={imgPath} alt=''/>
-                  <InvisibleInput type="radio" name="background" value={el} />
-                </Pic>
-              </li>
-            )})}
+                <li key={el}>
+                  <LabelPic>
+                    <Div>
+                      {/* <img src={imgPath} alt="background example" /> */}
+                    </Div>
+                    <InvisibleInput type="radio" name="background" value={el} />
+                  </LabelPic>
+                </li>
+              );
+            })}
           </BackgroundsPallet>
 
           <AddBtn type="submit">

@@ -21,6 +21,11 @@ export const GlobalStyles = createGlobalStyle`
   --nonAccentTextColor: ${({ theme }) => theme.nonAccentTextColor};
   --btnPlus: ${({ theme }) => theme.btnPlus};
   --btnPlusHover: ${({ theme }) => theme.btnPlusHover};
+  /* --modalBgColor: ${({ theme }) => theme.modalBgColor};
+  --btnText: ${({ theme }) => theme.btnText};
+  --btnBgColor: ${({ theme }) => theme.btnBgColor};
+  --plusInBtn: ${({ theme }) => theme.plusInBtn};
+  --btnBgColorHover: ${({ theme }) => theme.btnBgColorHover}; */
 }
 
 @font-face {
