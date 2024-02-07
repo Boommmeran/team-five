@@ -1,1 +1,1 @@
-export { default } from './SendEmail.jsx';
+export * from './SendEmail';

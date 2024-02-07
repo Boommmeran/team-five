@@ -24,7 +24,7 @@ const builderSchema = Yup.object().shape({
     .required(`This field is required.`),
 });
 
-export const SendEmail = () => {
+export const SendEmail = ({ onClose }) => {
   const onSubmit = (data, form) => {
     sendDataEmail(data);
     form.resetForm();
@@ -33,7 +33,7 @@ export const SendEmail = () => {
   return (
     <ContainerForModal>
       <TitleForModal>Need help</TitleForModal>
-      <ButtonClose />
+      <ButtonClose onClick={onClose} />
       <Formik
         initialValues={initialValues}
         validationSchema={builderSchema}

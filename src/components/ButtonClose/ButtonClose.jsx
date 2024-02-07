@@ -1,6 +1,6 @@
 import { ButtonCloseStyled } from './ButtonClose.styled';
 
-const { Icon } = require('components/Icon');
+import { Icon } from 'components/Icon';
 
 export const ButtonClose = () => {
   return (
