@@ -16,7 +16,7 @@ export const customStyles = {
 };
 
 export const FiltersTytle = styled.h2`
-    font-family: "Poppins", sans-serif;
+font-family: "Poppins", sans-serif;
 font-weight: 500;
 font-size: 18px;
 letter-spacing: -0.02em;

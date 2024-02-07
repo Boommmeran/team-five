@@ -64,14 +64,18 @@ export const refreshing = createAsyncThunk(
   }
 );
 
-// export const updateAvatar = createAsyncThunk('/users/avatars', async (_, thunkAPI) => {
-//   try {
-
-//     const responce = await axios.get('http://res.cloudinary.com/dt7u6ic1c/image/upload/v1706799169/')
-//     
-
+// export const updateAvatar = createAsyncThunk(
+//   '/users/avatars',
+//   async (_, thunkAPI) => {
+//     try {
+//       const responce = await axios.get(
+//         'http://res.cloudinary.com/dt7u6ic1c/image/upload/v1706799169/'
+//       );
+//       console.log('OPERATION', responce.avatarUrl);
+//       // return responce.data.avatarUrl;
+//     } catch (error) {
+//       return thunkAPI.rejectWithValue(error.message);
+//     }
 //   }
-  // catch (error) {
-  //   console.log(error);
-  // }
-// });
+// );
+
