@@ -131,11 +131,18 @@ export const DeadlineDate = styled.p`
 export const CardButtons = styled.div`
 display:flex;
 gap:8px;
+
+  /* button {
+
   button {
+
     margin: 0;
     padding: 0;
     border: none;
     background: none;
+
+  } */
+
     stroke: rgba(22, 22, 22, 0.5);
   }
 `;

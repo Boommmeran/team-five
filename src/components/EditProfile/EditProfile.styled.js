@@ -6,7 +6,7 @@ export const Container = styled.div`
   padding: 24px;
   width: 100%;
   height: 440px;
-  background: var(--headerBgColor);
+  background: var(--modalBgColor);
 
   @media only screen and (min-width: 375px) {
     width: 335px;
@@ -19,16 +19,16 @@ export const Container = styled.div`
 
 export const Title = styled.h3`
   margin: 0 0 24px 0;
-  font-weight: 500;
+  font-family: 'Poppins-Medium';
   font-size: 18px;
   line-height: 1.5;
+  letter-spacing:-2;
   color: var(--primaryTextColor);
 `;
 export const StyledForm = styled(Form)`
   position: relative;
   display: flex;
   flex-direction: column;
-  
 `;
 
 export const AvatarField = styled(Field)`
@@ -43,6 +43,7 @@ export const AvatarField = styled(Field)`
 `;
 
 export const StyledField = styled(Field)`
+  position: relative;
   margin-bottom: 14px;
   padding: 14px 18px;
   width: 100%;
@@ -50,10 +51,9 @@ export const StyledField = styled(Field)`
   outline-offset: -1px;
   border: 1px solid var(--accent);
   border-radius: 8px;
-
   font-size: 14px;
-  font-weight: 400px;
   line-height: 1.5;
+  letter-spacing: -2;
   color: var(--primaryTextColor);
 `;
 export const LastField = styled(Field)`
@@ -64,10 +64,9 @@ export const LastField = styled(Field)`
   outline-offset: -1px;
   border: 1px solid var(--accent);
   border-radius: 8px;
-
   font-size: 14px;
-  font-weight: 400px;
   line-height: 1.5;
+  letter-spacing: -2;
   color: var(--primaryTextColor);
 `;
 
@@ -78,9 +77,10 @@ export const Button = styled.button`
   border-radius: 8px;
   padding: 14px 126px;
   color: var(--primaryTextColor);
+  font-family: 'Poppins-Medium';
   font-size: 14px;
-  font-weight: 500;
   line-height: 1.5;
+  letter-spacing:-2;
 `;
 
 export const ButtonAvatar = styled.button`
@@ -93,7 +93,7 @@ export const ButtonAvatar = styled.button`
   background: var(--accent);
   border-radius: 8px;
   border: 0;
-  
+  stroke: var(--primaryTextColor);
 
   @media only screen and (min-width: 768px) {
     right: 186px;
@@ -104,4 +104,16 @@ export const ErrMsg = styled(ErrorMessage)`
   color: red;
   font-style: italic;
   font-size: 14px;
+`;
+
+export const StyledLabel = styled.label`
+  position: relative;
+  display: flex;
+  stroke: var(--primaryTextColor);
+
+  svg {
+    position: absolute;
+    top: 16px;
+    right: 15px;
+  }
 `;

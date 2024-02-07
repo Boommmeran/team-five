@@ -131,6 +131,7 @@ export const StylePlus = styled.div`
   background: black;
   margin-right: 8px;
   stroke: white;
+
 `;
 
 export const AddCardButton = styled.button`

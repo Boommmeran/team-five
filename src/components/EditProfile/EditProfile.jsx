@@ -8,9 +8,13 @@ import {
   AvatarField,
   ButtonAvatar,
   ErrMsg,
+  StyledLabel,
 } from './EditProfile.styled';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
+import { useAuth } from 'hooks';
+
+import { Icon } from 'components/Icon';
 
 const EditProfileSchema = Yup.object().shape({
   photo: Yup.string().url('invalid url'),
@@ -29,21 +33,22 @@ const EditProfileSchema = Yup.object().shape({
   password: Yup.string()
     .min(8, '8 chars minimum')
     .max(64, '64 chars maximum')
-    // .noWhitespace('Password must not contain spaces')
     .matches(
       /^[a-zA-Z0-9!@#$%^&*(),.?":{}|<>]+$/,
       'only latin letters, numbers and symbols'
     )
+    .matches(/^\S*$/, 'password must not contain spaces')
     .required('this field is required required'),
 });
 
 export const EditProfile = () => {
-  return (
+  const { user } = useAuth();
+
+return (
     <Container>
       <Title>Edit profile</Title>
       <Formik
         initialValues={{
-          photo: '',
           name: '',
           email: '',
           password: '',
@@ -58,28 +63,36 @@ export const EditProfile = () => {
           <AvatarField id="photo" name="photo" type="file" accept="image/*" />
 
           <ErrMsg name="name" component={'div'} />
-          <StyledField id="name" name="name" placeholder="Enter your name" />
+          <label>
+            <StyledField id="name" name="name" placeholder={user.name} />
+          </label>
+
           <ErrMsg name="email" component={'div'} />
-          <StyledField
-            id="email"
-            name="email"
-            placeholder="ivetta34@gmail.com"
-            type="email"
-          />
+          <label>
+            <StyledField
+              id="email"
+              name="email"
+              placeholder={user.email}
+              type="email"
+            />
+          </label>
 
           <ErrMsg name="password" component={'div'} />
-          <LastField
-            id="password"
-            name="password"
-            placeholder="ivetta1999.23"
-          />
+          <StyledLabel>
+            <Icon name="eye" />
+            <LastField
+              id="password"
+              name="password"
+              placeholder={user.password}
+            />
+          </StyledLabel>
 
           <Button type="submit">Submit</Button>
         </StyledForm>
       </Formik>
-      <ButtonAvatar>+</ButtonAvatar>
+      <ButtonAvatar>
+        <Icon name="plus" width="10px" height="10px" />
+      </ButtonAvatar>
     </Container>
   );
 };
-
-
