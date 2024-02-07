@@ -11,10 +11,8 @@ import {
   ModalTitle,
   IconsListWrap,
   InvisibleInput,
-  // IconedBtn,
   BackgroundsPallet,
   Label,
-  Pic,
   LabelPic,
   Div,
 } from './BoardCreatingModal.styled';
