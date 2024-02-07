@@ -11,7 +11,7 @@ import {
   ModalTitle,
   IconsListWrap,
   InvisibleInput,
-  IconedBtn,
+  // IconedBtn,
   BackgroundsPallet,
   Label,
   Pic,
@@ -98,7 +98,7 @@ export const BoardCreatingModal = ({ closeModal }) => {
               return (
               <li key={el}>
                 <Pic>
-                  <img src={imgPath}/>
+                  <img src={imgPath} alt=''/>
                   <InvisibleInput type="radio" name="background" value={el} />
                 </Pic>
               </li>
