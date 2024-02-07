@@ -1,30 +1,27 @@
 {
   "files": {
     "main.css": "/team-five/static/css/main.cd2e038f.css",
-    "main.js": "/team-five/static/js/main.8d9c8dd6.js",
-    "static/js/413.c4373fb8.chunk.js": "/team-five/static/js/413.c4373fb8.chunk.js",
-    "static/js/569.f86063ac.chunk.js": "/team-five/static/js/569.f86063ac.chunk.js",
-    "static/js/749.15c839fc.chunk.js": "/team-five/static/js/749.15c839fc.chunk.js",
-    "static/js/134.bea61d6e.chunk.js": "/team-five/static/js/134.bea61d6e.chunk.js",
-    "static/js/323.72c24b93.chunk.js": "/team-five/static/js/323.72c24b93.chunk.js",
+    "main.js": "/team-five/static/js/main.8608d660.js",
+    "static/js/192.f005ef6b.chunk.js": "/team-five/static/js/192.f005ef6b.chunk.js",
+    "static/js/495.07d15a0e.chunk.js": "/team-five/static/js/495.07d15a0e.chunk.js",
+    "static/js/749.7ca0fa41.chunk.js": "/team-five/static/js/749.7ca0fa41.chunk.js",
+    "static/js/323.3848f914.chunk.js": "/team-five/static/js/323.3848f914.chunk.js",
     "static/media/Poppins-Regular.ttf": "/team-five/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
     "static/media/Poppins-Medium.ttf": "/team-five/static/media/Poppins-Medium.673ed42382ab264e0bf5.ttf",
     "static/media/Poppins-SemiBold.ttf": "/team-five/static/media/Poppins-SemiBold.ac8d04b620e54be9b0f0.ttf",
     "static/media/Poppins-Regular.woff": "/team-five/static/media/Poppins-Regular.6c52b9ac6734cdb52c11.woff",
     "static/media/Poppins-SemiBold.woff": "/team-five/static/media/Poppins-SemiBold.07608aed0ae659b64793.woff",
     "static/media/Poppins-Medium.woff": "/team-five/static/media/Poppins-Medium.aa05ffb55514eb300e03.woff",
-    "static/media/sprite.svg": "/team-five/static/media/sprite.7e6a282fb81c537b5da78de9b8e10e19.svg",
+    "static/media/sprite.svg": "/team-five/static/media/sprite.dc7add122f0c0a373750a30cb14fce1a.svg",
     "index.html": "/team-five/index.html",
     "main.cd2e038f.css.map": "/team-five/static/css/main.cd2e038f.css.map",
-    "main.8d9c8dd6.js.map": "/team-five/static/js/main.8d9c8dd6.js.map",
-    "413.c4373fb8.chunk.js.map": "/team-five/static/js/413.c4373fb8.chunk.js.map",
-    "569.f86063ac.chunk.js.map": "/team-five/static/js/569.f86063ac.chunk.js.map",
-    "749.15c839fc.chunk.js.map": "/team-five/static/js/749.15c839fc.chunk.js.map",
-    "134.bea61d6e.chunk.js.map": "/team-five/static/js/134.bea61d6e.chunk.js.map",
-    "323.72c24b93.chunk.js.map": "/team-five/static/js/323.72c24b93.chunk.js.map"
+    "main.8608d660.js.map": "/team-five/static/js/main.8608d660.js.map",
+    "192.f005ef6b.chunk.js.map": "/team-five/static/js/192.f005ef6b.chunk.js.map",
+    "749.7ca0fa41.chunk.js.map": "/team-five/static/js/749.7ca0fa41.chunk.js.map",
+    "323.3848f914.chunk.js.map": "/team-five/static/js/323.3848f914.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cd2e038f.css",
-    "static/js/main.8d9c8dd6.js"
+    "static/js/main.8608d660.js"
   ]
 }
