@@ -1,1 +1,1 @@
-export * from './SendEmail';
+export * from './SendEmail.jsx';
