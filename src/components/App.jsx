@@ -15,7 +15,7 @@ const HomePage = lazy(() => import('pages/HomePage'));
 
 export const App = () => {
   const dispatch = useDispatch();
-  const { isRefreshing, theme = 'dark' } = useAuth();
+  const { isRefreshing, theme = 'light' } = useAuth();
 
   useEffect(() => {
     dispatch(refreshing());
