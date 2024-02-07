@@ -6,6 +6,9 @@ import { NeedHelpBlock, NeedHelpBtn } from './NeedHelp.styled';
 
 const customStyles = {
   content: {
+    width: 'fit-content',
+    height: 'fit-content',
+    padding: 0,
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
@@ -16,7 +19,7 @@ const customStyles = {
   },
 };
 
-Modal.setAppElement('#root');
+// Modal.setAppElement('#root');
 
 export const NeedHelp = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -60,7 +63,7 @@ export const NeedHelp = () => {
         isOpen={isModalOpen}
         onRequestClose={closeModal}
         style={customStyles}
-        contentLabel="Modal"
+        contentLabel="Need help modal"
       >
         <SendEmail onClose={closeModal} />
       </Modal>

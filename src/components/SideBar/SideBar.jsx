@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { NeedHelp } from './SidebarComponents/NeedHelp/NeedHelp.jsx';
+import { NeedHelp } from 'components/NeedHelp';
+import { BoardCreation } from 'components/SidebarBoardCreation';
 import { logOut } from '../../redux/auth/authOperation.js';
 import { Icon } from 'components/Icon';
 import {
@@ -7,8 +8,6 @@ import {
   Logo,
   BoardContainer,
   BoardList,
-  BoardCreationBlock,
-  BtnCreate,
   LogOut,
   BoardItem,
   ControlIconsContainer,
@@ -29,15 +28,7 @@ export const Sidebar = () => {
       </Logo>
       <BoardContainer>
         <h3>My boards</h3>
-        <BoardCreationBlock>
-          <p>
-            Create a<br />
-            new board
-          </p>
-          <BtnCreate type="button">
-            <Icon name="plus" width="20" height="20" />
-          </BtnCreate>
-        </BoardCreationBlock>
+        <BoardCreation />
         <BoardList>
           <BoardItem>
             <Icon
