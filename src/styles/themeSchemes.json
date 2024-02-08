@@ -22,7 +22,10 @@
     "btnText": "#161616",
     "plusInBtn": "#fff",
     "btnBgColorHover": "#9dc888",
-    "needHelpBg": "#1f1f1f"
+    "needHelpBg": "#1f1f1f",
+
+    "scroll": "#121212",
+    "scrollBg": "rgba(255, 255, 255, 0.1)"
   },
   "light": {
     "accent": "#bedbb0",
@@ -46,7 +49,10 @@
     "btnText": "#161616",
     "plusInBtn": "#fff",
     "btnBgColorHover": "#9dc888",
-    "needHelpBg": "#f6f6f7"
+    "needHelpBg": "#f6f6f7",
+
+    "scroll": "rgba(22, 22, 22, 0.1)",
+    "scrollBg": "#fff"
   },
   "violet": {
     "accent": "#5255bc",
@@ -70,7 +76,9 @@
     "btnText": "#fff",
     "plusInBtn": "#161616",
     "btnBgColorHover": "#7b7ede",
-    "needHelpBg": "rgba(236, 237, 253, 0.4)"
+    "needHelpBg": "rgba(236, 237, 253, 0.4)",
 
+    "scroll": "#b8bcfd",
+    "scrollBg": "#fff"
   }
 }

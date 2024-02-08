@@ -151,7 +151,6 @@ export const LabelPic = styled.label``;
 export const Div = styled.div`
   width: 28px;
   height: 28px;
-  background-color: red;
   border-radius: 6px;
   transition: transform var(--transition);
   cursor: pointer;
