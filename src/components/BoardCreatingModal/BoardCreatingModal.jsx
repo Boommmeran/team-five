@@ -48,26 +48,29 @@ const backgroundsArr = [
   'zhou',
 ];
 
-const initialValues = {
-  boardTitle: '',
-  icon: 'four-circles',
-  background: 'noBack',
-};
-
 const schema = Yup.object({
   boardTitle: Yup.string().required(),
   icon: Yup.string().oneOf(iconsArr).required(),
   background: Yup.string().oneOf(backgroundsArr).required(),
 });
 
-export const BoardCreatingModal = ({ onClose }) => {
+export const BoardCreatingModal = ({ onClose, title, btnText, reqFunc }) => {
+  // тут має бути прописана логіка отримання даних щодо дошки з redux (для випадка редагування) з подальшим 
+  // занесенням у initialValues (у форматі або ?? існуючі стартові двні)
+
+  const initialValues = {
+    boardTitle: '',
+    icon: 'four-circles',
+    background: 'noBack',
+  };
+
   const onSubmit = values => {
-    console.log(values);
+    reqFunc(values);
     onClose();
   };
   return (
     <ModalWrap>
-      <ModalTitle>New board</ModalTitle>
+      <ModalTitle>{title}</ModalTitle>
       <CloseBtn type="button" onClick={onClose}>
         <Icon name="close" />
       </CloseBtn>
@@ -117,7 +120,7 @@ export const BoardCreatingModal = ({ onClose }) => {
             <IconWrap>
               <Icon name="plus" />
             </IconWrap>{' '}
-            Create
+            {btnText}
           </AddBtn>
         </FormWrap>
       </Formik>

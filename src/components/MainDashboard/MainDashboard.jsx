@@ -55,7 +55,7 @@ export const MainDashboard = () => {
         contentLabel="Board Creation Modal"
         ariaHideApp={false}
       >
-        <BoardCreatingModal onClose={closeModal} />
+        <BoardCreatingModal onClose={closeModal} title={"New board"} btnText={"Create"} reqFunc={values=> console.log(values)}/>
       </Modal>
     </DashBoardWrap>
   );
