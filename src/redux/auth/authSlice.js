@@ -1,4 +1,10 @@
-import { registerUser, logInUser, logOut, refreshing, update} from './authOperation';
+import {
+  registerUser,
+  logInUser,
+  logOut,
+  refreshing,
+  update,
+} from './authOperation';
 
 import { createSlice } from '@reduxjs/toolkit';
 
@@ -48,6 +54,6 @@ export const authSlice = createSlice({
       })
       .addCase(update.fulfilled, (state, action) => {
         state.user = action.payload;
-  }),
-      
+      }),
+  
 });

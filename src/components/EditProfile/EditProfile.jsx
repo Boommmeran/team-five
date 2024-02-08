@@ -42,7 +42,6 @@ export const EditProfile = () => {
   const { user } = useAuth();
   const dispatch = useDispatch();
 
-  
   return (
     <Container>
       <Title>Edit profile</Title>
@@ -55,30 +54,29 @@ export const EditProfile = () => {
         validationSchema={EditProfileSchema}
         onSubmit={(values, actions) => {
           dispatch(update(values));
-          actions.resetForm();
+          // actions.resetForm();
         }}
       >
         <StyledForm>
           <AvatarField id="photo" name="photo" type="file" accept="image/*" />
 
           <Label>
-          
             <StyledField id="name" name="name" />
             <ErrMsg name="name" component="p" />
           </Label>
 
           <Label>
-            <StyledField
-              id="email"
-              name="email"
-              type="email"
-            />
+            <StyledField id="email" name="email" type="email" />
             <ErrMsg name="email" component="p" />
           </Label>
 
           <StyledLabel>
             <Icon name="eye" stroke="var(--primaryTextColor)" />
-            <LastField id="password" name="password" placeholder="Enter or update your password"/>
+            <LastField
+              id="password"
+              name="password"
+              placeholder="Enter or update your password"
+            />
             <ErrMsg name="password" component="p" />
           </StyledLabel>
 

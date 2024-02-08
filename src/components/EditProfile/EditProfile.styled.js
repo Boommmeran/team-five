@@ -37,7 +37,7 @@ export const AvatarField = styled(Field)`
   margin-right: auto;
   width: 68px;
   height: 68px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   cursor: pointer;
   border-radius: 8px;
 `;
