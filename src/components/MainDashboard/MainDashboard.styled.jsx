@@ -1,17 +1,9 @@
 import styled from 'styled-components';
 
-export const DashBoardWrap = styled.div`
-  background: var(--secondaryBgColor);
-  width: 100vw;
-  height: 100vh;
-`;
-
 export const StartText = styled.p`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
+  position: relative;
+  bottom: 50%;
+  transform: translateY(-50%);
   min-width: 280px;
 
   font-size: 14px;

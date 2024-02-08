@@ -1,8 +1,4 @@
-import {
-  StartText,
-  BoardCreationBtn,
-  DashBoardWrap,
-} from './MainDashboard.styled';
+import { StartText, BoardCreationBtn } from './MainDashboard.styled';
 import { useParams } from 'react-router-dom';
 import { Board } from 'components/Board';
 import Modal from 'react-modal';
@@ -33,7 +29,7 @@ export const MainDashboard = () => {
   };
 
   return (
-    <DashBoardWrap>
+    <>
       {boardName ? (
         <Board />
       ) : (
@@ -55,8 +51,13 @@ export const MainDashboard = () => {
         contentLabel="Board Creation Modal"
         ariaHideApp={false}
       >
-        <BoardCreatingModal onClose={closeModal} title={"New board"} btnText={"Create"} reqFunc={values=> console.log(values)}/>
+        <BoardCreatingModal
+          onClose={closeModal}
+          title={'New board'}
+          btnText={'Create'}
+          reqFunc={values => console.log(values)}
+        />
       </Modal>
-    </DashBoardWrap>
+    </>
   );
 };
