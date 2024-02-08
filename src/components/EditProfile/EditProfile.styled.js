@@ -60,6 +60,10 @@ export const StyledField = styled(Field)`
   &:focus,
   &:active {
     opacity: 1;
+    &::placeholder{
+      color:transparent;
+    }
+    
   }
 `;
 export const LastField = styled(Field)`
@@ -80,6 +84,9 @@ export const LastField = styled(Field)`
   &:focus,
   &:active {
     opacity: 1;
+    &::placeholder{
+      color:transparent;
+    }
   }
 `;
 
@@ -113,18 +120,33 @@ export const ButtonAvatar = styled.button`
 `;
 
 export const ErrMsg = styled(ErrorMessage)`
+  /* color: red;
+  font-size: 14px; */
+
+  position: absolute;
+  top: 2px;
+  right: 4px;
+
   color: red;
-  font-style: italic;
-  font-size: 14px;
+  font-size: 12px;
+`;
+
+export const Label = styled.label`
+  position: relative;
+  display: block;
 `;
 
 export const StyledLabel = styled.label`
   position: relative;
-  display: flex;
+  display: block;
 
   svg {
     position: absolute;
     top: 16px;
     right: 15px;
+    opacity:0,5;
+    &:active{
+      opacity:1;
+    }
   }
 `;
