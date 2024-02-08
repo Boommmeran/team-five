@@ -1,4 +1,6 @@
 import { useDispatch } from 'react-redux';
+import { NeedHelp } from 'components/NeedHelp';
+import { BoardCreation } from 'components/SidebarBoardCreation';
 import { logOut } from '../../redux/auth/authOperation.js';
 import { Icon } from 'components/Icon';
 import {
@@ -6,10 +8,6 @@ import {
   Logo,
   BoardContainer,
   BoardList,
-  BoardCreationBlock,
-  BtnCreate,
-  NeedHelpBlock,
-  NeedHelpBtn,
   LogOut,
   BoardItem,
   ControlIconsContainer,
@@ -30,15 +28,7 @@ export const Sidebar = () => {
       </Logo>
       <BoardContainer>
         <h3>My boards</h3>
-        <BoardCreationBlock>
-          <p>
-            Create a<br />
-            new board
-          </p>
-          <BtnCreate type="button">
-            <Icon name="plus" width="20" height="20" />
-          </BtnCreate>
-        </BoardCreationBlock>
+        <BoardCreation />
         <BoardList>
           <BoardItem>
             <Icon
@@ -59,33 +49,7 @@ export const Sidebar = () => {
           </BoardItem>
         </BoardList>
       </BoardContainer>
-      <NeedHelpBlock>
-        <picture>
-          <source
-            srcSet="
-              https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707115407/cactus-1x.webp 1x,
-              https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707115407/cactus-2x.webp 2x
-            "
-          />
-          <img
-            src="https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707115407/cactus-1x.webp"
-            width="54"
-            height="78"
-            alt="little cute cactus"
-          />
-        </picture>
-        <p>
-          If you need help with{' '}
-          <span style={{ color: 'var(--accent)' }}>TaskPro</span>, check out our
-          support resources or reach out to our customer support team.
-        </p>
-        <NeedHelpBtn type="button">
-          <div style={{ stroke: 'var(--primaryTextColor)' }}>
-            <Icon name="help" width="20" height="20" />
-          </div>
-          <span>Need help?</span>
-        </NeedHelpBtn>
-      </NeedHelpBlock>
+      <NeedHelp />
       <LogOut type="button" onClick={handleLogOut}>
         <Icon name="login" width="32" height="32" />
         <p>Log out</p>

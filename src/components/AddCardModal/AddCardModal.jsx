@@ -4,6 +4,7 @@ import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
 import { Calendar } from 'components/Сalendar';
 import { Icon } from 'components/Icon';
+
 import {
   ModalBody,
   Container,
@@ -50,7 +51,7 @@ const FormCardSchema = Yup.object().shape({
 
 Modal.setAppElement('#root');
 
-export function AddCardModal({ onAdd }) {
+export default function AddCardModal({ onAdd }) {
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   function openModal() {

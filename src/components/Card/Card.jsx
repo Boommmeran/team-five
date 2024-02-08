@@ -18,7 +18,8 @@ import {
   CardInformation,
 } from './Card.styled';
 
-export function Card() {
+
+export default function Card() {
   return (
     <CardBody>
       <CardColor></CardColor>

@@ -11,10 +11,10 @@ import {
   ModalTitle,
   IconsListWrap,
   InvisibleInput,
-  // IconedBtn,
   BackgroundsPallet,
   Label,
-  Pic,
+  LabelPic,
+  Div,
 } from './BoardCreatingModal.styled';
 import { Formik } from 'formik';
 
@@ -30,29 +30,23 @@ const iconsArr = [
 ];
 
 const backgroundsArr = [
-  'diego',
-  'eberhard',
-  'florian',
-  'gabriella',
-  'gaetan',
-  'igor',
-  'kace',
-  'miklos',
-  'milad',
-  'nicolas',
   'noBack',
-  'romello',
-  'tony',
-  'vickholius',
+  'miklos',
+  'eberhard',
+  'diego',
   'vino',
+  'vickholius',
+  'romello',
+  'kace',
+  'milad',
+  'gaetan',
+  'florian',
+  'tony',
+  'nicolas',
+  'gabriella',
+  'igor',
   'zhou',
 ];
-
-const initialValues = {
-  boardTitle: '',
-  icon: 'four-circles',
-  background: 'noBack',
-};
 
 const schema = Yup.object({
   boardTitle: Yup.string().required(),
@@ -60,15 +54,24 @@ const schema = Yup.object({
   background: Yup.string().oneOf(backgroundsArr).required(),
 });
 
-export const BoardCreatingModal = ({ closeModal }) => {
+export const BoardCreatingModal = ({ onClose, title, btnText, reqFunc }) => {
+  // тут має бути прописана логіка отримання даних щодо дошки з redux (для випадка редагування) з подальшим 
+  // занесенням у initialValues (у форматі або ?? існуючі стартові двні)
+
+  const initialValues = {
+    boardTitle: '',
+    icon: 'four-circles',
+    background: 'noBack',
+  };
+
   const onSubmit = values => {
-    console.log(values);
-    closeModal();
+    reqFunc(values);
+    onClose();
   };
   return (
     <ModalWrap>
-      <ModalTitle>New board</ModalTitle>
-      <CloseBtn type="button" onClick={closeModal}>
+      <ModalTitle>{title}</ModalTitle>
+      <CloseBtn type="button" onClick={onClose}>
         <Icon name="close" />
       </CloseBtn>
       <Formik
@@ -93,23 +96,31 @@ export const BoardCreatingModal = ({ closeModal }) => {
 
           <Text>Backgrounds</Text>
           <BackgroundsPallet>
-            {backgroundsArr.map(el =>{ 
-              const imgPath = `some path`
+            {backgroundsArr.map(el => {
+              const srcSetPath = ` https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707115407/pictures/${el}_28x28.webp 1x,
+              https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707115407/pictures/${el}_56x56.webp 2x`;
+              const srcDefault = `https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707115407/pictures/${el}_28x28.webp`;
               return (
-              <li key={el}>
-                <Pic>
-                  <img src={imgPath} alt=''/>
-                  <InvisibleInput type="radio" name="background" value={el} />
-                </Pic>
-              </li>
-            )})}
+                <li key={el}>
+                  <LabelPic>
+                    <Div>
+                      <picture>
+                        <source srcSet={srcSetPath} />
+                        <img src={srcDefault} alt="background example" />
+                      </picture>
+                    </Div>
+                    <InvisibleInput type="radio" name="background" value={el} />
+                  </LabelPic>
+                </li>
+              );
+            })}
           </BackgroundsPallet>
 
           <AddBtn type="submit">
             <IconWrap>
               <Icon name="plus" />
             </IconWrap>{' '}
-            Create
+            {btnText}
           </AddBtn>
         </FormWrap>
       </Formik>

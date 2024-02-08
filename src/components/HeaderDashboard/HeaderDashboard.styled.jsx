@@ -1,36 +1,12 @@
 import styled from 'styled-components';
 
-export const FilterBtn = styled.button`
+export const Wrap = styled.div`
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: space-between;
 
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: -0.02em;
+  background: var(--secondaryBgColor);
 
-  border: none;
-
-  background-color: inherit;
-
-  stroke: black;
-  > svg {
-    width: 16px;
-    height: 16px;
-  }
-
-  cursor: pointer;
-`;
-
-export const BoardName = styled.h3`
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: -0.02em;
-`;
-
-export const Wrap = styled.div`
   @media (max-width: 767px) {
     padding: 14px 0px;
   }
@@ -42,8 +18,49 @@ export const Wrap = styled.div`
   @media (min-width: 1440px) {
     padding: 10px 0px;
   }
+`;
 
+export const BoardName = styled.h3`
+  font-family: 'Poppins-Medium';
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+
+  color: var(--primaryTextColor);
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+`;
+
+export const FilterBtn = styled.button`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 8px;
+
+  font-family: 'Poppins-Medium';
+
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+
+  border: none;
+
+  color: var(--secondaryTextColor);
+  opacity: 0.8;
+  background-color: inherit;
+
+  stroke: var(--secondaryTextColor);
+  stroke-opacity: 0.8;
+  transition: opacity var(--transition);
+  > svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
 `;

@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+export const DashBoardWrap = styled.div`
+  background: var(--secondaryBgColor);
+  width: 100vw;
+  height: 100vh;
+`;
+
 export const StartText = styled.p`
   position: absolute;
   top: 50%;
@@ -9,9 +15,10 @@ export const StartText = styled.p`
   min-width: 280px;
 
   font-size: 14px;
-  font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 1.33;
+
+  color: var(--secondaryTextColor);
 
   @media (min-width: 375px) {
     width: 335px;
@@ -32,9 +39,11 @@ export const BoardCreationBtn = styled.button`
   outline: none;
 
   background-color: inherit;
-  color: inherit;
+  color: var(--btnPlus);
   cursor: pointer;
-  &:hover {
-    color: red;
+  transition: color var(--transition);
+  &:hover,
+  &:focus {
+    color: var(--btnPlusHover);
   }
 `;
