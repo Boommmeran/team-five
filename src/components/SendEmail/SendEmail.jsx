@@ -12,7 +12,7 @@ import {
   TitleForModal,
 } from './SendEmail.styled';
 import { Icon } from 'components/Icon';
-import { ButtonCloseStyled } from './ButtonClose.styled';
+import { ButtonCloseStyled } from 'components/ButtonClose/ButtonClose.styled';
 
 const initialValues = {
   emailForSupport: '',
@@ -26,7 +26,7 @@ const builderSchema = Yup.object().shape({
     .required(`This field is required.`),
 });
 
-export const SendEmail = () => {
+export const SendEmail = ({ onClose }) => {
   const onSubmit = (data, form) => {
     sendDataEmail(data);
     form.resetForm();
@@ -36,7 +36,7 @@ export const SendEmail = () => {
     <ContainerForModal>
       <TitleForModal>Need help</TitleForModal>
       {/* <ButtonClose/> */}
-      <ButtonCloseStyled type="button">
+      <ButtonCloseStyled type="button" onClick={onClose}>
         <Icon
           stroke="var(--primaryTextColor)"
           name="close"
