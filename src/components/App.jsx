@@ -1,11 +1,13 @@
 import { Suspense, lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { GlobalStyles } from './GlobalStyles';
 import { Layout } from 'components/Layout';
+import { Spinner } from 'components/Spinner';
 import { useDispatch } from 'react-redux';
 import { refreshing } from '../redux/auth/authOperation';
 import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RedirectRoute';
-import { GlobalStyles } from './GlobalStyles';
+
 import themes from '../styles/themeSchemes.json';
 import { useAuth } from 'hooks';
 
@@ -21,28 +23,33 @@ export const App = () => {
     dispatch(refreshing());
   }, [dispatch]);
 
-  return isRefreshing ? (
-    <div>Loading...</div>
-  ) : (
+  return (
     <>
       <GlobalStyles theme={themes[theme]} />
-      <Suspense fallback={null}>
-        <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route path="/welcome" element={<WelcomePage />} />
-        <Route
-          path="auth/:id"
-          element={<RestrictedRoute component={<AuthPage />} redirect="/" />}
-        />
-        <Route
-          index
-          element={
-            <PrivateRoute component={<HomePage />} redirect="/welcome" />
-          }
-        />
-      </Route>
-    </Routes>
-      </Suspense>
+      {isRefreshing ? (
+      <Spinner />) : (
+      <>
+        <Suspense fallback={null}>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route path="/welcome" element={<WelcomePage />} />
+              <Route
+                path="auth/:id"
+                element={
+                  <RestrictedRoute component={<AuthPage />} redirect="/" />
+                }
+              />
+              <Route
+                index
+                element={
+                  <PrivateRoute component={<HomePage />} redirect="/welcome" />
+                }
+              />
+            </Route>
+          </Routes>
+        </Suspense>
+      </>
+      )}
     </>
   );
-};
+}

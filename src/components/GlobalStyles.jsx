@@ -34,6 +34,9 @@ export const GlobalStyles = createGlobalStyle`
   --plusInBtn: ${({ theme }) => theme.plusInBtn};
   --btnBgColorHover: ${({ theme }) => theme.btnBgColorHover};
   --needHelpBg: ${({ theme }) => theme.needHelpBg};
+
+  --scroll: ${({ theme }) => theme.scroll};
+  --scrollBg: ${({ theme }) => theme.scrollBg};
   }
 
 @font-face {
