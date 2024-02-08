@@ -6,6 +6,7 @@ export const Container = styled.div`
   padding: 24px;
   width: 100%;
   height: 440px;
+  border-radius: 8px;
   background: var(--modalBgColor);
 
   @media only screen and (min-width: 375px) {
@@ -21,8 +22,7 @@ export const Title = styled.h3`
   margin: 0 0 24px 0;
   font-family: 'Poppins-Medium';
   font-size: 18px;
-  line-height: 1.5;
-  letter-spacing:-2;
+  letter-spacing: -0.02em;
   color: var(--primaryTextColor);
 `;
 export const StyledForm = styled(Form)`
@@ -37,7 +37,7 @@ export const AvatarField = styled(Field)`
   margin-right: auto;
   width: 68px;
   height: 68px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   cursor: pointer;
   border-radius: 8px;
 `;
@@ -50,11 +50,21 @@ export const StyledField = styled(Field)`
   outline: transparent;
   outline-offset: -1px;
   border: 1px solid var(--accent);
+  opacity: 0.4;
   border-radius: 8px;
   font-size: 14px;
-  line-height: 1.5;
-  letter-spacing: -2;
+  letter-spacing: -0.02em;
   color: var(--primaryTextColor);
+  transition: var(--transition);
+
+  &:focus,
+  &:active {
+    opacity: 1;
+    &::placeholder{
+      color:transparent;
+    }
+    
+  }
 `;
 export const LastField = styled(Field)`
   margin-bottom: 24px;
@@ -63,11 +73,21 @@ export const LastField = styled(Field)`
   outline: transparent;
   outline-offset: -1px;
   border: 1px solid var(--accent);
+  opacity: 0.4;
   border-radius: 8px;
   font-size: 14px;
   line-height: 1.5;
   letter-spacing: -2;
   color: var(--primaryTextColor);
+  transition: var(--transition);
+
+  &:focus,
+  &:active {
+    opacity: 1;
+    &::placeholder{
+      color:transparent;
+    }
+  }
 `;
 
 export const Button = styled.button`
@@ -80,12 +100,12 @@ export const Button = styled.button`
   font-family: 'Poppins-Medium';
   font-size: 14px;
   line-height: 1.5;
-  letter-spacing:-2;
+  letter-spacing: -2;
 `;
 
 export const ButtonAvatar = styled.button`
   position: absolute;
-  top: 130px;
+  top: 125px;
   right: 155px;
 
   width: 24px;
@@ -93,7 +113,6 @@ export const ButtonAvatar = styled.button`
   background: var(--accent);
   border-radius: 8px;
   border: 0;
-  stroke: var(--primaryTextColor);
 
   @media only screen and (min-width: 768px) {
     right: 186px;
@@ -101,19 +120,33 @@ export const ButtonAvatar = styled.button`
 `;
 
 export const ErrMsg = styled(ErrorMessage)`
+  /* color: red;
+  font-size: 14px; */
+
+  position: absolute;
+  top: 2px;
+  right: 4px;
+
   color: red;
-  font-style: italic;
-  font-size: 14px;
+  font-size: 12px;
+`;
+
+export const Label = styled.label`
+  position: relative;
+  display: block;
 `;
 
 export const StyledLabel = styled.label`
   position: relative;
-  display: flex;
-  stroke: var(--primaryTextColor);
+  display: block;
 
   svg {
     position: absolute;
     top: 16px;
     right: 15px;
+    opacity:0,5;
+    &:active{
+      opacity:1;
+    }
   }
 `;
