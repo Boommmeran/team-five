@@ -11,10 +11,8 @@ import {
   ModalTitle,
   IconsListWrap,
   InvisibleInput,
-  // IconedBtn,
   BackgroundsPallet,
   Label,
-  Pic,
   LabelPic,
   Div,
 } from './BoardCreatingModal.styled';
@@ -62,15 +60,15 @@ const schema = Yup.object({
   background: Yup.string().oneOf(backgroundsArr).required(),
 });
 
-export const BoardCreatingModal = ({ closeModal }) => {
+export const BoardCreatingModal = ({ onClose }) => {
   const onSubmit = values => {
     console.log(values);
-    closeModal();
+    onClose();
   };
   return (
     <ModalWrap>
       <ModalTitle>New board</ModalTitle>
-      <CloseBtn type="button" onClick={closeModal}>
+      <CloseBtn type="button" onClick={onClose}>
         <Icon name="close" />
       </CloseBtn>
       <Formik
