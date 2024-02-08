@@ -59,7 +59,7 @@ const AddColumn = ({ onAdd }) => {
             </Button>
           </StyledForm>
         </Formik>
-        <Icon name="icon-close" width="20" height="20" onClick={closeModal} />
+        <Icon name="close" width="20" height="20" onClick={closeModal} />
       </Modal>
     </>
   );
