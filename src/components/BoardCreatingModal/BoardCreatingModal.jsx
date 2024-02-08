@@ -30,21 +30,21 @@ const iconsArr = [
 ];
 
 const backgroundsArr = [
-  'diego',
-  'eberhard',
-  'florian',
-  'gabriella',
-  'gaetan',
-  'igor',
-  'kace',
-  'miklos',
-  'milad',
-  'nicolas',
   'noBack',
-  'romello',
-  'tony',
-  'vickholius',
+  'miklos',
+  'eberhard',
+  'diego',
   'vino',
+  'vickholius',
+  'romello',
+  'kace',
+  'milad',
+  'gaetan',
+  'florian',
+  'tony',
+  'nicolas',
+  'gabriella',
+  'igor',
   'zhou',
 ];
 
@@ -94,12 +94,17 @@ export const BoardCreatingModal = ({ onClose }) => {
           <Text>Backgrounds</Text>
           <BackgroundsPallet>
             {backgroundsArr.map(el => {
-              // const imgPath = `some path{el}`;
+              const srcSetPath = ` https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707115407/pictures/${el}_28x28.webp 1x,
+              https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707115407/pictures/${el}_56x56.webp 2x`;
+              const srcDefault = `https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707115407/pictures/${el}_28x28.webp`;
               return (
                 <li key={el}>
                   <LabelPic>
                     <Div>
-                      {/* <img src={imgPath} alt="background example" /> */}
+                      <picture>
+                        <source srcSet={srcSetPath} />
+                        <img src={srcDefault} alt="background example" />
+                      </picture>
                     </Div>
                     <InvisibleInput type="radio" name="background" value={el} />
                   </LabelPic>
