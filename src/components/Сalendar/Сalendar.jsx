@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import "./Calendar.css";
 
 export function Calendar(){
 
@@ -9,7 +10,7 @@ export function Calendar(){
     <DatePicker
       selected={startDate}
       onChange={(date) => setStartDate(date)}
-      dateFormat="MMMM d"
+      dateFormat= "MMMM d"
     />
   );
 }

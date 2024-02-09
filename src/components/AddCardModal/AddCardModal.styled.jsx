@@ -8,14 +8,13 @@ export const Container = styled.div`
   padding: 24px;
   width: 100%;
   background: var(--primaryBgColor);
-  /* background: black; */
 
   @media only screen and (min-width: 375px) {
     width: 335px;
   }
 
   @media only screen and (min-width: 768px) {
-    width: 400px;
+    width: 350px;
   }
 `;
 
@@ -26,7 +25,7 @@ export const ModalBody = styled.div`
 
 export const TitleModal = styled.h2`
   margin-bottom: 24px;
-  font-weight: 500;
+  font-family: 'Poppins-Medium';
   font-size: 18px;
   line-height: 1.5;
   color: var(--primaryTextColor);
@@ -45,7 +44,7 @@ export const CloseModal = styled.div`
 `;
 
 export const TitleCard = styled(Field)`
-  border: 1px solid #bedbb0;
+  border: 1px solid var(--accent);
   border-radius: 8px;
   width: 287px;
   height: 49px;
@@ -54,7 +53,7 @@ export const TitleCard = styled(Field)`
   margin-bottom: 14px;
 `;
 export const StyledDescription = styled(Field)`
-  border: 1px solid #bedbb0;
+  border: 1px solid var(--accent);
   border-radius: 8px;
   width: 287px;
   height: 154px;
@@ -64,10 +63,9 @@ export const StyledDescription = styled(Field)`
 `;
 
 export const LabelColorStyle = styled.p`
-  font-weight: 400;
   font-size: 12px;
   letter-spacing: -0.02em;
-  color: rgba(22, 22, 22, 0.5);
+  color: rgba(22, 22, 22, 0.5);//не змінюється в темі
   margin-bottom: 4px;
 `;
 
@@ -91,18 +89,20 @@ export const RadioButton = styled(Field)`
   
   }
 `;
-export const RadioButtonBlue = styled.div`
+export const RadioButtonColor = styled.div`
   border-radius: 100%;
   width: 14px;
   height: 14px;
-  background-color: #8fa1d0;
+  background-color: #8fa1d0;//змінюється в залежности від приорітету
+  /* background: #8fa1d0;
+  background: #e09cb5;
+  background: #bedbb0; */
 `;
 
 export const DeadlineStyle = styled.p`
-  font-weight: 400;
   font-size: 12px;
   letter-spacing: -0.02em;
-  color: rgba(22, 22, 22, 0.5);
+  color: rgba(22, 22, 22, 0.5);//не змінюється в темі
   margin-bottom: 4px;
 `;
 
@@ -128,9 +128,9 @@ export const StylePlus = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: black;
+  background: var(--btnText);
   margin-right: 8px;
-  stroke: white;
+  stroke:var(--plusInBtn);
 
 `;
 
