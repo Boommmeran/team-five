@@ -20,7 +20,7 @@ const addColumnFormSchema = Yup.object().shape({
 
 Modal.setAppElement('#root');
 
-const EditColumn = ({ onAdd }) => {
+export const EditColumnModal = ({ onAdd }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => {
     setIsModalOpen(true);
@@ -75,5 +75,3 @@ const EditColumn = ({ onAdd }) => {
     </>
   );
 };
-
-export default EditColumn;

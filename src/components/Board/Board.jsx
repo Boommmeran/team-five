@@ -3,7 +3,7 @@ import { IconWrap, AddBtn, Wrap } from './Board.styled';
 import { Icon } from 'components/Icon';
 import Modal from 'react-modal';
 import { useState } from 'react';
-import { EditColumnModal } from 'components/EditColumnModal/EditColumnModal';
+import { EditColumnModal } from 'components/EditColumnModal';
 
 export const Board = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
