@@ -19,7 +19,7 @@ import {
   StylePlus,
   AddCardButton,
   RadioButton,
-  RadioButtonBlue,
+  RadioButtonColor ,
 } from './AddCardModal.styled.jsx';
 
 const customStyles = {
@@ -112,9 +112,9 @@ export default function AddCardModal({ onAdd }) {
                   Label color
                 </LabelColorStyle>
                 <StyleRadioButton role="group" aria-labelledby="my-radio-group">
-                  <RadioButtonBlue>
+                  <RadioButtonColor >
                     <RadioButton type="radio" name="colorPicker" value="Blue" />
-                  </RadioButtonBlue>
+                  </RadioButtonColor >
                   <label>
                     <Field type="radio" name="colorPicker" value="Red" />
                   </label>
