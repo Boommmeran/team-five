@@ -1,11 +1,24 @@
 import styled from 'styled-components';
 
 export const HeadWrap = styled.div`
-width: 335px;
-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-background-color:  
-`
+  width: 335px;
+  height: 56px;
+
+  margin-bottom: 14px;
+  padding: 17px 20px;
+
+  border-radius: 8px;
+
+  background-color: var(--extraBgColor);
+
+  @media (min-width: 768px) {
+    width: 334px;
+  }
+`;
 
 export const Title = styled.h3`
   font-family: 'Poppins-Medium';
@@ -14,18 +27,54 @@ export const Title = styled.h3`
   letter-spacing: -0.02em;
 `;
 
+export const Wrap = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+`;
+
+export const IconedBtn = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+
+  opacity: 0.8;
+  background-color: inherit;
+
+  stroke: var(--secondaryTextColor);
+  stroke-opacity: 0.5;
+  transition: opacity var(--transition);
+
+  > svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+`;
+
+export const CardList = styled.ul`
+  margin-bottom: 14px;
+`;
+
 export const AddBtn = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
 
-  min-width: 287px;
-  height: 49px;
+  width: 335px;
+  height: 56px;
 
   padding: 10px 0 11px 0;
 
-  border: 1px solid black;
+  border: none;
   border-radius: 8px;
 
   font-size: 14px;
@@ -40,7 +89,7 @@ export const AddBtn = styled.button`
   cursor: pointer;
 
   @media (min-width: 768px) {
-    width: 302px;
+    width: 334px;
   }
 
   &:hover,
