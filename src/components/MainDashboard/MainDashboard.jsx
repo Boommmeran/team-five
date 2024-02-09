@@ -1,12 +1,12 @@
-import { StartText, BoardCreationBtn } from './MainDashboard.styled';
-import { useParams } from 'react-router-dom';
+// import { StartText, BoardCreationBtn } from './MainDashboard.styled';
+// import { useParams } from 'react-router-dom';
 import { Board } from 'components/Board';
 import Modal from 'react-modal';
 import { useState } from 'react';
 import { BoardCreatingModal } from 'components/BoardCreatingModal';
 
 export const MainDashboard = () => {
-  const { boardName } = useParams();
+  // const { boardName } = useParams();
   const [modalIsOpen, setIsOpen] = useState(false);
 
   const customStyles = {
@@ -20,9 +20,9 @@ export const MainDashboard = () => {
     },
   };
 
-  const openModal = () => {
-    setIsOpen(true);
-  };
+  // const openModal = () => {
+  //   setIsOpen(true);
+  // };
 
   const closeModal = () => {
     setIsOpen(false);
@@ -30,7 +30,7 @@ export const MainDashboard = () => {
 
   return (
     <>
-      {boardName ? (
+      {/* {boardName ? (
         <Board />
       ) : (
         <StartText>
@@ -42,8 +42,8 @@ export const MainDashboard = () => {
           board serves as a powerful tool to organize the workflow and ensure
           effective collaboration among team members.
         </StartText>
-      )}
-
+      )} */}
+      <Board />
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}

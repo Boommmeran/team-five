@@ -34,6 +34,9 @@ export const GlobalStyles = createGlobalStyle`
   --plusInBtn: ${({ theme }) => theme.plusInBtn};
   --btnBgColorHover: ${({ theme }) => theme.btnBgColorHover};
   --needHelpBg: ${({ theme }) => theme.needHelpBg};
+  --extraBgColor: ${({ theme }) => theme.extraBgColor};
+  --squareIconColor: ${({ theme }) => theme.squareIconColor};
+
 
   --scroll: ${({ theme }) => theme.scroll};
   --scrollBg: ${({ theme }) => theme.scrollBg};
