@@ -6,7 +6,7 @@ import { Button, Label, StyledField, StyledForm } from './Modal.styled';
 import { customStyles } from './Modal.styled';
 import { theme } from '../../index.js';
 import { Icon } from 'components/Icon';
-import { ButtonText } from './EditColumnModal.styled';
+import { ButtonText, CloseBtn } from './EditColumnModal.styled';
 
 
 const addColumnFormSchema = Yup.object().shape({
@@ -48,6 +48,9 @@ const EditColumn = ({ onAdd }) => {
         >
           <StyledForm>
             <Label>Edit column</Label>
+            <CloseBtn type="button" onClick={closeModal}>
+              <Icon name="close" />
+            </CloseBtn>
             <StyledField type="text" name="name" placeholder="Title" />
             {/* <ErrMsg name="name" component="div"/> */}
 

@@ -47,6 +47,30 @@ export const StyledField = styled(Field)`
   opacity: 0.4;
 `;
 
+export const CloseBtn = styled.button`
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  border: none;
+  outline: none;
+  background-color: inherit;
+
+  /* opacity: 0.5; */
+  transition: opacity var(--transition);
+
+  > svg {
+    stroke: var(--primaryTextColor);
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+
+  cursor: pointer;
+`;
+
 export const Label = styled.label`
   font-family: 'Poppins-Medium';
   /* font-family: 'Poppins', sans-serif;
