@@ -65,7 +65,6 @@ export const FilterModal = ({ closeModal }) => {
           <PickerName>High</PickerName>
         </Picker>
       </PickersList>
-      {/* <Icon name="icon-close" width="20" height="20" onClick={closeModal} /> */}
     </ModalWrap>
   );
 };

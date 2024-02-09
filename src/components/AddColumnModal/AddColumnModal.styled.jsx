@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { ErrorMessage, Field, Form } from 'formik';
 
-export const customStyles = {
+export const customModalStyles = {
   content: {
     top: '50%',
     left: '50%',
@@ -104,4 +104,18 @@ export const ButtonText = styled.span`
 
 export const ErrMsg = styled(ErrorMessage)`
   color: #f5530d;
+`;
+
+export const StylePlus = styled.div`
+  border: none;
+  border-radius: 8px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  margin-right: 8px;
+  stroke: white;
+
 `;
