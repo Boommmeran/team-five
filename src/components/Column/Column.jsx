@@ -1,6 +1,7 @@
 import { Icon } from 'components/Icon';
 import Modal from 'react-modal';
 import { useState } from 'react';
+import Card from 'components/Card/Card';
 import {
   AddBtn,
   CardList,
@@ -13,7 +14,8 @@ import {
 import { EditColumnModal } from 'components/EditColumnModal/EditColumnModal';
 
 export const Column = () => {
-  const [modalIsOpen, setIsOpen] = useState(false);
+  const [modalColumnIsOpen, setmodalColumnIsOpen] = useState(false);
+  const [modalCardIsOpen, setmodalCardIsOpen] = useState(false);
 
   const customStyles = {
     content: {
@@ -26,12 +28,20 @@ export const Column = () => {
     },
   };
 
-  const openModal = () => {
-    setIsOpen(true);
+  const openColumnModal = () => {
+    setmodalColumnIsOpen(true);
   };
 
-  const closeModal = () => {
-    setIsOpen(false);
+  const closeColumnModal = () => {
+    setmodalColumnIsOpen(false);
+  };
+
+  const openCardModal = () => {
+    setmodalCardIsOpen(true);
+  };
+
+  const closeCardModal = () => {
+    setmodalCardIsOpen(false);
   };
 
   return (
@@ -39,7 +49,7 @@ export const Column = () => {
       <HeadWrap>
         <Title>Column title</Title>
         <Wrap>
-          <IconedBtn type="button" onClick={openModal}>
+          <IconedBtn type="button" onClick={openColumnModal}>
             <Icon name="pencil" />
           </IconedBtn>
           <IconedBtn type="button">
@@ -47,23 +57,35 @@ export const Column = () => {
           </IconedBtn>
         </Wrap>
       </HeadWrap>
-      <CardList></CardList>
-      <AddBtn type="button">
+      <CardList>
+        <Card />
+        <Card />
+      </CardList>
+      <AddBtn type="button" onClick={openCardModal}>
         <IconWrap>
           <Icon name="plus" />
         </IconWrap>{' '}
         Add another card
       </AddBtn>
       <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
+        isOpen={modalCardIsOpen}
+        onRequestClose={closeCardModal}
+        style={customStyles}
+        contentLabel="Card Add Modal"
+        ariaHideApp={false}
+      >
+        <div>I AM A CARD ADD MODAL</div>
+      </Modal>
+      <Modal
+        isOpen={modalColumnIsOpen}
+        onRequestClose={closeColumnModal}
         style={customStyles}
         contentLabel="Column Edit Modal"
         ariaHideApp={false}
       >
         <EditColumnModal
           title={'Edit column'}
-          onClose={closeModal}
+          onClose={closeColumnModal}
           reqFunc={value => console.log(value)}
         />
       </Modal>
