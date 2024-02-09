@@ -8,6 +8,7 @@
     "secondaryBgColor": "#1f1f1f",
     "headerBgColor": "#161616",
     "modalBgColor": "#151515",
+    "extraBgColor": "#121212",
 
     "primaryTextColor": "#fff",
     "secondaryTextColor": "fff",
@@ -23,6 +24,7 @@
     "plusInBtn": "#fff",
     "btnBgColorHover": "#9dc888",
     "needHelpBg": "#1f1f1f",
+    "squareIconColor": "#fff",
 
     "scroll": "#121212",
     "scrollBg": "rgba(255, 255, 255, 0.1)"
@@ -36,6 +38,7 @@
     "secondaryBgColor": "#f6f6f7",
     "headerBgColor": "#fcfcfc",
     "modalBgColor": "#fcfcfc",
+    "extraBgColor": "#fff",
 
     "primaryTextColor": "#161616",
     "secondaryTextColor": "#161616",
@@ -50,6 +53,7 @@
     "plusInBtn": "#fff",
     "btnBgColorHover": "#9dc888",
     "needHelpBg": "#f6f6f7",
+    "squareIconColor": "#161616",
 
     "scroll": "rgba(22, 22, 22, 0.1)",
     "scrollBg": "#fff"
@@ -63,6 +67,7 @@
     "secondaryBgColor": "#ecedfd",
     "headerBgColor": "#fff",
     "modalBgColor": "#fcfcfc",
+    "extraBgColor": "#fff",
 
     "primaryTextColor": "#fff",
     "secondaryTextColor": "#161616",
@@ -77,6 +82,7 @@
     "plusInBtn": "#161616",
     "btnBgColorHover": "#7b7ede",
     "needHelpBg": "rgba(236, 237, 253, 0.4)",
+    "squareIconColor": "#5255bc",
 
     "scroll": "#b8bcfd",
     "scrollBg": "#fff"

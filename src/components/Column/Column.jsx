@@ -1,11 +1,18 @@
-import { Column } from 'components/Column';
-import { IconWrap, AddBtn, Wrap } from './Board.styled';
 import { Icon } from 'components/Icon';
 import Modal from 'react-modal';
 import { useState } from 'react';
+import {
+  AddBtn,
+  CardList,
+  HeadWrap,
+  IconWrap,
+  IconedBtn,
+  Title,
+  Wrap,
+} from './Column.styled';
 import { EditColumnModal } from 'components/EditColumnModal/EditColumnModal';
 
-export const Board = () => {
+export const Column = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
 
   const customStyles = {
@@ -26,18 +33,26 @@ export const Board = () => {
   const closeModal = () => {
     setIsOpen(false);
   };
+
   return (
-    <Wrap>
-      <ul>
-        <li>
-          <Column />
-        </li>
-      </ul>
-      <AddBtn type="button" onClick={openModal}>
+    <>
+      <HeadWrap>
+        <Title>Column title</Title>
+        <Wrap>
+          <IconedBtn type="button" onClick={openModal}>
+            <Icon name="pencil" />
+          </IconedBtn>
+          <IconedBtn type="button">
+            <Icon name="trash" />
+          </IconedBtn>
+        </Wrap>
+      </HeadWrap>
+      <CardList></CardList>
+      <AddBtn type="button">
         <IconWrap>
           <Icon name="plus" />
         </IconWrap>{' '}
-        Add another column
+        Add another card
       </AddBtn>
       <Modal
         isOpen={modalIsOpen}
@@ -47,11 +62,11 @@ export const Board = () => {
         ariaHideApp={false}
       >
         <EditColumnModal
-          title={'Add column'}
+          title={'Edit column'}
           onClose={closeModal}
           reqFunc={value => console.log(value)}
         />
       </Modal>
-    </Wrap>
+    </>
   );
 };

@@ -4,10 +4,10 @@ import { ScreensPage } from 'components/ScreensPage';
 
 export default function HomePage() {
   return (
-    <div>
+    <>
       <Header />
       <Sidebar />
       <ScreensPage />
-    </div>
+    </>
   );
 }

@@ -31,5 +31,5 @@ export const Button = styled.button`
   background:var(--modalBgColor);
   border: 0;
   cursor: pointer;
-  stroke: var(--primaryTextColor);
+  
 `;
