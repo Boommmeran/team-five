@@ -1,0 +1,57 @@
+.react-datepicker__input-container input {
+  font-family: 'Poppins-Medium';
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+  border: none;
+}
+.react-datepicker__portal{
+  
+}
+ /* Портал, який використовується для відображення календаря за межами основного контейнера. */
+
+.react-datepicker__calendar-container{
+  
+}
+/* Контейнер для календаря. */
+
+.react-datepicker__calendar{
+    
+} 
+/* Основний контейнер календаря. */
+
+.react-datepicker__month-container{
+   
+    
+} 
+/* Контейнер для місяця. */
+
+.react-datepicker__month-name{
+
+} 
+/* Основний контейнер місяця. */
+
+.react-datepicker__day{
+    font-size: 14px;
+    line-height: 1.28571;
+    letter-spacing: -0.02em;
+    color: var( --primaryTextColor);
+  
+ 
+}
+/* Клас для кожного дня в календарі. */
+
+.react-datepicker__day-names{
+    background-color: var( --primaryBgColor);
+ 
+} 
+/* Контейнер для назв днів тижня. */
+
+.react-datepicker__day-name{
+    font-family: 'Poppins-Medium';
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    color: rgba(22, 22, 22, 0.5);
+    background-color: var( --primaryBgColor);
+}
+/* Клас для кожної назви дня тижня. */

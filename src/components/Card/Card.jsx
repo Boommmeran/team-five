@@ -26,8 +26,7 @@ export default function Card() {
       <CardColor></CardColor>
       <CardTitle>Quiz Creation</CardTitle>
       <CardDescription>
-        Create engaging and interactive quizzes using Kahoot's intuitive quiz
-        builder. Design questions,
+      Create engaging and interactive quizzes using Kahoot's intuitive quiz builder. Design questions, provide multiple-choice answers, and include multimedia elements such as images and videos.
       </CardDescription>
       <CardSolid></CardSolid>
       <CardDetals>
