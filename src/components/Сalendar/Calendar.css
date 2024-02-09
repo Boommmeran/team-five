@@ -5,39 +5,12 @@
   color: var(--accent);
   border: none;
 }
-.react-datepicker__portal{
-  
-}
- /* Портал, який використовується для відображення календаря за межами основного контейнера. */
-
-.react-datepicker__calendar-container{
-  
-}
-/* Контейнер для календаря. */
-
-.react-datepicker__calendar{
-    
-} 
-/* Основний контейнер календаря. */
-
-.react-datepicker__month-container{
-   
-    
-} 
-/* Контейнер для місяця. */
-
-.react-datepicker__month-name{
-
-} 
-/* Основний контейнер місяця. */
 
 .react-datepicker__day{
     font-size: 14px;
     line-height: 1.28571;
     letter-spacing: -0.02em;
-    color: var( --primaryTextColor);
-  
- 
+    color: var( --primaryTextColor); 
 }
 /* Клас для кожного дня в календарі. */
 
