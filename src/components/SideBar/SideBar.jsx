@@ -1,7 +1,12 @@
-import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectBoards } from '../../redux/boards/boardsSelectors.js';
+import { fetchBoards, deleteBoard } from '../../redux/boards/boardsOperations.js';
+import { logOut } from '../../redux/auth/authOperation.js';
 import { NeedHelp } from 'components/NeedHelp';
 import { BoardCreation } from 'components/SidebarBoardCreation';
-import { logOut } from '../../redux/auth/authOperation.js';
+
+import { BoardItem } from 'components/BoardItem';
 import { Icon } from 'components/Icon';
 import {
   SidebarContainer,
@@ -9,15 +14,22 @@ import {
   BoardContainer,
   BoardList,
   LogOut,
-  BoardItem,
-  ControlIconsContainer,
 } from './SideBar.styled';
 
 export const Sidebar = () => {
   const dispatch = useDispatch();
+  const boards = useSelector(selectBoards);
+
+  useEffect(() => {
+    dispatch(fetchBoards());
+  }, [dispatch]);
 
   const handleLogOut = () => {
     dispatch(logOut());
+  };
+
+  const handleDeleteBoard = boardId => {
+    dispatch(deleteBoard(boardId));
   };
 
   return (
@@ -30,23 +42,9 @@ export const Sidebar = () => {
         <h3>My boards</h3>
         <BoardCreation />
         <BoardList>
-          <BoardItem>
-            <Icon
-              name="four-circles"
-              width="18"
-              height="18"
-              style={{ opacity: 0.5 }}
-            />
-            <p>Board name</p>
-            <ControlIconsContainer>
-              <button type="button">
-                <Icon name="pencil" width="16" height="16" />
-              </button>
-              <button>
-                <Icon name="trash" width="16" height="16" />
-              </button>
-            </ControlIconsContainer>
-          </BoardItem>
+          {boards.map(board => (
+            <BoardItem key={board._id} board={board} onDelete={() => handleDeleteBoard(board._id)}/>
+          ))}
         </BoardList>
       </BoardContainer>
       <NeedHelp />

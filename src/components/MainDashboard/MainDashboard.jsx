@@ -1,16 +1,12 @@
-import {
-  StartText,
-  BoardCreationBtn,
-  DashBoardWrap,
-} from './MainDashboard.styled';
-import { useParams } from 'react-router-dom';
+// import { StartText, BoardCreationBtn } from './MainDashboard.styled';
+// import { useParams } from 'react-router-dom';
 import { Board } from 'components/Board';
 import Modal from 'react-modal';
 import { useState } from 'react';
 import { BoardCreatingModal } from 'components/BoardCreatingModal';
 
 export const MainDashboard = () => {
-  const { boardName } = useParams();
+  // const { boardName } = useParams();
   const [modalIsOpen, setIsOpen] = useState(false);
 
   const customStyles = {
@@ -24,17 +20,17 @@ export const MainDashboard = () => {
     },
   };
 
-  const openModal = () => {
-    setIsOpen(true);
-  };
+  // const openModal = () => {
+  //   setIsOpen(true);
+  // };
 
   const closeModal = () => {
     setIsOpen(false);
   };
 
   return (
-    <DashBoardWrap>
-      {boardName ? (
+    <>
+      {/* {boardName ? (
         <Board />
       ) : (
         <StartText>
@@ -46,8 +42,8 @@ export const MainDashboard = () => {
           board serves as a powerful tool to organize the workflow and ensure
           effective collaboration among team members.
         </StartText>
-      )}
-
+      )} */}
+      <Board />
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -55,8 +51,13 @@ export const MainDashboard = () => {
         contentLabel="Board Creation Modal"
         ariaHideApp={false}
       >
-        <BoardCreatingModal onClose={closeModal} title={"New board"} btnText={"Create"} reqFunc={values=> console.log(values)}/>
+        <BoardCreatingModal
+          onClose={closeModal}
+          title={'New board'}
+          btnText={'Create'}
+          reqFunc={values => console.log(values)}
+        />
       </Modal>
-    </DashBoardWrap>
+    </>
   );
 };
