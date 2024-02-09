@@ -12,6 +12,7 @@ import {
   Wrap,
 } from './Column.styled';
 import { EditColumnModal } from 'components/EditColumnModal/EditColumnModal';
+import AddCardModal from 'components/AddCardModal/AddCardModal';
 
 export const Column = () => {
   const [modalColumnIsOpen, setmodalColumnIsOpen] = useState(false);
@@ -74,7 +75,12 @@ export const Column = () => {
         contentLabel="Card Add Modal"
         ariaHideApp={false}
       >
-        <div>I AM A CARD ADD MODAL</div>
+        <AddCardModal
+          title={'Add another card'}
+          btnText={'Add'}
+          onClose={closeCardModal}
+          reqFunc={values => console.log(values)}
+        />
       </Modal>
       <Modal
         isOpen={modalColumnIsOpen}
