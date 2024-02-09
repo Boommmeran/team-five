@@ -4,43 +4,67 @@ import {
   PickersList,
   PickerName,
   ShowPickers,
+  ModalWrap,
+  HorizontalLine,
+  LabelName,
+  CloseBtn,
 } from './FilterModal.styled';
 
 import { Icon } from 'components/Icon';
 
 export const FilterModal = ({ closeModal }) => {
   return (
-    <>
+    <ModalWrap>
       <FiltersTytle>Filters</FiltersTytle>
-
-      <PickerName>
+      <CloseBtn type="button" onClick={closeModal}>
+        <Icon name="close" />
+      </CloseBtn>
+      <HorizontalLine />
+      <LabelName>
         Label color
-        <ShowPickers>Show all</ShowPickers>
-      </PickerName>
+        <ShowPickers type="button">Show all</ShowPickers>
+      </LabelName>
       <PickersList>
         <Picker>
           <input
+            width="14"
+            height="14"
             type="radio"
             name="colorPicker"
             value="Grey"
             defaultChecked={true}
+            style={{ opacity: 0.5 }}
           />
-          Without priority
+          <PickerName>Without priority</PickerName>
         </Picker>
         <Picker>
-          <input type="radio" name="colorPicker" value="Blue" />
-          Low
+          <input
+            type="radio"
+            name="colorPicker"
+            value="Blue"
+            style={{ opacity: 0.5 }}
+          />
+          <PickerName>Low</PickerName>
         </Picker>
         <Picker>
-          <input type="radio" name="colorPicker" value="Red" />
-          Medium
+          <input
+            type="radio"
+            name="colorPicker"
+            value="Red"
+            style={{ opacity: 0.5 }}
+          />
+          <PickerName>Medium</PickerName>
         </Picker>
         <Picker>
-          <input type="radio" name="colorPicker" value="Green" />
-          High
+          <input
+            type="radio"
+            name="colorPicker"
+            value="Green"
+            style={{ opacity: 0.5 }}
+          />
+          <PickerName>High</PickerName>
         </Picker>
       </PickersList>
-      <Icon name="icon-close" width="20" height="20" onClick={closeModal} />
-    </>
+    </ModalWrap>
   );
 };

@@ -1,50 +1,77 @@
+import Modal from 'react-modal';
+import { useState } from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { Icon } from 'components/Icon';
 import {
   Button,
+  ButtonText,
+  CloseBtn,
   Label,
+  StylePlus,
   StyledField,
   StyledForm,
-  ButtonText,
+  customModalStyles,
 } from './EditColumnModal.styled';
 
-const columnFormSchema = Yup.object().shape({
+const addColumnFormSchema = Yup.object().shape({
   name: Yup.string().min(2, 'Too short!').required('This field is required!'),
 });
 
-export const EditColumnModal = ({ onClose, title, reqFunc }) => {
-  // тут має бути логіка отримання значення назви вже існуючого
-  // стовпця і подальший запис в initValues
-  const initialValues = {
-    name: '',
+Modal.setAppElement('#root');
+
+export const EditColumnModal = ({ onAdd }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => {
+    setIsModalOpen(true);
   };
 
-  const onSubmit = values => {
-    reqFunc(values);
-    onClose();
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
+
   return (
     <>
-      <Formik
-        initialValues={initialValues}
-        validationSchema={columnFormSchema}
-        onSubmit={onSubmit}
+      <button type="button" onClick={openModal}>
+        Open modal
+      </button>
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        style={customModalStyles}
+        contentLabel="Example Modal"
       >
-        <StyledForm>
-          <Label>{title}</Label>
-          <StyledField type="text" name="name" placeholder="Title" />
-          {/* <ErrMsg name="name" component="div"/> */}
+        <Formik
+          initialValues={{
+            name: '',
+          }}
+          validationSchema={addColumnFormSchema}
+          onSubmit={(values, action) => {
+            onAdd(values);
+            action.resetForm();
+          }}
+        >
+          <StyledForm>
+            <Label>Edit column</Label>
+            <CloseBtn
+              type="button"
+              onClick={closeModal}
+              style={{ stroke: 'var(--primaryTextColor)' }}
+            >
+              <Icon name="close" width="18" height="18" />
+            </CloseBtn>
+            <StyledField type="text" name="name" placeholder="Title" />
+            {/* <ErrMsg name="name" component="div"/> */}
 
-          <Button type="submit">
-            <div style={{ stroke: 'var(--plusInBtn)' }}>
-              <Icon name="icon-plus" width="20" height="20" />
-            </div>
-            <ButtonText>Add</ButtonText>
-          </Button>
-        </StyledForm>
-      </Formik>
-      <Icon name="icon-close" width="20" height="20" onClick={onClose} />
+            <Button type="submit">
+              <StylePlus>
+                <Icon name="plus" width="14" height="14" />
+              </StylePlus>
+              <ButtonText>Add</ButtonText>
+            </Button>
+          </StyledForm>
+        </Formik>
+      </Modal>
     </>
   );
 };
