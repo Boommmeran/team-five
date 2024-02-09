@@ -6,12 +6,10 @@ import AddCardModal from 'components/AddCardModal/AddCardModal';
 
 export default function HomePage() {
   return (
-    <div>
-      <Card/>
-      <AddCardModal/>
+    <>
       <Header />
       <Sidebar />
       <ScreensPage />
-    </div>
+    </>
   );
 }
