@@ -29,8 +29,9 @@ export const MainDashboard = () => {
   };
 
   return (
+
     <>
-      {boardName ? (
+      {/* {boardName ? (
         <Board />
       ) : (
         <StartText>
@@ -42,8 +43,8 @@ export const MainDashboard = () => {
           board serves as a powerful tool to organize the workflow and ensure
           effective collaboration among team members.
         </StartText>
-      )}
-
+      )} */}
+<Board/>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}

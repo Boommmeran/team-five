@@ -1,5 +1,38 @@
 import styled from 'styled-components';
 
+export const Wrap = styled.div`
+  display: flex;
+  gap: 18px;
+
+`
+
+export const AddBtn = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  max-width: 335px;
+
+  padding: 14px 78px;
+
+  border: none;
+  border-radius: 8px;
+
+  font-family: 'Poppins-Medium';
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+
+  color: var(--secondaryTextColor);
+  background-color: var(--primaryBgColor);
+
+  cursor: pointer;
+
+  @media (min-width: 768px) {
+    width: 334px;
+  }
+`;
+
 export const IconWrap = styled.div`
   display: flex;
   align-items: center;
@@ -15,22 +48,4 @@ export const IconWrap = styled.div`
     height: 14px;
     stroke: black;
   }
-`;
-
-export const AddBtn = styled.button`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  max-width: 335px;
-
-  padding: 14px 79px;
-
-  border: 1px solid black;
-  border-radius: 8px;
-
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: -0.02em;
 `;
