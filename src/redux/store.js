@@ -14,6 +14,8 @@ import storage from 'redux-persist/lib/storage';
 
 import { authSlice } from './auth/authSlice';
 import { boardsSlice } from './boards/boardsSlice';
+import { cardSlice } from './cards/cardsSlice';
+
 
 const authPersistConfig = {
   key: 'auth',
@@ -25,6 +27,7 @@ export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authSlice.reducer),
     boards: persistReducer(authPersistConfig, boardsSlice.reducer),
+    сards: persistReducer(authPersistConfig, cardSlice.reducer),
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
