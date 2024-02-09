@@ -1,50 +1,71 @@
-import { Formik } from 'formik';
-import * as Yup from 'yup';
-import { Icon } from 'components/Icon';
-import {
-  Button,
-  Label,
-  StyledField,
-  StyledForm,
-  ButtonText,
-} from './EditColumnModal.styled';
-
-const columnFormSchema = Yup.object().shape({
-  name: Yup.string().min(2, 'Too short!').required('This field is required!'),
-});
-
-export const EditColumnModal = ({ onClose, title, reqFunc }) => {
-  // тут має бути логіка отримання значення назви вже існуючого
-  // стовпця і подальший запис в initValues
-  const initialValues = {
-    name: '',
-  };
-
-  const onSubmit = values => {
-    reqFunc(values);
-    onClose();
-  };
-  return (
-    <>
-      <Formik
-        initialValues={initialValues}
-        validationSchema={columnFormSchema}
-        onSubmit={onSubmit}
-      >
-        <StyledForm>
-          <Label>{title}</Label>
-          <StyledField type="text" name="name" placeholder="Title" />
-          {/* <ErrMsg name="name" component="div"/> */}
-
-          <Button type="submit">
-            <div style={{ stroke: 'var(--plusInBtn)' }}>
-              <Icon name="icon-plus" width="20" height="20" />
-            </div>
-            <ButtonText>Add</ButtonText>
-          </Button>
-        </StyledForm>
-      </Formik>
-      <Icon name="icon-close" width="20" height="20" onClick={onClose} />
-    </>
-  );
-};
+import Modal from 'react-modal'; 
+import { useState } from 'react'; 
+import { Formik } from 'formik'; 
+import * as Yup from 'yup'; 
+import { Button, Label, StyledField, StyledForm } from './Modal.styled'; 
+import { customStyles } from './Modal.styled'; 
+import { theme } from '../../index.js'; 
+import { Icon } from 'components/Icon'; 
+import { ButtonText, CloseBtn } from './EditColumnModal.styled'; 
+ 
+ 
+const addColumnFormSchema = Yup.object().shape({ 
+  name: Yup.string().min(2, 'Too short!').required('This field is required!'), 
+}); 
+ 
+Modal.setAppElement('#root'); 
+ 
+const EditColumn = ({ onAdd }) => { 
+  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const openModal = () => { 
+    setIsModalOpen(true); 
+  }; 
+ 
+  const closeModal = () => { 
+    setIsModalOpen(false); 
+  }; 
+ 
+  return ( 
+    <> 
+      <button type="button" onClick={openModal}> 
+        Open modal 
+      </button> 
+      <Modal 
+        isOpen={isModalOpen} 
+        onRequestClose={closeModal} 
+        style={customStyles} 
+        contentLabel="Example Modal" 
+      > 
+        <Formik 
+          initialValues={{ 
+            name: '', 
+          }} 
+          validationSchema={addColumnFormSchema} 
+          onSubmit={(values, action) => { 
+            onAdd(values); 
+            action.resetForm(); 
+          }} 
+        > 
+          <StyledForm> 
+            <Label>Edit column</Label> 
+            <CloseBtn type="button" onClick={closeModal}> 
+              <Icon name="close" /> 
+            </CloseBtn> 
+            <StyledField type="text" name="name" placeholder="Title" /> 
+            {/* <ErrMsg name="name" component="div"/> */} 
+ 
+            <Button type="submit"> 
+              <div style={{ stroke: theme.colors.whiteColor }}> 
+                <Icon name="icon-plus" width="20" height="20" /> 
+              </div> 
+              <ButtonText>Add</ButtonText> 
+            </Button> 
+          </StyledForm> 
+        </Formik> 
+        <Icon name="close" width="20" height="20" onClick={closeModal} /> 
+      </Modal> 
+    </> 
+  ); 
+}; 
+ 
+export default EditColumn;

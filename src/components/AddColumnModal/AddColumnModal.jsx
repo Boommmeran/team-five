@@ -7,7 +7,7 @@ import { Button, Label, StyledField, StyledForm } from './Modal.styled';
 import { customStyles } from './Modal.styled';
 import { theme } from '../../index.js';
 import { Icon } from 'components/Icon';
-import { ButtonText } from './AddColumnModal.styled';
+import { ButtonText, CloseBtn } from './AddColumnModal.styled';
 
 const addColumnFormSchema = Yup.object().shape({
   name: Yup.string().min(2, 'Too short!').required('This field is required!'),
@@ -48,18 +48,21 @@ const AddColumn = ({ onAdd }) => {
         >
           <StyledForm>
             <Label>Add column</Label>
+            <CloseBtn type="button" onClick={closeModal}>
+              <Icon name="close" />
+            </CloseBtn>
             <StyledField type="text" name="name" placeholder="Title" />
             {/* <ErrMsg name="name" component="div"/> */}
 
             <Button type="submit">
               <div style={{ stroke: theme.colors.whiteColor }}>
-                <Icon name="icon-plus" width="20" height="20" />
+                <Icon name="plus" width="14" height="14" />
               </div>
               <ButtonText>Add</ButtonText>
             </Button>
           </StyledForm>
         </Formik>
-        <Icon name="icon-close" width="20" height="20" onClick={closeModal} />
+        <Icon name="close" width="20" height="20" onClick={closeModal} />
       </Modal>
     </>
   );
