@@ -29,13 +29,13 @@ const priority = ['without', 'low', 'medium', 'high'];
 
 const formCardSchema = Yup.object().shape({
   title: Yup.string()
-    .min(2, 'Too Short!')
-    .max(50, 'Too Long!')
-    .required('Required'),
+    .min(3, `It's can be up to 3 characters long`)
+    .max(10, 'Too Long!')
+    .required(`This field is required.`),
   description: Yup.string()
-    .min(2, 'Too Short!')
+    .min(10, `It's can be up to 10 characters long`)
     .max(500, 'Too Long!')
-    .required('Required'),
+    .required(`This field is required.`),
   colorPriority: Yup.string().oneOf(priority),
   dealline: Yup.string(),
 });

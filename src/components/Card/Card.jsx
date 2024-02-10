@@ -21,6 +21,7 @@ import {
   CardButtons,
   CardInformation,
   Bell,
+  Button,
 } from './Card.styled';
 
 export default function Card() {
@@ -34,6 +35,10 @@ export default function Card() {
       bottom: 'auto',
       transform: 'translate(-50%, -50%)',
       padding: 0,
+      boxShadow: '0px 4px 16px 0px #1616160D',
+    },
+    overlay: {
+      background: 'rgba(0,0,0,0.5)',
     },
   };
 
@@ -73,15 +78,15 @@ export default function Card() {
           <Bell type="button">
             <Icon name="bell" width="16" height="16" />
           </Bell>
-          <button type="button">
+          <Button type="button">
             <Icon name="arrow-in-circle" width="16" height="16" />
-          </button>
-          <button type="button" onClick={openCardModal}>
+          </Button>
+          <Button type="button" onClick={openCardModal}>
             <Icon name="pencil" width="16" height="16" />
-          </button>
-          <button type="button">
+          </Button>
+          <Button type="button">
             <Icon name="trash" width="16" height="16" />
-          </button>
+          </Button>
         </CardButtons>
       </CardDetals>
       <Modal

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Field, Form,ErrorMessage } from 'formik';
+import { Field, Form, ErrorMessage } from 'formik';
 
 export const StyledForm = styled(Form)`
   position: relative;
@@ -59,6 +59,9 @@ export const ErrMsg = styled(ErrorMessage)`
 `;
 
 export const TitleCard = styled(Field)`
+  padding-left: 18px;
+  outline: transparent;
+  outline-offset: -1px;
   border: 1px solid var(--accent);
   border-radius: 8px;
   width: 287px;
@@ -66,6 +69,24 @@ export const TitleCard = styled(Field)`
   box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.08);
   opacity: 0.4;
   margin-bottom: 14px;
+  transition: var(--transition);
+
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 1;
+    &::placeholder {
+      color: transparent;
+    }
+  }
+
+  @media only screen and (min-width: 375px) {
+    width: 287px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    width: 302px;
+  }
 `;
 
 export const Label = styled.label`
@@ -74,6 +95,10 @@ export const Label = styled.label`
 `;
 
 export const StyledDescription = styled(Field)`
+  padding-left: 18px;
+  outline: transparent;
+  outline-offset: -1px;
+  padding-top: 14px;
   border: 1px solid var(--accent);
   border-radius: 8px;
   width: 287px;
@@ -81,6 +106,24 @@ export const StyledDescription = styled(Field)`
   box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.08);
   opacity: 0.4;
   margin-bottom: 24px;
+  transition: var(--transition);
+
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 1;
+    &::placeholder {
+      color: transparent;
+    }
+  }
+
+  @media only screen and (min-width: 375px) {
+    width: 287px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    width: 302px;
+  }
 `;
 
 export const LabelColorStyle = styled.p`
@@ -115,6 +158,7 @@ export const RadioButtonBlu = styled.label`
   width: 14px;
   height: 14px;
   background-color: #8fa1d0;
+  transition: var(--transition);
   &:hover,
   &:focus,
   &:active {
@@ -122,6 +166,7 @@ export const RadioButtonBlu = styled.label`
     width: 16px;
     height: 16px;
   }
+  cursor: pointer;
 `;
 
 export const RadioButtonRed = styled.label`
@@ -129,6 +174,7 @@ export const RadioButtonRed = styled.label`
   width: 14px;
   height: 14px;
   background-color: #e09cb5;
+  transition: var(--transition);
   &:hover,
   &:focus,
   &:active {
@@ -136,6 +182,7 @@ export const RadioButtonRed = styled.label`
     width: 16px;
     height: 16px;
   }
+  cursor: pointer;
 `;
 
 export const RadioButtonGreen = styled.label`
@@ -143,6 +190,7 @@ export const RadioButtonGreen = styled.label`
   width: 14px;
   height: 14px;
   background-color: #bedbb0;
+  transition: var(--transition);
   &:hover,
   &:focus,
   &:active {
@@ -150,6 +198,7 @@ export const RadioButtonGreen = styled.label`
     width: 16px;
     height: 16px;
   }
+  cursor: pointer;
 `;
 
 export const RadioButtonGrey = styled.label`
@@ -157,6 +206,7 @@ export const RadioButtonGrey = styled.label`
   width: 14px;
   height: 14px;
   background-color: rgba(22, 22, 22, 0.3);
+  transition: var(--transition);
   &:hover,
   &:focus,
   &:active {
@@ -164,6 +214,7 @@ export const RadioButtonGrey = styled.label`
     width: 16px;
     height: 16px;
   }
+  cursor: pointer;
 `;
 
 export const DeadlineStyle = styled.p`
@@ -185,6 +236,21 @@ export const AddButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: var(--transition);
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: var(--btnBgColorHover);
+  }
+  cursor: pointer;
+  @media only screen and (min-width: 375px) {
+    width: 287px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    width: 302px;
+  }
 `;
 
 export const StylePlus = styled.div`
