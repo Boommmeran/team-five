@@ -45,12 +45,13 @@ export const boardsSlice = createSlice({
       .addCase(fetchBoardById.fulfilled, (state, action) => {
         state.loading = false;
         state.error = null;
-        const updatedBoard = action.payload;
+        const currentBoard = action.payload;
+        state.currentBoard = currentBoard;
         const index = state.boards.findIndex(
-          board => board._id === updatedBoard._id
+          board => board._id === currentBoard._id
         );
         if (index !== -1) {
-          state.boards[index] = updatedBoard;;
+          state.boards[index] = currentBoard;;
         }
       })
       .addCase(fetchBoardById.rejected, (state, action) => {

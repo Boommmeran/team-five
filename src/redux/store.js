@@ -26,8 +26,8 @@ const authPersistConfig = {
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authSlice.reducer),
-    boards: persistReducer(authPersistConfig, boardsSlice.reducer),
-    сards: persistReducer(authPersistConfig, cardSlice.reducer),
+    boards: boardsSlice.reducer,
+    cards: cardSlice.reducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

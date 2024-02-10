@@ -6,11 +6,9 @@ import { Spinner } from 'components/Spinner';
 export const Layout = () => {
   return (
     <Container>
-      <main>
-        <Suspense fallback={<Spinner />}>
-          <Outlet />
-        </Suspense>
-      </main>
+      <Suspense fallback={<Spinner />}>
+        <Outlet />
+      </Suspense>
     </Container>
   );
 };

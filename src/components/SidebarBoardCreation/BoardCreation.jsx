@@ -19,8 +19,6 @@ const customStyles = {
   },
 };
 
-// Modal.setAppElement('#root');
-
 export const BoardCreation = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -31,6 +29,7 @@ export const BoardCreation = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
   return (
     <BoardCreationBlock>
       <p>
@@ -46,7 +45,11 @@ export const BoardCreation = () => {
         style={customStyles}
         contentLabel="Creation board modal"
       >
-        <BoardCreatingModal onClose={closeModal} />
+        <BoardCreatingModal
+          onClose={closeModal}
+          title="New board"
+          btnText="Create"
+        />
       </Modal>
     </BoardCreationBlock>
   );
