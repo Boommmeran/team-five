@@ -21,10 +21,16 @@ export const CardColor = styled.div`
   height: 154px;
   top: 0px;
   left: 0px;
-  background: rgba(22, 22, 22, 0.3); //змінюється в залежности від приорітету
-  /* background: #8fa1d0;
-  background: #e09cb5;
-  background: #bedbb0; */
+  background-color: ${props =>
+    props.priority === 'high'
+      ? '#bedbb0'
+      : props.priority === 'medium'
+      ? '#e09cb5'
+      : props.priority === 'low'
+      ? '#8fa1d0'
+      : props.priority === 'without'
+      ? 'rgba(22, 22, 22, 0.3)'
+      : 'inherit'}; 
 `;
 export const CardTitle = styled.h4`
   text-align: left;
@@ -34,7 +40,7 @@ export const CardTitle = styled.h4`
   color: var(--primaryTextColor);
   margin-bottom: 8px;
 `;
-export const CardDescription = styled.div`
+export const CardDescription = styled.p`
   text-align: left;
   font-size: 12px;
   line-height: 1.33333;
@@ -84,12 +90,16 @@ export const PriorityColor = styled.div`
   width: 14px;
   height: 14px;
   margin-right: 4px;
-  background-color: rgba(22, 22, 22, 0.3);
-  //змінюється в залежности від приорітету
-  /* background: #8fa1d0;
-  background: #e09cb5;
-  background: #bedbb0;
-   */
+  background-color: ${props =>
+    props.priority === 'high'
+      ? '#bedbb0'
+      : props.priority === 'medium'
+      ? '#e09cb5'
+      : props.priority === 'low'
+      ? '#8fa1d0'
+      : props.priority === 'without'
+      ? 'rgba(22, 22, 22, 0.3)'
+      : 'inherit'};
 `;
 
 export const PriorityTipe = styled.p`
