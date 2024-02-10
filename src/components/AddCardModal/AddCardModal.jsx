@@ -75,7 +75,7 @@ export default function AddCardModal({ title, btnText, onClose, reqFunc }) {
             <label></label>
             <StyledDescription
             rows={4}
-              type="textarea"
+            component="textarea"
               name="description"
               placeholder="Description"
             />
