@@ -4,6 +4,8 @@ export const Wrap = styled.div`
   display: flex;
   gap: 18px;
   align-items: flex-start;
+
+  padding: 10px 24px;
 `;
 
 export const AddBtn = styled.button`
