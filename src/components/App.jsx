@@ -30,7 +30,7 @@ export const App = () => {
       {isRefreshing ? (
         <Spinner />
       ) : (
-        <Suspense fallback={null}>
+        <Suspense fallback={<Spinner />}>
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route
