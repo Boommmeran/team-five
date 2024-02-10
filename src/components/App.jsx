@@ -40,8 +40,13 @@ export const App = () => {
                     <RestrictedRoute component={<AuthPage />} redirect="/" />
                   }
                 />
-                <Route index element={<HomePage />} />
-              </Route>
+               <Route
+                index
+                element={
+                  <PrivateRoute component={<HomePage />} redirect="/welcome" />
+                }
+              />
+            </Route>
             </Routes>
           </Suspense>
         </>
