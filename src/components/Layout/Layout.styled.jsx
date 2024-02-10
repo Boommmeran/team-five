@@ -20,23 +20,18 @@ const device = {
   desktopL: `(min-width: ${size.desktop})`,
 };
 export const Container = styled.div`
-  padding-left: 20px;
-  padding-right: 20px;
   text-align: center;
 
   @media ${device.mobileM} {
-    width: calc(335px + 2 * 20px);
+    width: 375px;
+
     margin-left: auto;
     margin-right: auto;
   }
   @media ${device.tablet} {
-    width: calc(704px + 2 * 32px);
-    padding-left: 32px;
-    padding-right: 32px;
+    width: 768px;
   }
-  @media ${device.laptopL} {
+  @media ${device.laptop} {
     width: 1440px;
-    padding-left: 24px;
-    padding-right: 24px;
   }
 `;
