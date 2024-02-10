@@ -24,33 +24,37 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <div>
       <GlobalStyles theme={themes[theme]} />
+
       {isRefreshing ? (
         <Spinner />
       ) : (
-        <>
-          <Suspense fallback={null}>
-            <Routes>
-              <Route path="/" element={<Layout />}>
-                <Route path="/welcome" element={<WelcomePage />} />
-                <Route
-                  path="auth/:id"
-                  element={
-                    <RestrictedRoute component={<AuthPage />} redirect="/" />
-                  }
-                />
-               <Route
+        <Suspense fallback={null}>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route
+                path="/welcome"
+                element={
+                  <RestrictedRoute component={<WelcomePage />} redirect="/" />
+                }
+              />
+              <Route
+                path="auth/:id"
+                element={
+                  <RestrictedRoute component={<AuthPage />} redirect="/" />
+                }
+              />
+              <Route
                 index
                 element={
                   <PrivateRoute component={<HomePage />} redirect="/welcome" />
                 }
               />
             </Route>
-            </Routes>
-          </Suspense>
-        </>
+          </Routes>
+        </Suspense>
       )}
-    </>
+    </div>
   );
 };

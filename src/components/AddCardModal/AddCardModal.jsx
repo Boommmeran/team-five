@@ -1,4 +1,4 @@
-import { Formik, Field } from 'formik';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { Calendar } from 'components/Сalendar';
 import { Icon } from 'components/Icon';
@@ -15,24 +15,29 @@ import {
   DeadlineStyle,
   AddButton,
   StylePlus,
-  AddCardButton,
   RadioButton,
-  RadioButtonColor,
+  RadioButtonBlu,
+  RadioButtonRed,
+  RadioButtonGreen,
+  RadioButtonGrey,
+  StyledForm,
+  ErrMsg,
+  Label,
 } from './AddCardModal.styled.jsx';
 
-const formCardSchema = Yup.object().shape({
-  // так працювати не буде!
-  // в yup назва поля має відповідати атрибуту name у inputa
-  // на радіо кнопках валідація по конкретному значенню тобто oneOf([масив прийнятних значень])
+const priority = ['without', 'low', 'medium', 'high'];
 
-  name: Yup.string()
-    .min(2, 'Too Short!')
-    .max(50, 'Too Long!')
-    .required('Required'),
-  number: Yup.string()
-    .min(2, 'Too Short!')
+const formCardSchema = Yup.object().shape({
+  title: Yup.string()
+    .min(3, `It's can be up to 3 characters long`)
+    .max(10, 'Too Long!')
+    .required(`This field is required.`),
+  description: Yup.string()
+    .min(10, `It's can be up to 10 characters long`)
     .max(500, 'Too Long!')
-    .required('Required'),
+    .required(`This field is required.`),
+  colorPriority: Yup.string().oneOf(priority),
+  dealline: Yup.string(),
 });
 
 export default function AddCardModal({ title, btnText, onClose, reqFunc }) {
@@ -44,12 +49,13 @@ export default function AddCardModal({ title, btnText, onClose, reqFunc }) {
   const initValues = {
     title: '',
     description: '',
-    colorPicker: '',
+    colorPriority: 'without',
     dealline: '',
   };
   const onSubmit = values => {
     reqFunc(values);
     onClose();
+    console.log(values);
   };
   return (
     <Container>
@@ -67,32 +73,38 @@ export default function AddCardModal({ title, btnText, onClose, reqFunc }) {
           validationSchema={formCardSchema}
           onSubmit={onSubmit}
         >
-          <>
-            <label></label>
+          <StyledForm>
             <TitleCard type="text" name="title" placeholder="Title" />
-            <label></label>
-            <StyledDescription
-              type="textarea"
-              name="description"
-              placeholder="Description"
-            />
+            <ErrMsg component="p" name="title" />
+            <Label>
+              <StyledDescription
+                rows={4}
+                component="textarea"
+                name="description"
+                placeholder="Description"
+              />
+              <ErrMsg component="p" name="description" />
+            </Label>
             <LabelColorStyle id="colorCard-radio-group">
               Label color
             </LabelColorStyle>
             <StyleRadioButton role="group" aria-labelledby="my-radio-group">
-              <RadioButtonColor>
-                <RadioButton type="radio" name="colorPicker" value="Blue" />
-              </RadioButtonColor>
-              <label>
-                <Field type="radio" name="colorPicker" value="Red" />
-              </label>
-              <label>
-                <Field type="radio" name="colorPicker" value="Green" />
-              </label>
-              <label>
-                <Field type="radio" name="colorPicker" value="Grey" />
-              </label>
-              {/* <div>Picked: {values.picked}</div> */}
+              <RadioButtonBlu>
+                <RadioButton type="radio" name="colorPriority" value="low" />
+              </RadioButtonBlu>
+              <RadioButtonRed>
+                <RadioButton type="radio" name="colorPriority" value="medium" />
+              </RadioButtonRed>
+              <RadioButtonGreen>
+                <RadioButton type="radio" name="colorPriority" value="high" />
+              </RadioButtonGreen>
+              <RadioButtonGrey>
+                <RadioButton
+                  type="radio"
+                  name="colorPriority"
+                  value="without"
+                />
+              </RadioButtonGrey>
             </StyleRadioButton>
             <DeadlineStyle>Deadline</DeadlineStyle>
             <Calendar />
@@ -102,7 +114,7 @@ export default function AddCardModal({ title, btnText, onClose, reqFunc }) {
               </StylePlus>
               <p> {btnText}</p>
             </AddButton>
-          </>
+          </StyledForm>
         </Formik>
       </ModalBody>
     </Container>
