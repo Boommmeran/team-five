@@ -83,18 +83,22 @@ export default function AddCardModal({ title, btnText, onClose, reqFunc }) {
               Label color
             </LabelColorStyle>
             <StyleRadioButton role="group" aria-labelledby="my-radio-group">
-              <RadioButtonColor>
-                <RadioButton type="radio" name="colorPicker" value="Blue" />
-              </RadioButtonColor>
-              <label>
-                <Field type="radio" name="colorPicker" value="Red" />
-              </label>
-              <label>
-                <Field type="radio" name="colorPicker" value="Green" />
-              </label>
-              <label>
-                <Field type="radio" name="colorPicker" value="Grey" />
-              </label>
+            <RadioButtonBlu>
+                    <RadioButton type="radio" name="colorPicker" value="Blue" />
+                  </RadioButtonBlu>
+                  <RadioButtonRed>
+                    <RadioButton type="radio" name="colorPicker" value="Red" />
+                  </RadioButtonRed>
+                  <RadioButtonGreen>
+                    <RadioButton
+                      type="radio"
+                      name="colorPicker"
+                      value="Green"
+                    />
+                  </RadioButtonGreen>
+                  <RadioButtonGrey>
+                    <RadioButton type="radio" name="colorPicker" value="Grey" />
+                  </RadioButtonGrey>
             </StyleRadioButton>
             <DeadlineStyle>Deadline</DeadlineStyle>
             <Calendar />
