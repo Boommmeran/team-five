@@ -98,11 +98,8 @@ export const boardsSlice = createSlice({
       .addCase(deleteBoard.fulfilled, (state, action) => {
         state.loading = false;
         state.error = null;
-        // state.boards = state.boards.filter(
-        //   board => board.id !== action.payload
-        // );
         const index = state.boards.findIndex(
-          board => board.id === action.payload.id
+          board => board._id === action.payload._id
         );
         state.boards.splice(index, 1);
       })

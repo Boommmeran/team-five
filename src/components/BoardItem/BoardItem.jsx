@@ -37,7 +37,7 @@ export const BoardItem = ({ board }) => {
   };
 
   const handleSelectBoard = (event, BoardId) => {
-    if (event.target.tagName !== 'BUTTON') {
+    if (!event.target.closest('button')) {
       dispatch(fetchBoardById(BoardId))
     }
   };
