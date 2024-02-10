@@ -1,4 +1,4 @@
-import { Formik, Field } from 'formik';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { Calendar } from 'components/Сalendar';
 import { Icon } from 'components/Icon';
@@ -15,9 +15,11 @@ import {
   DeadlineStyle,
   AddButton,
   StylePlus,
-  AddCardButton,
   RadioButton,
-  RadioButtonColor,
+  RadioButtonBlu,
+  RadioButtonRed,
+  RadioButtonGreen,
+  RadioButtonGrey,
   StyledForm,
 } from './AddCardModal.styled.jsx';
 
@@ -45,7 +47,7 @@ export default function AddCardModal({ title, btnText, onClose, reqFunc }) {
   const initValues = {
     title: '',
     description: '',
-    colorPriority: '',
+    colorPriority: 'without',
     dealline: '',
   };
   const onSubmit = values => {
@@ -67,15 +69,15 @@ export default function AddCardModal({ title, btnText, onClose, reqFunc }) {
           initialValues={initValues}
           validationSchema={formCardSchema}
           // onSubmit={onSubmit}
-          onSubmit={data=>{console.log(data)}}
+          onSubmit={data => {
+            console.log(data);
+          }}
         >
           <StyledForm>
-            <label></label>
             <TitleCard type="text" name="title" placeholder="Title" />
-            <label></label>
             <StyledDescription
-            rows={4}
-            component="textarea"
+              rows={4}
+              component="textarea"
               name="description"
               placeholder="Description"
             />
@@ -83,22 +85,22 @@ export default function AddCardModal({ title, btnText, onClose, reqFunc }) {
               Label color
             </LabelColorStyle>
             <StyleRadioButton role="group" aria-labelledby="my-radio-group">
-            <RadioButtonBlu>
-                    <RadioButton type="radio" name="colorPicker" value="Blue" />
-                  </RadioButtonBlu>
-                  <RadioButtonRed>
-                    <RadioButton type="radio" name="colorPicker" value="Red" />
-                  </RadioButtonRed>
-                  <RadioButtonGreen>
-                    <RadioButton
-                      type="radio"
-                      name="colorPicker"
-                      value="Green"
-                    />
-                  </RadioButtonGreen>
-                  <RadioButtonGrey>
-                    <RadioButton type="radio" name="colorPicker" value="Grey" />
-                  </RadioButtonGrey>
+              <RadioButtonBlu>
+                <RadioButton type="radio" name="colorPriority" value="low" />
+              </RadioButtonBlu>
+              <RadioButtonRed>
+                <RadioButton type="radio" name="colorPriority" value="medium" />
+              </RadioButtonRed>
+              <RadioButtonGreen>
+                <RadioButton type="radio" name="colorPriority" value="high" />
+              </RadioButtonGreen>
+              <RadioButtonGrey>
+                <RadioButton
+                  type="radio"
+                  name="colorPriority"
+                  value="without"
+                />
+              </RadioButtonGrey>
             </StyleRadioButton>
             <DeadlineStyle>Deadline</DeadlineStyle>
             <Calendar />

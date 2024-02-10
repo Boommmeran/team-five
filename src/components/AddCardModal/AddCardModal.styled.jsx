@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Field,Form } from 'formik';
+import { Field, Form } from 'formik';
 
 export const StyledForm = styled(Form)`
   position: relative;
@@ -71,14 +71,15 @@ export const StyledDescription = styled(Field)`
 export const LabelColorStyle = styled.p`
   font-size: 12px;
   letter-spacing: -0.02em;
-  color: rgba(22, 22, 22, 0.5);//не змінюється в темі
+  color: rgba(22, 22, 22, 0.5); //не змінюється в темі
   margin-bottom: 4px;
 `;
 
 export const StyleRadioButton = styled.div`
+  height: 18px;
   display: flex;
   gap: 8px;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 `;
 
 export const RadioButton = styled(Field)`
@@ -86,29 +87,74 @@ export const RadioButton = styled(Field)`
   width: 1px;
   height: 1px;
 
-  &:hover,
+  /* &:hover,
   &:focus,
   &:active {
     position: static;
     width: 14px;
     height: 14px;
-  
-  }
+  } */
 `;
-export const RadioButtonColor = styled.div`
+export const RadioButtonBlu = styled.label`
   border-radius: 100%;
   width: 14px;
   height: 14px;
-  background-color: #8fa1d0;//змінюється в залежности від приорітету
-  /* background: #8fa1d0;
-  background: #e09cb5;
-  background: #bedbb0; */
+  background-color: #8fa1d0;
+  &:hover,
+  &:focus,
+  &:active {
+    border: 2px solid #8fa1d0;
+    width: 16px;
+    height: 16px;
+  }
+`;
+
+export const RadioButtonRed = styled.label`
+  border-radius: 100%;
+  width: 14px;
+  height: 14px;
+  background-color: #e09cb5;
+  &:hover,
+  &:focus,
+  &:active {
+    border: 2px solid #e09cb5;
+    width: 16px;
+    height: 16px;
+  }
+`;
+
+export const RadioButtonGreen = styled.label`
+  border-radius: 100%;
+  width: 14px;
+  height: 14px;
+  background-color: #bedbb0;
+  &:hover,
+  &:focus,
+  &:active {
+    border: 2px solid #bedbb0;
+    width: 16px;
+    height: 16px;
+  }
+`;
+
+export const RadioButtonGrey = styled.label`
+  border-radius: 100%;
+  width: 14px;
+  height: 14px;
+  background-color: rgba(22, 22, 22, 0.3);
+  &:hover,
+  &:focus,
+  &:active {
+    border: 2px solid rgba(22, 22, 22, 0.3);
+    width: 16px;
+    height: 16px;
+  }
 `;
 
 export const DeadlineStyle = styled.p`
   font-size: 12px;
   letter-spacing: -0.02em;
-  color: rgba(22, 22, 22, 0.5);//не змінюється в темі
+  color: rgba(22, 22, 22, 0.5); //не змінюється в темі
   margin-bottom: 4px;
 `;
 
@@ -136,8 +182,7 @@ export const StylePlus = styled.div`
   align-items: center;
   background: var(--btnText);
   margin-right: 8px;
-  stroke:var(--plusInBtn);
-
+  stroke: var(--plusInBtn);
 `;
 
 export const AddCardButton = styled.button`
