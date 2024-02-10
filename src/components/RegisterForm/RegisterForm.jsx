@@ -15,7 +15,6 @@ import {
   StyledNavLinkRegister,
   WrapForRegNav,
 } from './RegisterForm.styled';
-import { ErrorMessage } from 'formik';
 
 export const RegisterForm = () => {
   const [passwordShown, setPasswordShown] = useState(false);
@@ -62,9 +61,7 @@ export const RegisterForm = () => {
         ></RegInputStyled>
         <div>
           {errors?.name && (
-            <p style={{ background: 'red', color: 'white' }}>
-              {errors?.name?.message || 'Error'}
-            </p>
+            <p style={{ color: 'red' }}>{errors?.name?.message || 'Error'}</p>
           )}
         </div>
         <RegInputStyled
@@ -81,9 +78,7 @@ export const RegisterForm = () => {
         ></RegInputStyled>
         <div>
           {errors?.email && (
-            <p style={{ background: 'red', color: 'white' }}>
-              {errors?.email?.message || 'Error'}
-            </p>
+            <p style={{ color: 'red' }}>{errors?.email?.message || 'Error'}</p>
           )}
         </div>
         <LabelStyled>
@@ -104,12 +99,15 @@ export const RegisterForm = () => {
               setPasswordShown(!passwordShown);
             }}
           >
-            <Icon name="eye" />
+            <Icon
+              name="eye"
+              stroke={passwordShown ? 'white' : 'rgba(255, 255, 255, 0.3)'}
+            />
           </IconStyledEye>
         </LabelStyled>
         <div>
           {errors?.password && (
-            <p style={{ background: 'red', color: 'white' }}>
+            <p style={{ color: 'red' }}>
               {errors?.password?.message || 'Error'}
             </p>
           )}
@@ -129,7 +127,7 @@ export const RegisterForm = () => {
         />
         <div>
           {errors?.confirm_password && (
-            <p style={{ background: 'red', color: 'white' }}>
+            <p style={{ color: 'red' }}>
               {errors?.confirm_password?.message || 'Error'}
             </p>
           )}
