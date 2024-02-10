@@ -27,29 +27,25 @@ export const App = () => {
     <>
       <GlobalStyles theme={themes[theme]} />
       {isRefreshing ? (
-      <Spinner />) : (
-      <>
-        <Suspense fallback={null}>
-          <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route path="/welcome" element={<WelcomePage />} />
-              <Route
-                path="auth/:id"
-                element={
-                  <RestrictedRoute component={<AuthPage />} redirect="/" />
-                }
-              />
-              <Route
-                index
-                element={
-                  <PrivateRoute component={<HomePage />} redirect="/welcome" />
-                }
-              />
-            </Route>
-          </Routes>
-        </Suspense>
-      </>
+        <Spinner />
+      ) : (
+        <>
+          <Suspense fallback={null}>
+            <Routes>
+              <Route path="/" element={<Layout />}>
+                <Route path="/welcome" element={<WelcomePage />} />
+                <Route
+                  path="auth/:id"
+                  element={
+                    <RestrictedRoute component={<AuthPage />} redirect="/" />
+                  }
+                />
+                <Route index element={<HomePage />} />
+              </Route>
+            </Routes>
+          </Suspense>
+        </>
       )}
     </>
   );
-}
+};
