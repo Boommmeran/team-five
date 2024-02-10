@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Field, Form } from 'formik';
+import { Field, Form,ErrorMessage } from 'formik';
 
 export const StyledForm = styled(Form)`
   position: relative;
@@ -49,6 +49,15 @@ export const CloseModal = styled.div`
   }
 `;
 
+export const ErrMsg = styled(ErrorMessage)`
+  position: absolute;
+  top: 2px;
+  right: 4px;
+
+  color: red;
+  font-size: 12px;
+`;
+
 export const TitleCard = styled(Field)`
   border: 1px solid var(--accent);
   border-radius: 8px;
@@ -58,6 +67,12 @@ export const TitleCard = styled(Field)`
   opacity: 0.4;
   margin-bottom: 14px;
 `;
+
+export const Label = styled.label`
+  position: relative;
+  display: block;
+`;
+
 export const StyledDescription = styled(Field)`
   border: 1px solid var(--accent);
   border-radius: 8px;

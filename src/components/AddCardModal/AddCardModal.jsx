@@ -21,6 +21,8 @@ import {
   RadioButtonGreen,
   RadioButtonGrey,
   StyledForm,
+  ErrMsg,
+  Label,
 } from './AddCardModal.styled.jsx';
 
 const priority = ['without', 'low', 'medium', 'high'];
@@ -53,6 +55,7 @@ export default function AddCardModal({ title, btnText, onClose, reqFunc }) {
   const onSubmit = values => {
     reqFunc(values);
     onClose();
+    console.log(values);
   };
   return (
     <Container>
@@ -68,19 +71,20 @@ export default function AddCardModal({ title, btnText, onClose, reqFunc }) {
         <Formik
           initialValues={initValues}
           validationSchema={formCardSchema}
-          // onSubmit={onSubmit}
-          onSubmit={data => {
-            console.log(data);
-          }}
+          onSubmit={onSubmit}
         >
           <StyledForm>
             <TitleCard type="text" name="title" placeholder="Title" />
-            <StyledDescription
-              rows={4}
-              component="textarea"
-              name="description"
-              placeholder="Description"
-            />
+            <ErrMsg component="p" name="title" />
+            <Label>
+              <StyledDescription
+                rows={4}
+                component="textarea"
+                name="description"
+                placeholder="Description"
+              />
+              <ErrMsg component="p" name="description" />
+            </Label>
             <LabelColorStyle id="colorCard-radio-group">
               Label color
             </LabelColorStyle>
