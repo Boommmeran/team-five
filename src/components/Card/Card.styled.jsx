@@ -84,15 +84,12 @@ export const PriorityColor = styled.div`
   width: 14px;
   height: 14px;
   margin-right: 4px;
-  background-color: rgba(
-    22,
-    22,
-    22,
-    0.3
-  ); //змінюється в залежности від приорітету
+  background-color: rgba(22, 22, 22, 0.3);
+  //змінюється в залежности від приорітету
   /* background: #8fa1d0;
   background: #e09cb5;
-  background: #bedbb0; */
+  background: #bedbb0;
+   */
 `;
 
 export const PriorityTipe = styled.p`
@@ -134,4 +131,16 @@ export const CardButtons = styled.div`
 `;
 export const Bell = styled.button`
   stroke: var(--accent); //не змінюється в темах
+`;
+
+export const Button = styled.button`
+  cursor: pointer;
+  transition: var(--transition);
+  &:hover {
+    stroke: rgba(22, 22, 22);
+  }
+  &:focus,
+  &:active {
+    stroke: var(--accent);
+  }
 `;
