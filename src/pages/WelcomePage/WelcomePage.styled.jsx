@@ -15,6 +15,7 @@ export const WrapForNav = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+
   gap: 20px;
   margin-top: 55px;
 `;
@@ -38,7 +39,7 @@ export const StyledNavLink = styled(NavLink)`
 `;
 export const WraperWelcomeSection = styled.section`
   background: linear-gradient(rgba(255, 255, 255, 1) 30%, #bedbb0 92.19%);
-  width: 100%;
+  width: 100vw;
   height: 812px;
   display: flex;
   justify-content: center;

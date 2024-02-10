@@ -4,9 +4,9 @@ import { NavLink } from 'react-router-dom';
 export const LabelStyled = styled.label`
   position: relative;
 `;
-export const LoginStyledSection = styled.section`
+export const LoginStyledSection = styled.div`
   background: linear-gradient(rgba(255, 255, 255, 1) 30%, #bedbb0 92.19%);
-  width: 100%;
+  width: 100vw;
   height: 812px;
   display: flex;
   justify-content: center;
@@ -44,10 +44,6 @@ export const IconStyledEye = styled.i`
   position: absolute;
   top: 33%;
   right: 5%;
-  stroke: rgba(255, 255, 255, 0.3);
-  &:active {
-    stroke: white;
-  }
 `;
 
 export const StyledNavLinkLogin = styled(NavLink)`
@@ -89,8 +85,7 @@ export const WrapForLoginNav = styled.div`
   margin-bottom: 25px;
 `;
 export const ButtonLogin = styled.button`
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
+  font-family: 'Poppins-medium', sans-serif;
   font-size: 14px;
   letter-spacing: -0.02em;
   cursor: pointer;
