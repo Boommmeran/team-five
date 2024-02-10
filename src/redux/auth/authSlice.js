@@ -4,6 +4,7 @@ import {
   logOut,
   refreshing,
   update,
+  updateAvatar,
 } from './authOperation';
 
 import { createSlice } from '@reduxjs/toolkit';
@@ -14,7 +15,9 @@ export const authSlice = createSlice({
     user: {
       name: '',
       emai: '',
-      
+      avatarURL: '',
+      loading: false,
+      error: null,
     },
     token: null,
     isLoggedIn: false,
@@ -55,6 +58,18 @@ export const authSlice = createSlice({
       })
       .addCase(update.fulfilled, (state, action) => {
         state.user = action.payload;
+      })
+      .addCase(updateAvatar.pending, state => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(updateAvatar.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = null;
+        state.user.avatarURL = action.payload;
+      })
+      .addCase(updateAvatar.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
       }),
-  
 });
