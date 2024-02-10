@@ -17,10 +17,8 @@ export const Name = styled.p`
 `;
 
 export const Avatar = styled.img`
-  width: 32px;
-  height: 32px;
   cursor: pointer;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 `;
 
 export const Button = styled.button`

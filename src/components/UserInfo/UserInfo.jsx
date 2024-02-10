@@ -40,7 +40,21 @@ export const UserInfo = () => {
   return (
     <Container>
       <Name>{user.name}</Name>
-      <Avatar src="" alt="image user" onClick={openModal} />
+      <picture>
+        <source
+          srcSet="
+              https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707503119/pictures/user-1x.webp 1x,
+              https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707503119/pictures/user-2x.webp 2x
+            "
+        />
+        <Avatar
+          src="https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707503119/pictures/user-1x.webp"
+          width="32"
+          height="32"
+          alt="user photo"
+          onClick={openModal}
+        />
+      </picture>
       <Modal isOpen={isModalOpen} style={customStyles} contentLabel="Modal">
         <EditProfile />
         <Button onClick={closeModal}>

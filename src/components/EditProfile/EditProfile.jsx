@@ -5,8 +5,6 @@ import {
   StyledForm,
   StyledField,
   LastField,
-  AvatarField,
-  ButtonAvatar,
   ErrMsg,
   StyledLabel,
   Label,
@@ -16,11 +14,10 @@ import * as Yup from 'yup';
 import { useAuth } from 'hooks';
 import { update } from '../../redux/auth/authOperation';
 import { useDispatch } from 'react-redux';
-
+import { UpdateAvatar } from 'components/UpdateAvatar';
 import { Icon } from 'components/Icon';
 
 const EditProfileSchema = Yup.object().shape({
-  photo: Yup.string().url('invalid url'),
   name: Yup.string()
     .min(2, '2 chars minimum')
     .max(32, '32 chars maximum')
@@ -45,6 +42,8 @@ export const EditProfile = () => {
   return (
     <Container>
       <Title>Edit profile</Title>
+      <UpdateAvatar />
+
       <Formik
         initialValues={{
           name: user.name,
@@ -54,12 +53,9 @@ export const EditProfile = () => {
         validationSchema={EditProfileSchema}
         onSubmit={(values, actions) => {
           dispatch(update(values));
-          // actions.resetForm();
         }}
       >
         <StyledForm>
-          <AvatarField id="photo" name="photo" type="file" accept="image/*" />
-
           <Label>
             <StyledField id="name" name="name" />
             <ErrMsg name="name" component="p" />
@@ -83,14 +79,6 @@ export const EditProfile = () => {
           <Button type="submit">Submit</Button>
         </StyledForm>
       </Formik>
-      <ButtonAvatar>
-        <Icon
-          name="plus"
-          width="10px"
-          height="10px"
-          stroke="var(--primaryTextColor)"
-        />
-      </ButtonAvatar>
     </Container>
   );
 };

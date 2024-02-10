@@ -67,7 +67,6 @@ export const refreshing = createAsyncThunk(
 export const update = createAsyncThunk('update/user', async (user, thunkAPI) => {
   try {
     const responce = await axios.patch('/users/update', user);
-    
     return responce.data;
     
   }
@@ -75,4 +74,5 @@ export const update = createAsyncThunk('update/user', async (user, thunkAPI) => 
     return thunkAPI.rejectWithValue(error.message);
   }
 });
+
 

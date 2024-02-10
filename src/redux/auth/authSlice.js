@@ -14,6 +14,7 @@ export const authSlice = createSlice({
     user: {
       name: '',
       emai: '',
+      
     },
     token: null,
     isLoggedIn: false,

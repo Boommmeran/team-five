@@ -31,7 +31,7 @@ export const StyledForm = styled(Form)`
   flex-direction: column;
 `;
 
-export const AvatarField = styled(Field)`
+export const Avatar = styled.input`
   margin-bottom: 25px;
   margin-left: auto;
   margin-right: auto;
@@ -103,25 +103,10 @@ export const Button = styled.button`
   letter-spacing: -2;
 `;
 
-export const ButtonAvatar = styled.button`
-  position: absolute;
-  top: 125px;
-  right: 155px;
 
-  width: 24px;
-  height: 24px;
-  background: var(--accent);
-  border-radius: 8px;
-  border: 0;
-
-  @media only screen and (min-width: 768px) {
-    right: 186px;
-  }
-`;
 
 export const ErrMsg = styled(ErrorMessage)`
-  /* color: red;
-  font-size: 14px; */
+
 
   position: absolute;
   top: 2px;
@@ -150,3 +135,6 @@ export const StyledLabel = styled.label`
     }
   }
 `;
+
+
+
