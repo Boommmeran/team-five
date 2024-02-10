@@ -5,7 +5,7 @@ export const Wrap = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  background: var(--secondaryBgColor);
+  margin-bottom: 26px;
 
   @media (max-width: 767px) {
     padding: 14px 0px;

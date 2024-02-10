@@ -1,7 +1,7 @@
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { sendDataEmail } from 'services/sendDataEmail';
-import { ButtonClose } from 'components/ButtonClose/ButtonClose';
+// import { ButtonClose } from 'components/ButtonClose/ButtonClose';
 import {
   ButtonForModal,
   ContainerForModal,
@@ -11,6 +11,8 @@ import {
   StyledFormInModal,
   TitleForModal,
 } from './SendEmail.styled';
+import { Icon } from 'components/Icon';
+import { ButtonCloseStyled } from 'components/ButtonClose/ButtonClose.styled';
 
 const initialValues = {
   emailForSupport: '',
@@ -24,7 +26,7 @@ const builderSchema = Yup.object().shape({
     .required(`This field is required.`),
 });
 
-export const SendEmail = () => {
+export const SendEmail = ({ onClose }) => {
   const onSubmit = (data, form) => {
     sendDataEmail(data);
     form.resetForm();
@@ -33,7 +35,15 @@ export const SendEmail = () => {
   return (
     <ContainerForModal>
       <TitleForModal>Need help</TitleForModal>
-      <ButtonClose />
+      {/* <ButtonClose/> */}
+      <ButtonCloseStyled type="button" onClick={onClose}>
+        <Icon
+          stroke="var(--primaryTextColor)"
+          name="close"
+          width="18"
+          height="18"
+        />
+      </ButtonCloseStyled>{' '}
       <Formik
         initialValues={initialValues}
         validationSchema={builderSchema}

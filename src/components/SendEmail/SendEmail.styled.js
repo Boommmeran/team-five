@@ -2,18 +2,18 @@ import styled from 'styled-components';
 import { Form, Field, ErrorMessage } from 'formik';
 
 export const ContainerForModal = styled.div`
-  position: absolute;
+  position: relative;
   padding: 24px 29px 50px 24px;
-  min-width: 100%;
-  height: 381px;
+  width: 335px;
+  height: 355px;
   background: var(--headerBgColor);
   border-radius: 8px;
   box-shadow: 0 4px 16px 0 var(--nonAccentTextColor);
 
-  @media only screen and (min-width: 375px) {
+  /* @media only screen and (min-width: 375px) {
     min-width: 0;
     width: 345px;
-  }
+  } */
 
   @media only screen and (min-width: 768px) {
     width: 400px;
