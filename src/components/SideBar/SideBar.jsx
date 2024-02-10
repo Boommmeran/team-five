@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectBoards } from '../../redux/boards/boardsSelectors.js';
-import { fetchBoards, deleteBoard } from '../../redux/boards/boardsOperations.js';
+import { fetchBoards } from '../../redux/boards/boardsOperations.js';
 import { logOut } from '../../redux/auth/authOperation.js';
 import { NeedHelp } from 'components/NeedHelp';
 import { BoardCreation } from 'components/SidebarBoardCreation';
@@ -28,10 +28,6 @@ export const Sidebar = () => {
     dispatch(logOut());
   };
 
-  const handleDeleteBoard = boardId => {
-    dispatch(deleteBoard(boardId));
-  };
-
   return (
     <SidebarContainer>
       <Logo>
@@ -43,7 +39,10 @@ export const Sidebar = () => {
         <BoardCreation />
         <BoardList>
           {boards.map(board => (
-            <BoardItem key={board._id} board={board} onDelete={() => handleDeleteBoard(board._id)}/>
+            <BoardItem
+              key={board._id}
+              board={board}
+            />
           ))}
         </BoardList>
       </BoardContainer>
