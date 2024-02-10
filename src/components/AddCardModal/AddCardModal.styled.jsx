@@ -1,5 +1,11 @@
 import styled from 'styled-components';
-import { Field } from 'formik';
+import { Field,Form } from 'formik';
+
+export const StyledForm = styled(Form)`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+`;
 
 export const Container = styled.div`
   border-radius: 8px;

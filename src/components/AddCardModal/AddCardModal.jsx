@@ -18,21 +18,22 @@ import {
   AddCardButton,
   RadioButton,
   RadioButtonColor,
+  StyledForm,
 } from './AddCardModal.styled.jsx';
 
-const formCardSchema = Yup.object().shape({
-  // так працювати не буде!
-  // в yup назва поля має відповідати атрибуту name у inputa
-  // на радіо кнопках валідація по конкретному значенню тобто oneOf([масив прийнятних значень])
+const priority = ['without', 'low', 'medium', 'high'];
 
-  name: Yup.string()
+const formCardSchema = Yup.object().shape({
+  title: Yup.string()
     .min(2, 'Too Short!')
     .max(50, 'Too Long!')
     .required('Required'),
-  number: Yup.string()
+  description: Yup.string()
     .min(2, 'Too Short!')
     .max(500, 'Too Long!')
     .required('Required'),
+  colorPriority: Yup.string().oneOf(priority),
+  dealline: Yup.string(),
 });
 
 export default function AddCardModal({ title, btnText, onClose, reqFunc }) {
@@ -44,7 +45,7 @@ export default function AddCardModal({ title, btnText, onClose, reqFunc }) {
   const initValues = {
     title: '',
     description: '',
-    colorPicker: '',
+    colorPriority: '',
     dealline: '',
   };
   const onSubmit = values => {
@@ -65,13 +66,15 @@ export default function AddCardModal({ title, btnText, onClose, reqFunc }) {
         <Formik
           initialValues={initValues}
           validationSchema={formCardSchema}
-          onSubmit={onSubmit}
+          // onSubmit={onSubmit}
+          onSubmit={data=>{console.log(data)}}
         >
-          <>
+          <StyledForm>
             <label></label>
             <TitleCard type="text" name="title" placeholder="Title" />
             <label></label>
             <StyledDescription
+            rows={4}
               type="textarea"
               name="description"
               placeholder="Description"
@@ -92,7 +95,6 @@ export default function AddCardModal({ title, btnText, onClose, reqFunc }) {
               <label>
                 <Field type="radio" name="colorPicker" value="Grey" />
               </label>
-              {/* <div>Picked: {values.picked}</div> */}
             </StyleRadioButton>
             <DeadlineStyle>Deadline</DeadlineStyle>
             <Calendar />
@@ -102,7 +104,7 @@ export default function AddCardModal({ title, btnText, onClose, reqFunc }) {
               </StylePlus>
               <p> {btnText}</p>
             </AddButton>
-          </>
+          </StyledForm>
         </Formik>
       </ModalBody>
     </Container>
