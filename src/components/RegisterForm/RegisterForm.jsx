@@ -1,17 +1,21 @@
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import { registerUser } from '../../redux/auth/authOperation';
 
 import { useState } from 'react';
 import { Icon } from 'components/Icon';
 import {
-  // IconStyledEye,
+  ButtonRegister,
+  FormRegisterStyled,
+  IconStyledEye,
   LabelStyled,
+  // IconStyledEye,
   RegInputStyled,
-  RegisterStyled,
+  RegisterStyledSection,
+  StyledNavLinkRegister,
   WrapForRegNav,
 } from './RegisterForm.styled';
+import { ErrorMessage } from 'formik';
 
 export const RegisterForm = () => {
   const [passwordShown, setPasswordShown] = useState(false);
@@ -21,10 +25,11 @@ export const RegisterForm = () => {
   const {
     register,
     handleSubmit,
-    // reset,
-    // watch,
+    watch,
+    reset,
     formState: { errors, isValid },
-  } = useForm({ mode: 'onBlur' });
+  } = useForm({ mode: 'all' });
+
   const onSubmit = data => {
     dispatch(
       registerUser({
@@ -33,66 +38,84 @@ export const RegisterForm = () => {
         password: data.password,
       })
     );
+    reset();
   };
 
   return (
-    <RegisterStyled>
-      <WrapForRegNav>
-        <NavLink to="/auth/register">Registration</NavLink>
-        <NavLink to="/auth/login">Login</NavLink>
-      </WrapForRegNav>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <label>
-          Name
+    <RegisterStyledSection>
+      <FormRegisterStyled onSubmit={handleSubmit(onSubmit)}>
+        <WrapForRegNav>
+          <StyledNavLinkRegister to="/auth/register">
+            Registration
+          </StyledNavLinkRegister>
+          <StyledNavLinkRegister to="/auth/login">Login</StyledNavLinkRegister>
+        </WrapForRegNav>
+        <RegInputStyled
+          placeholder="Enter your name"
+          {...register('name', {
+            required: 'Required field',
+            minLength: {
+              value: 2,
+              message: 'Name is too short',
+            },
+          })}
+        ></RegInputStyled>
+        <div>
+          {errors?.name && (
+            <p style={{ background: 'red', color: 'white' }}>
+              {errors?.name?.message || 'Error'}
+            </p>
+          )}
+        </div>
+        <RegInputStyled
+          placeholder="Enter your email"
+          name="email"
+          type="email"
+          {...register('email', {
+            required: 'Required field',
+            pattern: {
+              value: /^\S+@\S+$/i,
+              message: 'Email must include @ and .',
+            },
+          })}
+        ></RegInputStyled>
+        <div>
+          {errors?.email && (
+            <p style={{ background: 'red', color: 'white' }}>
+              {errors?.email?.message || 'Error'}
+            </p>
+          )}
+        </div>
+        <LabelStyled>
           <RegInputStyled
-            {...register('name', {
-              required: 'Required field',
-              minLength: {
-                value: 2,
-                message: 'Name is too short',
-              },
-            })}
-          ></RegInputStyled>
-        </label>
-        <div>{errors?.name && <p>{errors?.name?.message || 'Error'}</p>}</div>
-        <label>
-          Email
-          <RegInputStyled
-            name="email"
-            type="email"
-            {...register('email', {
-              required: 'Required field',
-              pattern: /^\S+@\S+$/i,
-            })}
-          ></RegInputStyled>
-        </label>
-        <div>{errors?.email && <p>{errors?.email?.message || 'Error'}</p>}</div>
-        <LabelStyled style={{ stroke: 'red' }}>
-          Password
-          <RegInputStyled
+            placeholder="Create a password"
             name="password"
             type={passwordShown ? 'text' : 'password'}
             {...register('password', {
               required: 'Required field',
               minLength: {
                 value: 8,
-                message: 'Password is too short',
+                message: 'Password must include minimum 8 characters',
               },
             })}
           ></RegInputStyled>
-          <i
+          <IconStyledEye
             onClick={() => {
               setPasswordShown(!passwordShown);
             }}
           >
-            {' '}
             <Icon name="eye" />
-          </i>
+          </IconStyledEye>
         </LabelStyled>
         <div>
-          {errors?.password && <p>{errors?.password?.message || 'Error'}</p>}
+          {errors?.password && (
+            <p style={{ background: 'red', color: 'white' }}>
+              {errors?.password?.message || 'Error'}
+            </p>
+          )}
         </div>
-        {/* <RegInputStyled
+        <RegInputStyled
+          placeholder="Confirm your password"
           name="confirmPassword"
           type="password"
           {...register('confirm_password', {
@@ -103,10 +126,18 @@ export const RegisterForm = () => {
               }
             },
           })}
-        /> */}
-
-        <input type="submit" disabled={!isValid} />
-      </form>
-    </RegisterStyled>
+        />
+        <div>
+          {errors?.confirm_password && (
+            <p style={{ background: 'red', color: 'white' }}>
+              {errors?.confirm_password?.message || 'Error'}
+            </p>
+          )}
+        </div>
+        <ButtonRegister type="submit" disabled={!isValid}>
+          Register Now
+        </ButtonRegister>
+      </FormRegisterStyled>
+    </RegisterStyledSection>
   );
-}
+};
