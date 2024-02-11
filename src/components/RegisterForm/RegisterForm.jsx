@@ -6,10 +6,10 @@ import { useState } from 'react';
 import { Icon } from 'components/Icon';
 import {
   ButtonRegister,
+  ErrorRegistrationMessage,
   FormRegisterStyled,
   IconStyledEye,
   LabelStyled,
-  // IconStyledEye,
   RegInputStyled,
   RegisterStyledSection,
   StyledNavLinkRegister,
@@ -18,6 +18,7 @@ import {
 
 export const RegisterForm = () => {
   const [passwordShown, setPasswordShown] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -49,38 +50,44 @@ export const RegisterForm = () => {
           </StyledNavLinkRegister>
           <StyledNavLinkRegister to="/auth/login">Login</StyledNavLinkRegister>
         </WrapForRegNav>
-        <RegInputStyled
-          placeholder="Enter your name"
-          {...register('name', {
-            required: 'Required field',
-            minLength: {
-              value: 2,
-              message: 'Name is too short',
-            },
-          })}
-        ></RegInputStyled>
-        <div>
+        <LabelStyled>
+          {' '}
+          <RegInputStyled
+            placeholder="Enter your name"
+            {...register('name', {
+              required: 'Required field',
+              minLength: {
+                value: 2,
+                message: 'Name is too short',
+              },
+            })}
+          />
           {errors?.name && (
-            <p style={{ color: 'red' }}>{errors?.name?.message || 'Error'}</p>
+            <ErrorRegistrationMessage>
+              {errors?.name?.message || 'Error'}
+            </ErrorRegistrationMessage>
           )}
-        </div>
-        <RegInputStyled
-          placeholder="Enter your email"
-          name="email"
-          type="email"
-          {...register('email', {
-            required: 'Required field',
-            pattern: {
-              value: /^\S+@\S+$/i,
-              message: 'Email must include @ and .',
-            },
-          })}
-        ></RegInputStyled>
-        <div>
+        </LabelStyled>
+        <LabelStyled>
+          {' '}
+          <RegInputStyled
+            placeholder="Enter your email"
+            name="email"
+            type="email"
+            {...register('email', {
+              required: 'Required field',
+              pattern: {
+                value: /^\S+@\S+$/i,
+                message: 'Email must include @ and .',
+              },
+            })}
+          />
           {errors?.email && (
-            <p style={{ color: 'red' }}>{errors?.email?.message || 'Error'}</p>
+            <ErrorRegistrationMessage>
+              {errors?.email?.message || 'Error'}
+            </ErrorRegistrationMessage>
           )}
-        </div>
+        </LabelStyled>
         <LabelStyled>
           <RegInputStyled
             placeholder="Create a password"
@@ -93,7 +100,7 @@ export const RegisterForm = () => {
                 message: 'Password must include minimum 8 characters',
               },
             })}
-          ></RegInputStyled>
+          />
           <IconStyledEye
             onClick={() => {
               setPasswordShown(!passwordShown);
@@ -104,34 +111,43 @@ export const RegisterForm = () => {
               stroke={passwordShown ? 'white' : 'rgba(255, 255, 255, 0.3)'}
             />
           </IconStyledEye>
-        </LabelStyled>
-        <div>
           {errors?.password && (
-            <p style={{ color: 'red' }}>
+            <ErrorRegistrationMessage>
               {errors?.password?.message || 'Error'}
-            </p>
+            </ErrorRegistrationMessage>
           )}
-        </div>
-        <RegInputStyled
-          placeholder="Confirm your password"
-          name="confirmPassword"
-          type="password"
-          {...register('confirm_password', {
-            required: true,
-            validate: val => {
-              if (watch('password') !== val) {
-                return 'Your passwords do no match';
-              }
-            },
-          })}
-        />
-        <div>
+        </LabelStyled>
+        <LabelStyled>
+          {' '}
+          <RegInputStyled
+            placeholder="Confirm your password"
+            type={isActive ? 'text' : 'password'}
+            name="confirmPassword"
+            {...register('confirm_password', {
+              required: true,
+              validate: val => {
+                if (watch('password') !== val) {
+                  return 'Your passwords do no match';
+                }
+              },
+            })}
+          />{' '}
+          <IconStyledEye
+            onClick={() => {
+              setIsActive(!isActive);
+            }}
+          >
+            <Icon
+              name="eye"
+              stroke={isActive ? 'white' : 'rgba(255, 255, 255, 0.3)'}
+            />
+          </IconStyledEye>
           {errors?.confirm_password && (
-            <p style={{ color: 'red' }}>
+            <ErrorRegistrationMessage>
               {errors?.confirm_password?.message || 'Error'}
-            </p>
+            </ErrorRegistrationMessage>
           )}
-        </div>
+        </LabelStyled>
         <ButtonRegister type="submit" disabled={!isValid}>
           Register Now
         </ButtonRegister>
