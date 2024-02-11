@@ -50,9 +50,6 @@ export const IconStyledEye = styled.i`
   top: 33%;
   right: 5%;
   transition: var(--transition);
-  &:hover {
-    stroke: white;
-  }
 `;
 
 export const StyledNavLinkRegister = styled(NavLink)`

@@ -48,7 +48,7 @@ export const LoginForm = () => {
               required: 'Required field',
               pattern: /^\S+@\S+$/i,
             })}
-          ></LogInputStyled>{' '}
+          />
           {errors?.email && (
             <ErrorLoginMessage style={{ color: 'red' }}>
               {errors?.email?.message || 'Error'}
@@ -67,7 +67,7 @@ export const LoginForm = () => {
                 message: 'Password must include minimum 8 characters',
               },
             })}
-          ></LogInputStyled>
+          />
           <IconStyledEye
             onClick={() => {
               setPasswordShown(!passwordShown);
