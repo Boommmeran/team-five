@@ -21,8 +21,8 @@ export const CardColor = styled.div`
   height: 154px;
   top: 0px;
   left: 0px;
-  background-color: ${props => {
-    switch (props.priority) {
+  background-color: ${({priority}) => {
+    switch (priority) {
       case 'high':
         return '#bedbb0';
       case 'medium':

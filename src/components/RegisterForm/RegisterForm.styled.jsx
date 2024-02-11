@@ -7,18 +7,12 @@ export const LabelStyled = styled.label`
 export const RegisterStyledSection = styled.div`
   background: linear-gradient(rgba(255, 255, 255, 1) 30%, #bedbb0 92.19%);
   width: 100vw;
-  height: 812px;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  @media only screen and (min-width: 768px) {
-    height: 1024px;
-  }
-  @media only screen and (min-width: 1440px) {
-    height: 770px;
-  }
 `;
 
 export const RegInputStyled = styled.input`
@@ -121,10 +115,11 @@ export const ButtonRegister = styled.button`
   }
 `;
 export const ErrorRegistrationMessage = styled.p`
-  color: red;
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 2px;
+  right: 4px;
+
+  color: red;
   font-size: 12px;
   @media only screen and (max-width: 375px) {
     font-size: 8px;
