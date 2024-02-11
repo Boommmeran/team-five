@@ -4,9 +4,9 @@ import styled from 'styled-components';
 export const LabelStyled = styled.label`
   position: relative;
 `;
-export const RegisterStyledSection = styled.section`
+export const RegisterStyledSection = styled.div`
   background: linear-gradient(rgba(255, 255, 255, 1) 30%, #bedbb0 92.19%);
-  width: 100%;
+  width: 100vw;
   height: 812px;
   display: flex;
   justify-content: center;
@@ -44,8 +44,7 @@ export const IconStyledEye = styled.i`
   position: absolute;
   top: 33%;
   right: 5%;
-  stroke: rgba(255, 255, 255, 0.3);
-  &:active {
+  &:hover {
     stroke: white;
   }
 `;
@@ -89,8 +88,7 @@ export const WrapForRegNav = styled.div`
   margin-bottom: 30px;
 `;
 export const ButtonRegister = styled.button`
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
+  font-family: 'Poppins-medium', sans-serif;
   font-size: 14px;
   letter-spacing: -0.02em;
   cursor: pointer;
@@ -107,7 +105,4 @@ export const ButtonRegister = styled.button`
   @media only screen and (min-width: 768px) {
     width: 344px;
   }
-`;
-export const ErrorMessage = styled.p`
-  color: red;
 `;

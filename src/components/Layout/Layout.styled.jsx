@@ -24,9 +24,6 @@ export const Container = styled.div`
 
   @media ${device.mobileM} {
     width: 375px;
-
-    margin-left: auto;
-    margin-right: auto;
   }
   @media ${device.tablet} {
     width: 768px;
