@@ -3,24 +3,33 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   width: 79px;
-  height: 32px;
+  height: 40px;
   gap: 8px;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const Name = styled.p`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 5px 0;
   font-family: 'Poppins-Medium';
   font-size: 14px;
   line-height: 1.5;
-  letter-spacing:-2;
+  letter-spacing: -2;
   color: var(--primaryTextColor);
 `;
 
 export const Avatar = styled.img`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 32px;
   height: 32px;
   cursor: pointer;
   border: 1px solid black;
+  border-radius: 5px;
 `;
 
 export const Button = styled.button`
@@ -28,8 +37,7 @@ export const Button = styled.button`
   top: 14px;
   right: 10px;
   color: var(--primaryTextColor);
-  background:var(--modalBgColor);
+  background: var(--modalBgColor);
   border: 0;
   cursor: pointer;
-  
 `;
