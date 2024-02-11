@@ -17,7 +17,7 @@ import {
 import { EditColumnModal } from 'components/EditColumnModal/EditColumnModal';
 import AddCardModal from 'components/AddCardModal/AddCardModal';
 
-export const Column = () => {
+export const Column = ({columnId}) => {
   const [modalColumnIsOpen, setmodalColumnIsOpen] = useState(false);
   const [modalCardIsOpen, setmodalCardIsOpen] = useState(false);
 
@@ -102,10 +102,10 @@ export const Column = () => {
         ariaHideApp={false}
       >
         <AddCardModal
-          title={'Add another card'}
+         columnId={columnId}
+          title={'Add card'}
           btnText={'Add'}
           onClose={closeCardModal}
-          reqFunc={values => console.log(values)}
         />
       </Modal>
       <Modal

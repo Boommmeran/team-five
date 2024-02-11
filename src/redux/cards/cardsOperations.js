@@ -4,10 +4,10 @@ import axios from 'axios';
 axios.defaults.baseURL = 'http://localhost:9000/api';
 
 export const addCard = createAsyncThunk(
-  'cards/add',
-  async (cards, thunkAPI) => {
+  'card/add',
+  async ({ values, columnId }, thunkAPI) => {
     try {
-      const res = await axios.post('/cards', cards);
+      const res = await axios.post(`/cards/${columnId}`, values);
 
       return res.data;
     } catch (error) {
@@ -26,7 +26,7 @@ export const editCard = createAsyncThunk(
         priority: card.priority,
         deadline: card.deadline,
       });
-      
+
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
