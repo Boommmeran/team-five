@@ -30,6 +30,7 @@ export const StyledNavLink = styled(NavLink)`
   width: 344px;
   height: 49px;
   cursor: pointer;
+  transition: var(--transition);
   &:hover,
   &:focus,
   &:active {

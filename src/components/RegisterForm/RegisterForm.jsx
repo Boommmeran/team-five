@@ -6,10 +6,10 @@ import { useState } from 'react';
 import { Icon } from 'components/Icon';
 import {
   ButtonRegister,
+  ErrorRegistrationMessage,
   FormRegisterStyled,
   IconStyledEye,
   LabelStyled,
-  // IconStyledEye,
   RegInputStyled,
   RegisterStyledSection,
   StyledNavLinkRegister,
@@ -49,38 +49,44 @@ export const RegisterForm = () => {
           </StyledNavLinkRegister>
           <StyledNavLinkRegister to="/auth/login">Login</StyledNavLinkRegister>
         </WrapForRegNav>
-        <RegInputStyled
-          placeholder="Enter your name"
-          {...register('name', {
-            required: 'Required field',
-            minLength: {
-              value: 2,
-              message: 'Name is too short',
-            },
-          })}
-        ></RegInputStyled>
-        <div>
+        <LabelStyled>
+          {' '}
+          <RegInputStyled
+            placeholder="Enter your name"
+            {...register('name', {
+              required: 'Required field',
+              minLength: {
+                value: 2,
+                message: 'Name is too short',
+              },
+            })}
+          ></RegInputStyled>{' '}
           {errors?.name && (
-            <p style={{ color: 'red' }}>{errors?.name?.message || 'Error'}</p>
+            <ErrorRegistrationMessage>
+              {errors?.name?.message || 'Error'}
+            </ErrorRegistrationMessage>
           )}
-        </div>
-        <RegInputStyled
-          placeholder="Enter your email"
-          name="email"
-          type="email"
-          {...register('email', {
-            required: 'Required field',
-            pattern: {
-              value: /^\S+@\S+$/i,
-              message: 'Email must include @ and .',
-            },
-          })}
-        ></RegInputStyled>
-        <div>
+        </LabelStyled>
+        <LabelStyled>
+          {' '}
+          <RegInputStyled
+            placeholder="Enter your email"
+            name="email"
+            type="email"
+            {...register('email', {
+              required: 'Required field',
+              pattern: {
+                value: /^\S+@\S+$/i,
+                message: 'Email must include @ and .',
+              },
+            })}
+          ></RegInputStyled>{' '}
           {errors?.email && (
-            <p style={{ color: 'red' }}>{errors?.email?.message || 'Error'}</p>
+            <ErrorRegistrationMessage>
+              {errors?.email?.message || 'Error'}
+            </ErrorRegistrationMessage>
           )}
-        </div>
+        </LabelStyled>
         <LabelStyled>
           <RegInputStyled
             placeholder="Create a password"
@@ -104,14 +110,12 @@ export const RegisterForm = () => {
               stroke={passwordShown ? 'white' : 'rgba(255, 255, 255, 0.3)'}
             />
           </IconStyledEye>
-        </LabelStyled>
-        <div>
           {errors?.password && (
-            <p style={{ color: 'red' }}>
+            <ErrorRegistrationMessage>
               {errors?.password?.message || 'Error'}
-            </p>
+            </ErrorRegistrationMessage>
           )}
-        </div>
+        </LabelStyled>
         <RegInputStyled
           placeholder="Confirm your password"
           name="confirmPassword"
@@ -125,13 +129,11 @@ export const RegisterForm = () => {
             },
           })}
         />
-        <div>
-          {errors?.confirm_password && (
-            <p style={{ color: 'red' }}>
-              {errors?.confirm_password?.message || 'Error'}
-            </p>
-          )}
-        </div>
+        {errors?.confirm_password && (
+          <ErrorRegistrationMessage>
+            {errors?.confirm_password?.message || 'Error'}
+          </ErrorRegistrationMessage>
+        )}
         <ButtonRegister type="submit" disabled={!isValid}>
           Register Now
         </ButtonRegister>
