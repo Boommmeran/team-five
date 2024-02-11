@@ -54,9 +54,12 @@ export const NeedHelp = () => {
         support resources or reach out to our customer support team.
       </p>
       <NeedHelpBtn type="button" onClick={openModal}>
-        <div style={{ stroke: 'var(--primaryTextColor)' }}>
-          <Icon name="help" width="20" height="20" />
-        </div>
+        <Icon
+          name="help"
+          width="20"
+          height="20"
+          stroke="var(--primaryTextColor)"
+        />
         <span>Need help?</span>
       </NeedHelpBtn>
       <Modal

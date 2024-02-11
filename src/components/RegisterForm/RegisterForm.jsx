@@ -124,7 +124,7 @@ export const RegisterForm = () => {
             type={isActive ? 'text' : 'password'}
             name="confirmPassword"
             {...register('confirm_password', {
-              required: true,
+              required: 'Required field',
               validate: val => {
                 if (watch('password') !== val) {
                   return 'Your passwords do no match';
