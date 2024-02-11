@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import { useRef, useState } from 'react';
 import { Sidebar } from 'components/SideBar';
 import {
+  customStyles,
   HeaderStyled,
   ThemeContainer,
   Theme,
@@ -14,19 +15,6 @@ import {
   NavigationItem,
 } from './Header.styled';
 import { Icon } from 'components/Icon';
-
-const customStyles = {
-  content: {
-    inset: 0,
-    width: 'fit-content',
-    height: 'fit-content',
-    boxShadow: '0px 4px 16px 0px #1616160D',
-    padding: 0,
-  },
-  overlay: {
-    background: 'rgba(0,0,0,0.5)',
-  },
-};
 
 export const Header = () => {
   const [isMenuOpen, setIsOpenMenu] = useState(false);
