@@ -5,12 +5,14 @@ import { Main, SidebarWrapper } from './HomePage.styled';
 
 export default function HomePage() {
   return (
-    <Main>
+    <>
       <Header />
-      <SidebarWrapper>
-        <Sidebar />
-      </SidebarWrapper>
-      <ScreensPage />
-    </Main>
+      <Main>
+        <SidebarWrapper>
+          <Sidebar />
+        </SidebarWrapper>
+        <ScreensPage />
+      </Main>
+    </>
   );
 }

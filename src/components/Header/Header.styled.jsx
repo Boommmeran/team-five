@@ -11,7 +11,7 @@ export const MenuBtn = styled.button`
   }
 `;
 
-export const Container = styled.div`
+export const HeaderStyled = styled.header`
   display: flex;
   gap: 4px;
   justify-content: right;
