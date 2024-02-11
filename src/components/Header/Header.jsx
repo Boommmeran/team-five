@@ -4,7 +4,7 @@ import Modal from 'react-modal';
 import { useRef, useState } from 'react';
 import { Sidebar } from 'components/SideBar';
 import {
-  Container,
+  HeaderStyled,
   ThemeContainer,
   Theme,
   AddBtn,
@@ -41,7 +41,7 @@ export const Header = () => {
   };
 
   return (
-    <Container>
+    <HeaderStyled>
       <Wrap>
         <MenuBtn type="button" onClick={openMenu}>
           MENU
@@ -81,6 +81,6 @@ export const Header = () => {
         )}
       </ThemeContainer>
       <UserInfo />
-    </Container>
+    </HeaderStyled>
   );
 };
