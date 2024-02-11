@@ -1,11 +1,11 @@
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-// import { NavLink } from 'react-router-dom';
 import { logInUser } from '../../redux/auth/authOperation';
 import { useState } from 'react';
 import { Icon } from 'components/Icon';
 import {
   ButtonLogin,
+  ErrorLoginMessage,
   FormLoginStyled,
   IconStyledEye,
   LabelStyled,
@@ -38,20 +38,23 @@ export const LoginForm = () => {
           </StyledNavLinkLogin>
           <StyledNavLinkLogin to="/auth/login">Login</StyledNavLinkLogin>
         </WrapForLoginNav>
-        <LogInputStyled
-          placeholder="Enter your email"
-          name="email"
-          type="email"
-          {...register('email', {
-            required: 'Required field',
-            pattern: /^\S+@\S+$/i,
-          })}
-        ></LogInputStyled>
-        <div>
+        <LabelStyled>
+          {' '}
+          <LogInputStyled
+            placeholder="Enter your email"
+            name="email"
+            type="email"
+            {...register('email', {
+              required: 'Required field',
+              pattern: /^\S+@\S+$/i,
+            })}
+          ></LogInputStyled>{' '}
           {errors?.email && (
-            <p style={{ color: 'red' }}>{errors?.email?.message || 'Error'}</p>
+            <ErrorLoginMessage style={{ color: 'red' }}>
+              {errors?.email?.message || 'Error'}
+            </ErrorLoginMessage>
           )}
-        </div>
+        </LabelStyled>
         <LabelStyled>
           <LogInputStyled
             placeholder="Confirm a password"
@@ -75,15 +78,12 @@ export const LoginForm = () => {
               stroke={passwordShown ? 'white' : 'rgba(255, 255, 255, 0.3)'}
             />
           </IconStyledEye>
-        </LabelStyled>
-        <div>
           {errors?.password && (
-            <p style={{ color: 'red' }}>
+            <ErrorLoginMessage style={{ color: 'red' }}>
               {errors?.password?.message || 'Error'}
-            </p>
+            </ErrorLoginMessage>
           )}
-        </div>
-
+        </LabelStyled>
         <ButtonLogin type="submit" disabled={!isValid}>
           Login Now
         </ButtonLogin>
