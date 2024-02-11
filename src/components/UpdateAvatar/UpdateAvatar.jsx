@@ -26,7 +26,8 @@ export const UpdateAvatar = () => {
     filePicker.current.click();
   };
   return (
-    <ContainerAvatar>
+
+        <ContainerAvatar>
       <picture>
         <source
           srcSet="
@@ -35,7 +36,8 @@ export const UpdateAvatar = () => {
             "
         />
         <Avatar
-          src={cloudinaryBaseURL + user.avatarURL}
+          src = "https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707503119/avatars/65c7535718c4cbf97cce7270"
+          // src={cloudinaryBaseURL + user.avatarURL}
           width="68"
           height="68"
           alt="user photo"
