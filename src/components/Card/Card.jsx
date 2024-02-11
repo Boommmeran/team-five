@@ -24,17 +24,14 @@ import {
   Button,
 } from './Card.styled';
 
-const cardItem = {
-  title: 'Quiz Creation',
-  text: 'Create engaging and interactive quizzes using Kahoot`s intuitive quiz builder. Design questions, provide multiple-choice answers, and include multimedia elements such as images and videos.',
-  priority: {
-    enum: ['without', 'low', 'medium', 'high'],
-  },
-  deadline: '14/02/2024',
-};
 
-export default function Card(cardItem) {
+export default function Card({ card }) {
   const [modalCardIsOpen, setmodalCardIsOpen] = useState(false);
+
+  const { title, text, deadline, priority } = card;
+  const dateDeadline = new Date(deadline);
+  const formatedDate = `${dateDeadline.getDay()}/${dateDeadline.getMonth()}/${dateDeadline.getFullYear()}`;
+  const cardTextDescription = text.substring(0, 90) + '...';
 
   const customStyles = {
     content: {
@@ -59,33 +56,24 @@ export default function Card(cardItem) {
     setmodalCardIsOpen(false);
   };
 
-  const cardText =
-    'Create engaging and interactive quizzes using Kahoot`s intuitive quiz builder. Design questions, provide multiple-choice answers, and include multimedia elements such as images and videos.';
-  const cardTextDescription = cardText.substring(1, 90) + '...';
-
   return (
     <CardBody>
-      <CardColor priority="without"></CardColor>
-      {/* <CardColor priority ={cardItem.priority}></CardColor> */}
-      <CardTitle>{cardItem.title}Quiz Creation</CardTitle>
-      <CardDescription>
-        {cardItem.text}
-        {cardTextDescription}
-      </CardDescription>
+      <CardColor priority={priority}></CardColor>
+      <CardTitle>{title}</CardTitle>
+      <CardDescription>{cardTextDescription}</CardDescription>
       <CardSolid></CardSolid>
       <CardDetals>
         <CardInformation>
           <Priority>
             <PriorityTitle>Priority</PriorityTitle>
             <PriorityDetals>
-              <PriorityColor priority="without"></PriorityColor>
-              {/* <PriorityColor priority ={cardItem.priority}></PriorityColor> */}
-              <PriorityTipe>{cardItem.priority}Without</PriorityTipe>
+              <PriorityColor priority={priority}></PriorityColor>
+              <PriorityTipe>{priority}</PriorityTipe>
             </PriorityDetals>
           </Priority>
           <Deadline>
             <DeadlineTitle>Deadline</DeadlineTitle>
-            <DeadlineDate>{cardItem.deadline}14/02/2024</DeadlineDate>
+            <DeadlineDate>{formatedDate}</DeadlineDate>
           </Deadline>
         </CardInformation>
         <CardButtons>

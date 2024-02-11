@@ -10,9 +10,6 @@ export const CardBody = styled.div`
   justify-content: flex-start;
   position: relative;
   padding: 14px 20px 14px 24px;
-  /* 
-  margin: 20px;//видалити
-  border: 1px solid black;//видалити */
 `;
 export const CardColor = styled.div`
   position: absolute;
@@ -21,7 +18,7 @@ export const CardColor = styled.div`
   height: 154px;
   top: 0px;
   left: 0px;
-  background-color: ${({priority}) => {
+  background-color: ${({ priority }) => {
     switch (priority) {
       case 'high':
         return '#bedbb0';
@@ -74,6 +71,7 @@ export const Priority = styled.div`
   display: flex;
   flex-direction: column;
   margin-right: 14px;
+  
 `;
 
 export const PriorityDetals = styled.div`
@@ -86,6 +84,7 @@ export const PriorityTitle = styled.p`
   letter-spacing: -0.02em;
   color: rgba(22, 22, 22, 0.5); //не змінюється в темах
   margin-bottom: 4px;
+  text-transform: lowercase;
 `;
 export const PriorityColor = styled.div`
   border-radius: 100%;
