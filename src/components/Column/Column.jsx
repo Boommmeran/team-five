@@ -2,6 +2,8 @@ import { Icon } from 'components/Icon';
 import Modal from 'react-modal';
 import { useState } from 'react';
 import Card from 'components/Card/Card';
+import 'react-perfect-scrollbar/dist/css/styles.css';
+
 import {
   AddBtn,
   CardList,
@@ -10,6 +12,7 @@ import {
   IconedBtn,
   Title,
   Wrap,
+  Container,
 } from './Column.styled';
 import { EditColumnModal } from 'components/EditColumnModal/EditColumnModal';
 import AddCardModal from 'components/AddCardModal/AddCardModal';
@@ -62,10 +65,29 @@ export const Column = () => {
           </IconedBtn>
         </Wrap>
       </HeadWrap>
-      <CardList>
-        <Card />
-        <Card />
-      </CardList>
+      <Container>
+        <CardList>
+          <li>
+            <Card />
+          </li>
+          <li>
+            <Card />
+          </li>
+          <li>
+            <Card />
+          </li>
+          <li>
+            <Card />
+          </li>
+          <li>
+            <Card />
+          </li>
+          <li>
+            <Card />
+          </li>
+        </CardList>
+      </Container>
+
       <AddBtn type="button" onClick={openCardModal}>
         <IconWrap>
           <Icon name="plus" />

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Section = styled.section`
+  padding: 10px 24px;
   grid-column: 2;
   grid-row: 2;
   height: 100vh;
