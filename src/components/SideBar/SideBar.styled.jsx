@@ -29,10 +29,10 @@ export const BoardContainer = styled.div`
     font-family: 'Poppins-Regular';
     opacity: 50%;
   }
-  `;
+`;
 
 export const BoardList = styled.ul`
-margin-bottom: 40px;
+  margin-bottom: 40px;
 `;
 
 export const LogOut = styled.button`

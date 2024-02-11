@@ -49,9 +49,7 @@ export const LoginForm = () => {
         ></LogInputStyled>
         <div>
           {errors?.email && (
-            <p style={{ background: 'red', color: 'white' }}>
-              {errors?.email?.message || 'Error'}
-            </p>
+            <p style={{ color: 'red' }}>{errors?.email?.message || 'Error'}</p>
           )}
         </div>
         <LabelStyled>
@@ -72,12 +70,15 @@ export const LoginForm = () => {
               setPasswordShown(!passwordShown);
             }}
           >
-            <Icon name="eye" />
+            <Icon
+              name="eye"
+              stroke={passwordShown ? 'white' : 'rgba(255, 255, 255, 0.3)'}
+            />
           </IconStyledEye>
         </LabelStyled>
         <div>
           {errors?.password && (
-            <p style={{ background: 'red', color: 'white' }}>
+            <p style={{ color: 'red' }}>
               {errors?.password?.message || 'Error'}
             </p>
           )}

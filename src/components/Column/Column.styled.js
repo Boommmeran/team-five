@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PerfectScrollbar from 'react-perfect-scrollbar';
 
 export const HeadWrap = styled.div`
   display: flex;
@@ -25,6 +26,51 @@ export const Title = styled.h3`
   font-size: 14px;
   line-height: 1.5;
   letter-spacing: -0.02em;
+`;
+
+export const Container = styled(PerfectScrollbar)`
+  max-height: 478px;
+
+  @media (min-width: 768px) {
+    max-height: 640px;
+  }
+
+  @media (min-width: 1180px) {
+    max-height: 478px;
+  }
+
+  overflow: auto;
+  padding: 0;
+  margin-bottom: 14px;
+
+  & .ps__rail-y {
+    position: absolute;
+    width: 8px;
+    background-color: var(--scrollBg) !important;
+    border-radius: 12px;
+    opacity: 1;
+    cursor: pointer;
+  }
+  & .ps__thumb-y {
+    height: 142px !important;
+    width: 8px;
+    background-color: var(--scroll);
+    right: 0;
+    opacity: 1;
+  }
+  & .ps__rail-y:hover > .ps__thumb-y,
+  .ps__rail-y:focus > .ps__thumb-y,
+  .ps__rail-y.ps--clicking .ps__thumb-y {
+    width: 8px;
+    height: 142px;
+  }
+`;
+
+export const CardList = styled.ul`
+  > li:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+  border-radius: 12px;
 `;
 
 export const Wrap = styled.div`
@@ -57,10 +103,6 @@ export const IconedBtn = styled.button`
   &:focus {
     opacity: 1;
   }
-`;
-
-export const CardList = styled.ul`
-  margin-bottom: 14px;
 `;
 
 export const AddBtn = styled.button`
