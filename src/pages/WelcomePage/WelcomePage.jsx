@@ -17,6 +17,7 @@ export default function WelcomePage() {
           <img
             src="https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707485609/pictures/image-welcome.jpg"
             alt="Welcome img"
+            style={{ mixBlendMode: 'multiply' }}
           />
         </ThumbWelcomeImg>
         <LogoStyled>

@@ -28,7 +28,7 @@ export const Container = styled.div`
   @media ${device.tablet} {
     width: 768px;
   }
-  @media ${device.laptop} {
+  @media ${device.laptopL} {
     width: 1440px;
   }
 `;
