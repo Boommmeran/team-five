@@ -44,14 +44,23 @@ export const StyledFieldInModal = styled(Field)`
 
   outline: transparent;
   outline-offset: -1px;
-  border: 1px solid rgba(190, 219, 176, 0.4);
+  border: 1px solid var(--accent);
   border-radius: 8px;
   resize: none;
+  opacity: 0.4;
 
   font-size: 14px;
   line-height: 1.4;
 
   color: var(--primaryTextColor);
+
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 1;
+  }
+
+  transition: opacity var(--transition);
 
   @media only screen and (min-width: 375px) {
     width: 287px;
@@ -74,15 +83,25 @@ export const StyledTextareaInModal = styled(Field)`
 
   outline: transparent;
   outline-offset: -1px;
-  border: 1px solid rgba(190, 219, 176, 0.4);
+  border: 1px solid var(--accent);
   border-radius: 8px;
   resize: none;
+  opacity: 0.4;
 
   font-size: 14px;
   height: calc(30px * 4);
   line-height: 1.5;
 
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 1;
+  }
+
   color: var(--primaryTextColor);
+
+  transition: opacity var(--transition);
+
   @media only screen and (min-width: 375px) {
     width: 287px;
   }
@@ -99,13 +118,21 @@ export const ButtonForModal = styled.button`
   height: 49px;
   width: 100%;
 
-  background: var(--accent);
+  background-color: var(--accent);
   border: 0;
   border-radius: 8px;
 
   color: var(--primaryTextColor);
   font-size: 14px;
   line-height: 1.5;
+  cursor: pointer;
+
+  transition: background-color var(--transition);
+
+  &:hover,
+  :focus {
+    background-color: var(--btnBgColorHover);
+  }
 
   @media only screen and (min-width: 375px) {
     width: 287px;
