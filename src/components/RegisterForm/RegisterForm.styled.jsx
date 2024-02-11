@@ -20,7 +20,11 @@ export const RegisterStyledSection = styled.div`
     height: 770px;
   }
 `;
+
 export const RegInputStyled = styled.input`
+  @media only screen and (max-width: 320px) {
+    width: 100%;
+  }
   display: flex;
   width: 287px;
   height: 49px;
@@ -30,6 +34,7 @@ export const RegInputStyled = styled.input`
   border: 1px solid rgba(190, 219, 176, 0.4);
   border-radius: 8px;
   outline: none;
+  transition: var(--transition);
   &:hover,
   &:focus,
   &:active {
@@ -44,15 +49,14 @@ export const IconStyledEye = styled.i`
   position: absolute;
   top: 33%;
   right: 5%;
-  &:hover {
-    stroke: white;
-  }
+  transition: var(--transition);
 `;
 
 export const StyledNavLinkRegister = styled(NavLink)`
   font-family: 'Poppins-medium', sans-serif;
   color: rgba(255, 255, 255, 0.3);
   font-size: 18px;
+  transition: var(--transition);
   cursor: pointer;
   &:hover,
   &:focus,
@@ -62,8 +66,14 @@ export const StyledNavLinkRegister = styled(NavLink)`
   &.active {
     color: white;
   }
+  @media only screen and (max-width: 375px) {
+    font-size: 12px;
+  }
 `;
 export const FormRegisterStyled = styled.form`
+  @media only screen and (max-width: 320px) {
+    width: 100%;
+  }
   width: 335px;
   display: flex;
   justify-content: center;
@@ -88,6 +98,9 @@ export const WrapForRegNav = styled.div`
   margin-bottom: 30px;
 `;
 export const ButtonRegister = styled.button`
+  @media only screen and (max-width: 320px) {
+    width: 100%;
+  }
   font-family: 'Poppins-medium', sans-serif;
   font-size: 14px;
   letter-spacing: -0.02em;
@@ -98,11 +111,22 @@ export const ButtonRegister = styled.button`
   background: rgba(190, 219, 176, 1);
   border: 1px solid rgba(190, 219, 176, 0.4);
   border-radius: 8px;
+  transition: var(--transition);
   &:hover,
   &:focus {
     background: rgba(157, 200, 136, 1);
   }
   @media only screen and (min-width: 768px) {
     width: 344px;
+  }
+`;
+export const ErrorRegistrationMessage = styled.p`
+  color: red;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 12px;
+  @media only screen and (max-width: 375px) {
+    font-size: 8px;
   }
 `;
