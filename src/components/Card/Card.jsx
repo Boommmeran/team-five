@@ -24,14 +24,14 @@ import {
   Button,
 } from './Card.styled';
 
-const cardItem ={
+const cardItem = {
   title: 'Quiz Creation',
   text: 'Create engaging and interactive quizzes using Kahoot`s intuitive quiz builder. Design questions, provide multiple-choice answers, and include multimedia elements such as images and videos.',
   priority: {
-    enum: ["without", "low", "medium", "high"],
+    enum: ['without', 'low', 'medium', 'high'],
   },
   deadline: '14/02/2024',
-}
+};
 
 export default function Card(cardItem) {
   const [modalCardIsOpen, setmodalCardIsOpen] = useState(false);
@@ -59,15 +59,18 @@ export default function Card(cardItem) {
     setmodalCardIsOpen(false);
   };
 
+  const cardText =
+    'Create engaging and interactive quizzes using Kahoot`s intuitive quiz builder. Design questions, provide multiple-choice answers, and include multimedia elements such as images and videos.';
+  const cardTextDescription = cardText.substring(1, 90) + '...';
+
   return (
     <CardBody>
-      <CardColor priority ="without"></CardColor>
+      <CardColor priority="without"></CardColor>
       {/* <CardColor priority ={cardItem.priority}></CardColor> */}
       <CardTitle>{cardItem.title}Quiz Creation</CardTitle>
-      <CardDescription>{cardItem.text}
-        Create engaging and interactive quizzes using Kahoot's intuitive quiz
-        builder. Design questions, provide multiple-choice answers, and include
-        multimedia elements such as images and videos.
+      <CardDescription>
+        {cardItem.text}
+        {cardTextDescription}
       </CardDescription>
       <CardSolid></CardSolid>
       <CardDetals>
@@ -75,7 +78,7 @@ export default function Card(cardItem) {
           <Priority>
             <PriorityTitle>Priority</PriorityTitle>
             <PriorityDetals>
-              <PriorityColor priority ="without"></PriorityColor>
+              <PriorityColor priority="without"></PriorityColor>
               {/* <PriorityColor priority ={cardItem.priority}></PriorityColor> */}
               <PriorityTipe>{cardItem.priority}Without</PriorityTipe>
             </PriorityDetals>

@@ -21,16 +21,18 @@ export const CardColor = styled.div`
   height: 154px;
   top: 0px;
   left: 0px;
-  background-color: ${props =>
-    props.priority === 'high'
-      ? '#bedbb0'
-      : props.priority === 'medium'
-      ? '#e09cb5'
-      : props.priority === 'low'
-      ? '#8fa1d0'
-      : props.priority === 'without'
-      ? 'rgba(22, 22, 22, 0.3)'
-      : 'inherit'}; 
+  background-color: ${props => {
+    switch (props.priority) {
+      case 'high':
+        return '#bedbb0';
+      case 'medium':
+        return '#e09cb5';
+      case 'low':
+        return '#8fa1d0';
+      default:
+        return 'rgba(22, 22, 22, 0.3)';
+    }
+  }};
 `;
 export const CardTitle = styled.h4`
   text-align: left;
@@ -90,16 +92,18 @@ export const PriorityColor = styled.div`
   width: 14px;
   height: 14px;
   margin-right: 4px;
-  background-color: ${props =>
-    props.priority === 'high'
-      ? '#bedbb0'
-      : props.priority === 'medium'
-      ? '#e09cb5'
-      : props.priority === 'low'
-      ? '#8fa1d0'
-      : props.priority === 'without'
-      ? 'rgba(22, 22, 22, 0.3)'
-      : 'inherit'};
+  background-color: ${props => {
+    switch (props.priority) {
+      case 'high':
+        return '#bedbb0';
+      case 'medium':
+        return '#e09cb5';
+      case 'low':
+        return '#8fa1d0';
+      default:
+        return 'rgba(22, 22, 22, 0.3)';
+    }
+  }};
 `;
 
 export const PriorityTipe = styled.p`
