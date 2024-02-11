@@ -41,18 +41,13 @@ export const StyledNavLink = styled(NavLink)`
 export const WraperWelcomeSection = styled.section`
   background: linear-gradient(rgba(255, 255, 255, 1) 30%, #bedbb0 92.19%);
   width: 100vw;
-  height: 812px;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  @media only screen and (min-width: 768px) {
-    height: 1024px;
-  }
-  @media only screen and (min-width: 1440px) {
-    height: 770px;
-  }
+  
 `;
 export const WraperContentWelcome = styled.div`
   margin-right: auto;
