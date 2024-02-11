@@ -18,6 +18,7 @@ import {
 
 export const RegisterForm = () => {
   const [passwordShown, setPasswordShown] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -60,7 +61,7 @@ export const RegisterForm = () => {
                 message: 'Name is too short',
               },
             })}
-          ></RegInputStyled>{' '}
+          />
           {errors?.name && (
             <ErrorRegistrationMessage>
               {errors?.name?.message || 'Error'}
@@ -80,7 +81,7 @@ export const RegisterForm = () => {
                 message: 'Email must include @ and .',
               },
             })}
-          ></RegInputStyled>{' '}
+          />
           {errors?.email && (
             <ErrorRegistrationMessage>
               {errors?.email?.message || 'Error'}
@@ -99,7 +100,7 @@ export const RegisterForm = () => {
                 message: 'Password must include minimum 8 characters',
               },
             })}
-          ></RegInputStyled>
+          />
           <IconStyledEye
             onClick={() => {
               setPasswordShown(!passwordShown);
@@ -116,24 +117,37 @@ export const RegisterForm = () => {
             </ErrorRegistrationMessage>
           )}
         </LabelStyled>
-        <RegInputStyled
-          placeholder="Confirm your password"
-          name="confirmPassword"
-          type="password"
-          {...register('confirm_password', {
-            required: true,
-            validate: val => {
-              if (watch('password') !== val) {
-                return 'Your passwords do no match';
-              }
-            },
-          })}
-        />
-        {errors?.confirm_password && (
-          <ErrorRegistrationMessage>
-            {errors?.confirm_password?.message || 'Error'}
-          </ErrorRegistrationMessage>
-        )}
+        <LabelStyled>
+          {' '}
+          <RegInputStyled
+            placeholder="Confirm your password"
+            type={isActive ? 'text' : 'password'}
+            name="confirmPassword"
+            {...register('confirm_password', {
+              required: true,
+              validate: val => {
+                if (watch('password') !== val) {
+                  return 'Your passwords do no match';
+                }
+              },
+            })}
+          />{' '}
+          <IconStyledEye
+            onClick={() => {
+              setIsActive(!isActive);
+            }}
+          >
+            <Icon
+              name="eye"
+              stroke={isActive ? 'white' : 'rgba(255, 255, 255, 0.3)'}
+            />
+          </IconStyledEye>
+          {errors?.confirm_password && (
+            <ErrorRegistrationMessage>
+              {errors?.confirm_password?.message || 'Error'}
+            </ErrorRegistrationMessage>
+          )}
+        </LabelStyled>
         <ButtonRegister type="submit" disabled={!isValid}>
           Register Now
         </ButtonRegister>
