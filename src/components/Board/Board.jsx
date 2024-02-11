@@ -1,5 +1,12 @@
 import { Column } from 'components/Column';
-import { IconWrap, AddBtn, Wrap } from './Board.styled';
+import {
+  IconWrap,
+  AddBtn,
+  Wrap,
+  ColumnItem,
+  Container,
+  ColumnList,
+} from './Board.styled';
 import { Icon } from 'components/Icon';
 import Modal from 'react-modal';
 import { useState } from 'react';
@@ -31,18 +38,31 @@ export const Board = () => {
     setIsOpen(false);
   };
   return (
-    <Wrap>
-      <ul>
-        <li>
-          <Column />
-        </li>
-      </ul>
-      <AddBtn type="button" onClick={openModal}>
-        <IconWrap>
-          <Icon name="plus" />
-        </IconWrap>{' '}
-        Add another column
-      </AddBtn>
+    <>
+      <Container>
+        <Wrap>
+          <ColumnList>
+            <ColumnItem>
+              <Column />
+            </ColumnItem>
+            <ColumnItem>
+              <Column />
+            </ColumnItem>
+            <ColumnItem>
+              <Column />
+            </ColumnItem>
+            <ColumnItem>
+              <Column />
+            </ColumnItem>
+          </ColumnList>
+          <AddBtn type="button" onClick={openModal}>
+            <IconWrap>
+              <Icon name="plus" />
+            </IconWrap>{' '}
+            Add another column
+          </AddBtn>
+        </Wrap>
+      </Container>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -56,6 +76,6 @@ export const Board = () => {
           reqFunc={value => console.log(value)}
         />
       </Modal>
-    </Wrap>
+    </>
   );
 };

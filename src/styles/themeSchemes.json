@@ -56,7 +56,7 @@
     "squareIconColor": "#161616",
 
     "scroll": "rgba(22, 22, 22, 0.1)",
-    "scrollBg": "#fff"
+    "scrollBg": "#e8e8e8"
   },
   "violet": {
     "accent": "#5255bc",
