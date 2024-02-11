@@ -25,21 +25,11 @@ export const Title = styled.h3`
   letter-spacing: -0.02em;
   color: var(--primaryTextColor);
 `;
+
 export const StyledForm = styled(Form)`
   position: relative;
   display: flex;
   flex-direction: column;
-`;
-
-export const AvatarField = styled(Field)`
-  margin-bottom: 25px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 68px;
-  height: 68px;
-  /* border: 1px solid black; */
-  cursor: pointer;
-  border-radius: 8px;
 `;
 
 export const StyledField = styled(Field)`
@@ -60,12 +50,12 @@ export const StyledField = styled(Field)`
   &:focus,
   &:active {
     opacity: 1;
-    &::placeholder{
-      color:transparent;
+    &::placeholder {
+      color: transparent;
     }
-    
   }
 `;
+
 export const LastField = styled(Field)`
   margin-bottom: 24px;
   padding: 14px 18px;
@@ -84,8 +74,8 @@ export const LastField = styled(Field)`
   &:focus,
   &:active {
     opacity: 1;
-    &::placeholder{
-      color:transparent;
+    &::placeholder {
+      color: transparent;
     }
   }
 `;
@@ -98,37 +88,23 @@ export const Button = styled.button`
   padding: 14px 126px;
   color: var(--primaryTextColor);
   font-family: 'Poppins-Medium';
+  font-weight: 500;
   font-size: 14px;
-  line-height: 1.5;
-  letter-spacing: -2;
-`;
+  letter-spacing: -0, 02em;
 
-export const ButtonAvatar = styled.button`
-  position: absolute;
-  top: 125px;
-  right: 155px;
-
-  width: 24px;
-  height: 24px;
-  background: var(--accent);
-  border-radius: 8px;
-  border: 0;
-
-  @media only screen and (min-width: 768px) {
-    right: 186px;
+  &:hover {
+    background: var(--hover);
   }
 `;
 
 export const ErrMsg = styled(ErrorMessage)`
-  /* color: red;
-  font-size: 14px; */
-
   position: absolute;
   top: 2px;
   right: 4px;
 
   color: red;
   font-size: 12px;
+  font-style: italic;
 `;
 
 export const Label = styled.label`
@@ -144,9 +120,9 @@ export const StyledLabel = styled.label`
     position: absolute;
     top: 16px;
     right: 15px;
-    opacity:0,5;
-    &:active{
-      opacity:1;
+    opacity: 0, 5;
+    &:active {
+      opacity: 1;
     }
   }
 `;
