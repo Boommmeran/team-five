@@ -24,7 +24,16 @@ import {
   Button,
 } from './Card.styled';
 
-export default function Card() {
+const cardItem = {
+  title: 'Quiz Creation',
+  text: 'Create engaging and interactive quizzes using Kahoot`s intuitive quiz builder. Design questions, provide multiple-choice answers, and include multimedia elements such as images and videos.',
+  priority: {
+    enum: ['without', 'low', 'medium', 'high'],
+  },
+  deadline: '14/02/2024',
+};
+
+export default function Card(cardItem) {
   const [modalCardIsOpen, setmodalCardIsOpen] = useState(false);
 
   const customStyles = {
@@ -50,14 +59,18 @@ export default function Card() {
     setmodalCardIsOpen(false);
   };
 
+  const cardText =
+    'Create engaging and interactive quizzes using Kahoot`s intuitive quiz builder. Design questions, provide multiple-choice answers, and include multimedia elements such as images and videos.';
+  const cardTextDescription = cardText.substring(1, 90) + '...';
+
   return (
     <CardBody>
-      <CardColor></CardColor>
-      <CardTitle>Quiz Creation</CardTitle>
+      <CardColor priority="without"></CardColor>
+      {/* <CardColor priority ={cardItem.priority}></CardColor> */}
+      <CardTitle>{cardItem.title}Quiz Creation</CardTitle>
       <CardDescription>
-        Create engaging and interactive quizzes using Kahoot's intuitive quiz
-        builder. Design questions, provide multiple-choice answers, and include
-        multimedia elements such as images and videos.
+        {cardItem.text}
+        {cardTextDescription}
       </CardDescription>
       <CardSolid></CardSolid>
       <CardDetals>
@@ -65,13 +78,14 @@ export default function Card() {
           <Priority>
             <PriorityTitle>Priority</PriorityTitle>
             <PriorityDetals>
-              <PriorityColor></PriorityColor>
-              <PriorityTipe>Without</PriorityTipe>
+              <PriorityColor priority="without"></PriorityColor>
+              {/* <PriorityColor priority ={cardItem.priority}></PriorityColor> */}
+              <PriorityTipe>{cardItem.priority}Without</PriorityTipe>
             </PriorityDetals>
           </Priority>
           <Deadline>
             <DeadlineTitle>Deadline</DeadlineTitle>
-            <DeadlineDate>14/02/2024</DeadlineDate>
+            <DeadlineDate>{cardItem.deadline}14/02/2024</DeadlineDate>
           </Deadline>
         </CardInformation>
         <CardButtons>
