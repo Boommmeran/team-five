@@ -1,11 +1,9 @@
 import styled from 'styled-components';
 
 export const Main = styled.main`
-  @media (min-width: 1440px) {
-    display: grid;
-    grid-template-columns: 260px 1fr;
-    grid-template-rows: 68px 1fr;
-  }
+  grid-column: 2;
+  grid-row: 2;
+  
 `;
 
 export const SidebarWrapper = styled.aside`
