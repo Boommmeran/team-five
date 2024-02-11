@@ -24,7 +24,7 @@ export const Input = styled.input`
 export const Button = styled.button`
   position: absolute;
   top: 56px;
-  left: 47%;
+  left:46%;
 
   width: 24px;
   height: 24px;
@@ -33,6 +33,6 @@ export const Button = styled.button`
   border: 0;
 
   @media only screen and (min-width: 768px) {
-    /* right: 186px; */
+    left: 47%;
   }
 `;

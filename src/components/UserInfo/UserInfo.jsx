@@ -36,26 +36,19 @@ export const UserInfo = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-  console.log("userInfo", cloudinaryBaseURL + user.avatarURL)
 
   return (
     <Container>
       <Name>{user.name}</Name>
-      {/* <picture> */}
-        {/* <source
-          srcSet="
-              https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707503119/pictures/user-1x.webp 1x,
-              https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707503119/pictures/user-2x.webp 2x
-            "
-        /> */}
-        <Avatar
-          src={cloudinaryBaseURL + user.avatarURL}
-          width="32"
-          height="32"
-          alt="user photo"
-          onClick={openModal}
-        />
-      {/* </picture> */}
+
+      <Avatar
+        src={cloudinaryBaseURL + user.avatarURL}
+        width="32"
+        height="32"
+        alt="user photo"
+        onClick={openModal}
+      />
+
       <Modal isOpen={isModalOpen} style={customStyles} contentLabel="Modal">
         <EditProfile />
         <Button onClick={closeModal}>

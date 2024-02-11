@@ -13,36 +13,27 @@ const cloudinaryBaseURL =
 export const UpdateAvatar = () => {
   const { user } = useAuth();
   const dispatch = useDispatch();
-  console.log('Component', user.avatarURL);
+
   const filePicker = useRef(null);
 
-  const handleFileChange =  event => {
+  const handleFileChange = event => {
     const selectedFile = event.target.files[0];
-    console.log(event.target.files[0]);
-   dispatch(updateAvatar(selectedFile));
+
+    dispatch(updateAvatar(selectedFile));
   };
 
   const handlePick = () => {
     filePicker.current.click();
   };
   return (
+    <ContainerAvatar>
+      <Avatar
+        src={cloudinaryBaseURL + user.avatarURL}
+        width="68"
+        height="68"
+        alt="user photo"
+      />
 
-        <ContainerAvatar>
-      {/* <picture>
-        <source
-          srcSet="
-              https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707503119/pictures/user-1x.webp 1x,
-              https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707503119/pictures/user-2x.webp 2x
-            "
-        /> */}
-        <Avatar
-          // src = "https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707503119/avatars/65c7535718c4cbf97cce7270"
-           src={cloudinaryBaseURL + user.avatarURL}
-          width="68"
-          height="68"
-          alt="user photo"
-        />
-      {/* </picture> */}
       <Button onClick={handlePick}>
         <Icon
           name="plus"
