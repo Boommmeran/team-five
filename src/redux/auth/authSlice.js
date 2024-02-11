@@ -55,7 +55,7 @@ export const authSlice = createSlice({
         state.isRefreshing = false;
       })
       .addCase(update.fulfilled, (state, action) => {
-        state.user = action.payload;
+        state.user = { ...state.user, ...action.payload };
       })
       .addCase(updateAvatar.fulfilled, (state, action) => {
         state.user.avatarURL = action.payload;

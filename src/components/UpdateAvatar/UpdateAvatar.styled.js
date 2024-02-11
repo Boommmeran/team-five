@@ -1,16 +1,14 @@
 import styled from 'styled-components';
 
 export const ContainerAvatar = styled.div`
-position:relative;
+  position: relative;
   display: flex;
   justify-content: center;
-  
 `;
 
 export const Avatar = styled.img`
-
-margin-bottom:25px;
-border-radius:8px;
+  margin-bottom: 25px;
+  border-radius: 8px;
 `;
 
 export const Input = styled.input`
@@ -25,8 +23,8 @@ export const Input = styled.input`
 
 export const Button = styled.button`
   position: absolute;
-  top: 58px;
-left: 46%;
+  top: 56px;
+  left: 47%;
 
   width: 24px;
   height: 24px;
@@ -35,6 +33,6 @@ left: 46%;
   border: 0;
 
   @media only screen and (min-width: 768px) {
-    right: 186px;
+    /* right: 186px; */
   }
 `;

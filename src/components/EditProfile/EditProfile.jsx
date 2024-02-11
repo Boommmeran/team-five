@@ -25,13 +25,14 @@ export const EditProfile = () => {
   return (
     <Container>
       <Title>Edit profile</Title>
-      <UpdateAvatar />
+     <UpdateAvatar />
 
       <Formik
         initialValues={{
           name: user.name,
           email: user.email,
           password: '',
+          
         }}
         validationSchema={EditProfileSchema}
         onSubmit={(values, actions) => {
@@ -39,6 +40,7 @@ export const EditProfile = () => {
         }}
       >
         <StyledForm>
+           
           <Label>
             <StyledField id="name" name="name" />
             <ErrMsg name="name" component="p" />

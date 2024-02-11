@@ -16,10 +16,10 @@ export const UpdateAvatar = () => {
   console.log('Component', user.avatarURL);
   const filePicker = useRef(null);
 
-  const handleFileChange = async event => {
+  const handleFileChange =  event => {
     const selectedFile = event.target.files[0];
     console.log(event.target.files[0]);
-    dispatch(updateAvatar(selectedFile));
+   dispatch(updateAvatar(selectedFile));
   };
 
   const handlePick = () => {
@@ -28,21 +28,21 @@ export const UpdateAvatar = () => {
   return (
 
         <ContainerAvatar>
-      <picture>
+      {/* <picture>
         <source
           srcSet="
               https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707503119/pictures/user-1x.webp 1x,
               https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707503119/pictures/user-2x.webp 2x
             "
-        />
+        /> */}
         <Avatar
-          src = "https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707503119/avatars/65c7535718c4cbf97cce7270"
-          // src={cloudinaryBaseURL + user.avatarURL}
+          // src = "https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707503119/avatars/65c7535718c4cbf97cce7270"
+           src={cloudinaryBaseURL + user.avatarURL}
           width="68"
           height="68"
           alt="user photo"
         />
-      </picture>
+      {/* </picture> */}
       <Button onClick={handlePick}>
         <Icon
           name="plus"
@@ -55,7 +55,7 @@ export const UpdateAvatar = () => {
         type="file"
         ref={filePicker}
         onChange={handleFileChange}
-        accept="image/*,.png,.gif,.web,"
+        accept="image/*,.jpg,.png,.gif,.web,"
       />
     </ContainerAvatar>
   );
