@@ -54,7 +54,7 @@ const schema = Yup.object({
   background: Yup.string().oneOf(backgroundsArr).required(),
 });
 
-export const BoardCreatingModal = ({ onClose, title, btnText, reqFunc }) => {
+export const BoardCreatingModal = ({ onClose, title, btnText }) => {
   // тут має бути прописана логіка отримання даних щодо дошки з redux (для випадка редагування) з подальшим 
   // занесенням у initialValues (у форматі або ?? існуючі стартові двні)
 
@@ -65,7 +65,7 @@ export const BoardCreatingModal = ({ onClose, title, btnText, reqFunc }) => {
   };
 
   const onSubmit = values => {
-    reqFunc(values);
+    // reqFunc(values);
     onClose();
   };
   return (

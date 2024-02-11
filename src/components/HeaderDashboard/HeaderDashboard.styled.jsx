@@ -7,8 +7,6 @@ export const Wrap = styled.div`
 
   margin-bottom: 26px;
 
-  background: var(--secondaryBgColor);
-
   @media (max-width: 767px) {
     padding: 14px 0px;
   }

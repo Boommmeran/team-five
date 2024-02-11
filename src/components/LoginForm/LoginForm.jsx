@@ -3,15 +3,17 @@ import { useDispatch } from 'react-redux';
 // import { NavLink } from 'react-router-dom';
 import { logInUser } from '../../redux/auth/authOperation';
 import { useState } from 'react';
+import { Icon } from 'components/Icon';
 import {
+  ButtonLogin,
+  FormLoginStyled,
   IconStyledEye,
   LabelStyled,
-  LoginInputStyled,
-  LoginStyled,
+  LogInputStyled,
+  LoginStyledSection,
   StyledNavLinkLogin,
   WrapForLoginNav,
 } from './LoginForm.styled';
-import { Icon } from 'components/Icon';
 
 export const LoginForm = () => {
   const [passwordShown, setPasswordShown] = useState(false);
@@ -28,52 +30,64 @@ export const LoginForm = () => {
   };
 
   return (
-    <LoginStyled>
-      <WrapForLoginNav>
-        <StyledNavLinkLogin to="/auth/register">
-          Registration
-        </StyledNavLinkLogin>
-        <StyledNavLinkLogin to="/auth/login">Login</StyledNavLinkLogin>
-      </WrapForLoginNav>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <label>
-          <LoginInputStyled
-            name="email"
-            type="email"
-            {...register('email', {
-              required: 'Required field',
-              pattern: /^\S+@\S+$/i,
-            })}
-          ></LoginInputStyled>
-        </label>
-        <div>{errors?.email && <p>{errors?.email?.message || 'Error'}</p>}</div>
-        <LabelStyled style={{ stroke: 'red' }}>
-          <LoginInputStyled
-            style={{ position: 'relative' }}
+    <LoginStyledSection>
+      <FormLoginStyled onSubmit={handleSubmit(onSubmit)}>
+        <WrapForLoginNav>
+          <StyledNavLinkLogin to="/auth/register">
+            Registration
+          </StyledNavLinkLogin>
+          <StyledNavLinkLogin to="/auth/login">Login</StyledNavLinkLogin>
+        </WrapForLoginNav>
+        <LogInputStyled
+          placeholder="Enter your email"
+          name="email"
+          type="email"
+          {...register('email', {
+            required: 'Required field',
+            pattern: /^\S+@\S+$/i,
+          })}
+        ></LogInputStyled>
+        <div>
+          {errors?.email && (
+            <p style={{ color: 'red' }}>{errors?.email?.message || 'Error'}</p>
+          )}
+        </div>
+        <LabelStyled>
+          <LogInputStyled
+            placeholder="Confirm a password"
             name="password"
             type={passwordShown ? 'text' : 'password'}
             {...register('password', {
               required: 'Required field',
               minLength: {
                 value: 8,
-                message: 'Password is too short',
+                message: 'Password must include minimum 8 characters',
               },
             })}
-          ></LoginInputStyled>
+          ></LogInputStyled>
           <IconStyledEye
             onClick={() => {
               setPasswordShown(!passwordShown);
             }}
           >
-            {' '}
-            <Icon name="eye" />
-          </IconStyledEye>{' '}
+            <Icon
+              name="eye"
+              stroke={passwordShown ? 'white' : 'rgba(255, 255, 255, 0.3)'}
+            />
+          </IconStyledEye>
         </LabelStyled>
         <div>
-          {errors?.password && <p>{errors?.password?.message || 'Error'}</p>}
+          {errors?.password && (
+            <p style={{ color: 'red' }}>
+              {errors?.password?.message || 'Error'}
+            </p>
+          )}
         </div>
-        <input type="submit" disabled={!isValid} />
-      </form>
-    </LoginStyled>
+
+        <ButtonLogin type="submit" disabled={!isValid}>
+          Login Now
+        </ButtonLogin>
+      </FormLoginStyled>
+    </LoginStyledSection>
   );
-}
+};

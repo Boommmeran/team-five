@@ -24,15 +24,21 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <div>
       <GlobalStyles theme={themes[theme]} />
+
       {isRefreshing ? (
-      <Spinner />) : (
-      <>
-        <Suspense fallback={null}>
+        <Spinner />
+      ) : (
+        <Suspense fallback={<Spinner />}>
           <Routes>
             <Route path="/" element={<Layout />}>
-              <Route path="/welcome" element={<WelcomePage />} />
+              <Route
+                path="/welcome"
+                element={
+                  <RestrictedRoute component={<WelcomePage />} redirect="/" />
+                }
+              />
               <Route
                 path="auth/:id"
                 element={
@@ -48,8 +54,7 @@ export const App = () => {
             </Route>
           </Routes>
         </Suspense>
-      </>
       )}
-    </>
+    </div>
   );
-}
+};
