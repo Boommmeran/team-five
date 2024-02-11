@@ -8,6 +8,7 @@ import { RestrictedRoute } from './RedirectRoute';
 import { GlobalStyles } from './GlobalStyles';
 import themes from '../styles/themeSchemes.json';
 import { useAuth } from 'hooks';
+import { useTheme } from 'hooks/useTheme';
 
 const WelcomePage = lazy(() => import('pages/WelcomePage'));
 const AuthPage = lazy(() => import('pages/AuthPage'));
@@ -16,6 +17,7 @@ const HomePage = lazy(() => import('pages/HomePage'));
 export const App = () => {
   const dispatch = useDispatch();
   const { isRefreshing, theme = 'dark' } = useAuth();
+  // const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     dispatch(refreshing());

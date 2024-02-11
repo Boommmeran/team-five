@@ -1,10 +1,4 @@
-import {
-  Container,
-  Name,
-  Avatar,
-  Button,
-  ContainerInfo,
-} from './ProfileInfo.styled';
+import { Container, Name, Avatar, Button } from './ProfileInfo.styled';
 import { EditProfile } from 'components/EditProfile';
 import Modal from 'react-modal';
 import img from './image_profile.jpg';

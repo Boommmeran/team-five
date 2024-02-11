@@ -28,6 +28,7 @@ export const Avatar = styled.img`
   height: 32px;
   cursor: pointer;
   border: 1px solid black;
+  border-radius: 5px;
 `;
 
 export const Button = styled.button`

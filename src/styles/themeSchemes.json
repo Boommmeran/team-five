@@ -9,7 +9,7 @@
     "modalBgColor": "#151515",
     "primaryTextColor": "#fff",
     "secondaryTextColor": "rgba(255, 255, 255, 0.5)",
-    "nonAccentTextColor": "rgba(255, 255, 255, 0.5)",
+    "nonAccentTextColor": "rgba(255, 255, 255, 0.8)",
     "btnPlus": "#bedbb0",
     "btnPlusHover": "#9dc888"
   },
