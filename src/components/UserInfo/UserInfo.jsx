@@ -2,10 +2,12 @@ import { Container, Name, Avatar, Button } from './UserInfo.styled';
 import { EditProfile } from 'components/EditProfile';
 import { Icon } from 'components/Icon';
 import Modal from 'react-modal';
-import img from './image_profile.jpg';
 import { useState } from 'react';
 
 import { useAuth } from 'hooks';
+
+const cloudinaryBaseURL =
+  'https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707503119/';
 
 const customStyles = {
   content: {
@@ -13,7 +15,6 @@ const customStyles = {
     left: '50%',
     right: 'auto',
     bottom: 'auto',
-    // marginRight: '-50%',
     padding: '0',
     transform: 'translate(-50%, -50%)',
     boxShadow: '0px 4px 16px 0px #1616160D',
@@ -22,8 +23,6 @@ const customStyles = {
     background: 'rgba(0,0,0,0.5)',
   },
 };
-
-Modal.setAppElement('#root');
 
 export const UserInfo = () => {
   const { user } = useAuth();
@@ -38,18 +37,17 @@ export const UserInfo = () => {
     setIsModalOpen(false);
   };
 
-  //   useEffect(() => {
-  //     dispatch(updateAvatar());
-
-  // }, [dispatch])
-
   return (
     <Container>
-      <Name>
-        <h4>Ivetta</h4>
-        {/* {user.name} */}
-      </Name>
-      <Avatar src={img} alt="image profile" onClick={openModal} />
+      <Name>{user.name}</Name>
+
+      <Avatar
+        src={cloudinaryBaseURL + user.avatarURL}
+        width="32"
+        height="32"
+        alt="user photo"
+        onClick={openModal}
+      />
 
       <Modal isOpen={isModalOpen} style={customStyles} contentLabel="Modal">
         <EditProfile />

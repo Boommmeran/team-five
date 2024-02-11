@@ -1,22 +1,29 @@
 import styled, { keyframes } from 'styled-components';
 
+export const Wrap = styled.div`
+  grid-column: 2;
+  grid-row: 1;
+`;
+
+export const MenuBtn = styled.button`
+  @media (min-width: 1180px) {
+    display: none;
+  }
+`;
+
 export const Container = styled.div`
   display: flex;
   gap: 4px;
   justify-content: right;
-
   position: fixed;
   top: 0;
   right: 0;
-
   width: 100%;
   max-width: 800px;
   height: 68px;
   padding: 14px;
-
   background-color: var(--headerBgColor);
   color: var(--primaryTextColor);
-
   letter-spacing: -0.02em;
 `;
 
@@ -26,22 +33,11 @@ export const ThemeContainer = styled.div`
 `;
 
 export const AddBtn = styled.button`
-  display: flex;
-  align-items: center;
   gap: 8px;
   background: transparent;
   max-width: 335px;
   border: none;
   border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: -0.02em;
-  cursor: pointer;
-`;
-
-export const Theme = styled.div`
-  font-family: 'Poppins-Regular';
   font-size: 14px;
   display: flex;
   column-gap: 4px;
@@ -50,10 +46,6 @@ export const Theme = styled.div`
 `;
 
 export const IconWrap = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   > svg {
     width: 14px;
     height: 14px;
@@ -73,7 +65,6 @@ export const Navigation = styled.nav`
   background-color: #151515;
   border-radius: 8px;
   cursor: pointer;
-
   // opacity: 0;
   // transform: translateY(-10px);
   // visibility: hidden;
@@ -91,6 +82,14 @@ const fade = keyframes`
   to {
     opacity: 0.7;
   }
+`;
+
+export const Theme = styled.div`
+  font-family: 'Poppins-Regular';
+  font-size: 14px;
+  display: flex;
+  column-gap: 4px;
+  align-items: right;
 `;
 
 export const NavigationItem = styled.button`

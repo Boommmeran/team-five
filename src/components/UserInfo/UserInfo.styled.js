@@ -2,17 +2,11 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  width: 79px;
-  height: 40px;
+
   gap: 8px;
-  align-items: center;
-  justify-content: center;
 `;
 
 export const Name = styled.p`
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin: 5px 0;
   font-family: 'Poppins-Medium';
   font-size: 14px;
@@ -22,14 +16,7 @@ export const Name = styled.p`
 `;
 
 export const Avatar = styled.img`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
   cursor: pointer;
-  border: 1px solid black;
-  border-radius: 5px;
 `;
 
 export const Button = styled.button`
