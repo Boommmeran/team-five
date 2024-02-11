@@ -46,8 +46,6 @@ export const BoardItem = ({ board }) => {
     dispatch(deleteBoard(BoardId));
   }
 
-console.log(currentBoard)
-
   return (
     <BoardItemContainer
       onClick={(event) => handleSelectBoard(event, board._id)}
@@ -73,6 +71,7 @@ console.log(currentBoard)
           onClose={closeModal}
           title="Edit board"
           btnText="Edit"
+          board={board}
         />
       </Modal>
     </BoardItemContainer>
