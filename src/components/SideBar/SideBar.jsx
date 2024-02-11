@@ -1,22 +1,28 @@
-import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectBoards } from '../../redux/boards/boardsSelectors.js';
+import { fetchBoards } from '../../redux/boards/boardsOperations.js';
 import { logOut } from '../../redux/auth/authOperation.js';
+import { NeedHelp } from 'components/NeedHelp';
+import { BoardCreation } from 'components/SidebarBoardCreation';
+
+import { BoardItem } from 'components/BoardItem';
 import { Icon } from 'components/Icon';
 import {
   SidebarContainer,
   Logo,
   BoardContainer,
   BoardList,
-  BoardCreationBlock,
-  BtnCreate,
-  NeedHelpBlock,
-  NeedHelpBtn,
   LogOut,
-  BoardItem,
-  ControlIconsContainer,
 } from './SideBar.styled';
 
 export const Sidebar = () => {
   const dispatch = useDispatch();
+  const boards = useSelector(selectBoards);
+
+  useEffect(() => {
+    dispatch(fetchBoards());
+  }, [dispatch]);
 
   const handleLogOut = () => {
     dispatch(logOut());
@@ -30,62 +36,17 @@ export const Sidebar = () => {
       </Logo>
       <BoardContainer>
         <h3>My boards</h3>
-        <BoardCreationBlock>
-          <p>
-            Create a<br />
-            new board
-          </p>
-          <BtnCreate type="button">
-            <Icon name="plus" width="20" height="20" />
-          </BtnCreate>
-        </BoardCreationBlock>
+        <BoardCreation />
         <BoardList>
-          <BoardItem>
-            <Icon
-              name="four-circles"
-              width="18"
-              height="18"
-              style={{ opacity: 0.5 }}
+          {boards.map(board => (
+            <BoardItem
+              key={board._id}
+              board={board}
             />
-            <p>Board name</p>
-            <ControlIconsContainer>
-              <button type="button">
-                <Icon name="pencil" width="16" height="16" />
-              </button>
-              <button>
-                <Icon name="trash" width="16" height="16" />
-              </button>
-            </ControlIconsContainer>
-          </BoardItem>
+          ))}
         </BoardList>
       </BoardContainer>
-      <NeedHelpBlock>
-        <picture>
-          <source
-            srcSet="
-              https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707115407/cactus-1x.webp 1x,
-              https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707115407/cactus-2x.webp 2x
-            "
-          />
-          <img
-            src="https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707115407/cactus-1x.webp"
-            width="54"
-            height="78"
-            alt="little cute cactus"
-          />
-        </picture>
-        <p>
-          If you need help with{' '}
-          <span style={{ color: 'var(--accent)' }}>TaskPro</span>, check out our
-          support resources or reach out to our customer support team.
-        </p>
-        <NeedHelpBtn type="button">
-          <div style={{ stroke: 'var(--primaryTextColor)' }}>
-            <Icon name="help" width="20" height="20" />
-          </div>
-          <span>Need help?</span>
-        </NeedHelpBtn>
-      </NeedHelpBlock>
+      <NeedHelp />
       <LogOut type="button" onClick={handleLogOut}>
         <Icon name="login" width="32" height="32" />
         <p>Log out</p>

@@ -1,11 +1,11 @@
-import { Container, Name, Avatar, Button } from './ProfileInfo.styled';
+import { Container, Name, Avatar, Button } from './UserInfo.styled';
 import { EditProfile } from 'components/EditProfile';
+import { Icon } from 'components/Icon';
 import Modal from 'react-modal';
 import img from './image_profile.jpg';
 import { useState } from 'react';
-// import { useDispatch } from 'react-redux';
+
 import { useAuth } from 'hooks';
-// import { updateAvatar } from 'redux/auth/authOperation';
 
 const customStyles = {
   content: {
@@ -13,7 +13,7 @@ const customStyles = {
     left: '50%',
     right: 'auto',
     bottom: 'auto',
-    marginRight: '-50%',
+    // marginRight: '-50%',
     padding: '0',
     transform: 'translate(-50%, -50%)',
     boxShadow: '0px 4px 16px 0px #1616160D',
@@ -27,7 +27,7 @@ Modal.setAppElement('#root');
 
 export const UserInfo = () => {
   const { user } = useAuth();
-  // const dispatch = useDispatch();
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -53,7 +53,9 @@ export const UserInfo = () => {
 
       <Modal isOpen={isModalOpen} style={customStyles} contentLabel="Modal">
         <EditProfile />
-        <Button onClick={closeModal}>X</Button>
+        <Button onClick={closeModal}>
+          <Icon name="close" stroke="var(--primaryTextColor)" />
+        </Button>
       </Modal>
     </Container>
   );

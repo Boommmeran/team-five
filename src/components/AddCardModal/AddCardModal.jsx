@@ -1,9 +1,9 @@
-import React from 'react';
-import Modal from 'react-modal';
-import { Formik, Field } from 'formik';
+import { useState } from 'react';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
-import Calendar from '../Сalendar';
-// import { Icon } from 'components/Icon';
+import { Calendar } from 'components/Calendar';
+import { Icon } from 'components/Icon';
+
 import {
   ModalBody,
   Container,
@@ -16,121 +16,119 @@ import {
   DeadlineStyle,
   AddButton,
   StylePlus,
-  AddCardButton,
   RadioButton,
-  RadioButtonBlue,
+  RadioButtonBlu,
+  RadioButtonRed,
+  RadioButtonGreen,
+  RadioButtonGrey,
+  StyledForm,
+  ErrMsg,
+  Label,
 } from './AddCardModal.styled.jsx';
 
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-  },
-};
+const priority = ['without', 'low', 'medium', 'high'];
 
-const FormCardSchema = Yup.object().shape({
-  name: Yup.string()
-    .min(2, 'Too Short!')
-    .max(50, 'Too Long!')
-    .required('Required'),
-  number: Yup.string()
-    .min(2, 'Too Short!')
+const formCardSchema = Yup.object().shape({
+  title: Yup.string()
+    .min(3, `It's can be up to 3 characters long`)
+    .max(10, 'Too Long!')
+    .required(`This field is required.`),
+  description: Yup.string()
+    .min(10, `It's can be up to 10 characters long`)
     .max(500, 'Too Long!')
-    .required('Required'),
+    .required(`This field is required.`),
+  colorPriority: Yup.string().oneOf(priority),
+  deadline: Yup.date(),
 });
 
-Modal.setAppElement('#root');
+export default function AddCardModal({ title, btnText, onClose, reqFunc }) {
+  const [selectedDate, setSelectedDate] = useState(new Date());
 
-export default function AddCardModal({ onAdd }) {
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-
-  function openModal() {
-    setIsOpen(true);
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
+  const onSubmit = values => {
+    reqFunc(values);
+    onClose();
+  };
 
   return (
-    <>
-      <AddCardButton onClick={openModal}>
-        <StylePlus>
-          +{/* <Icon name="icon-plus" width="14" height="14" /> */}
-        </StylePlus>
-        <p> Add another card</p>
-      </AddCardButton>
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Example Modal"
-      >
-        <Container>
-          <ModalBody>
-            <TitleModal>Add card</TitleModal>
-            <CloseModal>
-              <button type="button" onClick={closeModal}>
-                x{/* <Icon name="icon-close" width="18" height="18" /> */}
-              </button>
-            </CloseModal>
-            <Formik
-              initialValues={{
-                title: '',
-                description: '',
-                colorPicker: '',
-                dealline: '',
-              }}
-              validationSchema={FormCardSchema}
-              onSubmit={(values, actions) => {
-                onAdd(values);
-                actions.resetForm();
-              }}
-            >
-              <>
-                <label></label>
-                <TitleCard type="text" name="title" placeholder="Title" />
-                <label></label>
+    <Container>
+      <ModalBody>
+        <TitleModal>{title}</TitleModal>
+        <CloseModal>
+          <button type="button" onClick={onClose}>
+              <Icon
+                name="close"
+                width="18"
+                height="18"
+                stroke="var(--primaryTextColor)"
+              />
+          </button>
+        </CloseModal>
+        <Formik
+          initialValues={{
+            title: '',
+            description: '',
+            colorPriority: 'without',
+            deadline: selectedDate,
+          }}
+          validationSchema={formCardSchema}
+          onSubmit={onSubmit}
+        >
+          {({ handleSubmit, setFieldValue }) => (
+            <StyledForm onSubmit={handleSubmit}>
+              <TitleCard type="text" name="title" placeholder="Title" />
+              <ErrMsg component="p" name="title" />
+              <Label>
                 <StyledDescription
-                  type="textarea"
+                  rows={4}
+                  component="textarea"
                   name="description"
                   placeholder="Description"
                 />
-                <LabelColorStyle id="colorCard-radio-group">
-                  Label color
-                </LabelColorStyle>
-                <StyleRadioButton role="group" aria-labelledby="my-radio-group">
-                  <RadioButtonBlue>
-                    <RadioButton type="radio" name="colorPicker" value="Blue" />
-                  </RadioButtonBlue>
-                  <label>
-                    <Field type="radio" name="colorPicker" value="Red" />
-                  </label>
-                  <label>
-                    <Field type="radio" name="colorPicker" value="Green" />
-                  </label>
-                  <label>
-                    <Field type="radio" name="colorPicker" value="Grey" />
-                  </label>
-                  {/* <div>Picked: {values.picked}</div> */}
-                </StyleRadioButton>
-                <DeadlineStyle>Deadline</DeadlineStyle>
-                <Calendar />
-                <AddButton type="submit">
-                  <StylePlus>
-                    +{/* <Icon name="icon-plus" width="14" height="14" /> */}
-                  </StylePlus>
-                  <p> Add</p>
-                </AddButton>
-              </>
-            </Formik>
-          </ModalBody>
-        </Container>
-      </Modal>
-    </>
+                <ErrMsg component="p" name="description" />
+              </Label>
+              <LabelColorStyle id="colorCard-radio-group">
+                Label color
+              </LabelColorStyle>
+              <StyleRadioButton role="group" aria-labelledby="my-radio-group">
+                <RadioButtonBlu>
+                  <RadioButton type="radio" name="colorPriority" value="low" />
+                </RadioButtonBlu>
+                <RadioButtonRed>
+                  <RadioButton
+                    type="radio"
+                    name="colorPriority"
+                    value="medium"
+                  />
+                </RadioButtonRed>
+                <RadioButtonGreen>
+                  <RadioButton type="radio" name="colorPriority" value="high" />
+                </RadioButtonGreen>
+                <RadioButtonGrey>
+                  <RadioButton
+                    type="radio"
+                    name="colorPriority"
+                    value="without"
+                  />
+                </RadioButtonGrey>
+              </StyleRadioButton>
+              <DeadlineStyle>Deadline</DeadlineStyle>
+              <Calendar
+                selectedDate={selectedDate}
+                onDateChange={date => {
+                  setSelectedDate(date);
+                  setFieldValue('deadline', date);
+                }}
+              />
+              <AddButton type="submit">
+                <StylePlus>
+                  <Icon name="plus" width="14" height="14" />
+                </StylePlus>
+                <p>{btnText}</p>
+              </AddButton>
+            </StyledForm>
+          )}
+        </Formik>
+      </ModalBody>
+    </Container>
   );
 }

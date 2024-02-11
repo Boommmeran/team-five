@@ -1,11 +1,13 @@
 import { Suspense, lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { GlobalStyles } from './GlobalStyles';
 import { Layout } from 'components/Layout';
+import { Spinner } from 'components/Spinner';
 import { useDispatch } from 'react-redux';
 import { refreshing } from '../redux/auth/authOperation';
 import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RedirectRoute';
-import { GlobalStyles } from './GlobalStyles';
+
 import themes from '../styles/themeSchemes.json';
 import { useAuth } from 'hooks';
 import { useTheme } from 'hooks/useTheme';
@@ -16,35 +18,44 @@ const HomePage = lazy(() => import('pages/HomePage'));
 
 export const App = () => {
   const dispatch = useDispatch();
-  const { isRefreshing, theme = 'dark' } = useAuth();
-  // const { theme, setTheme } = useTheme();
+  const { isRefreshing, theme = 'light' } = useAuth();
 
   useEffect(() => {
     dispatch(refreshing());
   }, [dispatch]);
 
-  return isRefreshing ? (
-    <div>Loading...</div>
-  ) : (
-    <>
+  return (
+    <div>
       <GlobalStyles theme={themes[theme]} />
-      <Suspense fallback={null}>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<WelcomePage />} />
-            <Route
-              path="auth/:id"
-              element={
-                <RestrictedRoute component={<AuthPage />} redirect="/home" />
-              }
-            />
-            <Route
-              path="/home"
-              element={<PrivateRoute component={<HomePage />} redirect="/" />}
-            />
-          </Route>
-        </Routes>
-      </Suspense>
-    </>
+
+      {isRefreshing ? (
+        <Spinner />
+      ) : (
+        <Suspense fallback={<Spinner />}>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route
+                path="/welcome"
+                element={
+                  <RestrictedRoute component={<WelcomePage />} redirect="/" />
+                }
+              />
+              <Route
+                path="auth/:id"
+                element={
+                  <RestrictedRoute component={<AuthPage />} redirect="/" />
+                }
+              />
+              <Route
+                index
+                element={
+                  <PrivateRoute component={<HomePage />} redirect="/welcome" />
+                }
+              />
+            </Route>
+          </Routes>
+        </Suspense>
+      )}
+    </div>
   );
 };

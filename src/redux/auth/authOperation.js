@@ -64,14 +64,15 @@ export const refreshing = createAsyncThunk(
   }
 );
 
-// export const updateAvatar = createAsyncThunk('/users/avatars', async (_, thunkAPI) => {
-//   try {
+export const update = createAsyncThunk('update/user', async (user, thunkAPI) => {
+  try {
+    const responce = await axios.patch('/users/update', user);
+    
+    return responce.data;
+    
+  }
+  catch (error) {
+    return thunkAPI.rejectWithValue(error.message);
+  }
+});
 
-//     const responce = await axios.get('http://res.cloudinary.com/dt7u6ic1c/image/upload/v1706799169/')
-//     
-
-//   }
-  // catch (error) {
-  //   console.log(error);
-  // }
-// });

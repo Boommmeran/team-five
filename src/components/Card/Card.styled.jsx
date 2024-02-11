@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 export const CardBody = styled.div`
   border-radius: 8px;
-  width: 335px;
-  /* width: 100%; */
+  width: 335px; // змінити на /* width: 100%; */ коли стане у колонкуи
   height: 154px;
   background: var(--primaryBgColor);
   display: flex;
@@ -11,17 +10,9 @@ export const CardBody = styled.div`
   justify-content: flex-start;
   position: relative;
   padding: 14px 20px 14px 24px;
-
-  margin: 20px;
-  border: 1px solid black;
-
-  @media only screen and (min-width: 375px) {
-    width: 335px;
-  }
-
-  @media only screen and (min-width: 768px) {
-    width: 400px;
-  }
+  /* 
+  margin: 20px;//видалити
+  border: 1px solid black;//видалити */
 `;
 export const CardColor = styled.div`
   position: absolute;
@@ -30,39 +21,49 @@ export const CardColor = styled.div`
   height: 154px;
   top: 0px;
   left: 0px;
-  background: rgba(22, 22, 22, 0.3);
+  background-color: ${props => {
+    switch (props.priority) {
+      case 'high':
+        return '#bedbb0';
+      case 'medium':
+        return '#e09cb5';
+      case 'low':
+        return '#8fa1d0';
+      default:
+        return 'rgba(22, 22, 22, 0.3)';
+    }
+  }};
 `;
 export const CardTitle = styled.h4`
   text-align: left;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
+  font-family: 'Poppins-SemiBold';
   font-size: 14px;
   letter-spacing: -0.02em;
-  color: #161616;
+  color: var(--primaryTextColor);
   margin-bottom: 8px;
 `;
 export const CardDescription = styled.p`
   text-align: left;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
   font-size: 12px;
   line-height: 1.33333;
   letter-spacing: -0.02em;
-  color: rgba(22, 22, 22, 0.7);
-  width: 290;
-  height: 38;
+  color: var(--secondaryTextColor);
+  width: 290px;
+  height: 38px;
+  overflow: hidden; /* скрывает текст, который не помещается в контейнер */
+  text-overflow: ellipsis; /* отображает многоточие для обрезанного текста */
   margin-bottom: 14px;
 `;
 
 export const CardSolid = styled.div`
   border: 1px solid;
-  border-color: rgba(22, 22, 22, 0.1);
+  border-color: rgba(22, 22, 22, 0.1); //не змінюється в темах
   margin-bottom: 14px;
 `;
 
 export const CardDetals = styled.div`
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
 `;
 
 export const CardInformation = styled.div`
@@ -81,27 +82,34 @@ export const PriorityDetals = styled.div`
 
 export const PriorityTitle = styled.p`
   text-align: left;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
   font-size: 8px;
   letter-spacing: -0.02em;
-  color: rgba(22, 22, 22, 0.5);
+  color: rgba(22, 22, 22, 0.5); //не змінюється в темах
   margin-bottom: 4px;
 `;
 export const PriorityColor = styled.div`
   border-radius: 100%;
   width: 14px;
   height: 14px;
-  background-color: rgba(22, 22, 22, 0.3);
   margin-right: 4px;
+  background-color: ${props => {
+    switch (props.priority) {
+      case 'high':
+        return '#bedbb0';
+      case 'medium':
+        return '#e09cb5';
+      case 'low':
+        return '#8fa1d0';
+      default:
+        return 'rgba(22, 22, 22, 0.3)';
+    }
+  }};
 `;
 
 export const PriorityTipe = styled.p`
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
   font-size: 10px;
   letter-spacing: -0.02em;
-  color: #161616;
+  color: var(--primaryTextColor);
 `;
 
 export const Deadline = styled.div`
@@ -112,34 +120,41 @@ export const Deadline = styled.div`
 
 export const DeadlineTitle = styled.p`
   text-align: left;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
   font-size: 8px;
   letter-spacing: -0.02em;
-  color: rgba(22, 22, 22, 0.5);
+  color: rgba(22, 22, 22, 0.5); //не змінюється в темах
   margin-bottom: 4px;
 `;
 
 export const DeadlineDate = styled.p`
   text-align: left;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
   font-size: 10px;
   letter-spacing: -0.02em;
-  color: #161616;
+  color: var(--primaryTextColor);
 `;
 export const CardButtons = styled.div`
-display:flex;
-gap:8px;
-  /* button {
+  display: flex;
+  gap: 8px;
+  stroke: rgba(22, 22, 22, 0.5); //не змінюється в темах
+  button {
     margin: 0;
     padding: 0;
     border: none;
     background: none;
-  } */
+  }
+`;
+export const Bell = styled.button`
+  stroke: var(--accent); //не змінюється в темах
 `;
 
-
-
-
-
+export const Button = styled.button`
+  cursor: pointer;
+  transition: var(--transition);
+  &:hover {
+    stroke: rgba(22, 22, 22);
+  }
+  &:focus,
+  &:active {
+    stroke: var(--accent);
+  }
+`;
