@@ -8,7 +8,6 @@ export const ContainerAvatar = styled.div`
 `;
 
 export const Avatar = styled.img`
-  /* margin-bottom: 25px; */
   border-radius: 8px;
 `;
 
@@ -33,7 +32,7 @@ export const Button = styled.button`
   border-radius: 8px;
   border: 0;
 
-  &:hover &:focus {
+  &:hover, &:focus {
     background: var(--hover);
   }
 

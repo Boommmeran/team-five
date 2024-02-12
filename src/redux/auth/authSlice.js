@@ -38,6 +38,8 @@ export const authSlice = createSlice({
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
+        state.showImage = true;
+        state.showSvg = false;
       })
       .addCase(logInUser.rejected, () =>
         console.log('Email or password is not correct')
@@ -54,6 +56,9 @@ export const authSlice = createSlice({
         state.user = action.payload;
         state.isLoggedIn = true;
         state.isRefreshing = false;
+        state.showImage = true;
+        state.showSvg = false;
+        
       })
       .addCase(refreshing.rejected, state => {
         state.isRefreshing = false;

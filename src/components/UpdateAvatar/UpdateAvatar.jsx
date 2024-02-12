@@ -35,7 +35,7 @@ export const UpdateAvatar = () => {
         <Icon
           name="user"
           fill="var(--secondaryBgColor)"
-          stroke="red"
+          stroke="var(--secondaryTextColor)"
           width="68px"
           height="68px"
         />
@@ -50,12 +50,7 @@ export const UpdateAvatar = () => {
       )}
 
       <Button onClick={handlePick}>
-        <Icon
-          name="plus"
-          width="10px"
-          height="10px"
-          stroke="var(--primaryTextColor)"
-        />
+        <Icon name="plus" width="10px" height="10px" stroke="#161616" />
       </Button>
       <Input
         type="file"

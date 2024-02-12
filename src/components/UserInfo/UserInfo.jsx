@@ -8,7 +8,6 @@ import { useAuth } from 'hooks';
 
 const cloudinaryBaseURL =
   'https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707503119/';
-// const avatarURL = 'pictures/user-1x.webp';
 
 const customStyles = {
   content: {
@@ -18,7 +17,9 @@ const customStyles = {
     bottom: 'auto',
     padding: '0',
     transform: 'translate(-50%, -50%)',
-    boxShadow: '0px 4px 16px 0px #1616160D',
+    boxShadow: ' 0 4px 16px 0 rgba(22, 22, 22, 0.05)',
+    borderRadius: '8px',
+    border: '1px solid rgba(190, 219, 176, 0.5);',
   },
   overlay: {
     background: 'rgba(0,0,0,0.5)',
@@ -29,7 +30,7 @@ export const UserInfo = () => {
   const { user } = useAuth();
   const { showSvg } = useAuth();
   const { showImage } = useAuth();
-console.log(showSvg)
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -46,16 +47,14 @@ console.log(showSvg)
       {showSvg && (
         <ButtonSvg onClick={openModal}>
           <Icon
-          name="user"
-          fill="var(--secondaryBgColor)"
-          stroke="red"
-          width="32px"
-          height="32px"
-          
-        />
+            name="user"
+            fill="var(--secondaryBgColor)"
+            stroke="var(--secondaryTextColor)"
+            width="32px"
+            height="32px"
+          />
         </ButtonSvg>
-        
-      )} 
+      )}
 
       {showImage && (
         <Avatar
@@ -66,18 +65,11 @@ console.log(showSvg)
           onClick={openModal}
         />
       )}
-       {/* <Avatar
-          src={cloudinaryBaseURL + user.avatarURL}
-          width="32"
-          height="32"
-          alt="user photo"
-          onClick={openModal}
-        /> */}
 
       <Modal isOpen={isModalOpen} style={customStyles} contentLabel="Modal">
         <EditProfile />
         <Button onClick={closeModal}>
-          <Icon name="close" stroke="var(--primaryTextColor)" />
+          <Icon name="close" stroke="var(--secondaryTextColor)" />
         </Button>
       </Modal>
     </Container>

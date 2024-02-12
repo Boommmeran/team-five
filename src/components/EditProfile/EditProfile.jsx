@@ -52,7 +52,7 @@ export const EditProfile = () => {
           </Label>
 
           <StyledLabel>
-            <Icon name="eye" stroke="var(--primaryTextColor)" />
+            <Icon name="eye" stroke="var(--secondaryTextColor)" />
             <LastField
               id="password"
               name="password"
@@ -61,7 +61,7 @@ export const EditProfile = () => {
             <ErrMsg name="password" component="p" />
           </StyledLabel>
 
-          <Button type="submit">Submit</Button>
+          <Button type="submit">Send</Button>
         </StyledForm>
       </Formik>
     </Container>
