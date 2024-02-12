@@ -52,7 +52,7 @@ export const LogOut = styled.button`
   font-family: 'Poppins-Medium';
   font-size: 14px;
   cursor: pointer;
-  stroke: var(--accent);
+  stroke: var(--borderInThemeModal);
   transition: var(--transition);
 
   p {

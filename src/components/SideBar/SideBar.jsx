@@ -31,7 +31,7 @@ export const Sidebar = () => {
     <SidebarContainer>
       <div>
         <Logo>
-          <Icon name="logo" width="32" height="32" />
+          <Icon name="logo" width="32" height="32"/>
           <h2>TaskPro</h2>
         </Logo>
         <Title>My boards</Title>

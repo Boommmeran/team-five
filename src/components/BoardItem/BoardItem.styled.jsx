@@ -44,14 +44,14 @@ export const BoardItemContainer = styled.li`
     height: 61px;
     margin-right: -14px;
     margin-left: auto;
-    background-color: var(--accent);
+    background-color: var(--borderInThemeModal);
   }
 `}
 
   &:hover,
   &:focus,
   &:active {
-    background-color: var(--secondaryBgColor);
+    background-color: var(--needHelpBg);
     opacity: 1;
 
     > ${ControlIconsContainer} {
