@@ -1,5 +1,20 @@
 import styled from 'styled-components';
 
+export const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    transform: 'translate(-50%, -50%)',
+    padding: 0,
+    boxShadow: '0px 4px 16px 0px #1616160D',
+  },
+  overlay: {
+    background: 'rgba(0,0,0,0.5)',
+  },
+};
+
 export const CardBody = styled.div`
   border-radius: 8px;
   width: 335px; // змінити на /* width: 100%; */ коли стане у колонкуи
@@ -10,9 +25,6 @@ export const CardBody = styled.div`
   justify-content: flex-start;
   position: relative;
   padding: 14px 20px 14px 24px;
-  /* 
-  margin: 20px;//видалити
-  border: 1px solid black;//видалити */
 `;
 export const CardColor = styled.div`
   position: absolute;
@@ -21,8 +33,8 @@ export const CardColor = styled.div`
   height: 154px;
   top: 0px;
   left: 0px;
-  background-color: ${props => {
-    switch (props.priority) {
+  background-color: ${({ priority }) => {
+    switch (priority) {
       case 'high':
         return '#bedbb0';
       case 'medium':
@@ -74,6 +86,7 @@ export const Priority = styled.div`
   display: flex;
   flex-direction: column;
   margin-right: 14px;
+  
 `;
 
 export const PriorityDetals = styled.div`
@@ -86,11 +99,12 @@ export const PriorityTitle = styled.p`
   letter-spacing: -0.02em;
   color: rgba(22, 22, 22, 0.5); //не змінюється в темах
   margin-bottom: 4px;
+  
 `;
 export const PriorityColor = styled.div`
   border-radius: 100%;
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   margin-right: 4px;
   background-color: ${props => {
     switch (props.priority) {
@@ -110,6 +124,8 @@ export const PriorityTipe = styled.p`
   font-size: 10px;
   letter-spacing: -0.02em;
   color: var(--primaryTextColor);
+  text-transform: capitalize;
+ 
 `;
 
 export const Deadline = styled.div`

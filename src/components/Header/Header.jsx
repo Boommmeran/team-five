@@ -1,24 +1,20 @@
-import { UserInfo } from 'components/UserInfo/UserInfo';
-import { MenuBtn, Wrap } from './Header.styled';
+import { UserInfo } from 'components/UserInfo';
+import { MenuBtn } from './Header.styled';
 import Modal from 'react-modal';
 import { useState } from 'react';
 import { Sidebar } from 'components/SideBar';
-
-const customStyles = {
-  content: {
-    inset: 0,
-    width: 'fit-content',
-    height: 'fit-content',
-    boxShadow: '0px 4px 16px 0px #1616160D',
-    padding: 0,
-  },
-  overlay: {
-    background: 'rgba(0,0,0,0.5)',
-  },
-};
+import { ThemeSwitcher } from 'components/ThemeSwitcher';
+import { Icon } from 'components/Icon';
+import {
+  HeaderStyled,
+  HeaderWrapper,
+  
+  customStylesForModal,
+} from './Header.styled';
 
 export const Header = () => {
   const [isMenuOpen, setIsOpenMenu] = useState(false);
+  
 
   const openMenu = () => {
     setIsOpenMenu(true);
@@ -29,19 +25,23 @@ export const Header = () => {
   };
 
   return (
-    <Wrap>
+    <HeaderStyled>
       <MenuBtn type="button" onClick={openMenu}>
-        MENU
+        <Icon name="menu" stroke="var(--secondaryTextColor)" />
       </MenuBtn>
-      <UserInfo />
+
+      <HeaderWrapper>
+        <ThemeSwitcher/>
+        <UserInfo />
+      </HeaderWrapper>
       <Modal
         isOpen={isMenuOpen}
         onRequestClose={closeMenu}
-        style={customStyles}
+        style={customStylesForModal}
         contentLabel="Sidebar"
       >
         <Sidebar />
       </Modal>
-    </Wrap>
+    </HeaderStyled>
   );
 };

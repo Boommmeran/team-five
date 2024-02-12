@@ -4,6 +4,7 @@ import { useState } from 'react';
 import AddCardModal from 'components/AddCardModal/AddCardModal';
 
 import {
+  customStyles,
   CardBody,
   CardDetals,
   Priority,
@@ -24,32 +25,13 @@ import {
   Button,
 } from './Card.styled';
 
-const cardItem = {
-  title: 'Quiz Creation',
-  text: 'Create engaging and interactive quizzes using Kahoot`s intuitive quiz builder. Design questions, provide multiple-choice answers, and include multimedia elements such as images and videos.',
-  priority: {
-    enum: ['without', 'low', 'medium', 'high'],
-  },
-  deadline: '14/02/2024',
-};
-
-export default function Card(cardItem) {
+export default function Card({ card }) {
   const [modalCardIsOpen, setmodalCardIsOpen] = useState(false);
 
-  const customStyles = {
-    content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      transform: 'translate(-50%, -50%)',
-      padding: 0,
-      boxShadow: '0px 4px 16px 0px #1616160D',
-    },
-    overlay: {
-      background: 'rgba(0,0,0,0.5)',
-    },
-  };
+  const { title, text, deadline, priority } = card;
+  const dateDeadline = new Date(deadline);
+  const formatedDate = `${dateDeadline.getUTCDate()}/${(dateDeadline.getUTCMonth() + 1).toString().padStart(2, '0')}/${dateDeadline.getFullYear()}`;
+  const cardTextDescription = text.substring(0, 90) + '...';
 
   const openCardModal = () => {
     setmodalCardIsOpen(true);
@@ -59,33 +41,24 @@ export default function Card(cardItem) {
     setmodalCardIsOpen(false);
   };
 
-  const cardText =
-    'Create engaging and interactive quizzes using Kahoot`s intuitive quiz builder. Design questions, provide multiple-choice answers, and include multimedia elements such as images and videos.';
-  const cardTextDescription = cardText.substring(1, 90) + '...';
-
   return (
     <CardBody>
-      <CardColor priority="without"></CardColor>
-      {/* <CardColor priority ={cardItem.priority}></CardColor> */}
-      <CardTitle>{cardItem.title}Quiz Creation</CardTitle>
-      <CardDescription>
-        {cardItem.text}
-        {cardTextDescription}
-      </CardDescription>
+      <CardColor priority={priority}></CardColor>
+      <CardTitle>{title}</CardTitle>
+      <CardDescription>{cardTextDescription}</CardDescription>
       <CardSolid></CardSolid>
       <CardDetals>
         <CardInformation>
           <Priority>
             <PriorityTitle>Priority</PriorityTitle>
             <PriorityDetals>
-              <PriorityColor priority="without"></PriorityColor>
-              {/* <PriorityColor priority ={cardItem.priority}></PriorityColor> */}
-              <PriorityTipe>{cardItem.priority}Without</PriorityTipe>
+              <PriorityColor priority={priority}></PriorityColor>
+              <PriorityTipe>{priority}</PriorityTipe>
             </PriorityDetals>
           </Priority>
           <Deadline>
             <DeadlineTitle>Deadline</DeadlineTitle>
-            <DeadlineDate>{cardItem.deadline}14/02/2024</DeadlineDate>
+            <DeadlineDate>{formatedDate}</DeadlineDate>
           </Deadline>
         </CardInformation>
         <CardButtons>

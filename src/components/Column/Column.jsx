@@ -5,6 +5,7 @@ import Card from 'components/Card/Card';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 
 import {
+  customStyles,
   AddBtn,
   CardList,
   HeadWrap,
@@ -17,24 +18,40 @@ import {
 import { EditColumnModal } from 'components/EditColumnModal/EditColumnModal';
 import AddCardModal from 'components/AddCardModal/AddCardModal';
 
-export const Column = () => {
+export const Column = ({ columnId }) => {
   const [modalColumnIsOpen, setmodalColumnIsOpen] = useState(false);
   const [modalCardIsOpen, setmodalCardIsOpen] = useState(false);
-
-  const customStyles = {
-    content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      transform: 'translate(-50%, -50%)',
-      boxShadow: '0px 4px 16px 0px #1616160D',
-      padding: 0,
+  const cards = [
+    {
+      _id: '65c8c3c181c2d3854aa44bce',
+      title: 'Design and Prototyping SoYummy',
+      text: "Create a visually stunning and eye-catching watch dial design that embodies our brand's essence of sleek aesthetics and modern elegance. Your design should be unique, innovative, and reflective of the latest trends in watch design.",
+      priority: 'low',
+      deadline: 'Sun Feb 11 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
     },
-    overlay: {
-      background: 'rgba(0,0,0,0.5)',
+    {
+      _id: '65c8c3c181c2d3854aba44bce',
+      title: 'Design and Prototyping SoYummy',
+      text: "Create a visually stunning and eye-catching watch dial design that embodies our brand's essence of sleek aesthetics and modern elegance. Your design should be unique, innovative, and reflective of the latest trends in watch design.",
+      priority: 'high',
+      deadline: 'Sun Feb 11 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
     },
-  };
+    {
+      _id: '65c8c3c181c2d3854aa44bceg',
+      title: 'Design and Prototyping SoYummy',
+      text: "Create a visually stunning and eye-catching watch dial design that embodies our brand's essence of sleek aesthetics and modern elegance. Your design should be unique, innovative, and reflective of the latest trends in watch design.",
+      priority: 'medium',
+      deadline: 'Sun Feb 11 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
+    },
+    {
+      _id: '65c8c3c181c2d3854aa44bcee',
+      title: 'Design and Prototyping SoYummy',
+      text: "Create a visually stunning and eye-catching watch dial design that embodies our brand's essence of sleek aesthetics and modern elegance. Your design should be unique, innovative, and reflective of the latest trends in watch design.",
+      priority: 'without',
+      deadline: 'Sun Feb 11 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
+    },
+  ];
+  const filtredCards = cards;
 
   const openColumnModal = () => {
     setmodalColumnIsOpen(true);
@@ -67,24 +84,9 @@ export const Column = () => {
       </HeadWrap>
       <Container>
         <CardList>
-          <li>
-            <Card />
-          </li>
-          <li>
-            <Card />
-          </li>
-          <li>
-            <Card />
-          </li>
-          <li>
-            <Card />
-          </li>
-          <li>
-            <Card />
-          </li>
-          <li>
-            <Card />
-          </li>
+          {filtredCards.map(card => (
+            <Card key={card._id} card={card} />
+          ))}
         </CardList>
       </Container>
 
@@ -102,10 +104,10 @@ export const Column = () => {
         ariaHideApp={false}
       >
         <AddCardModal
-          title={'Add another card'}
+          columnId={columnId}
+          title={'Add card'}
           btnText={'Add'}
           onClose={closeCardModal}
-          reqFunc={values => console.log(values)}
         />
       </Modal>
       <Modal

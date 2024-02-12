@@ -1,8 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:9000/api';
-
 export const fetchColumnsByBoardId = createAsyncThunk(
   'columns/boardId',
   async (boardId, thunkAPI) => {

@@ -14,11 +14,17 @@ export default function WelcomePage() {
     <WraperWelcomeSection>
       <WraperContentWelcome>
         <ThumbWelcomeImg>
-          <img
-            src="https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707485609/pictures/image-welcome.jpg"
-            alt="Welcome img"
-            style={{ mixBlendMode: 'multiply' }}
-          />
+          <picture>
+            <source
+              srcSet="http://res.cloudinary.com/dt7u6ic1c/image/upload/v1706799169/avatars/jE_DHXsifaZ7-4NRAsyL3 1x, http://res.cloudinary.com/dt7u6ic1c/image/upload/v1706799169/avatars/RuKeVdzJGSKz9BP0xLfuD 2x"
+              media="(min-width: 1200px)"
+            />
+            <img
+              src="http://res.cloudinary.com/dt7u6ic1c/image/upload/v1706799169/avatars/jE_DHXsifaZ7-4NRAsyL3"
+              alt="Welcome img"
+              style={{ mixBlendMode: 'multiply' }}
+            />
+          </picture>
         </ThumbWelcomeImg>
         <LogoStyled>
           <Icon name={'logo'} width="48px" height="48px" />

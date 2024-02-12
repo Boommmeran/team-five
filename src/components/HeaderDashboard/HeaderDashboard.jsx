@@ -1,24 +1,14 @@
 import { useParams } from 'react-router-dom';
-import { FilterBtn, BoardName, Wrap } from './HeaderDashboard.styled';
+import {
+  customStyles,
+  FilterBtn,
+  BoardName,
+  Wrap,
+} from './HeaderDashboard.styled';
 import { Icon } from 'components/Icon';
 import { useState } from 'react';
 import Modal from 'react-modal';
 import { FilterModal } from 'components/FilterModal/FilterModal';
-
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    transform: 'translate(-50%, -50%)',
-    boxShadow: '0px 4px 16px 0px #1616160D',
-    padding: 0,
-  },
-  overlay: {
-    background: 'rgba(0,0,0,0.5)',
-  },
-};
 
 export const HeaderDashboard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

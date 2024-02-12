@@ -6,13 +6,15 @@ import { useState } from 'react';
 
 import { useAuth } from 'hooks';
 
+const cloudinaryBaseURL =
+  'https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707503119/';
+
 const customStyles = {
   content: {
     top: '50%',
     left: '50%',
     right: 'auto',
     bottom: 'auto',
-    // marginRight: '-50%',
     padding: '0',
     transform: 'translate(-50%, -50%)',
     boxShadow: '0px 4px 16px 0px #1616160D',
@@ -21,8 +23,6 @@ const customStyles = {
     background: 'rgba(0,0,0,0.5)',
   },
 };
-
-Modal.setAppElement('#root');
 
 export const UserInfo = () => {
   const { user } = useAuth();
@@ -40,7 +40,15 @@ export const UserInfo = () => {
   return (
     <Container>
       <Name>{user.name}</Name>
-      <Avatar src="" alt="image user" onClick={openModal} />
+
+      <Avatar
+        src={cloudinaryBaseURL + user.avatarURL}
+        width="32"
+        height="32"
+        alt="user photo"
+        onClick={openModal}
+      />
+
       <Modal isOpen={isModalOpen} style={customStyles} contentLabel="Modal">
         <EditProfile />
         <Button onClick={closeModal}>

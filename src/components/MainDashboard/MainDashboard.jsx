@@ -1,4 +1,4 @@
-// import { StartText, BoardCreationBtn } from './MainDashboard.styled';
+import {customStyles } from './MainDashboard.styled';
 // import { useParams } from 'react-router-dom';
 import { Board } from 'components/Board';
 import Modal from 'react-modal';
@@ -8,21 +8,7 @@ import { BoardCreatingModal } from 'components/BoardCreatingModal';
 export const MainDashboard = () => {
   // const { boardName } = useParams();
   const [modalIsOpen, setIsOpen] = useState(false);
-
-  const customStyles = {
-    content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      transform: 'translate(-50%, -50%)',
-      boxShadow: '0px 4px 16px 0px #1616160D',
-      padding: 0,
-    },
-    overlay: {
-      background: 'rgba(0,0,0,0.5)',
-    },
-  };
+ 
   // const openModal = () => {
   //   setIsOpen(true);
   // };
