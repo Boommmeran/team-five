@@ -17,10 +17,13 @@ export const authSlice = createSlice({
       name: '',
       emai: '',
       avatarURL: '',
+      
     },
     token: null,
     isLoggedIn: false,
     isRefreshing: false,
+    showImage: false,
+    showSvg: true,
   },
   extraReducers: builder =>
     builder
@@ -35,6 +38,8 @@ export const authSlice = createSlice({
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
+        state.showImage = true;
+        state.showSvg = false;
       })
       .addCase(logInUser.rejected, () =>
         console.log('Email or password is not correct')
@@ -51,6 +56,9 @@ export const authSlice = createSlice({
         state.user = action.payload;
         state.isLoggedIn = true;
         state.isRefreshing = false;
+        state.showImage = true;
+        state.showSvg = false;
+        
       })
       .addCase(refreshing.rejected, state => {
         state.isRefreshing = false;
@@ -60,9 +68,13 @@ export const authSlice = createSlice({
       })
       .addCase(updateAvatar.fulfilled, (state, action) => {
         state.user.avatarURL = action.payload;
+        state.showImage = true;
+        state.showSvg = false;
       })
       .addCase(updateAvatar.rejected, (state, action) => {
         state.error = action.payload;
+        state.showImage = false;
+        state.showSvg = true;
       })
       .addCase(changeTheme.fulfilled, (state, action) => {
         state.user = { ...state.user, ...action.payload };
