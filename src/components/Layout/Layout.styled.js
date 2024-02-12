@@ -21,6 +21,9 @@ const device = {
 };
 export const Container = styled.div`
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: 68px 1fr;
 
   @media ${device.mobileM} {
     width: 375px;

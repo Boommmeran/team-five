@@ -12,15 +12,13 @@ export const MenuBtn = styled.button`
 `;
 
 export const HeaderStyled = styled.header`
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
   display: flex;
   gap: 4px;
   justify-content: right;
-  position: fixed;
-  top: 0;
-  right: 0;
+  align-items: center;
   width: 100%;
-  max-width: 800px;
-  height: 68px;
   padding: 14px;
   background-color: var(--headerBgColor);
   color: var(--primaryTextColor);
