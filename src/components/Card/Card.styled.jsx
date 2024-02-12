@@ -99,12 +99,12 @@ export const PriorityTitle = styled.p`
   letter-spacing: -0.02em;
   color: rgba(22, 22, 22, 0.5); //не змінюється в темах
   margin-bottom: 4px;
-  text-transform: lowercase;
+  
 `;
 export const PriorityColor = styled.div`
   border-radius: 100%;
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   margin-right: 4px;
   background-color: ${props => {
     switch (props.priority) {
@@ -124,6 +124,8 @@ export const PriorityTipe = styled.p`
   font-size: 10px;
   letter-spacing: -0.02em;
   color: var(--primaryTextColor);
+  text-transform: capitalize;
+ 
 `;
 
 export const Deadline = styled.div`
