@@ -129,7 +129,7 @@ export const StyledDescription = styled(Field)`
 export const LabelColorStyle = styled.p`
   font-size: 12px;
   letter-spacing: -0.02em;
-  color: rgba(22, 22, 22, 0.5); //не змінюється в темі
+  color: var(--secondaryTextColor);
   margin-bottom: 4px;
 `;
 
@@ -144,14 +144,6 @@ export const RadioButton = styled(Field)`
   position: absolute;
   width: 1px;
   height: 1px;
-
-  /* &:hover,
-  &:focus,
-  &:active {
-    position: static;
-    width: 14px;
-    height: 14px;
-  } */
 `;
 export const RadioButtonBlu = styled.label`
   border-radius: 100%;
@@ -220,7 +212,7 @@ export const RadioButtonGrey = styled.label`
 export const DeadlineStyle = styled.p`
   font-size: 12px;
   letter-spacing: -0.02em;
-  color: rgba(22, 22, 22, 0.5); //не змінюється в темі
+  color: var(--secondaryTextColor);
   margin-bottom: 4px;
 `;
 

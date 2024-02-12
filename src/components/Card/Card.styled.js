@@ -72,7 +72,6 @@ export const PriorityTitle = styled.p`
   letter-spacing: -0.02em;
   color: var(--secondaryTextColor);
   margin-bottom: 4px;
-  text-transform: lowercase;
 `;
 export const PriorityColor = styled.div`
   border-radius: 100%;

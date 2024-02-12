@@ -45,15 +45,6 @@ export const Board = () => {
             <ColumnItem>
               <Column />
             </ColumnItem>
-            <ColumnItem>
-              <Column />
-            </ColumnItem>
-            <ColumnItem>
-              <Column />
-            </ColumnItem>
-            <ColumnItem>
-              <Column />
-            </ColumnItem>
           </ColumnList>
           <AddBtn type="button" onClick={openModal}>
             <IconWrap>

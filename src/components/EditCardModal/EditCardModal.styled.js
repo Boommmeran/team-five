@@ -120,7 +120,7 @@ export const StyledDescription = styled(Field)`
 export const LabelColorStyle = styled.p`
   font-size: 12px;
   letter-spacing: -0.02em;
-  color: rgba(22, 22, 22, 0.5); //не змінюється в темі
+  color: var(--secondaryTextColor);
   margin-bottom: 4px;
 `;
 
@@ -134,7 +134,7 @@ export const StyleRadioButton = styled.div`
 export const DeadlineStyle = styled.p`
   font-size: 12px;
   letter-spacing: -0.02em;
-  color: rgba(22, 22, 22, 0.5);
+  color: var(--secondaryTextColor);
   margin-bottom: 4px;
 `;
 
