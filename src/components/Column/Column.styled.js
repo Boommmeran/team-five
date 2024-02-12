@@ -8,7 +8,6 @@ export const HeadWrap = styled.div`
   width: 335px;
   height: 56px;
 
-  margin-bottom: 14px;
   padding: 17px 20px;
 
   border-radius: 8px;
@@ -32,19 +31,15 @@ export const CardList = styled.ul`
     margin-bottom: 10px;
   }
   border-radius: 12px;
-  max-height: 478px;
 
   @media (min-width: 768px) {
-    max-height: 640px;
   }
 
   @media (min-width: 1180px) {
-    max-height: 478px;
   }
 
   overflow: auto;
   padding: 0;
-  margin-bottom: 14px;
 
   &::-webkit-scrollbar {
     width: 8px; /* ширина скролбару */

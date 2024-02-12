@@ -1,15 +1,5 @@
 import styled from 'styled-components';
 
-export const SidebarContainer = styled.div`
-  width: 225px;
-  min-height: 100vh;
-  padding: 14px;
-  color: var(--primaryTextColor);
-  letter-spacing: -0.02em;
-  text-align: left;
-  background-color: var(--primaryBgColor);
-`;
-
 export const Logo = styled.div`
   font-family: 'Poppins-SemiBold';
   letter-spacing: -0.04em;

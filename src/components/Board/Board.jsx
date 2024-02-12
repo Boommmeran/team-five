@@ -43,7 +43,7 @@ export const Board = () => {
         <Wrap>
           <ColumnList>
             <ColumnItem>
-              <Column />
+              <Column title={'New'} />
             </ColumnItem>
           </ColumnList>
           <AddBtn type="button" onClick={openModal}>

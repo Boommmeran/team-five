@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import { ColumnHead } from 'components/ColumnHead/ColumnHead';
 
-export const Column = ({ columnId }) => {
+export const Column = ({ columnId, title }) => {
   const [modalColumnIsOpen, setmodalColumnIsOpen] = useState(false);
   const [modalCardIsOpen, setmodalCardIsOpen] = useState(false);
   const { cards } = useSelector(state => state.cards);
@@ -49,7 +49,7 @@ export const Column = ({ columnId }) => {
   return (
     <>
       <ColumnHead
-        title={'New column'}
+        title={title}
         openModal={openColumnModal}
         columnId={columnId}
       />

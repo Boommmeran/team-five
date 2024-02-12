@@ -39,6 +39,38 @@ const cards = [
     deadline:
       'Sun Feb 11 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
   },
+  {
+    _id: '65c8c3c181c2d3854aa44bce',
+    title: 'Design and Prototyping SoYummy',
+    text: "Create a visually stunning and eye-catching watch dial design that embodies our brand's essence of sleek aesthetics and modern elegance. Your design should be unique, innovative, and reflective of the latest trends in watch design.",
+    priority: 'low',
+    deadline:
+      'Sun Feb 12 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
+  },
+  {
+    _id: '65c8c3c181c2d3854aa44bce',
+    title: 'Design and Prototyping SoYummy',
+    text: "Create a visually stunning and eye-catching watch dial design that embodies our brand's essence of sleek aesthetics and modern elegance. Your design should be unique, innovative, and reflective of the latest trends in watch design.",
+    priority: 'high',
+    deadline:
+      'Sun Feb 11 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
+  },
+  {
+    _id: '65c8c3c181c2d3854aa44bce',
+    title: 'Design and Prototyping SoYummy',
+    text: "Create a visually stunning and eye-catching watch dial design that embodies our brand's essence of sleek aesthetics and modern elegance. Your design should be unique, innovative, and reflective of the latest trends in watch design.",
+    priority: 'medium',
+    deadline:
+      'Sun Feb 11 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
+  },
+  {
+    _id: '65c8c3c181c2d3854aa44bce',
+    title: 'Design and Prototyping SoYummy',
+    text: "Create a visually stunning and eye-catching watch dial design that embodies our brand's essence of sleek aesthetics and modern elegance. Your design should be unique, innovative, and reflective of the latest trends in watch design.",
+    priority: 'without',
+    deadline:
+      'Sun Feb 11 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
+  },
 ];
 
 export const cardSlice = createSlice({

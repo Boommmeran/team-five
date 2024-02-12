@@ -12,10 +12,14 @@ export const SidebarWrapper = styled.aside`
   @media (max-width: 1179px) {
     display: none;
   }
+
   @media (min-width: 1180px) {
-    display: block;
-    grid-column: 1;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    grid-column: 1 / 2;
     grid-row-start: 1;
-    grid-row-end: 2;
+    grid-row-end: 3;
   }
 `;
