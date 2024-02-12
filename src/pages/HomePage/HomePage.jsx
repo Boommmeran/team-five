@@ -7,10 +7,10 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <SidebarWrapper>
-        <Sidebar />
-      </SidebarWrapper>
       <Main>
+        <SidebarWrapper>
+          <Sidebar />
+        </SidebarWrapper>
         <ScreensPage />
       </Main>
     </>

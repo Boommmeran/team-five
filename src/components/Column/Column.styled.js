@@ -1,21 +1,6 @@
 import styled from 'styled-components';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 
-export const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    transform: 'translate(-50%, -50%)',
-    boxShadow: '0px 4px 16px 0px #1616160D',
-    padding: 0,
-  },
-  overlay: {
-    background: 'rgba(0,0,0,0.5)',
-  },
-};
-
 export const HeadWrap = styled.div`
   display: flex;
   align-items: center;
@@ -50,7 +35,7 @@ export const Container = styled(PerfectScrollbar)`
     max-height: 640px;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 1180px) {
     max-height: 478px;
   }
 

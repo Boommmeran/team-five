@@ -1,19 +1,9 @@
 import styled, { keyframes } from 'styled-components';
 
-export const customStyles = {
-  content: {
-    inset: 0,
-    width: 'fit-content',
-    height: 'fit-content',
-    boxShadow: '0px 4px 16px 0px #1616160D',
-    padding: 0,
-  },
-  overlay: {
-    background: 'rgba(0,0,0,0.5)',
-  },
-};
-
-export const Wrap = styled.div``;
+export const Wrap = styled.div`
+  grid-column: 2;
+  grid-row: 1;
+`;
 
 export const MenuBtn = styled.button`
   @media (min-width: 1180px) {
@@ -22,8 +12,6 @@ export const MenuBtn = styled.button`
 `;
 
 export const HeaderStyled = styled.header`
-  grid-column: 2;
-  grid-row: 1;
   display: flex;
   gap: 4px;
   justify-content: right;
