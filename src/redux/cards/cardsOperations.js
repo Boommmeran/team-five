@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// axios.defaults.baseURL = 'http://localhost:9000/api';
 axios.defaults.baseURL = 'https://team-five-backend-v2.onrender.com/api';
 
 export const fetchCards = createAsyncThunk(
