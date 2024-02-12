@@ -5,7 +5,6 @@ import Card from 'components/Card/Card';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 
 import {
-  customStyles,
   AddBtn,
   CardList,
   HeadWrap,
@@ -52,6 +51,21 @@ export const Column = ({ columnId }) => {
     },
   ];
   const filtredCards = cards;
+
+  const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      transform: 'translate(-50%, -50%)',
+      boxShadow: '0px 4px 16px 0px #1616160D',
+      padding: 0,
+    },
+    overlay: {
+      background: 'rgba(0,0,0,0.5)',
+    },
+  };
 
   const openColumnModal = () => {
     setmodalColumnIsOpen(true);
