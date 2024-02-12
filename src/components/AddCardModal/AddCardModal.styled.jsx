@@ -8,15 +8,11 @@ export const StyledForm = styled(Form)`
 `;
 
 export const Container = styled.div`
+  border-radius: 8px;
+  height: 522px;
   position: relative;
-  display: flex;
-  flex-direction: column;
   padding: 24px;
   width: 100%;
-  height: 522px;
-
-  border-radius: 8px;
-
   background: var(--primaryBgColor);
 
   @media only screen and (min-width: 375px) {
@@ -28,13 +24,16 @@ export const Container = styled.div`
   }
 `;
 
+export const ModalBody = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 export const TitleModal = styled.h2`
   margin-bottom: 24px;
   font-family: 'Poppins-Medium';
   font-size: 18px;
   line-height: 1.5;
-  letter-spacing: -0.02em;
-
   color: var(--primaryTextColor);
 `;
 
@@ -53,7 +52,7 @@ export const CloseModal = styled.div`
 export const ErrMsg = styled(ErrorMessage)`
   position: absolute;
   top: 2px;
-  right: 8px;
+  right: 4px;
 
   color: red;
   font-size: 12px;
@@ -70,7 +69,7 @@ export const TitleCard = styled(Field)`
   box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.08);
   opacity: 0.4;
   margin-bottom: 14px;
-  transition: opacity var(--transition);
+  transition: var(--transition);
 
   &:hover,
   &:focus,
@@ -79,6 +78,10 @@ export const TitleCard = styled(Field)`
     &::placeholder {
       color: transparent;
     }
+  }
+
+  @media only screen and (min-width: 375px) {
+    width: 287px;
   }
 
   @media only screen and (min-width: 768px) {
@@ -103,8 +106,8 @@ export const StyledDescription = styled(Field)`
   box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.08);
   opacity: 0.4;
   margin-bottom: 24px;
-  transition: opacity var(--transition);
-  resize: none;
+  transition: var(--transition);
+
   &:hover,
   &:focus,
   &:active {
@@ -112,6 +115,10 @@ export const StyledDescription = styled(Field)`
     &::placeholder {
       color: transparent;
     }
+  }
+
+  @media only screen and (min-width: 375px) {
+    width: 287px;
   }
 
   @media only screen and (min-width: 768px) {
@@ -224,18 +231,21 @@ export const AddButton = styled.button`
   border-radius: 8px;
   width: 287px;
   height: 49px;
-  background-color: var(--btnPlus);
+  background: var(--btnPlus);
   margin-top: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color var(--transition);
-  cursor: pointer;
+  transition: var(--transition);
 
   &:hover,
   &:focus,
   &:active {
     background-color: var(--btnBgColorHover);
+  }
+  cursor: pointer;
+  @media only screen and (min-width: 375px) {
+    width: 287px;
   }
 
   @media only screen and (min-width: 768px) {
