@@ -2,55 +2,18 @@ import { Icon } from 'components/Icon';
 import Modal from 'react-modal';
 import { useState } from 'react';
 import Card from 'components/Card/Card';
-import 'react-perfect-scrollbar/dist/css/styles.css';
-
-import {
-  AddBtn,
-  CardList,
-  HeadWrap,
-  IconWrap,
-  IconedBtn,
-  Title,
-  Wrap,
-  Container,
-} from './Column.styled';
+import { AddBtn, CardList, IconWrap } from './Column.styled';
 import { EditColumnModal } from 'components/EditColumnModal/EditColumnModal';
 import AddCardModal from 'components/AddCardModal/AddCardModal';
+import { useSelector } from 'react-redux';
+import { nanoid } from '@reduxjs/toolkit';
+import { ColumnHead } from 'components/ColumnHead/ColumnHead';
 
 export const Column = ({ columnId }) => {
   const [modalColumnIsOpen, setmodalColumnIsOpen] = useState(false);
   const [modalCardIsOpen, setmodalCardIsOpen] = useState(false);
-  const cards = [
-    {
-      _id: '65c8c3c181c2d3854aa44bce',
-      title: 'Design and Prototyping SoYummy',
-      text: "Create a visually stunning and eye-catching watch dial design that embodies our brand's essence of sleek aesthetics and modern elegance. Your design should be unique, innovative, and reflective of the latest trends in watch design.",
-      priority: 'low',
-      deadline: 'Sun Feb 11 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
-    },
-    {
-      _id: '65c8c3c181c2d3854aa44bce',
-      title: 'Design and Prototyping SoYummy',
-      text: "Create a visually stunning and eye-catching watch dial design that embodies our brand's essence of sleek aesthetics and modern elegance. Your design should be unique, innovative, and reflective of the latest trends in watch design.",
-      priority: 'high',
-      deadline: 'Sun Feb 11 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
-    },
-    {
-      _id: '65c8c3c181c2d3854aa44bce',
-      title: 'Design and Prototyping SoYummy',
-      text: "Create a visually stunning and eye-catching watch dial design that embodies our brand's essence of sleek aesthetics and modern elegance. Your design should be unique, innovative, and reflective of the latest trends in watch design.",
-      priority: 'medium',
-      deadline: 'Sun Feb 11 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
-    },
-    {
-      _id: '65c8c3c181c2d3854aa44bce',
-      title: 'Design and Prototyping SoYummy',
-      text: "Create a visually stunning and eye-catching watch dial design that embodies our brand's essence of sleek aesthetics and modern elegance. Your design should be unique, innovative, and reflective of the latest trends in watch design.",
-      priority: 'without',
-      deadline: 'Sun Feb 11 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
-    },
-  ];
-  const filtredCards = cards;
+  const { cards } = useSelector(state => state.cards);
+  const filtredCards = cards; //?.filter(({ column: { _id } }) => _id === columnId);
 
   const customStyles = {
     content: {
@@ -85,24 +48,17 @@ export const Column = ({ columnId }) => {
 
   return (
     <>
-      <HeadWrap>
-        <Title>Column title</Title>
-        <Wrap>
-          <IconedBtn type="button" onClick={openColumnModal}>
-            <Icon name="pencil" />
-          </IconedBtn>
-          <IconedBtn type="button">
-            <Icon name="trash" />
-          </IconedBtn>
-        </Wrap>
-      </HeadWrap>
-      <Container>
-        <CardList>
-          {filtredCards.map(card => (
-            <Card card={card} />
-          ))}
-        </CardList>
-      </Container>
+      <ColumnHead
+        title={'New column'}
+        openModal={openColumnModal}
+        columnId={columnId}
+      />
+
+      <CardList>
+        {filtredCards.map(card => (
+          <Card key={nanoid()} card={card} />
+        ))}
+      </CardList>
 
       <AddBtn type="button" onClick={openCardModal}>
         <IconWrap>

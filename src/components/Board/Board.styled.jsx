@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import PerfectScrollbar from 'react-perfect-scrollbar';
 // import 'react-perfect-scrollbar/dist/css/styles.css';
 
-export const Container = styled(PerfectScrollbar)`
+export const Container = styled.div`
   max-width: 347px;
 
   @media (min-width: 768px) {
@@ -12,32 +11,30 @@ export const Container = styled(PerfectScrollbar)`
   @media (min-width: 1180px) {
     max-width: 1128px;
   }
+
   &.scrollbar-container {
     height: auto;
   }
   overflow: auto;
   padding: 0 0 8px;
 
-  & .ps__rail-x {
-    position: absolute;
+  &::-webkit-scrollbar {
+    width: 8px; /* ширина скролбару */
     height: 8px;
-    background-color: var(--scrollBg) !important;
-    border-radius: 12px;
-    opacity: 1;
-    cursor: pointer;
   }
-  & .ps__thumb-x {
-    width: 142px !important;
-    height: 8px;
-    background-color: var(--scroll);
-    bottom: 0;
-    opacity: 1;
+
+  &::-webkit-scrollbar-track {
+    background: blue; /* колір фону всієї доріжки скролбару */
+    border-radius: 12px; // заокруглення доріжки скролу
   }
-  & .ps__rail-x:hover > .ps__thumb-x,
-  .ps__rail-x:focus > .ps__thumb-x,
-  .ps__rail-x.ps--clicking .ps__thumb-x {
-    height: 8px;
-    width: 142px;
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(15, 15, 15); // колір самого скролу
+    border-radius: 12px; /* заокруглення самого скролу */
+
+    &:hover {
+      background-color: red; // колір самого скролу при наведенні
+    }
   }
 `;
 
@@ -58,8 +55,7 @@ export const Wrap = styled.div`
   gap: 18px;
   align-items: flex-start;
   padding: 0 0 8px;
-  ;
-`
+`;
 export const AddBtn = styled.button`
   display: flex;
   align-items: center;
@@ -108,8 +104,7 @@ export const IconWrap = styled.div`
   border-radius: 8px;
   stroke: var(--extraBgColor);
 
-
-  background-color: var(--squareIconColor);  
+  background-color: var(--squareIconColor);
   transition: background-color stroke var(--transition);
 
   &:hover,

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import PerfectScrollbar from 'react-perfect-scrollbar';
 
 export const HeadWrap = styled.div`
   display: flex;
@@ -28,7 +27,11 @@ export const Title = styled.h3`
   letter-spacing: -0.02em;
 `;
 
-export const Container = styled(PerfectScrollbar)`
+export const CardList = styled.ul`
+  > li:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+  border-radius: 12px;
   max-height: 478px;
 
   @media (min-width: 768px) {
@@ -43,34 +46,23 @@ export const Container = styled(PerfectScrollbar)`
   padding: 0;
   margin-bottom: 14px;
 
-  & .ps__rail-y {
-    position: absolute;
-    width: 8px;
-    background-color: var(--scrollBg) !important;
-    border-radius: 12px;
-    opacity: 1;
-    cursor: pointer;
+  &::-webkit-scrollbar {
+    width: 8px; /* ширина скролбару */
   }
-  & .ps__thumb-y {
-    height: 142px !important;
-    width: 8px;
-    background-color: var(--scroll);
-    right: 0;
-    opacity: 1;
-  }
-  & .ps__rail-y:hover > .ps__thumb-y,
-  .ps__rail-y:focus > .ps__thumb-y,
-  .ps__rail-y.ps--clicking .ps__thumb-y {
-    width: 8px;
-    height: 142px;
-  }
-`;
 
-export const CardList = styled.ul`
-  > li:not(:last-of-type) {
-    margin-bottom: 10px;
+  &::-webkit-scrollbar-track {
+    background: blue; /* колір фону всієї доріжки скролбару */
+    border-radius: 12px; // заокруглення доріжки скролу
   }
-  border-radius: 12px;
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(15, 15, 15); // колір самого скролу
+    border-radius: 12px; /* заокруглення самого скролу */
+
+    &:hover {
+      background-color: red; // колір самого скролу при наведенні
+    }
+  }
 `;
 
 export const Wrap = styled.div`

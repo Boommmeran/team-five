@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CardBody = styled.div`
+export const CardBody = styled.li`
   border-radius: 8px;
   width: 335px; // змінити на /* width: 100%; */ коли стане у колонкуи
   height: 154px;
@@ -71,7 +71,6 @@ export const Priority = styled.div`
   display: flex;
   flex-direction: column;
   margin-right: 14px;
-  
 `;
 
 export const PriorityDetals = styled.div`

@@ -24,7 +24,6 @@ import {
   Button,
 } from './Card.styled';
 
-
 export default function Card({ card }) {
   const [modalCardIsOpen, setmodalCardIsOpen] = useState(false);
 
