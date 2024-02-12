@@ -1,23 +1,13 @@
 import { useState } from "react";
 import Modal from 'react-modal';
 import { Icon } from 'components/Icon';
-import { BoardCreationBlock, BtnCreate } from "./BoardCreation.styled";
-import { BoardCreatingModal } from "components/BoardCreatingModal";
+import { BoardCreatingModal } from 'components/BoardCreatingModal';
+import {
+  BoardCreationBlock,
+  BtnCreate,
+  customStylesForModal,
+} from './BoardCreation.styled';
 
-const customStyles = {
-  content: {
-    width: 'fit-content',
-    height: 'fit-content',
-    padding: 0,
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    boxShadow: '0px 4px 16px 0px #1616160D',
-  },
-  overlay: {
-    background: 'rgba(0,0,0,0.5)',
-  },
-};
 
 export const BoardCreation = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -42,7 +32,7 @@ export const BoardCreation = () => {
       <Modal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
-        style={customStyles}
+        style={customStylesForModal}
         contentLabel="Creation board modal"
       >
         <BoardCreatingModal

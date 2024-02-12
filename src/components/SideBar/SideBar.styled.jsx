@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const SidebarContainer = styled.div`
+export const SidebarContainer = styled.section`
   width: 225px;
   min-height: 100vh;
   padding: 14px;
@@ -8,6 +8,14 @@ export const SidebarContainer = styled.div`
   letter-spacing: -0.02em;
   text-align: left;
   background-color: var(--primaryBgColor);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media only screen and (min-width: 768px) {
+    width: 260px;
+    padding: 24px;
+  }
 `;
 
 export const Logo = styled.div`
@@ -17,22 +25,21 @@ export const Logo = styled.div`
   column-gap: 8px;
   align-items: center;
   margin-bottom: 70px;
+
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 60px;
+  }
 `;
 
-export const BoardContainer = styled.div`
-  font-family: 'Poppins-Medium';
-  font-size: 14px;
-
-  h3 {
-    margin-bottom: 8px;
-    font-size: 12px;
-    font-family: 'Poppins-Regular';
-    opacity: 50%;
-  }
+export const Title = styled.h3`
+  margin-bottom: 8px;
+  font-size: 12px;
+  opacity: 50%;
 `;
 
 export const BoardList = styled.ul`
   margin-bottom: 40px;
+  font-family: 'Poppins-Medium';
 `;
 
 export const LogOut = styled.button`
@@ -44,6 +51,7 @@ export const LogOut = styled.button`
   align-items: center;
   font-family: 'Poppins-Medium';
   font-size: 14px;
+  cursor: pointer;
   stroke: var(--accent);
   transition: var(--transition);
 
@@ -56,5 +64,9 @@ export const LogOut = styled.button`
   &:focus,
   &:active {
     stroke: var(--hover);
+  }
+
+  @media only screen and (min-width: 1440px) {
+    font-size: 16px;
   }
 `;

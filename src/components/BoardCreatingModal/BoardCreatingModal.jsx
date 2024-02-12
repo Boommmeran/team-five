@@ -56,9 +56,9 @@ const schema = Yup.object({
 
 export const BoardCreatingModal = ({ onClose, title, btnText, board }) => {
   const initialValues = {
-    boardTitle: board.title ?? '',
-    icon: board.icon ?? 'four-circles',
-    background: board.background ?? 'noBack',
+    boardTitle: board ? board.title : '',
+    icon: board ?board.icon : 'four-circles',
+    background: board ?board.background : 'noBack',
   };
 
   const onSubmit = values => {

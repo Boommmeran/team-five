@@ -5,13 +5,12 @@ import { fetchBoards } from '../../redux/boards/boardsOperations.js';
 import { logOut } from '../../redux/auth/authOperation.js';
 import { NeedHelp } from 'components/NeedHelp';
 import { BoardCreation } from 'components/SidebarBoardCreation';
-
 import { BoardItem } from 'components/BoardItem';
 import { Icon } from 'components/Icon';
 import {
   SidebarContainer,
   Logo,
-  BoardContainer,
+  Title,
   BoardList,
   LogOut,
 } from './SideBar.styled';
@@ -30,27 +29,26 @@ export const Sidebar = () => {
 
   return (
     <SidebarContainer>
-      <Logo>
-        <Icon name="logo" width="32" height="32" />
-        <h2>TaskPro</h2>
-      </Logo>
-      <BoardContainer>
-        <h3>My boards</h3>
+      <div>
+        <Logo>
+          <Icon name="logo" width="32" height="32" />
+          <h2>TaskPro</h2>
+        </Logo>
+        <Title>My boards</Title>
         <BoardCreation />
         <BoardList>
           {boards.map(board => (
-            <BoardItem
-              key={board._id}
-              board={board}
-            />
+            <BoardItem key={board._id} board={board} />
           ))}
         </BoardList>
-      </BoardContainer>
-      <NeedHelp />
-      <LogOut type="button" onClick={handleLogOut}>
-        <Icon name="login" width="32" height="32" />
-        <p>Log out</p>
-      </LogOut>
+      </div>
+      <div>
+        <NeedHelp />
+        <LogOut type="button" onClick={handleLogOut}>
+          <Icon name="login" width="32" height="32" />
+          <p>Log out</p>
+        </LogOut>
+      </div>
     </SidebarContainer>
   );
 };

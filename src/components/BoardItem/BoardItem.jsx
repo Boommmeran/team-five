@@ -1,27 +1,18 @@
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Modal from 'react-modal';
-import { Icon } from 'components/Icon';
-import { BoardItemContainer, ControlIconsContainer } from './BoardItem.styled';
-import { BoardCreatingModal } from 'components/BoardCreatingModal';
-import { useDispatch } from 'react-redux';
-import { deleteBoard, fetchBoardById } from '../../redux/boards/boardsOperations';
-import { useSelector } from 'react-redux';
+import {
+  deleteBoard,
+  fetchBoardById,
+} from '../../redux/boards/boardsOperations';
 import { selectCurrentBoard } from '../../redux/boards/boardsSelectors';
-
-const customStyles = {
-  content: {
-    width: 'fit-content',
-    height: 'fit-content',
-    padding: 0,
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    boxShadow: '0px 4px 16px 0px #1616160D',
-  },
-  overlay: {
-    background: 'rgba(0,0,0,0.5)',
-  },
-};
+import { BoardCreatingModal } from 'components/BoardCreatingModal';
+import { Icon } from 'components/Icon';
+import {
+  BoardItemContainer,
+  ControlIconsContainer,
+  customStylesForModal,
+} from './BoardItem.styled';
 
 export const BoardItem = ({ board }) => {
   const dispatch = useDispatch();
@@ -38,33 +29,37 @@ export const BoardItem = ({ board }) => {
 
   const handleSelectBoard = (event, BoardId) => {
     if (!event.target.closest('button')) {
-      dispatch(fetchBoardById(BoardId))
+      dispatch(fetchBoardById(BoardId));
     }
   };
 
-  const handleDelete = (BoardId) => {
+  const handleDelete = BoardId => {
     dispatch(deleteBoard(BoardId));
-  }
+  };
 
   return (
     <BoardItemContainer
-      onClick={(event) => handleSelectBoard(event, board._id)}
+      onClick={event => handleSelectBoard(event, board._id)}
       selected={currentBoard && currentBoard._id === board._id}
     >
       <Icon name={board.icon} width="18" height="18" style={{ opacity: 0.5 }} />
       <p>{board.title}</p>
       <ControlIconsContainer>
-        <button type="button" onClick={openModal}>
+        <button type="button" style={{ cursor: 'pointer' }} onClick={openModal}>
           <Icon name="pencil" width="16" height="16" />
         </button>
-        <button type="button" onClick={() => handleDelete(board._id)}>
+        <button
+          type="button"
+          style={{ cursor: 'pointer' }}
+          onClick={() => handleDelete(board._id)}
+        >
           <Icon name="trash" width="16" height="16" />
         </button>
       </ControlIconsContainer>
       <Modal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
-        style={customStyles}
+        style={customStylesForModal}
         contentLabel="Edition board modal"
       >
         <BoardCreatingModal
