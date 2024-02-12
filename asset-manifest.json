@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/team-five/static/css/main.cd2e038f.css",
-    "main.js": "/team-five/static/js/main.35da241d.js",
+    "main.js": "/team-five/static/js/main.d02270fc.js",
     "static/js/192.f7f1d0df.chunk.js": "/team-five/static/js/192.f7f1d0df.chunk.js",
     "static/js/411.820738fb.chunk.js": "/team-five/static/js/411.820738fb.chunk.js",
     "static/css/260.bc8b4ab1.chunk.css": "/team-five/static/css/260.bc8b4ab1.chunk.css",
@@ -18,7 +18,7 @@
     "static/media/sprite.svg": "/team-five/static/media/sprite.559d1117b6fbfec9d1b00a7a92c59855.svg",
     "index.html": "/team-five/index.html",
     "main.cd2e038f.css.map": "/team-five/static/css/main.cd2e038f.css.map",
-    "main.35da241d.js.map": "/team-five/static/js/main.35da241d.js.map",
+    "main.d02270fc.js.map": "/team-five/static/js/main.d02270fc.js.map",
     "192.f7f1d0df.chunk.js.map": "/team-five/static/js/192.f7f1d0df.chunk.js.map",
     "411.820738fb.chunk.js.map": "/team-five/static/js/411.820738fb.chunk.js.map",
     "260.bc8b4ab1.chunk.css.map": "/team-five/static/css/260.bc8b4ab1.chunk.css.map",
@@ -29,6 +29,6 @@
   },
   "entrypoints": [
     "static/css/main.cd2e038f.css",
-    "static/js/main.35da241d.js"
+    "static/js/main.d02270fc.js"
   ]
 }
