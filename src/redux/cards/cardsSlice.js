@@ -14,10 +14,6 @@ const cards = [
     priority: 'low',
     deadline:
       'Sun Feb 12 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
-    column: {
-      _id: '65c8c3c181c2d3854aa44bc1',
-      title: 'Column titile',
-    },
   },
   {
     _id: '65c8c3c181c2d3854aa44bce',
@@ -26,10 +22,6 @@ const cards = [
     priority: 'high',
     deadline:
       'Sun Feb 11 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
-    column: {
-      _id: '65c8c3c181c2d3854aa44bc1',
-      title: 'Column titile',
-    },
   },
   {
     _id: '65c8c3c181c2d3854aa44bce',
@@ -38,10 +30,6 @@ const cards = [
     priority: 'medium',
     deadline:
       'Sun Feb 11 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
-    column: {
-      _id: '65c8c3c181c2d3854aa44bc1',
-      title: 'Column titile',
-    },
   },
   {
     _id: '65c8c3c181c2d3854aa44bce',
@@ -50,10 +38,6 @@ const cards = [
     priority: 'without',
     deadline:
       'Sun Feb 11 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
-    column: {
-      _id: '65c8c3c181c2d3854aa44bc1',
-      title: 'Column titile',
-    },
   },
   {
     _id: '65c8c3c181c2d3854aa44bce',
@@ -62,10 +46,6 @@ const cards = [
     priority: 'low',
     deadline:
       'Sun Feb 12 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
-    column: {
-      _id: '65c8c3c181c2d3854aa44bc1',
-      title: 'Column titile',
-    },
   },
   {
     _id: '65c8c3c181c2d3854aa44bce',
@@ -74,10 +54,6 @@ const cards = [
     priority: 'high',
     deadline:
       'Sun Feb 11 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
-    column: {
-      _id: '65c8c3c181c2d3854aa44bc2',
-      title: 'Column titile',
-    },
   },
   {
     _id: '65c8c3c181c2d3854aa44bce',
@@ -86,10 +62,6 @@ const cards = [
     priority: 'medium',
     deadline:
       'Sun Feb 11 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
-    column: {
-      _id: '65c8c3c181c2d3854aa44bc1',
-      title: 'Column titile',
-    },
   },
   {
     _id: '65c8c3c181c2d3854aa44bce',
@@ -98,10 +70,6 @@ const cards = [
     priority: 'without',
     deadline:
       'Sun Feb 11 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
-    column: {
-      _id: '65c8c3c181c2d3854aa44bc1',
-      title: 'Column titile',
-    },
   },
 ];
 

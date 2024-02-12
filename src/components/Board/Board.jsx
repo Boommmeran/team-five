@@ -11,13 +11,9 @@ import {
 import { Icon } from 'components/Icon';
 import Modal from 'react-modal';
 import { useState } from 'react';
-import { AddColumnFormik } from 'components/AddColumnFormik/AddColumnFormik';
-import { useSelector } from 'react-redux';
-import { nanoid } from '@reduxjs/toolkit';
 
 export const Board = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
-  const { columns } = useSelector(state => state.columns);
 
   const openModal = () => {
     setIsOpen(true);
@@ -31,13 +27,9 @@ export const Board = () => {
       <Container>
         <Wrap>
           <ColumnList>
-            {columns.map(({ _id, title }) => {
-              return (
-                <ColumnItem key={nanoid()}>
-                  <Column title={title} columnId={_id} />
-                </ColumnItem>
-              );
-            })}
+            <ColumnItem>
+              <Column title={'New'} />
+            </ColumnItem>
           </ColumnList>
           <AddBtn type="button" onClick={openModal}>
             <IconWrap>
@@ -54,7 +46,11 @@ export const Board = () => {
         contentLabel="Column Edit Modal"
         ariaHideApp={false}
       >
-        <AddColumnFormik onClose={closeModal} />
+        {/* <EditColumnModal
+          title={'Add column'}
+          onClose={closeModal}
+          reqFunc={value => console.log(value)}
+        /> */}
       </Modal>
     </>
   );

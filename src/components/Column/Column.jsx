@@ -11,7 +11,7 @@ import { ColumnHead } from 'components/ColumnHead/ColumnHead';
 export const Column = ({ columnId, title }) => {
   const [modalCardIsOpen, setmodalCardIsOpen] = useState(false);
   const { cards } = useSelector(state => state.cards);
-  const filtredCards = cards?.filter(({ column: { _id } }) => _id === columnId);
+  const filtredCards = cards; //?.filter(({ column: { _id } }) => _id === columnId);
 
   const customStyles = {
     content: {
