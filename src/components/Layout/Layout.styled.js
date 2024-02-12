@@ -22,7 +22,7 @@ const device = {
 export const Container = styled.div`
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: 68px 1fr;
 
   @media ${device.mobileM} {
@@ -30,6 +30,10 @@ export const Container = styled.div`
   }
   @media ${device.tablet} {
     width: 768px;
+  }
+  @media ${device.laptop} {
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: 68px 1fr;
   }
   @media ${device.laptopL} {
     width: 1440px;

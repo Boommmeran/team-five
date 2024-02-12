@@ -12,7 +12,7 @@ export const MenuBtn = styled.button`
 `;
 
 export const HeaderStyled = styled.header`
-  grid-column: 2 / 3;
+  grid-column: 1 / 2;
   grid-row: 1 / 2;
   display: flex;
   gap: 4px;
@@ -23,6 +23,11 @@ export const HeaderStyled = styled.header`
   background-color: var(--headerBgColor);
   color: var(--primaryTextColor);
   letter-spacing: -0.02em;
+
+  @media screen and (min-width: 1180px) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
 `;
 
 export const ThemeContainer = styled.div`
