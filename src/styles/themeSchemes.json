@@ -2,21 +2,25 @@
   "dark": {
     "accent": "#bedbb0",
     "hover": "#9dc888",
-    "transition": "300ms cubic-bezier(0.4, 0, 0.2, 1);",
+    "transition": "300ms cubic-bezier(0.4, 0, 0.2, 1)",
 
     "primaryBgColor": "#121212",
     "secondaryBgColor": "#1f1f1f",
     "headerBgColor": "#161616",
     "modalBgColor": "#151515",
     "extraBgColor": "#121212",
+    "calendarBgColor": "#1f1f1f",
 
     "primaryTextColor": "#fff",
     "secondaryTextColor": "#fff",
+    "activeTextColorCalend": "#1f1f1f",
+    "textColorcalendar": "#fff",
+    "numberCalendar": "#fff",
 
     "primaryOpacity": "0.5",
     "secondaryOpacity": "0.8",
     "opacityInThemeModal": "0.5",
-    
+
     "btnPlus": "#bedbb0",
     "btnPlusHover": "#9dc888",
 
@@ -28,6 +32,9 @@
     "squareIconColor": "#fff",
 
     "borderInThemeModal": "#bedbb0",
+    "borderForCalendar": "#bedbb0",
+    "strokeForCalendar": "rgba(255, 255, 255, 0.2)",
+    "textCalendar": "rgba(255, 255, 255, 0.5)",
 
     "scroll": "#121212",
     "scrollBg": "rgba(255, 255, 255, 0.1)"
@@ -35,16 +42,20 @@
   "light": {
     "accent": "#bedbb0",
     "hover": "#9dc888",
-    "transition": "300ms cubic-bezier(0.4, 0, 0.2, 1);",
+    "transition": "300ms cubic-bezier(0.4, 0, 0.2, 1)",
 
     "primaryBgColor": "#fff",
     "secondaryBgColor": "#f6f6f7",
     "headerBgColor": "#fff",
     "modalBgColor": "#fcfcfc",
     "extraBgColor": "#fff",
+    "calendarBgColor": "#fff",
 
     "primaryTextColor": "#161616",
     "secondaryTextColor": "#161616",
+    "activeTextColorCalend": "#161616",
+    "textColorcalendar": "#161616",
+    "numberCalendar": "#161616",
 
     "primaryOpacity": "0.7",
     "secondaryOpacity": "0.8",
@@ -60,6 +71,9 @@
     "squareIconColor": "#161616",
 
     "borderInThemeModal": "#bedbb0",
+    "borderForCalendar": "#bedbb0",
+    "strokeForCalendar": "rgba(22, 22, 22, 0.2)",
+    "textCalendar": "rgba(22, 22, 22, 0.5)",
 
     "scroll": "rgba(22, 22, 22, 0.1)",
     "scrollBg": "#e8e8e8"
@@ -67,16 +81,20 @@
   "violet": {
     "accent": "#5255bc",
     "hover": "#7b7ede",
-    "transition": "300ms cubic-bezier(0.4, 0, 0.2, 1);",
+    "transition": "300ms cubic-bezier(0.4, 0, 0.2, 1)",
 
     "primaryBgColor": "#5255bc",
     "secondaryBgColor": "#ecedfd",
     "headerBgColor": "#fff",
     "modalBgColor": "#fcfcfc",
     "extraBgColor": "#fff",
+    "calendarBgColor": "#fff",
 
     "primaryTextColor": "#fff",
     "secondaryTextColor": "#161616",
+    "activeTextColorCalend": "#fcfcfc",
+    "textColorcalendar": "#161616",
+    "numberCalendar": "#161616",
 
     "primaryOpacity": "0.7",
     "secondaryOpacity": "0.8",
@@ -92,6 +110,9 @@
     "squareIconColor": "#5255bc",
 
     "borderInThemeModal": "#ecedfd",
+    "borderForCalendar": "#5255bc",
+    "strokeForCalendar": "rgba(22, 22, 22, 0.2)",
+    "textCalendar": "rgba(22, 22, 22, 0.5)",
 
     "scroll": "#b8bcfd",
     "scrollBg": "#fff"

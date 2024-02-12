@@ -18,9 +18,13 @@ export const GlobalStyles = createGlobalStyle`
   --secondaryBgColor: ${({ theme }) => theme.secondaryBgColor};
   --headerBgColor: ${({ theme }) => theme.headerBgColor};
   --modalBgColor: ${({ theme }) => theme.modalBgColor};
+  --calendarBgColor:${({ theme }) => theme.calendarBgColor};
 
   --primaryTextColor: ${({ theme }) => theme.primaryTextColor};
   --secondaryTextColor: ${({ theme }) => theme.secondaryTextColor};
+  --activeTextColorCalend:${({ theme }) => theme.activeTextColorCalend};
+  --textColorcalendar: ${({ theme }) => theme.textColorcalendar};
+  --numberCalendar: ${({ theme }) => theme.numberCalendar};
 
   --primaryOpacity: ${({ theme }) => theme.primaryOpacity};
   --secondaryOpacity: ${({ theme }) => theme.secondaryOpacity};
@@ -39,7 +43,10 @@ export const GlobalStyles = createGlobalStyle`
   --squareIconColor: ${({ theme }) => theme.squareIconColor};
 
   --borderInThemeModal: ${({ theme }) => theme.borderInThemeModal};
-
+  --borderForCalendar: ${({ theme }) => theme.borderForCalendar};
+  --strokeForCalendar: ${({ theme }) => theme.strokeForCalendar};
+  --textCalendar: ${({ theme }) => theme.textCalendar};
+  
   --scroll: ${({ theme }) => theme.scroll};
   --scrollBg: ${({ theme }) => theme.scrollBg};
   }
