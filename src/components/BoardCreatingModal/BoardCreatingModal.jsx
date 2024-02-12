@@ -17,6 +17,8 @@ import {
   Div,
 } from './BoardCreatingModal.styled';
 import { Formik } from 'formik';
+import { addBoard, editBoard } from '../../redux/boards/boardsOperations';
+import { useDispatch } from 'react-redux';
 
 const iconsArr = [
   'four-circles',
@@ -49,19 +51,30 @@ const backgroundsArr = [
 ];
 
 const schema = Yup.object({
-  boardTitle: Yup.string().required(),
+  title: Yup.string().required(),
   icon: Yup.string().oneOf(iconsArr).required(),
   background: Yup.string().oneOf(backgroundsArr).required(),
 });
 
 export const BoardCreatingModal = ({ onClose, title, btnText, board }) => {
+  const dispatch = useDispatch();
+
   const initialValues = {
-    boardTitle: board ? board.title : '',
-    icon: board ?board.icon : 'four-circles',
-    background: board ?board.background : 'noBack',
+    title: board ? board.title : '',
+    icon: board ? board.icon : 'four-circles',
+    background: board ? board.background : 'noBack',
+  };
+
+  const handleSubmit = (boardId, boardData) => {
+    if (!boardId) {
+      dispatch(addBoard(boardData));
+    } else {
+      dispatch(editBoard(boardId, boardData));
+    }
   };
 
   const onSubmit = values => {
+    handleSubmit(board ? board._id : null, values);
     onClose();
   };
   
@@ -77,7 +90,7 @@ export const BoardCreatingModal = ({ onClose, title, btnText, board }) => {
         onSubmit={onSubmit}
       >
         <FormWrap>
-          <Input type="text" placeholder="Title" name="boardTitle" />
+          <Input type="text" placeholder="Title" name="title" />
           <Text>Icons</Text>
 
           <IconsListWrap>
