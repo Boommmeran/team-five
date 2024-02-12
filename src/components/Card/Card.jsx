@@ -1,7 +1,6 @@
 import { Icon } from 'components/Icon';
 import Modal from 'react-modal';
 import { useState } from 'react';
-import AddCardModal from 'components/AddCardModal/AddCardModal';
 
 import {
   customStyles,
@@ -24,14 +23,34 @@ import {
   Bell,
   Button,
 } from './Card.styled';
+import { useDispatch } from 'react-redux';
+import { deleteCard } from '../../redux/cards/cardsOperations';
+import EditCardModal from 'components/EditCardModal/EditCardModal';
 
 export default function Card({ card }) {
   const [modalCardIsOpen, setmodalCardIsOpen] = useState(false);
-
-  const { title, text, deadline, priority } = card;
+  const dispatch = useDispatch();
+  const { _id: cardId, title, text, deadline, priority } = card;
   const dateDeadline = new Date(deadline);
-  const formatedDate = `${dateDeadline.getUTCDate()}/${(dateDeadline.getUTCMonth() + 1).toString().padStart(2, '0')}/${dateDeadline.getFullYear()}`;
+  const formatedDate = `${dateDeadline.getDate()}/${
+    dateDeadline.getMonth() + 1
+  }/${dateDeadline.getFullYear()}`;
   const cardTextDescription = text.substring(0, 90) + '...';
+
+  const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      transform: 'translate(-50%, -50%)',
+      padding: 0,
+      boxShadow: '0px 4px 16px 0px #1616160D',
+    },
+    overlay: {
+      background: 'rgba(0,0,0,0.5)',
+    },
+  };
 
   const openCardModal = () => {
     setmodalCardIsOpen(true);
@@ -41,9 +60,13 @@ export default function Card({ card }) {
     setmodalCardIsOpen(false);
   };
 
+  const handleDeleteCard = () => {
+    dispatch(deleteCard({ cardId }));
+  };
+
   return (
     <CardBody>
-      <CardColor priority={priority}></CardColor>
+      <CardColor $priority={priority}></CardColor>
       <CardTitle>{title}</CardTitle>
       <CardDescription>{cardTextDescription}</CardDescription>
       <CardSolid></CardSolid>
@@ -52,7 +75,7 @@ export default function Card({ card }) {
           <Priority>
             <PriorityTitle>Priority</PriorityTitle>
             <PriorityDetals>
-              <PriorityColor priority={priority}></PriorityColor>
+              <PriorityColor $priority={priority}></PriorityColor>
               <PriorityTipe>{priority}</PriorityTipe>
             </PriorityDetals>
           </Priority>
@@ -71,7 +94,7 @@ export default function Card({ card }) {
           <Button type="button" onClick={openCardModal}>
             <Icon name="pencil" width="16" height="16" />
           </Button>
-          <Button type="button">
+          <Button type="button" onClick={handleDeleteCard}>
             <Icon name="trash" width="16" height="16" />
           </Button>
         </CardButtons>
@@ -83,12 +106,7 @@ export default function Card({ card }) {
         contentLabel="Card Add Modal"
         ariaHideApp={false}
       >
-        <AddCardModal
-          title={'Edit card'}
-          btnText={'Edit'}
-          onClose={closeCardModal}
-          reqFunc={values => console.log(values)}
-        />
+        <EditCardModal card={card} onClose={closeCardModal} />
       </Modal>
     </CardBody>
   );

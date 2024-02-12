@@ -1,58 +1,42 @@
 import styled from 'styled-components';
-import PerfectScrollbar from 'react-perfect-scrollbar';
 // import 'react-perfect-scrollbar/dist/css/styles.css';
 
-export const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    transform: 'translate(-50%, -50%)',
-    boxShadow: '0px 4px 16px 0px #1616160D',
-    padding: 0,
-  },
-  overlay: {
-    background: 'rgba(0,0,0,0.5)',
-  },
-};
-
-export const Container = styled(PerfectScrollbar)`
+export const Container = styled.div`
   max-width: 347px;
 
   @media (min-width: 768px) {
     max-width: 718px;
   }
 
-  @media (min-width: 1440px) {
+  @media (min-width: 1180px) {
     max-width: 1128px;
   }
+
   &.scrollbar-container {
     height: auto;
   }
   overflow: auto;
   padding: 0 0 8px;
 
-  & .ps__rail-x {
-    position: absolute;
-    height: 8px;
-    background-color: var(--scrollBg) !important;
-    border-radius: 12px;
-    opacity: 1;
-    cursor: pointer;
+  &::-webkit-scrollbar {
+    width: 12px; /* ширина скролбару */
+    height: 12px;
   }
-  & .ps__thumb-x {
-    width: 142px !important;
-    height: 8px;
-    background-color: var(--scroll);
-    bottom: 0;
-    opacity: 1;
+
+  &::-webkit-scrollbar-track {
+    background: var(--scroll); /* колір фону всієї доріжки скролбару */
+    border-radius: 12px; // заокруглення доріжки скролу
   }
-  & .ps__rail-x:hover > .ps__thumb-x,
-  .ps__rail-x:focus > .ps__thumb-x,
-  .ps__rail-x.ps--clicking .ps__thumb-x {
-    height: 8px;
-    width: 142px;
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scrollBg); // колір самого скролу
+    border-radius: 12px; /* заокруглення самого скролу */
+
+    &:hover {
+      background-color: var(
+        --scroll-bg-hover
+      ); // колір самого скролу при наведенні
+    }
   }
 `;
 
@@ -62,7 +46,11 @@ export const ColumnList = styled.ul`
 `;
 
 export const ColumnItem = styled.li`
+  display: grid;
+  grid-template-rows: 56px minmax(0, 1fr) 56px;
+  gap: 14px;
   width: 347px;
+  height: calc(90vh - 80px);
   @media (min-width: 768px) {
     width: 350px;
   }
@@ -73,8 +61,7 @@ export const Wrap = styled.div`
   gap: 18px;
   align-items: flex-start;
   padding: 0 0 8px;
-  ;
-`
+`;
 export const AddBtn = styled.button`
   display: flex;
   align-items: center;
@@ -123,8 +110,7 @@ export const IconWrap = styled.div`
   border-radius: 8px;
   stroke: var(--extraBgColor);
 
-
-  background-color: var(--squareIconColor);  
+  background-color: var(--squareIconColor);
   transition: background-color stroke var(--transition);
 
   &:hover,

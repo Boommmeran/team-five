@@ -39,9 +39,21 @@ export const GlobalStyles = createGlobalStyle`
   --squareIconColor: ${({ theme }) => theme.squareIconColor};
 
   --borderInThemeModal: ${({ theme }) => theme.borderInThemeModal};
+  --cards-line: ${({ theme }) => theme.cardsLine};
+
 
   --scroll: ${({ theme }) => theme.scroll};
   --scrollBg: ${({ theme }) => theme.scrollBg};
+  --scroll-bg-hover: ${({ theme }) => theme.scrollBgHover};
+
+  --scroll-col: ${({ theme }) => theme.scrollCol};
+  --scroll-col-bg: ${({ theme }) => theme.scrollColBg};
+  --scroll-col-bg-hover: ${({ theme }) => theme.scrollColBgHover};
+
+  --priority-without: ${({ theme }) => theme.priorityWithout};
+  --priority-low: ${({ theme }) => theme.priorityLow};
+  --priority-medium: ${({ theme }) => theme.priorityMedium};
+  --priority-high: ${({ theme }) => theme.priorityHigh};
   }
 
 @font-face {
@@ -68,6 +80,8 @@ export const GlobalStyles = createGlobalStyle`
 body {
   font-family: 'Poppins-Regular', sans-serif;
   margin: 0 auto;
+  min-width: 100%;
+  background-color: var(--primaryBgColor);
 }
 
 img {

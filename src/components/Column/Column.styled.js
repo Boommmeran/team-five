@@ -1,20 +1,4 @@
 import styled from 'styled-components';
-import PerfectScrollbar from 'react-perfect-scrollbar';
-
-export const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    transform: 'translate(-50%, -50%)',
-    boxShadow: '0px 4px 16px 0px #1616160D',
-    padding: 0,
-  },
-  overlay: {
-    background: 'rgba(0,0,0,0.5)',
-  },
-};
 
 export const HeadWrap = styled.div`
   display: flex;
@@ -24,7 +8,6 @@ export const HeadWrap = styled.div`
   width: 335px;
   height: 56px;
 
-  margin-bottom: 14px;
   padding: 17px 20px;
 
   border-radius: 8px;
@@ -43,49 +26,40 @@ export const Title = styled.h3`
   letter-spacing: -0.02em;
 `;
 
-export const Container = styled(PerfectScrollbar)`
-  max-height: 478px;
-
-  @media (min-width: 768px) {
-    max-height: 640px;
-  }
-
-  @media (min-width: 1440px) {
-    max-height: 478px;
-  }
-
-  overflow: auto;
-  padding: 0;
-  margin-bottom: 14px;
-
-  & .ps__rail-y {
-    position: absolute;
-    width: 8px;
-    background-color: var(--scrollBg) !important;
-    border-radius: 12px;
-    opacity: 1;
-    cursor: pointer;
-  }
-  & .ps__thumb-y {
-    height: 142px !important;
-    width: 8px;
-    background-color: var(--scroll);
-    right: 0;
-    opacity: 1;
-  }
-  & .ps__rail-y:hover > .ps__thumb-y,
-  .ps__rail-y:focus > .ps__thumb-y,
-  .ps__rail-y.ps--clicking .ps__thumb-y {
-    width: 8px;
-    height: 142px;
-  }
-`;
-
 export const CardList = styled.ul`
   > li:not(:last-of-type) {
     margin-bottom: 10px;
   }
   border-radius: 12px;
+
+  @media (min-width: 768px) {
+  }
+
+  @media (min-width: 1180px) {
+  }
+
+  overflow: auto;
+  padding: 0;
+
+  &::-webkit-scrollbar {
+    width: 8px; /* ширина скролбару */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--scroll-col); /* колір фону всієї доріжки скролбару */
+    border-radius: 12px; // заокруглення доріжки скролу
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-col-bg); // колір самого скролу
+    border-radius: 12px; /* заокруглення самого скролу */
+
+    &:hover {
+      background-color: var(
+        --scroll-col-bg-hover
+      ); // колір самого скролу при наведенні
+    }
+  }
 `;
 
 export const Wrap = styled.div`
@@ -100,12 +74,9 @@ export const IconedBtn = styled.button`
   justify-content: center;
   padding: 0;
   border: none;
-
-  opacity: 0.8;
   background-color: inherit;
 
   stroke: var(--secondaryTextColor);
-  stroke-opacity: 0.5;
   transition: opacity var(--transition);
 
   > svg {
@@ -116,7 +87,7 @@ export const IconedBtn = styled.button`
   cursor: pointer;
   &:hover,
   &:focus {
-    opacity: 1;
+    stroke: var(--accent);
   }
 `;
 

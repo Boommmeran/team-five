@@ -20,8 +20,10 @@ const device = {
   desktopL: `(min-width: ${size.desktop})`,
 };
 export const Container = styled.div`
-
-  text-align: center;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 68px 1fr;
 
   @media ${device.mobileM} {
     width: 375px;
@@ -29,10 +31,11 @@ export const Container = styled.div`
   @media ${device.tablet} {
     width: 768px;
   }
-  @media ${device.laptopL} {
-    display: grid;
+  @media ${device.laptop} {
     grid-template-columns: 260px 1fr;
     grid-template-rows: 68px 1fr;
+  }
+  @media ${device.laptopL} {
     width: 1440px;
   }
 `;

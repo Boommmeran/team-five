@@ -4,14 +4,79 @@ import {
   chengeColumnsCard,
   deleteCard,
   editCard,
-  fetchCards,
-  fetchCardById,
 } from './cardsOperations';
+
+const cards = [
+  {
+    _id: '65c8c3c181c2d3854aa44bce',
+    title: 'Design and Prototyping SoYummy',
+    text: "Create a visually stunning and eye-catching watch dial design that embodies our brand's essence of sleek aesthetics and modern elegance. Your design should be unique, innovative, and reflective of the latest trends in watch design.",
+    priority: 'low',
+    deadline:
+      'Sun Feb 12 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
+  },
+  {
+    _id: '65c8c3c181c2d3854aa44bce',
+    title: 'Design and Prototyping SoYummy',
+    text: "Create a visually stunning and eye-catching watch dial design that embodies our brand's essence of sleek aesthetics and modern elegance. Your design should be unique, innovative, and reflective of the latest trends in watch design.",
+    priority: 'high',
+    deadline:
+      'Sun Feb 11 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
+  },
+  {
+    _id: '65c8c3c181c2d3854aa44bce',
+    title: 'Design and Prototyping SoYummy',
+    text: "Create a visually stunning and eye-catching watch dial design that embodies our brand's essence of sleek aesthetics and modern elegance. Your design should be unique, innovative, and reflective of the latest trends in watch design.",
+    priority: 'medium',
+    deadline:
+      'Sun Feb 11 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
+  },
+  {
+    _id: '65c8c3c181c2d3854aa44bce',
+    title: 'Design and Prototyping SoYummy',
+    text: "Create a visually stunning and eye-catching watch dial design that embodies our brand's essence of sleek aesthetics and modern elegance. Your design should be unique, innovative, and reflective of the latest trends in watch design.",
+    priority: 'without',
+    deadline:
+      'Sun Feb 11 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
+  },
+  {
+    _id: '65c8c3c181c2d3854aa44bce',
+    title: 'Design and Prototyping SoYummy',
+    text: "Create a visually stunning and eye-catching watch dial design that embodies our brand's essence of sleek aesthetics and modern elegance. Your design should be unique, innovative, and reflective of the latest trends in watch design.",
+    priority: 'low',
+    deadline:
+      'Sun Feb 12 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
+  },
+  {
+    _id: '65c8c3c181c2d3854aa44bce',
+    title: 'Design and Prototyping SoYummy',
+    text: "Create a visually stunning and eye-catching watch dial design that embodies our brand's essence of sleek aesthetics and modern elegance. Your design should be unique, innovative, and reflective of the latest trends in watch design.",
+    priority: 'high',
+    deadline:
+      'Sun Feb 11 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
+  },
+  {
+    _id: '65c8c3c181c2d3854aa44bce',
+    title: 'Design and Prototyping SoYummy',
+    text: "Create a visually stunning and eye-catching watch dial design that embodies our brand's essence of sleek aesthetics and modern elegance. Your design should be unique, innovative, and reflective of the latest trends in watch design.",
+    priority: 'medium',
+    deadline:
+      'Sun Feb 11 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
+  },
+  {
+    _id: '65c8c3c181c2d3854aa44bce',
+    title: 'Design and Prototyping SoYummy',
+    text: "Create a visually stunning and eye-catching watch dial design that embodies our brand's essence of sleek aesthetics and modern elegance. Your design should be unique, innovative, and reflective of the latest trends in watch design.",
+    priority: 'without',
+    deadline:
+      'Sun Feb 11 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
+  },
+];
 
 export const cardSlice = createSlice({
   name: 'cards',
   initialState: {
-    cards: [],
+    cards: cards,
     loading: false,
     error: null,
   },
@@ -26,41 +91,6 @@ export const cardSlice = createSlice({
 
   extraReducers: builder =>
     builder
-      .addCase(fetchCards.pending, state => {
-        state.loading = true;
-        state.error = null;
-      })
-      .addCase(fetchCards.fulfilled, (state, action) => {
-        state.loading = false;
-        state.error = null;
-        state.boards = action.payload;
-      })
-      .addCase(fetchCards.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.payload;
-      })
-
-      .addCase(fetchCardById.pending, state => {
-        state.loading = true;
-        state.error = null;
-      })
-      .addCase(fetchCardById.fulfilled, (state, action) => {
-        state.loading = false;
-        state.error = null;
-        const currentBoard = action.payload;
-        state.currentBoard = currentBoard;
-        const index = state.boards.findIndex(
-          board => board._id === currentBoard._id
-        );
-        if (index !== -1) {
-          state.boards[index] = currentBoard;
-        }
-      })
-      .addCase(fetchCardById.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.payload;
-      })
-
       .addCase(addCard.pending, state => {
         state.loading = true;
         state.error = null;
@@ -100,7 +130,12 @@ export const cardSlice = createSlice({
       .addCase(chengeColumnsCard.fulfilled, (state, action) => {
         state.loading = false;
         state.error = null;
-        // зміна колонки
+
+        const { _id, ...cardData } = action.payload;
+        const index = state.cards.findIndex(card => card._id === _id);
+        if (index !== -1) {
+          state.cards[index] = { ...state.cards[index], ...cardData };
+        }
       })
       .addCase(chengeColumnsCard.rejected, (state, action) => {
         state.loading = false;

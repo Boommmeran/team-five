@@ -1,26 +1,27 @@
 import styled from 'styled-components';
 
 export const HeaderStyled = styled.header`
-  position: relative;
-
-  max-width: 375px;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
   display: flex;
-  justify-content: space-between;
-
+  gap: 4px;
+  justify-content: right;
+  align-items: center;
+  width: 100%;
+  padding: 14px;
   background-color: var(--headerBgColor);
+  color: var(--primaryTextColor);
+  letter-spacing: -0.02em;
 
-  padding: 14px 20px;
-
-  @media (min-width: 768px) {
-    max-width: 768px;
-    padding: 18px 32px;
+  @media screen and (min-width: 1180px) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
   }
+`;
 
-  @media (min-width: 1440px) {
-    max-width: 1180px;
-    justify-content: flex-end;
-    padding: 18px 24px;
-  }
+export const ThemeContainer = styled.div`
+  display: flex;
+  justify-content: left;
 `;
 
 export const MenuBtn = styled.button`
@@ -42,22 +43,39 @@ export const MenuBtn = styled.button`
   }
 `;
 
-export const HeaderWrapper = styled.div`
-position: relative;
+export const NavigationList = styled.ul`
+  list-style-type: none;
+`;
+
+const fade = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.7;
+  }
+`;
+
+export const Theme = styled.div`
+  font-family: 'Poppins-Regular';
+  font-size: 14px;
   display: flex;
   align-items: baseline;
   gap: 14px;
 `;
 
-export const customStylesForModal = {
-  content: {
-    inset: 0,
-    width: 'fit-content',
-    height: 'fit-content',
-    boxShadow: '0px 4px 16px 0px #1616160D',
-    padding: 0,
-  },
-  overlay: {
-    background: 'rgba(0,0,0,0.5)',
-  },
-};
+export const NavigationItem = styled.button`
+  display: flex;
+  padding: 0;
+  padding-bottom: 8px;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--secondaryTextColor);
+  &:hover {
+    animation: ${fade} 2s linear infinite alternate;
+    transform: scale(1.05);
+    color: var(--btnPlus);
+  }
+`;

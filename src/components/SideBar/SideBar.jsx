@@ -8,13 +8,7 @@ import { BoardCreation } from 'components/SidebarBoardCreation';
 
 import { BoardItem } from 'components/BoardItem';
 import { Icon } from 'components/Icon';
-import {
-  SidebarContainer,
-  Logo,
-  BoardContainer,
-  BoardList,
-  LogOut,
-} from './SideBar.styled';
+import { Logo, BoardContainer, BoardList, LogOut } from './SideBar.styled';
 
 export const Sidebar = () => {
   const dispatch = useDispatch();
@@ -29,28 +23,29 @@ export const Sidebar = () => {
   };
 
   return (
-    <SidebarContainer>
-      <Logo>
-        <Icon name="logo" width="32" height="32" />
-        <h2>TaskPro</h2>
-      </Logo>
-      <BoardContainer>
-        <h3>My boards</h3>
-        <BoardCreation />
-        <BoardList>
-          {boards.map(board => (
-            <BoardItem
-              key={board._id}
-              board={board}
-            />
-          ))}
-        </BoardList>
-      </BoardContainer>
-      <NeedHelp />
-      <LogOut type="button" onClick={handleLogOut}>
-        <Icon name="login" width="32" height="32" />
-        <p>Log out</p>
-      </LogOut>
-    </SidebarContainer>
+    <>
+      <div>
+        <Logo>
+          <Icon name="logo" width="32" height="32" />
+          <h2>TaskPro</h2>
+        </Logo>
+        <BoardContainer>
+          <h3>My boards</h3>
+          <BoardCreation />
+          <BoardList>
+            {boards.map(board => (
+              <BoardItem key={board._id} board={board} />
+            ))}
+          </BoardList>
+        </BoardContainer>
+      </div>
+      <div>
+        <NeedHelp />
+        <LogOut type="button" onClick={handleLogOut}>
+          <Icon name="login" width="32" height="32" />
+          <p>Log out</p>
+        </LogOut>
+      </div>
+    </>
   );
 };
