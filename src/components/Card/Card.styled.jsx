@@ -1,5 +1,20 @@
 import styled from 'styled-components';
 
+export const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    transform: 'translate(-50%, -50%)',
+    padding: 0,
+    boxShadow: '0px 4px 16px 0px #1616160D',
+  },
+  overlay: {
+    background: 'rgba(0,0,0,0.5)',
+  },
+};
+
 export const CardBody = styled.div`
   border-radius: 8px;
   width: 335px; // змінити на /* width: 100%; */ коли стане у колонкуи
@@ -84,12 +99,12 @@ export const PriorityTitle = styled.p`
   letter-spacing: -0.02em;
   color: rgba(22, 22, 22, 0.5); //не змінюється в темах
   margin-bottom: 4px;
-  text-transform: lowercase;
+  
 `;
 export const PriorityColor = styled.div`
   border-radius: 100%;
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   margin-right: 4px;
   background-color: ${props => {
     switch (props.priority) {
@@ -109,6 +124,8 @@ export const PriorityTipe = styled.p`
   font-size: 10px;
   letter-spacing: -0.02em;
   color: var(--primaryTextColor);
+  text-transform: capitalize;
+ 
 `;
 
 export const Deadline = styled.div`

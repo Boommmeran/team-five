@@ -4,6 +4,7 @@ import { useState } from 'react';
 import AddCardModal from 'components/AddCardModal/AddCardModal';
 
 import {
+  customStyles,
   CardBody,
   CardDetals,
   Priority,
@@ -24,29 +25,13 @@ import {
   Button,
 } from './Card.styled';
 
-
 export default function Card({ card }) {
   const [modalCardIsOpen, setmodalCardIsOpen] = useState(false);
 
   const { title, text, deadline, priority } = card;
   const dateDeadline = new Date(deadline);
-  const formatedDate = `${dateDeadline.getDay()}/${dateDeadline.getMonth()}/${dateDeadline.getFullYear()}`;
+  const formatedDate = `${dateDeadline.getUTCDate()}/${(dateDeadline.getUTCMonth() + 1).toString().padStart(2, '0')}/${dateDeadline.getFullYear()}`;
   const cardTextDescription = text.substring(0, 90) + '...';
-
-  const customStyles = {
-    content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      transform: 'translate(-50%, -50%)',
-      padding: 0,
-      boxShadow: '0px 4px 16px 0px #1616160D',
-    },
-    overlay: {
-      background: 'rgba(0,0,0,0.5)',
-    },
-  };
 
   const openCardModal = () => {
     setmodalCardIsOpen(true);
