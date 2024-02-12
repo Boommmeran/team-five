@@ -25,31 +25,25 @@ import {
 import { useDispatch } from 'react-redux';
 import { deleteCard } from '../../redux/cards/cardsOperations';
 import EditCardModal from 'components/EditCardModal/EditCardModal';
+import { MoveCardDropdown } from 'components/MoveCardDropdown/MoveCardDropdown';
 
 export default function Card({ card }) {
   const [modalCardIsOpen, setmodalCardIsOpen] = useState(false);
+  const [isOpenMoveCardModal, setIsOpenMoveCardModal] = useState(false);
   const dispatch = useDispatch();
-  const { _id: cardId, title, text, deadline, priority } = card;
+  const {
+    _id: cardId,
+    title,
+    text,
+    deadline,
+    priority,
+    column: { _id: columnId },
+  } = card;
   const dateDeadline = new Date(deadline);
   const formatedDate = `${dateDeadline.getDate()}/${
     dateDeadline.getMonth() + 1
   }/${dateDeadline.getFullYear()}`;
   const cardTextDescription = text.substring(0, 90) + '...';
-
-  const customStyles = {
-    content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      transform: 'translate(-50%, -50%)',
-      padding: 0,
-      boxShadow: '0px 4px 16px 0px #1616160D',
-    },
-    overlay: {
-      background: 'rgba(0,0,0,0.5)',
-    },
-  };
 
   const openCardModal = () => {
     setmodalCardIsOpen(true);
@@ -61,6 +55,14 @@ export default function Card({ card }) {
 
   const handleDeleteCard = () => {
     dispatch(deleteCard({ cardId }));
+  };
+
+  const hendleMoveCardModalOpen = () => {
+    setIsOpenMoveCardModal(true);
+  };
+
+  const hendleMoveCardModalClose = () => {
+    setIsOpenMoveCardModal(false);
   };
 
   return (
@@ -87,7 +89,7 @@ export default function Card({ card }) {
           <Bell type="button">
             <Icon name="bell" width="16" height="16" />
           </Bell>
-          <Button type="button">
+          <Button type="button" onClick={hendleMoveCardModalOpen}>
             <Icon name="arrow-in-circle" width="16" height="16" />
           </Button>
           <Button type="button" onClick={openCardModal}>
@@ -101,11 +103,18 @@ export default function Card({ card }) {
       <Modal
         isOpen={modalCardIsOpen}
         onRequestClose={closeCardModal}
-        style={customStyles}
-        contentLabel="Card Add Modal"
-        ariaHideApp={false}
+        className={'modal-content'}
+        overlayClassName={'modal-overlay'}
       >
         <EditCardModal card={card} onClose={closeCardModal} />
+      </Modal>
+      <Modal
+        isOpen={isOpenMoveCardModal}
+        onRequestClose={hendleMoveCardModalClose}
+        className={'modal-content'}
+        overlayClassName={'modal-overlay'}
+      >
+        <MoveCardDropdown currColumnId={columnId} cardId={cardId} />
       </Modal>
     </CardBody>
   );

@@ -6,10 +6,33 @@ import {
   fetchColumnsByBoardId,
 } from './columnsOperations';
 
+const columns = [
+  {
+    _id: '65c8c3c181c2d3854aa44bc1',
+    title: 'Column titile one',
+  },
+  {
+    _id: '65c8c3c181c2d3854aa44bc2',
+    title: 'Column titile two',
+  },
+  {
+    _id: '65c8c3c181c2d3854aa44bc3',
+    title: 'Column titile three',
+  },
+  {
+    _id: '65c8c3c181c2d3854aa44bc4',
+    title: 'Column titile four',
+  },
+  {
+    _id: '65c8c3c181c2d3854aa44bc5',
+    title: 'Column titile five',
+  },
+];
+
 export const columnsSlice = createSlice({
   name: 'columns',
   initialState: {
-    columns: [],
+    columns: columns,
     loading: false,
     error: null,
   },

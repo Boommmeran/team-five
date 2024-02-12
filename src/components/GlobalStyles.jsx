@@ -39,7 +39,6 @@ export const GlobalStyles = createGlobalStyle`
 
   --cards-line: ${({ theme }) => theme.cardsLine};
 
-
   --scroll: ${({ theme }) => theme.scroll};
   --scrollBg: ${({ theme }) => theme.scrollBg};
   --scroll-bg-hover: ${({ theme }) => theme.scrollBgHover};
@@ -113,5 +112,28 @@ li{
   text-decoration: none;
   list-style: none;
   padding: 0;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  box-shadow: 0 0 10px -2px var(--primaryTextColor);
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.modal-overlay {
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
 }
 `;
