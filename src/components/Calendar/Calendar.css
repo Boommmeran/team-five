@@ -3,6 +3,13 @@
   border-radius: 8px;
 }
 
+.today {
+  font-family: 'Poppins-Medium';
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+}
+
 .react-datepicker__input-container input {
   font-family: 'Poppins-Medium';
   font-size: 14px;

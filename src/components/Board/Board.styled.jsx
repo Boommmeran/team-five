@@ -2,6 +2,21 @@ import styled from 'styled-components';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 // import 'react-perfect-scrollbar/dist/css/styles.css';
 
+export const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    transform: 'translate(-50%, -50%)',
+    boxShadow: '0px 4px 16px 0px #1616160D',
+    padding: 0,
+  },
+  overlay: {
+    background: 'rgba(0,0,0,0.5)',
+  },
+};
+
 export const Container = styled(PerfectScrollbar)`
   max-width: 347px;
 
@@ -9,7 +24,7 @@ export const Container = styled(PerfectScrollbar)`
     max-width: 718px;
   }
 
-  @media (min-width: 1180px) {
+  @media (min-width: 1440px) {
     max-width: 1128px;
   }
   &.scrollbar-container {
