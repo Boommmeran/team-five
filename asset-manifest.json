@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/team-five/static/css/main.cd2e038f.css",
-    "main.js": "/team-five/static/js/main.63460517.js",
+    "main.js": "/team-five/static/js/main.d09e0d66.js",
     "static/js/192.f7f1d0df.chunk.js": "/team-five/static/js/192.f7f1d0df.chunk.js",
     "static/js/411.820738fb.chunk.js": "/team-five/static/js/411.820738fb.chunk.js",
     "static/js/802.ffa48c0d.chunk.js": "/team-five/static/js/802.ffa48c0d.chunk.js",
@@ -18,7 +18,7 @@
     "static/media/sprite.svg": "/team-five/static/media/sprite.88bf92ada416476bf25587509bd92654.svg",
     "index.html": "/team-five/index.html",
     "main.cd2e038f.css.map": "/team-five/static/css/main.cd2e038f.css.map",
-    "main.63460517.js.map": "/team-five/static/js/main.63460517.js.map",
+    "main.d09e0d66.js.map": "/team-five/static/js/main.d09e0d66.js.map",
     "192.f7f1d0df.chunk.js.map": "/team-five/static/js/192.f7f1d0df.chunk.js.map",
     "411.820738fb.chunk.js.map": "/team-five/static/js/411.820738fb.chunk.js.map",
     "802.ffa48c0d.chunk.js.map": "/team-five/static/js/802.ffa48c0d.chunk.js.map",
@@ -29,6 +29,6 @@
   },
   "entrypoints": [
     "static/css/main.cd2e038f.css",
-    "static/js/main.63460517.js"
+    "static/js/main.d09e0d66.js"
   ]
 }
