@@ -1,4 +1,4 @@
-import {customStyles } from './MainDashboard.styled';
+import {customStyles, StartText, BoardCreationBtn } from './MainDashboard.styled';
 // import { useParams } from 'react-router-dom';
 import { Board } from 'components/Board';
 import Modal from 'react-modal';

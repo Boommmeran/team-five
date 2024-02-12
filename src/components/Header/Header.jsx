@@ -1,20 +1,24 @@
 import { UserInfo } from 'components/UserInfo';
-import { MenuBtn } from './Header.styled';
+import { MenuBtn, Wrap } from './Header.styled';
 import Modal from 'react-modal';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Sidebar } from 'components/SideBar';
-import { ThemeSwitcher } from 'components/ThemeSwitcher';
-import { Icon } from 'components/Icon';
 import {
+  customStyles,
   HeaderStyled,
-  HeaderWrapper,
-  
-  customStylesForModal,
+  ThemeContainer,
+  Theme,
+  AddBtn,
+  IconWrap,
+  Navigation,
+  NavigationList,
+  NavigationItem,
 } from './Header.styled';
+import { Icon } from 'components/Icon';
 
 export const Header = () => {
   const [isMenuOpen, setIsOpenMenu] = useState(false);
-  
+  const menuRef = useRef(null);
 
   const openMenu = () => {
     setIsOpenMenu(true);
@@ -26,22 +30,45 @@ export const Header = () => {
 
   return (
     <HeaderStyled>
-      <MenuBtn type="button" onClick={openMenu}>
-        <Icon name="menu" stroke="var(--secondaryTextColor)" />
-      </MenuBtn>
-
-      <HeaderWrapper>
-        <ThemeSwitcher/>
-        <UserInfo />
-      </HeaderWrapper>
-      <Modal
-        isOpen={isMenuOpen}
-        onRequestClose={closeMenu}
-        style={customStylesForModal}
-        contentLabel="Sidebar"
-      >
-        <Sidebar />
-      </Modal>
+      <Wrap>
+        <MenuBtn type="button" onClick={openMenu}>
+          MENU
+        </MenuBtn>
+        <Modal
+          isOpen={isMenuOpen}
+          onRequestClose={closeMenu}
+          style={customStyles}
+          contentLabel="Sidebar"
+        >
+          <Sidebar />
+        </Modal>
+      </Wrap>
+      <ThemeContainer>
+        <AddBtn type="button" onClick={() => console.log('fdsga')}>
+          <Theme>
+            <h4>Theme</h4>
+          </Theme>
+          <IconWrap>
+            <Icon name="plus" />
+          </IconWrap>{' '}
+        </AddBtn>
+        {false && (
+          <Navigation isOpen={() => console.log('fdsga')} ref={menuRef}>
+            <NavigationList>
+              <NavigationItem onClick={() => console.log('fdsga')}>
+                Light
+              </NavigationItem>
+              <NavigationItem onClick={() => console.log('fdsga')}>
+                Dark
+              </NavigationItem>
+              <NavigationItem onClick={() => console.log('fdsga')}>
+                Violet
+              </NavigationItem>
+            </NavigationList>
+          </Navigation>
+        )}
+      </ThemeContainer>
+      <UserInfo />
     </HeaderStyled>
   );
 };

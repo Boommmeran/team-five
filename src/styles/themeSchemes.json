@@ -11,11 +11,10 @@
     "extraBgColor": "#121212",
 
     "primaryTextColor": "#fff",
-    "secondaryTextColor": "#fff",
+    "secondaryTextColor": "fff",
 
     "primaryOpacity": "0.5",
     "secondaryOpacity": "0.8",
-    "opacityInThemeModal": "0.5",
     
     "btnPlus": "#bedbb0",
     "btnPlusHover": "#9dc888",
@@ -27,8 +26,6 @@
     "needHelpBg": "#1f1f1f",
     "squareIconColor": "#fff",
 
-    "borderInThemeModal": "#bedbb0",
-
     "scroll": "#121212",
     "scrollBg": "rgba(255, 255, 255, 0.1)"
   },
@@ -39,7 +36,7 @@
 
     "primaryBgColor": "#fff",
     "secondaryBgColor": "#f6f6f7",
-    "headerBgColor": "#fff",
+    "headerBgColor": "#fcfcfc",
     "modalBgColor": "#fcfcfc",
     "extraBgColor": "#fff",
 
@@ -48,7 +45,6 @@
 
     "primaryOpacity": "0.7",
     "secondaryOpacity": "0.8",
-    "opacityInThemeModal": "1",
 
     "btnPlus": "#bedbb0",
     "btnPlusHover": "#9dc888",
@@ -58,8 +54,6 @@
     "btnBgColorHover": "#9dc888",
     "needHelpBg": "#f6f6f7",
     "squareIconColor": "#161616",
-
-    "borderInThemeModal": "#bedbb0",
 
     "scroll": "rgba(22, 22, 22, 0.1)",
     "scrollBg": "#e8e8e8"
@@ -80,7 +74,6 @@
 
     "primaryOpacity": "0.7",
     "secondaryOpacity": "0.8",
-    "opacityInThemeModal": "1",
 
     "btnPlus": "#b8bcfd",
     "btnPlusHover": "#979cea",
@@ -90,8 +83,6 @@
     "btnBgColorHover": "#7b7ede",
     "needHelpBg": "rgba(236, 237, 253, 0.4)",
     "squareIconColor": "#5255bc",
-
-    "borderInThemeModal": "#ecedfd",
 
     "scroll": "#b8bcfd",
     "scrollBg": "#fff"

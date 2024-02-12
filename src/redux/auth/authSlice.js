@@ -5,7 +5,6 @@ import {
   refreshing,
   update,
   updateAvatar,
-  changeTheme,
 } from './authOperation';
 
 import { createSlice } from '@reduxjs/toolkit';
@@ -63,8 +62,5 @@ export const authSlice = createSlice({
       })
       .addCase(updateAvatar.rejected, (state, action) => {
         state.error = action.payload;
-      })
-      .addCase(changeTheme.fulfilled, (state, action) => {
-        state.user = { ...state.user, ...action.payload };
       }),
 });
