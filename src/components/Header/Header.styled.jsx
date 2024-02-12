@@ -1,15 +1,4 @@
-import styled, { keyframes } from 'styled-components';
-
-export const Wrap = styled.div`
-  grid-column: 2;
-  grid-row: 1;
-`;
-
-export const MenuBtn = styled.button`
-  @media (min-width: 1180px) {
-    display: none;
-  }
-`;
+import styled from 'styled-components';
 
 export const HeaderStyled = styled.header`
   grid-column: 1 / 2;
@@ -35,43 +24,23 @@ export const ThemeContainer = styled.div`
   justify-content: left;
 `;
 
-export const AddBtn = styled.button`
-  gap: 8px;
-  background: transparent;
-  max-width: 335px;
+export const MenuBtn = styled.button`
   border: none;
-  border-radius: 8px;
-  font-size: 14px;
-  display: flex;
-  column-gap: 4px;
-  align-items: right;
-  color: var(--nonAccentTextColor);
-`;
+  background-color: inherit;
 
-export const IconWrap = styled.div`
-  > svg {
-    width: 14px;
-    height: 14px;
-    stroke: var(--nonAccentTextColor);
+  svg {
+    width: 24px;
+    height: 24px;
+
+    @media (min-width: 768px) {
+      width: 32px;
+      height: 32px;
+    }
   }
-`;
 
-export const Navigation = styled.nav`
-  font-family: 'Poppins-Regular';
-  font-size: 14px;
-  position: absolute;
-  top: 54px;
-  text-align: left;
-  padding-left: 12px;
-  width: 81px;
-  height: 84px;
-  background-color: #151515;
-  border-radius: 8px;
-  cursor: pointer;
-  // opacity: 0;
-  // transform: translateY(-10px);
-  // visibility: hidden;
-  // transition: 0.3s;
+  @media (min-width: 1440px) {
+    display: none;
+  }
 `;
 
 export const NavigationList = styled.ul`
@@ -91,8 +60,8 @@ export const Theme = styled.div`
   font-family: 'Poppins-Regular';
   font-size: 14px;
   display: flex;
-  column-gap: 4px;
-  align-items: right;
+  align-items: baseline;
+  gap: 14px;
 `;
 
 export const NavigationItem = styled.button`

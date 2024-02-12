@@ -5,7 +5,6 @@ import { Calendar } from 'components/Calendar';
 import { Icon } from 'components/Icon';
 
 import {
-  ModalBody,
   Container,
   TitleModal,
   StyledDescription,
@@ -43,6 +42,7 @@ export default function AddCardModal({ title, btnText, onClose, columnId }) {
   const dispatch = useDispatch();
 
   const onSubmit = values => {
+    dispatch(addCard({ values, columnId }));
     dispatch(addCard({ values, columnId }));
     onClose();
   };

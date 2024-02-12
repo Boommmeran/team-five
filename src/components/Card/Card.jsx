@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import { useState } from 'react';
 
 import {
+  customStyles,
   CardBody,
   CardDetals,
   Priority,

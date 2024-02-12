@@ -48,7 +48,7 @@
 
     "primaryBgColor": "#fff",
     "secondaryBgColor": "#f6f6f7",
-    "headerBgColor": "#fcfcfc",
+    "headerBgColor": "#fff",
     "modalBgColor": "#fcfcfc",
     "extraBgColor": "#fff",
 
@@ -57,6 +57,7 @@
 
     "primaryOpacity": "0.7",
     "secondaryOpacity": "0.8",
+    "opacityInThemeModal": "1",
 
     "btnPlus": "#bedbb0",
     "btnPlusHover": "#9dc888",
@@ -98,6 +99,7 @@
 
     "primaryOpacity": "0.7",
     "secondaryOpacity": "0.8",
+    "opacityInThemeModal": "1",
 
     "btnPlus": "#b8bcfd",
     "btnPlusHover": "#979cea",
