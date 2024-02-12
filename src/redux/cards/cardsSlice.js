@@ -13,7 +13,7 @@ const cards = [
     text: "Create a visually stunning and eye-catching watch dial design that embodies our brand's essence of sleek aesthetics and modern elegance. Your design should be unique, innovative, and reflective of the latest trends in watch design.",
     priority: 'low',
     deadline:
-      'Sun Feb 11 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
+      'Sun Feb 12 2024 21:15:17 GMT+0200 (Восточная Европа, стандартное время)',
   },
   {
     _id: '65c8c3c181c2d3854aa44bce',
@@ -98,7 +98,12 @@ export const cardSlice = createSlice({
       .addCase(chengeColumnsCard.fulfilled, (state, action) => {
         state.loading = false;
         state.error = null;
-        // зміна колонки
+
+        const { _id, ...cardData } = action.payload;
+        const index = state.cards.findIndex(card => card._id === _id);
+        if (index !== -1) {
+          state.cards[index] = { ...state.cards[index], ...cardData };
+        }
       })
       .addCase(chengeColumnsCard.rejected, (state, action) => {
         state.loading = false;

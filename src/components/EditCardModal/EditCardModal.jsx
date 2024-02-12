@@ -18,9 +18,9 @@ import {
   StyledForm,
   ErrMsg,
   Label,
-} from './AddCardModal.styled.js';
+} from './EditCardModal.styled.js';
 import { useDispatch } from 'react-redux';
-import { addCard } from '../../redux/cards/cardsOperations.js';
+import { editCard } from '../../redux/cards/cardsOperations.js';
 import { RadioInputs } from 'components/RadioInputs/RadioInputs.jsx';
 
 const priority = ['without', 'low', 'medium', 'high'];
@@ -38,19 +38,20 @@ const formCardSchema = Yup.object().shape({
   deadline: Yup.date(),
 });
 
-export default function AddCardModal({ title, btnText, onClose, columnId }) {
-  const [selectedDate, setSelectedDate] = useState(new Date());
+export default function EditCardModal({ card, onClose }) {
+  const { _id: cardId, title, text, deadline, priority } = card;
+  const [selectedDate, setSelectedDate] = useState(deadline);
   const dispatch = useDispatch();
 
   const onSubmit = values => {
-    dispatch(addCard({ values, columnId }));
+    dispatch(editCard({ values, cardId }));
     onClose();
   };
 
   return (
     <Container>
       <ModalBody>
-        <TitleModal>{title}</TitleModal>
+        <TitleModal>Edit card</TitleModal>
         <CloseModal>
           <button type="button" onClick={onClose}>
             <Icon
@@ -63,9 +64,9 @@ export default function AddCardModal({ title, btnText, onClose, columnId }) {
         </CloseModal>
         <Formik
           initialValues={{
-            title: '',
-            text: '',
-            priority: 'without',
+            title,
+            text,
+            priority,
             deadline: selectedDate,
           }}
           validationSchema={formCardSchema}
@@ -87,7 +88,7 @@ export default function AddCardModal({ title, btnText, onClose, columnId }) {
               <LabelColorStyle id="colorCard-radio-group">
                 Label color
               </LabelColorStyle>
-              <RadioInputs defaultChecked="without" />
+              <RadioInputs defaultChecked={priority} />
               <DeadlineStyle>Deadline</DeadlineStyle>
               <Calendar
                 selectedDate={selectedDate}
@@ -100,7 +101,7 @@ export default function AddCardModal({ title, btnText, onClose, columnId }) {
                 <StylePlus>
                   <Icon name="plus" width="14" height="14" />
                 </StylePlus>
-                <p>{btnText}</p>
+                <p>Edit</p>
               </AddButton>
             </StyledForm>
           )}

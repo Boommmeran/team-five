@@ -18,18 +18,7 @@ export const CardColor = styled.div`
   height: 154px;
   top: 0px;
   left: 0px;
-  background-color: ${({ priority }) => {
-    switch (priority) {
-      case 'high':
-        return '#bedbb0';
-      case 'medium':
-        return '#e09cb5';
-      case 'low':
-        return '#8fa1d0';
-      default:
-        return 'rgba(22, 22, 22, 0.3)';
-    }
-  }};
+  background-color: var(--priority-${({ $priority }) => $priority});
 `;
 export const CardTitle = styled.h4`
   text-align: left;
@@ -53,13 +42,13 @@ export const CardDescription = styled.p`
 `;
 
 export const CardSolid = styled.div`
-  border: 1px solid;
-  border-color: rgba(22, 22, 22, 0.1); //не змінюється в темах
+  border: 1px solid var(--cards-line);
   margin-bottom: 14px;
 `;
 
 export const CardDetals = styled.div`
   display: flex;
+  align-items: center;
   justify-content: space-between;
 `;
 
@@ -81,7 +70,7 @@ export const PriorityTitle = styled.p`
   text-align: left;
   font-size: 8px;
   letter-spacing: -0.02em;
-  color: rgba(22, 22, 22, 0.5); //не змінюється в темах
+  color: var(--secondaryTextColor);
   margin-bottom: 4px;
   text-transform: lowercase;
 `;
@@ -90,18 +79,7 @@ export const PriorityColor = styled.div`
   width: 14px;
   height: 14px;
   margin-right: 4px;
-  background-color: ${props => {
-    switch (props.priority) {
-      case 'high':
-        return '#bedbb0';
-      case 'medium':
-        return '#e09cb5';
-      case 'low':
-        return '#8fa1d0';
-      default:
-        return 'rgba(22, 22, 22, 0.3)';
-    }
-  }};
+  background-color: var(--priority-${({ $priority }) => $priority});
 `;
 
 export const PriorityTipe = styled.p`
@@ -120,7 +98,7 @@ export const DeadlineTitle = styled.p`
   text-align: left;
   font-size: 8px;
   letter-spacing: -0.02em;
-  color: rgba(22, 22, 22, 0.5); //не змінюється в темах
+  color: var(--secondaryTextColor);
   margin-bottom: 4px;
 `;
 
@@ -133,7 +111,7 @@ export const DeadlineDate = styled.p`
 export const CardButtons = styled.div`
   display: flex;
   gap: 8px;
-  stroke: rgba(22, 22, 22, 0.5); //не змінюється в темах
+  stroke: var(--secondaryTextColor); //не змінюється в темах
   button {
     margin: 0;
     padding: 0;
@@ -148,11 +126,8 @@ export const Bell = styled.button`
 export const Button = styled.button`
   cursor: pointer;
   transition: var(--transition);
-  &:hover {
-    stroke: rgba(22, 22, 22);
-  }
-  &:focus,
-  &:active {
+  stroke: var(--secondaryTextColor);
+  &:is(:hover, :focus) {
     stroke: var(--accent);
   }
 `;

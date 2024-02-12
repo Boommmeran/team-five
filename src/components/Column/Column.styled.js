@@ -51,16 +51,18 @@ export const CardList = styled.ul`
   }
 
   &::-webkit-scrollbar-track {
-    background: blue; /* колір фону всієї доріжки скролбару */
+    background: var(--scroll-col); /* колір фону всієї доріжки скролбару */
     border-radius: 12px; // заокруглення доріжки скролу
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: rgb(15, 15, 15); // колір самого скролу
+    background-color: var(--scroll-col-bg); // колір самого скролу
     border-radius: 12px; /* заокруглення самого скролу */
 
     &:hover {
-      background-color: red; // колір самого скролу при наведенні
+      background-color: var(
+        --scroll-col-bg-hover
+      ); // колір самого скролу при наведенні
     }
   }
 `;
@@ -77,12 +79,9 @@ export const IconedBtn = styled.button`
   justify-content: center;
   padding: 0;
   border: none;
-
-  opacity: 0.8;
   background-color: inherit;
 
   stroke: var(--secondaryTextColor);
-  stroke-opacity: 0.5;
   transition: opacity var(--transition);
 
   > svg {
@@ -93,7 +92,7 @@ export const IconedBtn = styled.button`
   cursor: pointer;
   &:hover,
   &:focus {
-    opacity: 1;
+    stroke: var(--accent);
   }
 `;
 

@@ -19,21 +19,23 @@ export const Container = styled.div`
   padding: 0 0 8px;
 
   &::-webkit-scrollbar {
-    width: 8px; /* ширина скролбару */
-    height: 8px;
+    width: 12px; /* ширина скролбару */
+    height: 12px;
   }
 
   &::-webkit-scrollbar-track {
-    background: blue; /* колір фону всієї доріжки скролбару */
+    background: var(--scroll); /* колір фону всієї доріжки скролбару */
     border-radius: 12px; // заокруглення доріжки скролу
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: rgb(15, 15, 15); // колір самого скролу
+    background-color: var(--scrollBg); // колір самого скролу
     border-radius: 12px; /* заокруглення самого скролу */
 
     &:hover {
-      background-color: red; // колір самого скролу при наведенні
+      background-color: var(
+        --scroll-bg-hover
+      ); // колір самого скролу при наведенні
     }
   }
 `;

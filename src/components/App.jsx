@@ -24,7 +24,7 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <>
       <GlobalStyles theme={themes[theme]} />
 
       {isRefreshing ? (
@@ -55,6 +55,6 @@ export const App = () => {
           </Routes>
         </Suspense>
       )}
-    </div>
+    </>
   );
 };

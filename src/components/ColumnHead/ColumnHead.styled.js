@@ -25,6 +25,7 @@ export const Title = styled.h3`
   font-size: 14px;
   line-height: 1.5;
   letter-spacing: -0.02em;
+  color: var(--primaryTextColor);
 `;
 
 export const Wrap = styled.div`
@@ -39,12 +40,9 @@ export const IconedBtn = styled.button`
   justify-content: center;
   padding: 0;
   border: none;
-
-  opacity: 0.8;
   background-color: inherit;
 
   stroke: var(--secondaryTextColor);
-  stroke-opacity: 0.5;
   transition: opacity var(--transition);
 
   > svg {
@@ -55,6 +53,6 @@ export const IconedBtn = styled.button`
   cursor: pointer;
   &:hover,
   &:focus {
-    opacity: 1;
+    stroke: var(--accent);
   }
 `;

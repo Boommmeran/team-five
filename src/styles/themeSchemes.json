@@ -11,11 +11,11 @@
     "extraBgColor": "#121212",
 
     "primaryTextColor": "#fff",
-    "secondaryTextColor": "fff",
+    "secondaryTextColor": "rgba(255, 255, 255, 0.5)",
 
     "primaryOpacity": "0.5",
     "secondaryOpacity": "0.8",
-    
+
     "btnPlus": "#bedbb0",
     "btnPlusHover": "#9dc888",
 
@@ -26,8 +26,20 @@
     "needHelpBg": "#1f1f1f",
     "squareIconColor": "#fff",
 
-    "scroll": "#121212",
-    "scrollBg": "rgba(255, 255, 255, 0.1)"
+    "cardsLine": "rgba(255, 255, 255, 0.1)",
+
+    "scroll": "#161616",
+    "scrollBg": "rgba(255, 255, 255, 0.1)",
+    "scrollBgHover": "rgba(255, 255, 255, 0.2)",
+
+    "scrollCol": "rgba(255, 255, 255, 0.1)",
+    "scrollColBg": "rgba(18, 18, 18, 1)",
+    "scrollColBgHover": "rrgba(38, 38, 38, 1)",
+
+    "priorityWithout": "rgba(255, 255, 255, 0.3)",
+    "priorityLow": "rgba(143, 161, 208, 1)",
+    "priorityMedium": "rgba(224, 156, 181, 1)",
+    "priorityHigh": "rgba(190, 219, 176, 1)"
   },
   "light": {
     "accent": "#bedbb0",
@@ -55,8 +67,20 @@
     "needHelpBg": "#f6f6f7",
     "squareIconColor": "#161616",
 
-    "scroll": "rgba(22, 22, 22, 0.1)",
-    "scrollBg": "#e8e8e8"
+    "cardsLine": "rgba(22, 22, 22, 0.1)",
+
+    "scroll": "#fff",
+    "scrollBg": "#e8e8e8",
+    "scrollBgHover": "rgba(200, 200, 200, 1)",
+
+    "scrollCol": "rgba(232, 232, 232, 1)",
+    "scrollColBg": "rgba(22, 22, 22, 0.1)",
+    "scrollColBgHover": "rgba(22, 22, 22, 0.2)",
+
+    "priorityWithout": "rgba(22, 22, 22, 0.3)",
+    "priorityLow": "rgba(143, 161, 208, 1)",
+    "priorityMedium": "rgba(224, 156, 181, 1)",
+    "priorityHigh": "rgba(190, 219, 176, 1)"
   },
   "violet": {
     "accent": "#5255bc",
@@ -84,7 +108,19 @@
     "needHelpBg": "rgba(236, 237, 253, 0.4)",
     "squareIconColor": "#5255bc",
 
+    "cardsLine": "rgba(22, 22, 22, 0.1)",
+
     "scroll": "#b8bcfd",
-    "scrollBg": "#fff"
+    "scrollBg": "#fff",
+    "scrollBgHover": "rgba(200, 200, 200, 1)",
+
+    "scrollCol": "rgba(255, 255, 255, 1)",
+    "scrollColBg": "rgba(184, 188, 253, 1)",
+    "scrollColBgHover": "rgba(194, 198, 255, 1)",
+
+    "priorityWithout": "rgba(22, 22, 22, 0.3)",
+    "priorityLow": "rgba(143, 161, 208, 1)",
+    "priorityMedium": "rgba(224, 156, 181, 1)",
+    "priorityHigh": "rgba(190, 219, 176, 1)"
   }
 }

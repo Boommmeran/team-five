@@ -20,7 +20,7 @@ const device = {
   desktopL: `(min-width: ${size.desktop})`,
 };
 export const Container = styled.div`
-  text-align: center;
+  margin: 0 auto;
 
   @media ${device.mobileM} {
     width: 375px;
