@@ -78,7 +78,6 @@ export const GlobalStyles = createGlobalStyle`
 body {
   font-family: 'Poppins-Regular', sans-serif;
   margin: 0 auto;
-  min-height: 95vh;
   min-width: 100%;
   background-color: var(--primaryBgColor);
 }

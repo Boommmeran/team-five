@@ -17,11 +17,11 @@ export const fetchColumnsByBoardId = createAsyncThunk(
   }
 );
 
-export const addColumnByBoardId = createAsyncThunk(
+export const addColumn = createAsyncThunk(
   'columns/add',
-  async ({ boardId, column }, thunkAPI) => {
+  async ({ boardId, body }, thunkAPI) => {
     try {
-      const res = await axios.post(`/columns/${boardId}`, column);
+      const res = await axios.post(`/columns/${boardId}`, body);
 
       return res.data;
     } catch (error) {
@@ -32,9 +32,9 @@ export const addColumnByBoardId = createAsyncThunk(
 
 export const editColumn = createAsyncThunk(
   'columns/edit',
-  async ({ columnId, column }, thunkAPI) => {
+  async ({ body, columnId }, thunkAPI) => {
     try {
-      const res = await axios.patch(`/columns/${columnId}`, column);
+      const res = await axios.patch(`/columns/${columnId}`, body);
 
       return res.data;
     } catch (error) {
@@ -45,7 +45,7 @@ export const editColumn = createAsyncThunk(
 
 export const deleteColumn = createAsyncThunk(
   'columns/delete',
-  async (columnId, thunkAPI) => {
+  async ({ columnId }, thunkAPI) => {
     try {
       const res = await axios.delete(`/columns/${columnId}`);
 

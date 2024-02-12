@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
-  addColumnByBoardId,
+  addColumn,
   deleteColumn,
   editColumn,
   fetchColumnsByBoardId,
@@ -37,16 +37,16 @@ export const columnsSlice = createSlice({
         state.error = action.payload;
       })
       //========================================================
-      .addCase(addColumnByBoardId.pending, state => {
+      .addCase(addColumn.pending, state => {
         state.loading = true;
         state.error = null;
       })
-      .addCase(addColumnByBoardId.fulfilled, (state, action) => {
+      .addCase(addColumn.fulfilled, (state, action) => {
         state.loading = false;
         state.error = null;
         state.columns.push(action.payload);
       })
-      .addCase(addColumnByBoardId.rejected, (state, action) => {
+      .addCase(addColumn.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       })

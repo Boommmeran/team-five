@@ -3,14 +3,12 @@ import Modal from 'react-modal';
 import { useState } from 'react';
 import Card from 'components/Card/Card';
 import { AddBtn, CardList, IconWrap } from './Column.styled';
-import { EditColumnModal } from 'components/EditColumnModal/EditColumnModal';
 import AddCardModal from 'components/AddCardModal/AddCardModal';
 import { useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import { ColumnHead } from 'components/ColumnHead/ColumnHead';
 
 export const Column = ({ columnId, title }) => {
-  const [modalColumnIsOpen, setmodalColumnIsOpen] = useState(false);
   const [modalCardIsOpen, setmodalCardIsOpen] = useState(false);
   const { cards } = useSelector(state => state.cards);
   const filtredCards = cards; //?.filter(({ column: { _id } }) => _id === columnId);
@@ -30,14 +28,6 @@ export const Column = ({ columnId, title }) => {
     },
   };
 
-  const openColumnModal = () => {
-    setmodalColumnIsOpen(true);
-  };
-
-  const closeColumnModal = () => {
-    setmodalColumnIsOpen(false);
-  };
-
   const openCardModal = () => {
     setmodalCardIsOpen(true);
   };
@@ -48,18 +38,12 @@ export const Column = ({ columnId, title }) => {
 
   return (
     <>
-      <ColumnHead
-        title={title}
-        openModal={openColumnModal}
-        columnId={columnId}
-      />
-
+      <ColumnHead title={title} columnId={columnId} />
       <CardList>
         {filtredCards.map(card => (
           <Card key={nanoid()} card={card} />
         ))}
       </CardList>
-
       <AddBtn type="button" onClick={openCardModal}>
         <IconWrap>
           <Icon name="plus" />
@@ -78,19 +62,6 @@ export const Column = ({ columnId, title }) => {
           title={'Add card'}
           btnText={'Add'}
           onClose={closeCardModal}
-        />
-      </Modal>
-      <Modal
-        isOpen={modalColumnIsOpen}
-        onRequestClose={closeColumnModal}
-        style={customStyles}
-        contentLabel="Column Edit Modal"
-        ariaHideApp={false}
-      >
-        <EditColumnModal
-          title={'Edit column'}
-          onClose={closeColumnModal}
-          reqFunc={value => console.log(value)}
         />
       </Modal>
     </>

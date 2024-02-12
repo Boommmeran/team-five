@@ -10,7 +10,6 @@ import {
 import { Icon } from 'components/Icon';
 import Modal from 'react-modal';
 import { useState } from 'react';
-import { EditColumnModal } from 'components/EditColumnModal';
 
 export const Board = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -61,11 +60,11 @@ export const Board = () => {
         contentLabel="Column Edit Modal"
         ariaHideApp={false}
       >
-        <EditColumnModal
+        {/* <EditColumnModal
           title={'Add column'}
           onClose={closeModal}
           reqFunc={value => console.log(value)}
-        />
+        /> */}
       </Modal>
     </>
   );

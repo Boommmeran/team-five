@@ -47,10 +47,10 @@ export const ColumnList = styled.ul`
 
 export const ColumnItem = styled.li`
   display: grid;
-  grid-template-rows: 56px 1fr 56px;
+  grid-template-rows: 56px minmax(0, 1fr) 56px;
   gap: 14px;
   width: 347px;
-  max-height: 82vh;
+  height: calc(90vh - 80px);
   @media (min-width: 768px) {
     width: 350px;
   }
