@@ -1,4 +1,4 @@
-import { Container, Name, Avatar, Button, ButtonSvg } from './UserInfo.styled';
+import { Container, Name, Avatar, Button } from './UserInfo.styled';
 import { EditProfile } from 'components/EditProfile';
 import { Icon } from 'components/Icon';
 import Modal from 'react-modal';
@@ -17,9 +17,7 @@ const customStyles = {
     bottom: 'auto',
     padding: '0',
     transform: 'translate(-50%, -50%)',
-    boxShadow: ' 0 4px 16px 0 rgba(22, 22, 22, 0.05)',
-    borderRadius: '8px',
-    border: '1px solid rgba(190, 219, 176, 0.5);',
+    boxShadow: '0px 4px 16px 0px #1616160D',
   },
   overlay: {
     background: 'rgba(0,0,0,0.5)',
@@ -28,8 +26,6 @@ const customStyles = {
 
 export const UserInfo = () => {
   const { user } = useAuth();
-  const { showSvg } = useAuth();
-  const { showImage } = useAuth();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -44,32 +40,19 @@ export const UserInfo = () => {
   return (
     <Container>
       <Name>{user.name}</Name>
-      {showSvg && (
-        <ButtonSvg onClick={openModal}>
-          <Icon
-            name="user"
-            fill="var(--secondaryBgColor)"
-            stroke="var(--secondaryTextColor)"
-            width="32px"
-            height="32px"
-          />
-        </ButtonSvg>
-      )}
 
-      {showImage && (
-        <Avatar
-          src={cloudinaryBaseURL + user.avatarURL}
-          width="32"
-          height="32"
-          alt="user photo"
-          onClick={openModal}
-        />
-      )}
+      <Avatar
+        src={cloudinaryBaseURL + user.avatarURL}
+        width="32"
+        height="32"
+        alt="user photo"
+        onClick={openModal}
+      />
 
       <Modal isOpen={isModalOpen} style={customStyles} contentLabel="Modal">
         <EditProfile />
         <Button onClick={closeModal}>
-          <Icon name="close" stroke="var(--secondaryTextColor)" />
+          <Icon name="close" stroke="var(--primaryTextColor)" />
         </Button>
       </Modal>
     </Container>

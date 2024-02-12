@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
+
   gap: 8px;
 `;
 
@@ -11,7 +12,7 @@ export const Name = styled.p`
   font-size: 14px;
   line-height: 1.5;
   letter-spacing: -2;
-  color: var(--secondaryTextColor);
+  color: var(--primaryTextColor);
 `;
 
 export const Avatar = styled.img`
@@ -26,12 +27,4 @@ export const Button = styled.button`
   background: var(--modalBgColor);
   border: 0;
   cursor: pointer;
-`;
-
-export const ButtonSvg = styled.button`
-  padding: 0;
-  margin: 0;
-  border: 0;
-  background-color: var(--primaryBgColor);
-  cursor:pointer;
 `;
