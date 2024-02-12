@@ -42,6 +42,9 @@ export const GlobalStyles = createGlobalStyle`
 
   --scroll: ${({ theme }) => theme.scroll};
   --scrollBg: ${({ theme }) => theme.scrollBg};
+
+  --logoBg: ${({ theme }) => theme.logoBg};
+  --logoLightning: ${({ theme }) => theme.logoLightning};
   }
 
 @font-face {

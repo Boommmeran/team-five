@@ -30,7 +30,10 @@
     "borderInThemeModal": "#bedbb0",
 
     "scroll": "#121212",
-    "scrollBg": "rgba(255, 255, 255, 0.1)"
+    "scrollBg": "rgba(255, 255, 255, 0.1)",
+
+    "logoBg": "#1f1f1f",
+    "logoLightning": "#fff"
   },
   "light": {
     "accent": "#bedbb0",
@@ -62,7 +65,10 @@
     "borderInThemeModal": "#bedbb0",
 
     "scroll": "rgba(22, 22, 22, 0.1)",
-    "scrollBg": "#e8e8e8"
+    "scrollBg": "#e8e8e8",
+
+    "logoBg": "#1f1f1f",
+    "logoLightning": "#fff"
   },
   "violet": {
     "accent": "#5255bc",
@@ -94,6 +100,9 @@
     "borderInThemeModal": "#ecedfd",
 
     "scroll": "#b8bcfd",
-    "scrollBg": "#fff"
+    "scrollBg": "#fff",
+
+    "logoBg":"#ECEDFD",
+    "logoLightning": "#5255BC"
   }
 }
