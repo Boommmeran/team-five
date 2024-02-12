@@ -92,7 +92,7 @@ export const Button = styled.button`
   font-size: 14px;
   letter-spacing: -0, 02em;
 
-  &:hover {
+  &:hover &:focus {
     background: var(--hover);
   }
 `;

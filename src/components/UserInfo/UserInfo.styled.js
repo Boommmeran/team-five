@@ -28,3 +28,13 @@ export const Button = styled.button`
   border: 0;
   cursor: pointer;
 `;
+
+export const ButtonSvg = styled.button`
+opacity: 0;
+  height: 0;
+  width: 0;
+  line-height: 0;
+  overfow: hidden;
+  padding: 0;
+  margin: 0;
+`;

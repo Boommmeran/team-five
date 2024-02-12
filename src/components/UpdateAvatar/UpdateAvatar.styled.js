@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
 export const ContainerAvatar = styled.div`
+  margin-bottom: 25px;
   position: relative;
   display: flex;
   justify-content: center;
 `;
 
 export const Avatar = styled.img`
-  margin-bottom: 25px;
+  /* margin-bottom: 25px; */
   border-radius: 8px;
 `;
 
@@ -24,13 +25,17 @@ export const Input = styled.input`
 export const Button = styled.button`
   position: absolute;
   top: 56px;
-  left:46%;
+  left: 46%;
 
   width: 24px;
   height: 24px;
   background: var(--accent);
   border-radius: 8px;
   border: 0;
+
+  &:hover &:focus {
+    background: var(--hover);
+  }
 
   @media only screen and (min-width: 768px) {
     left: 47%;

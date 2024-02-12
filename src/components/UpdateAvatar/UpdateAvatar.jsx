@@ -12,6 +12,9 @@ const cloudinaryBaseURL =
 
 export const UpdateAvatar = () => {
   const { user } = useAuth();
+  const { showSvg } = useAuth();
+  const { showImage } = useAuth();
+
   const dispatch = useDispatch();
 
   const filePicker = useRef(null);
@@ -25,14 +28,26 @@ export const UpdateAvatar = () => {
   const handlePick = () => {
     filePicker.current.click();
   };
+
   return (
     <ContainerAvatar>
-      <Avatar
-        src={cloudinaryBaseURL + user.avatarURL}
-        width="68"
-        height="68"
-        alt="user photo"
-      />
+      {showSvg && (
+        <Icon
+          name="user"
+          fill="var(--secondaryBgColor)"
+          stroke="red"
+          width="68px"
+          height="68px"
+        />
+      )}
+      {showImage && (
+        <Avatar
+          src={cloudinaryBaseURL + user.avatarURL}
+          width="68"
+          height="68"
+          alt="user photo"
+        />
+      )}
 
       <Button onClick={handlePick}>
         <Icon
