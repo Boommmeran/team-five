@@ -11,6 +11,7 @@ export function Calendar({ selectedDate, onDateChange }) {
       selected={selectedDate}
       onChange={handleDateChange}
       dateFormat="MMMM d"
+      minDate={new Date()}
     />
   );
 }
