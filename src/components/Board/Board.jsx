@@ -6,6 +6,7 @@ import {
   ColumnItem,
   Container,
   ColumnList,
+  customStyles,
 } from './Board.styled';
 import { Icon } from 'components/Icon';
 import Modal from 'react-modal';
@@ -17,21 +18,6 @@ import { nanoid } from '@reduxjs/toolkit';
 export const Board = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const { columns } = useSelector(state => state.columns);
-
-  const customStyles = {
-    content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      transform: 'translate(-50%, -50%)',
-      boxShadow: '0px 4px 16px 0px #1616160D',
-      padding: 0,
-    },
-    overlay: {
-      background: 'rgba(0,0,0,0.5)',
-    },
-  };
 
   const openModal = () => {
     setIsOpen(true);

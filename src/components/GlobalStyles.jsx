@@ -24,6 +24,7 @@ export const GlobalStyles = createGlobalStyle`
 
   --primaryOpacity: ${({ theme }) => theme.primaryOpacity};
   --secondaryOpacity: ${({ theme }) => theme.secondaryOpacity};
+  --opacityInThemeModal: ${({ theme }) => theme.opacityInThemeModal};
 
   --btnPlus: ${({ theme }) => theme.btnPlus};
   --btnPlusHover: ${({ theme }) => theme.btnPlusHover};
@@ -42,6 +43,8 @@ export const GlobalStyles = createGlobalStyle`
   --scroll: ${({ theme }) => theme.scroll};
   --scrollBg: ${({ theme }) => theme.scrollBg};
   --scroll-bg-hover: ${({ theme }) => theme.scrollBgHover};
+
+  --borderInThemeModal: ${({ theme }) => theme.borderInThemeModal};
 
   --scroll-col: ${({ theme }) => theme.scrollCol};
   --scroll-col-bg: ${({ theme }) => theme.scrollColBg};

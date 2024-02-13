@@ -15,6 +15,7 @@
 
     "primaryOpacity": "0.5",
     "secondaryOpacity": "0.8",
+    "opacityInThemeModal": "0.5",
 
     "btnPlus": "#bedbb0",
     "btnPlusHover": "#9dc888",
@@ -27,6 +28,8 @@
     "squareIconColor": "#fff",
 
     "cardsLine": "rgba(255, 255, 255, 0.1)",
+
+    "borderInThemeModal": "#bedbb0",
 
     "scroll": "#161616",
     "scrollBg": "rgba(255, 255, 255, 0.1)",
@@ -48,7 +51,7 @@
 
     "primaryBgColor": "#fff",
     "secondaryBgColor": "#f6f6f7",
-    "headerBgColor": "#fcfcfc",
+    "headerBgColor": "#fff",
     "modalBgColor": "#fcfcfc",
     "extraBgColor": "#fff",
 
@@ -57,6 +60,7 @@
 
     "primaryOpacity": "0.7",
     "secondaryOpacity": "0.8",
+    "opacityInThemeModal": "1",
 
     "btnPlus": "#bedbb0",
     "btnPlusHover": "#9dc888",
@@ -68,6 +72,8 @@
     "squareIconColor": "#161616",
 
     "cardsLine": "rgba(22, 22, 22, 0.1)",
+
+    "borderInThemeModal": "#bedbb0",
 
     "scroll": "#fff",
     "scrollBg": "#e8e8e8",
@@ -98,6 +104,7 @@
 
     "primaryOpacity": "0.7",
     "secondaryOpacity": "0.8",
+    "opacityInThemeModal": "1",
 
     "btnPlus": "#b8bcfd",
     "btnPlusHover": "#979cea",
@@ -109,6 +116,8 @@
     "squareIconColor": "#5255bc",
 
     "cardsLine": "rgba(22, 22, 22, 0.1)",
+
+    "borderInThemeModal": "#ecedfd",
 
     "scroll": "#b8bcfd",
     "scrollBg": "#fff",

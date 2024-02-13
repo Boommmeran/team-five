@@ -2,7 +2,6 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import axios from 'axios';
 
-// axios.defaults.baseURL = 'http://localhost:9000/api';
 axios.defaults.baseURL = 'https://team-five-backend-v2.onrender.com/api';
 
 const setAuthHeader = token => {
@@ -87,6 +86,18 @@ export const updateAvatar = createAsyncThunk(
       const response = await axios.patch('/users/avatars', formData);
 
       return response.data.avatarURL;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const changeTheme = createAsyncThunk(
+  'changeTheme/user',
+  async ({ theme }, thunkAPI) => {
+    try {
+      const response = await axios.patch('/users/theme', { theme });
+      return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

@@ -8,7 +8,7 @@ export const Container = styled.div`
     max-width: 718px;
   }
 
-  @media (min-width: 1180px) {
+  @media (min-width: 1440px) {
     max-width: 1128px;
   }
 
@@ -39,6 +39,21 @@ export const Container = styled.div`
     }
   }
 `;
+
+export const customStyles = { 
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    transform: 'translate(-50%, -50%)',
+    boxShadow: '0px 4px 16px 0px #1616160D',
+    padding: 0,
+  },
+  overlay: {
+    background: 'rgba(0,0,0,0.5)',
+  },
+};
 
 export const ColumnList = styled.ul`
   display: flex;

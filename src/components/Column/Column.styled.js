@@ -35,7 +35,7 @@ export const CardList = styled.ul`
   @media (min-width: 768px) {
   }
 
-  @media (min-width: 1180px) {
+  @media (min-width: 1440px) {
   }
 
   overflow: auto;
