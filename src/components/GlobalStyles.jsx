@@ -38,7 +38,7 @@ export const GlobalStyles = createGlobalStyle`
   --extraBgColor: ${({ theme }) => theme.extraBgColor};
   --squareIconColor: ${({ theme }) => theme.squareIconColor};
 
-  --cards-line: ${({ theme }) => theme.cardsLine};
+  --cardsLine: ${({ theme }) => theme.cardsLine};
 
   --scroll: ${({ theme }) => theme.scroll};
   --scrollBg: ${({ theme }) => theme.scrollBg};

@@ -11,7 +11,7 @@
     "extraBgColor": "#121212",
 
     "primaryTextColor": "#fff",
-    "secondaryTextColor": "rgba(255, 255, 255, 0.5)",
+    "secondaryTextColor": "#fff",
 
     "primaryOpacity": "0.5",
     "secondaryOpacity": "0.8",
@@ -132,6 +132,7 @@
     "squareIconColor": "#5255bc",
 
     "cardsLine": "rgba(22, 22, 22, 0.1)",
+    "beforeInFilters": "",
 
     "borderInThemeModal": "#ecedfd",
 
