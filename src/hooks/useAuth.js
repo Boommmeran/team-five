@@ -5,11 +5,15 @@ import {
   selectIsRefreshing,
   selectEmail,
   selectTheme,
+  selectShowImage,
+  selectShowSvg ,
 } from '../redux/auth/authSelectors';
 
 export const useAuth = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const isRefreshing = useSelector(selectIsRefreshing);
+  const showSvg = useSelector(selectShowSvg);
+  const showImage = useSelector(selectShowImage);
   const user = useSelector(selectUser);
   const email = useSelector(selectEmail);
   const theme = useSelector(selectTheme);
@@ -21,5 +25,7 @@ export const useAuth = () => {
     email,
     user,
     theme,
+    showSvg,
+    showImage,
   };
 };
