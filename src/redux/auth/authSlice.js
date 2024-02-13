@@ -36,9 +36,9 @@ export const authSlice = createSlice({
         state.token = action.payload.token;
         state.isLoggedIn = true;
       })
-      .addCase(logInUser.rejected, () =>
-        console.log('Email or password is not correct')
-      )
+      // .addCase(logInUser.rejected, () =>
+      //   console.log('Email or password is not correct')
+      // )
       .addCase(logOut.fulfilled, state => {
         state.user = { name: '', email: '' };
         state.isLoggedIn = false;

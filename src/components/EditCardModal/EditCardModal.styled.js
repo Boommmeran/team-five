@@ -13,7 +13,7 @@ export const Container = styled.div`
   position: relative;
   padding: 24px;
   width: 100%;
-  background: var(--primaryBgColor);
+  background: var(--modalBgColor);
 
   @media only screen and (min-width: 375px) {
     width: 335px;
@@ -24,23 +24,20 @@ export const Container = styled.div`
   }
 `;
 
-export const ModalBody = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
 export const TitleModal = styled.h2`
   margin-bottom: 24px;
   font-family: 'Poppins-Medium';
   font-size: 18px;
   line-height: 1.5;
-  color: var(--primaryTextColor);
+  color: var(--textColorcalendar);
 `;
 
 export const CloseModal = styled.div`
   position: absolute;
   top: 14px;
   right: 14px;
+  cursor: pointer;
+
   button {
     margin: 0;
     padding: 0;
@@ -52,7 +49,7 @@ export const CloseModal = styled.div`
 export const ErrMsg = styled(ErrorMessage)`
   position: absolute;
   top: 2px;
-  right: 4px;
+  right: 8px;
 
   color: red;
   font-size: 12px;
@@ -69,6 +66,10 @@ export const TitleCard = styled(Field)`
   box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.08);
   opacity: 0.4;
   margin-bottom: 14px;
+
+  background-color: var(--modalBgColor);
+  color: var(--textColorcalendar);
+
   transition: var(--transition);
 
   &:hover,
@@ -106,7 +107,22 @@ export const StyledDescription = styled(Field)`
   box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.08);
   opacity: 0.4;
   margin-bottom: 24px;
+
+  resize: none;
+
+  color: var(--textColorcalendar);
+  background: var(--modalBgColor);
+
   transition: var(--transition);
+
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 1;
+    &::placeholder {
+      color: transparent;
+    }
+  }
 
   @media only screen and (min-width: 375px) {
     width: 287px;
@@ -120,7 +136,7 @@ export const StyledDescription = styled(Field)`
 export const LabelColorStyle = styled.p`
   font-size: 12px;
   letter-spacing: -0.02em;
-  color: var(--secondaryTextColor);
+  color: var(--textCalendar);
   margin-bottom: 4px;
 `;
 
@@ -145,7 +161,7 @@ export const AddButton = styled.button`
   border-radius: 8px;
   width: 287px;
   height: 49px;
-  background: var(--btnPlus);
+  background: var(--accent);
   margin-top: 40px;
   display: flex;
   justify-content: center;
@@ -192,4 +208,11 @@ export const AddCardButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+export const Span = styled.span`
+  font-family: 'Poppins-Medium';
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: var(--accent);
 `;

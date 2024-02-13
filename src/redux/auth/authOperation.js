@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 axios.defaults.baseURL = 'http://localhost:9000/api';
 // axios.defaults.baseURL = 'https://team-five-backend-v2.onrender.com/api';
@@ -32,9 +33,9 @@ export const logInUser = createAsyncThunk(
     try {
       const res = await axios.post('/users/login', user);
       setAuthHeader(res.data.token);
-
       return res.data;
     } catch (error) {
+      toast.error('Email or password is not correct');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -88,6 +89,7 @@ export const updateAvatar = createAsyncThunk(
 
       return response.data.avatarURL;
     } catch (error) {
+      toast.error('Something went wrong. Please, try again.');
       return thunkAPI.rejectWithValue(error.message);
     }
   }

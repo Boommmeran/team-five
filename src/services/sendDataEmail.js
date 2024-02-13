@@ -6,6 +6,6 @@ export const sendDataEmail = async data => {
     await axios.post('/support', data);
     toast.success('Successfully sent!');
   } catch (error) {
-    toast.error('Oops. Something went wrong');
+    toast.error('Oops. Something went wrong.');
   }
 };

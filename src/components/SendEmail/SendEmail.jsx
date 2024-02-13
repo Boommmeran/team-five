@@ -38,7 +38,7 @@ export const SendEmail = ({ onClose }) => {
       <TitleForModal>Need help</TitleForModal>
       <ButtonClose type="button" onClick={onClose}>
         <Icon
-          stroke="var(--primaryTextColor)"
+          stroke="var(--textColorcalendar)"
           name="close"
           width="18"
           height="18"

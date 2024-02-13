@@ -17,6 +17,7 @@ import {
   StyledForm,
   ErrMsg,
   Label,
+  Span,
 } from './AddCardModal.styled.js';
 import { useDispatch } from 'react-redux';
 import { addCard } from '../../redux/cards/cardsOperations.js';
@@ -55,7 +56,7 @@ export default function AddCardModal({ title, btnText, onClose, columnId }) {
             name="close"
             width="18"
             height="18"
-            stroke="var(--primaryTextColor)"
+            stroke="var(--textColorcalendar)"
           />
         </button>
       </CloseModal>
@@ -92,13 +93,16 @@ export default function AddCardModal({ title, btnText, onClose, columnId }) {
               }}
             />
             <DeadlineStyle>Deadline</DeadlineStyle>
-            <Calendar
-              selectedDate={selectedDate}
-              onDateChange={date => {
-                setSelectedDate(date);
-                setFieldValue('deadline', date);
-              }}
-            />
+            <div>
+              <Span> Today,</Span>
+              <Calendar
+                selectedDate={selectedDate}
+                onDateChange={date => {
+                  setSelectedDate(date);
+                  setFieldValue('deadline', date);
+                }}
+              />
+            </div>
             <AddButton type="submit">
               <StylePlus>
                 <Icon name="plus" width="14" height="14" />

@@ -7,7 +7,7 @@ export const ContainerForModal = styled.div`
   width: 320px;
   height: 381px;
 
-  background: var(--headerBgColor);
+  background-color: var(--modalBgColor);
   border-radius: 8px;
   box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.05);
 
@@ -22,14 +22,14 @@ export const ContainerForModal = styled.div`
   }
 `;
 
-export const TitleForModal = styled.h3`
+export const TitleForModal = styled.h2`
   margin-bottom: 24px;
 
   text-align: start;
   font-family: 'Poppins-Medium';
   font-size: 18px;
   letter-spacing: -0.02em;
-  color: var(--primaryTextColor);
+  color: var(--textColorcalendar);
 `;
 export const StyledFormInModal = styled(Form)`
   display: flex;
@@ -52,7 +52,8 @@ export const StyledFieldInModal = styled(Field)`
   font-size: 14px;
   line-height: 1.4;
 
-  color: var(--primaryTextColor);
+  background: var(--modalBgColor);
+  color: var(--textColorcalendar);
 
   &:hover,
   &:focus,
@@ -91,14 +92,14 @@ export const StyledTextareaInModal = styled(Field)`
   font-size: 14px;
   height: calc(30px * 4);
   line-height: 1.5;
+  color: var(--textColorcalendar);
+  background: var(--modalBgColor);
 
   &:hover,
   &:focus,
   &:active {
     opacity: 1;
   }
-
-  color: var(--primaryTextColor);
 
   transition: opacity var(--transition);
 
@@ -122,7 +123,7 @@ export const ButtonForModal = styled.button`
   border: 0;
   border-radius: 8px;
 
-  color: var(--primaryTextColor);
+  color: var(--btnText);
   font-size: 14px;
   line-height: 1.5;
   cursor: pointer;
@@ -155,6 +156,7 @@ export const ButtonClose = styled.button`
   padding: 0;
   border: none;
   background: none;
+
   cursor: pointer;
 `;
 
