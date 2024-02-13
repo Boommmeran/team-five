@@ -33,10 +33,10 @@ export const LoginForm = () => {
     <LoginStyledSection>
       <FormLoginStyled onSubmit={handleSubmit(onSubmit)}>
         <WrapForLoginNav>
-          <StyledNavLinkLogin to="/auth/register">
+          <StyledNavLinkLogin to="/users/register">
             Registration
           </StyledNavLinkLogin>
-          <StyledNavLinkLogin to="/auth/login">Login</StyledNavLinkLogin>
+          <StyledNavLinkLogin to="/users/login">Login</StyledNavLinkLogin>
         </WrapForLoginNav>
         <LabelStyled>
           {' '}

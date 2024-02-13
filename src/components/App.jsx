@@ -7,10 +7,8 @@ import { useDispatch } from 'react-redux';
 import { refreshing } from '../redux/auth/authOperation';
 import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RedirectRoute';
-
 import themes from '../styles/themeSchemes.json';
 import { useAuth } from 'hooks';
-import { ScreensPage } from './ScreensPage';
 
 const WelcomePage = lazy(() => import('pages/WelcomePage'));
 const AuthPage = lazy(() => import('pages/AuthPage'));
@@ -18,9 +16,12 @@ const HomePage = lazy(() => import('pages/HomePage'));
 
 export const App = () => {
   const dispatch = useDispatch();
-  const { isRefreshing, theme = 'light' } = useAuth();
+  const { isLoggedIn, isRefreshing, theme = 'light' } = useAuth();
 
   useEffect(() => {
+    if (!isLoggedIn) {
+      return;
+    }
     dispatch(refreshing());
   }, [dispatch]);
 
@@ -40,7 +41,7 @@ export const App = () => {
               }
             />
             <Route
-              path="auth/:id"
+              path="users/:id"
               element={
                 <RestrictedRoute component={<AuthPage />} redirect="/" />
               }

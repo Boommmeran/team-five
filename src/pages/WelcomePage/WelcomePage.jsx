@@ -35,8 +35,8 @@ export default function WelcomePage() {
           Pro - Don't wait, start achieving your goals now!
         </p>
         <WrapForNav>
-          <StyledNavLink to="/auth/register">Registration</StyledNavLink>
-          <StyledNavLink to="/auth/login">Login</StyledNavLink>
+          <StyledNavLink to="/users/register">Registration</StyledNavLink>
+          <StyledNavLink to="/users/login">Login</StyledNavLink>
         </WrapForNav>
       </WraperContentWelcome>
     </WraperWelcomeSection>
