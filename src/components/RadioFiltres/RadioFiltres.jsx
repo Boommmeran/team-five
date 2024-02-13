@@ -1,37 +1,51 @@
 import { nanoid } from '@reduxjs/toolkit';
 import { useSearchParams } from 'react-router-dom';
+import { capitalizer } from 'helpers/capitalizer';
 import {
-  RadioButton,
+  FiltersWrap,
+  FilterLabel,
   RadioLabel,
   StyledRadioGroup,
+  ShowAllBtn,
+  FiltersSpan,
 } from './RadioFiltres.styled';
 
 export const RadioFilters = () => {
-  const list = ['low', 'medium', 'high', 'without'];
+  const listParams = ['without','low', 'medium', 'high', ];
   const [searchParams, setSearchParams] = useSearchParams();
-  const currValue = searchParams.get('priority') || 'without';
+  const currValue = searchParams.get('priority');
 
   const handleFilter = ({ target: { value } }) => {
     setSearchParams({ priority: value });
   };
 
+  const handleShowAll = () => {
+    setSearchParams({});
+  }
+
   return (
     <>
-      <h3>Label Colors</h3>
+      <FiltersWrap>
+        <FilterLabel>Label color</FilterLabel>
+        <ShowAllBtn type="button" onClick={handleShowAll}>
+          Show all
+        </ShowAllBtn>
+      </FiltersWrap>
       <StyledRadioGroup role="group" aria-labelledby="my-radio-group">
-        {list.map(item => (
+        {listParams.map(item => (
           <RadioLabel
             key={nanoid()}
             $priority={item}
-            // className={currValue === item ? 'checked' : ''}
+            className={currValue === item ? 'checked' : ''}
           >
-            <RadioButton
+            <input
               type="radio"
               name="priority"
               value={item}
               checked={currValue === item}
               onChange={handleFilter}
             />
+            <FiltersSpan>{capitalizer(item)}</FiltersSpan>
           </RadioLabel>
         ))}
       </StyledRadioGroup>
