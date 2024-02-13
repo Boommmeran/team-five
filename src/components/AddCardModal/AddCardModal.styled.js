@@ -108,6 +108,7 @@ export const StyledDescription = styled(Field)`
   opacity: 0.4;
   margin-bottom: 24px;
   transition: var(--transition);
+  resize: none;
 
   &:hover,
   &:focus,
