@@ -18,7 +18,7 @@ import { UpdateAvatar } from 'components/UpdateAvatar';
 import { Icon } from 'components/Icon';
 import { EditProfileSchema } from 'schemas/editProfileSchema';
 
-export const EditProfile = () => {
+export const EditProfile = ({closeModal}) => {
   const { user } = useAuth();
   const dispatch = useDispatch();
 
@@ -61,7 +61,7 @@ export const EditProfile = () => {
             <ErrMsg name="password" component="p" />
           </StyledLabel>
 
-          <Button type="submit">Submit</Button>
+          <Button type="submit" onClick={closeModal} >Submit</Button>
         </StyledForm>
       </Formik>
     </Container>

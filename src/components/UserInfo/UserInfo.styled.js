@@ -28,3 +28,11 @@ export const Button = styled.button`
   border: 0;
   cursor: pointer;
 `;
+
+export const ButtonSvg = styled.button`
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: var(--primaryBgColor);
+  cursor:pointer;
+`;
