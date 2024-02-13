@@ -25,7 +25,7 @@ export const EditProfile = () => {
   return (
     <Container>
       <Title>Edit profile</Title>
-     <UpdateAvatar />
+      <UpdateAvatar />
 
       <Formik
         initialValues={{

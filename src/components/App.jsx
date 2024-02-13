@@ -16,9 +16,12 @@ const HomePage = lazy(() => import('pages/HomePage'));
 
 export const App = () => {
   const dispatch = useDispatch();
-  const { isRefreshing, theme = 'light' } = useAuth();
+  const { isLoggedIn, isRefreshing, theme = 'light' } = useAuth();
 
   useEffect(() => {
+    if (!isLoggedIn) {
+      return;
+    }
     dispatch(refreshing());
   }, [dispatch]);
 
@@ -38,7 +41,7 @@ export const App = () => {
               }
             />
             <Route
-              path="auth/:id"
+              path="users/:id"
               element={
                 <RestrictedRoute component={<AuthPage />} redirect="/" />
               }

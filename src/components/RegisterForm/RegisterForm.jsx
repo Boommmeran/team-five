@@ -45,10 +45,10 @@ export const RegisterForm = () => {
     <RegisterStyledSection>
       <FormRegisterStyled onSubmit={handleSubmit(onSubmit)}>
         <WrapForRegNav>
-          <StyledNavLinkRegister to="/auth/register">
+          <StyledNavLinkRegister to="/users/register">
             Registration
           </StyledNavLinkRegister>
-          <StyledNavLinkRegister to="/auth/login">Login</StyledNavLinkRegister>
+          <StyledNavLinkRegister to="/users/login">Login</StyledNavLinkRegister>
         </WrapForRegNav>
         <LabelStyled>
           {' '}
