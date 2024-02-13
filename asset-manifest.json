@@ -1,34 +1,34 @@
 {
   "files": {
     "main.css": "/team-five/static/css/main.cd2e038f.css",
-    "main.js": "/team-five/static/js/main.854dae45.js",
+    "main.js": "/team-five/static/js/main.f7dde5a7.js",
     "static/js/192.317f4d9f.chunk.js": "/team-five/static/js/192.317f4d9f.chunk.js",
     "static/js/717.913664e5.chunk.js": "/team-five/static/js/717.913664e5.chunk.js",
     "static/css/911.e0d75c20.chunk.css": "/team-five/static/css/911.e0d75c20.chunk.css",
-    "static/js/911.b9beabe4.chunk.js": "/team-five/static/js/911.b9beabe4.chunk.js",
+    "static/js/911.75d5bce3.chunk.js": "/team-five/static/js/911.75d5bce3.chunk.js",
     "static/js/734.348ec384.chunk.js": "/team-five/static/js/734.348ec384.chunk.js",
     "static/js/134.bea61d6e.chunk.js": "/team-five/static/js/134.bea61d6e.chunk.js",
-    "static/js/323.12db639f.chunk.js": "/team-five/static/js/323.12db639f.chunk.js",
+    "static/js/323.f63defb4.chunk.js": "/team-five/static/js/323.f63defb4.chunk.js",
     "static/media/Poppins-Regular.ttf": "/team-five/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
     "static/media/Poppins-Medium.ttf": "/team-five/static/media/Poppins-Medium.673ed42382ab264e0bf5.ttf",
     "static/media/Poppins-SemiBold.ttf": "/team-five/static/media/Poppins-SemiBold.ac8d04b620e54be9b0f0.ttf",
     "static/media/Poppins-Regular.woff": "/team-five/static/media/Poppins-Regular.6c52b9ac6734cdb52c11.woff",
     "static/media/Poppins-SemiBold.woff": "/team-five/static/media/Poppins-SemiBold.07608aed0ae659b64793.woff",
     "static/media/Poppins-Medium.woff": "/team-five/static/media/Poppins-Medium.aa05ffb55514eb300e03.woff",
-    "static/media/sprite.svg": "/team-five/static/media/sprite.88bf92ada416476bf25587509bd92654.svg",
+    "static/media/sprite.svg": "/team-five/static/media/sprite.be576fc631066f37cb601184c9c0faee.svg",
     "index.html": "/team-five/index.html",
     "main.cd2e038f.css.map": "/team-five/static/css/main.cd2e038f.css.map",
-    "main.854dae45.js.map": "/team-five/static/js/main.854dae45.js.map",
+    "main.f7dde5a7.js.map": "/team-five/static/js/main.f7dde5a7.js.map",
     "192.317f4d9f.chunk.js.map": "/team-five/static/js/192.317f4d9f.chunk.js.map",
     "717.913664e5.chunk.js.map": "/team-five/static/js/717.913664e5.chunk.js.map",
     "911.e0d75c20.chunk.css.map": "/team-five/static/css/911.e0d75c20.chunk.css.map",
-    "911.b9beabe4.chunk.js.map": "/team-five/static/js/911.b9beabe4.chunk.js.map",
+    "911.75d5bce3.chunk.js.map": "/team-five/static/js/911.75d5bce3.chunk.js.map",
     "734.348ec384.chunk.js.map": "/team-five/static/js/734.348ec384.chunk.js.map",
     "134.bea61d6e.chunk.js.map": "/team-five/static/js/134.bea61d6e.chunk.js.map",
-    "323.12db639f.chunk.js.map": "/team-five/static/js/323.12db639f.chunk.js.map"
+    "323.f63defb4.chunk.js.map": "/team-five/static/js/323.f63defb4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cd2e038f.css",
-    "static/js/main.854dae45.js"
+    "static/js/main.f7dde5a7.js"
   ]
 }
