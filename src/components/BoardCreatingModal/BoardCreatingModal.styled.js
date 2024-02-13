@@ -27,7 +27,7 @@ export const ModalTitle = styled.h3`
   line-height: 1.5;
   letter-spacing: -0.02em;
 
-  color: var(--primaryTextColor);
+  color: var(--textColorcalendar);
 `;
 
 export const CloseBtn = styled.button`
@@ -43,7 +43,7 @@ export const CloseBtn = styled.button`
   transition: opacity var(--transition);
 
   > svg {
-    stroke: var(--primaryTextColor);
+    stroke: var(--textColorcalendar);
   }
 
   &:hover,
@@ -70,14 +70,20 @@ export const Input = styled(Field)`
   font-family: 'Poppins-Regular';
   font-size: 14px;
 
-  border: 1px solid var(--btnPlus);
+  border: 1px solid var(--accent);
   border-radius: 8px;
   box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.08);
 
-  color: var(--primaryTextColor);
-  background-color: ${({ theme }) =>
-    theme === 'dark' ? ' #1f1f1f' : 'inherit'};
+  color: var(--textColorcalendar);
+  background-color: var(--modalBgColor);
   opacity: 0.4;
+  transition: opacity var(--transition);
+
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 1;
+  }
 
   @media (min-width: 768px) {
     width: 302px;
@@ -87,7 +93,7 @@ export const Input = styled(Field)`
 export const Text = styled.p`
   margin-bottom: 14px;
 
-  color: var(--primaryTextColor);
+  color: var(--textColorcalendar);
 `;
 
 export const IconsListWrap = styled.ul`
@@ -170,8 +176,8 @@ export const AddBtn = styled.button`
   height: 49px;
 
   padding: 10px 0 11px 0;
-
-  border: 1px solid black;
+  border: none;
+  /* border: 1px solid black; */
   border-radius: 8px;
 
   font-size: 14px;
@@ -180,7 +186,7 @@ export const AddBtn = styled.button`
   letter-spacing: -0.02em;
 
   color: var(--btnText);
-  background-color: var(--btnBgColor);
+  background-color: var(--accent);
   transition: background-color var(--transition);
 
   cursor: pointer;

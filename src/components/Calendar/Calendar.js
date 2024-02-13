@@ -9,16 +9,13 @@ export function Calendar({ selectedDate, onDateChange }) {
   };
 
   return (
-    <>
-      <span className="today"> Today,</span>
-      <DatePicker
-        selected={selectedDate}
-        onChange={handleDateChange}
-        dateFormat="MMMM d"
-        minDate={new Date()}
-        locale={enGB}
-        weekStartsOn={1}
-      />
-    </>
+    <DatePicker
+      selected={selectedDate}
+      onChange={handleDateChange}
+      dateFormat="MMMM d"
+      minDate={new Date()}
+      locale={enGB}
+      weekStartsOn={1}
+    />
   );
 }

@@ -5,7 +5,6 @@ import { Calendar } from 'components/Calendar';
 import { Icon } from 'components/Icon';
 
 import {
-  ModalBody,
   Container,
   TitleModal,
   StyledDescription,
@@ -18,6 +17,7 @@ import {
   StyledForm,
   ErrMsg,
   Label,
+  Span,
 } from './EditCardModal.styled.js';
 import { useDispatch } from 'react-redux';
 import { editCard } from '../../redux/cards/cardsOperations.js';
@@ -50,51 +50,52 @@ export default function EditCardModal({ card, onClose }) {
 
   return (
     <Container>
-      <ModalBody>
-        <TitleModal>Edit card</TitleModal>
-        <CloseModal>
-          <button type="button" onClick={onClose}>
-            <Icon
-              name="close"
-              width="18"
-              height="18"
-              stroke="var(--primaryTextColor)"
-            />
-          </button>
-        </CloseModal>
-        <Formik
-          initialValues={{
-            title,
-            text,
-            priority,
-            deadline: selectedDate,
-          }}
-          validationSchema={formCardSchema}
-          onSubmit={onSubmit}
-        >
-          {({ handleSubmit, setFieldValue }) => (
-            <StyledForm onSubmit={handleSubmit}>
-              <TitleCard type="text" name="title" placeholder="Title" />
-              <ErrMsg component="p" name="title" />
-              <Label>
-                <StyledDescription
-                  rows={4}
-                  component="textarea"
-                  name="text"
-                  placeholder="Description"
-                />
-                <ErrMsg component="p" name="text" />
-              </Label>
-              <LabelColorStyle id="colorCard-radio-group">
-                Label color
-              </LabelColorStyle>
-              <RadioInputs
-                defaultChecked={priority}
-                onPriorityChange={priority => {
-                  setFieldValue('priority', priority);
-                }}
+      <TitleModal>Edit card</TitleModal>
+      <CloseModal>
+        <button type="button" onClick={onClose}>
+          <Icon
+            name="close"
+            width="18"
+            height="18"
+            stroke="var(--primaryTextColor)"
+          />
+        </button>
+      </CloseModal>
+      <Formik
+        initialValues={{
+          title,
+          text,
+          priority,
+          deadline: selectedDate,
+        }}
+        validationSchema={formCardSchema}
+        onSubmit={onSubmit}
+      >
+        {({ handleSubmit, setFieldValue }) => (
+          <StyledForm onSubmit={handleSubmit}>
+            <TitleCard type="text" name="title" placeholder="Title" />
+            <ErrMsg component="p" name="title" />
+            <Label>
+              <StyledDescription
+                rows={4}
+                component="textarea"
+                name="text"
+                placeholder="Description"
               />
-              <DeadlineStyle>Deadline</DeadlineStyle>
+              <ErrMsg component="p" name="text" />
+            </Label>
+            <LabelColorStyle id="colorCard-radio-group">
+              Label color
+            </LabelColorStyle>
+            <RadioInputs
+              defaultChecked={priority}
+              onPriorityChange={priority => {
+                setFieldValue('priority', priority);
+              }}
+            />
+            <DeadlineStyle>Deadline</DeadlineStyle>
+            <div>
+              <Span> Today,</Span>
               <Calendar
                 selectedDate={selectedDate}
                 onDateChange={date => {
@@ -102,16 +103,16 @@ export default function EditCardModal({ card, onClose }) {
                   setFieldValue('deadline', date);
                 }}
               />
-              <AddButton type="submit">
-                <StylePlus>
-                  <Icon name="plus" width="14" height="14" />
-                </StylePlus>
-                <p>Edit</p>
-              </AddButton>
-            </StyledForm>
-          )}
-        </Formik>
-      </ModalBody>
+            </div>
+            <AddButton type="submit">
+              <StylePlus>
+                <Icon name="plus" width="14" height="14" />
+              </StylePlus>
+              <p>Edit</p>
+            </AddButton>
+          </StyledForm>
+        )}
+      </Formik>
     </Container>
   );
 }
