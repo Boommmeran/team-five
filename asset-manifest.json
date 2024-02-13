@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/team-five/static/css/main.cd2e038f.css",
-    "main.js": "/team-five/static/js/main.95c69260.js",
+    "main.js": "/team-five/static/js/main.533614f0.js",
     "static/js/192.f7f1d0df.chunk.js": "/team-five/static/js/192.f7f1d0df.chunk.js",
     "static/js/717.7395071f.chunk.js": "/team-five/static/js/717.7395071f.chunk.js",
-    "static/js/242.0a965835.chunk.js": "/team-five/static/js/242.0a965835.chunk.js",
-    "static/css/701.08adfcd9.chunk.css": "/team-five/static/css/701.08adfcd9.chunk.css",
-    "static/js/701.3ffb8cfd.chunk.js": "/team-five/static/js/701.3ffb8cfd.chunk.js",
+    "static/css/763.ff636556.chunk.css": "/team-five/static/css/763.ff636556.chunk.css",
+    "static/js/763.ba968cce.chunk.js": "/team-five/static/js/763.ba968cce.chunk.js",
+    "static/js/734.348ec384.chunk.js": "/team-five/static/js/734.348ec384.chunk.js",
     "static/js/134.bea61d6e.chunk.js": "/team-five/static/js/134.bea61d6e.chunk.js",
     "static/js/323.12db639f.chunk.js": "/team-five/static/js/323.12db639f.chunk.js",
     "static/media/Poppins-Regular.ttf": "/team-five/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
@@ -18,17 +18,17 @@
     "static/media/sprite.svg": "/team-five/static/media/sprite.88bf92ada416476bf25587509bd92654.svg",
     "index.html": "/team-five/index.html",
     "main.cd2e038f.css.map": "/team-five/static/css/main.cd2e038f.css.map",
-    "main.95c69260.js.map": "/team-five/static/js/main.95c69260.js.map",
+    "main.533614f0.js.map": "/team-five/static/js/main.533614f0.js.map",
     "192.f7f1d0df.chunk.js.map": "/team-five/static/js/192.f7f1d0df.chunk.js.map",
     "717.7395071f.chunk.js.map": "/team-five/static/js/717.7395071f.chunk.js.map",
-    "242.0a965835.chunk.js.map": "/team-five/static/js/242.0a965835.chunk.js.map",
-    "701.08adfcd9.chunk.css.map": "/team-five/static/css/701.08adfcd9.chunk.css.map",
-    "701.3ffb8cfd.chunk.js.map": "/team-five/static/js/701.3ffb8cfd.chunk.js.map",
+    "763.ff636556.chunk.css.map": "/team-five/static/css/763.ff636556.chunk.css.map",
+    "763.ba968cce.chunk.js.map": "/team-five/static/js/763.ba968cce.chunk.js.map",
+    "734.348ec384.chunk.js.map": "/team-five/static/js/734.348ec384.chunk.js.map",
     "134.bea61d6e.chunk.js.map": "/team-five/static/js/134.bea61d6e.chunk.js.map",
     "323.12db639f.chunk.js.map": "/team-five/static/js/323.12db639f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cd2e038f.css",
-    "static/js/main.95c69260.js"
+    "static/js/main.533614f0.js"
   ]
 }
