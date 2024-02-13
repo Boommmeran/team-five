@@ -1,9 +1,14 @@
 import styled from 'styled-components';
 
+export const StartContainer = styled.div`
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
 export const StartText = styled.p`
-  position: relative;
-  bottom: 50%;
-  transform: translateY(-50%);
   min-width: 280px;
 
   font-size: 14px;
@@ -22,6 +27,8 @@ export const StartText = styled.p`
     margin: auto;
   }
 `;
+
+
 
 export const customStyles = {
   content: {

@@ -15,7 +15,7 @@ export const authSlice = createSlice({
   initialState: {
     user: {
       name: '',
-      emai: '',
+      email: '',
       avatarURL: '',
     },
     token: null,
@@ -40,7 +40,7 @@ export const authSlice = createSlice({
         console.log('Email or password is not correct')
       )
       .addCase(logOut.fulfilled, state => {
-        state.user = { name: '', emai: '' };
+        state.user = { name: '', email: '' };
         state.isLoggedIn = false;
         state.token = null;
       })

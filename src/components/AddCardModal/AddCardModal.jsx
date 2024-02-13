@@ -5,7 +5,6 @@ import { Calendar } from 'components/Calendar';
 import { Icon } from 'components/Icon';
 
 import {
-  ModalBody,
   Container,
   TitleModal,
   StyledDescription,
@@ -49,63 +48,66 @@ export default function AddCardModal({ title, btnText, onClose, columnId }) {
 
   return (
     <Container>
-      <ModalBody>
-        <TitleModal>{title}</TitleModal>
-        <CloseModal>
-          <button type="button" onClick={onClose}>
-            <Icon
-              name="close"
-              width="18"
-              height="18"
-              stroke="var(--primaryTextColor)"
-            />
-          </button>
-        </CloseModal>
-        <Formik
-          initialValues={{
-            title: '',
-            text: '',
-            priority: 'without',
-            deadline: selectedDate,
-          }}
-          validationSchema={formCardSchema}
-          onSubmit={onSubmit}
-        >
-          {({ handleSubmit, setFieldValue }) => (
-            <StyledForm onSubmit={handleSubmit}>
-              <TitleCard type="text" name="title" placeholder="Title" />
-              <ErrMsg component="p" name="title" />
-              <Label>
-                <StyledDescription
-                  rows={4}
-                  component="textarea"
-                  name="text"
-                  placeholder="Description"
-                />
-                <ErrMsg component="p" name="text" />
-              </Label>
-              <LabelColorStyle id="colorCard-radio-group">
-                Label color
-              </LabelColorStyle>
-              <RadioInputs defaultChecked="without" />
-              <DeadlineStyle>Deadline</DeadlineStyle>
-              <Calendar
-                selectedDate={selectedDate}
-                onDateChange={date => {
-                  setSelectedDate(date);
-                  setFieldValue('deadline', date);
-                }}
+      <TitleModal>{title}</TitleModal>
+      <CloseModal>
+        <button type="button" onClick={onClose}>
+          <Icon
+            name="close"
+            width="18"
+            height="18"
+            stroke="var(--primaryTextColor)"
+          />
+        </button>
+      </CloseModal>
+      <Formik
+        initialValues={{
+          title: '',
+          text: '',
+          priority: 'without',
+          deadline: selectedDate,
+        }}
+        validationSchema={formCardSchema}
+        onSubmit={onSubmit}
+      >
+        {({ handleSubmit, setFieldValue }) => (
+          <StyledForm onSubmit={handleSubmit}>
+            <TitleCard type="text" name="title" placeholder="Title" />
+            <ErrMsg component="p" name="title" />
+            <Label>
+              <StyledDescription
+                rows={4}
+                component="textarea"
+                name="text"
+                placeholder="Description"
               />
-              <AddButton type="submit">
-                <StylePlus>
-                  <Icon name="plus" width="14" height="14" />
-                </StylePlus>
-                <p>{btnText}</p>
-              </AddButton>
-            </StyledForm>
-          )}
-        </Formik>
-      </ModalBody>
+              <ErrMsg component="p" name="text" />
+            </Label>
+            <LabelColorStyle id="colorCard-radio-group">
+              Label color
+            </LabelColorStyle>
+            <RadioInputs
+              defaultChecked="without"
+              onPriorityChange={priority => {
+                setFieldValue('priority', priority);
+              }}
+            />
+            <DeadlineStyle>Deadline</DeadlineStyle>
+            <Calendar
+              selectedDate={selectedDate}
+              onDateChange={date => {
+                setSelectedDate(date);
+                setFieldValue('deadline', date);
+              }}
+            />
+            <AddButton type="submit">
+              <StylePlus>
+                <Icon name="plus" width="14" height="14" />
+              </StylePlus>
+              <p>{btnText}</p>
+            </AddButton>
+          </StyledForm>
+        )}
+      </Formik>
     </Container>
   );
 }

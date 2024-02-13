@@ -2,7 +2,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://team-five-backend-v2.onrender.com/api';
+axios.defaults.baseURL = 'http://localhost:9000/api';
+// axios.defaults.baseURL = 'https://team-five-backend-v2.onrender.com/api';
 
 const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;

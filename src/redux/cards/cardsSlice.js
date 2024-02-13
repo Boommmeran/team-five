@@ -4,6 +4,7 @@ import {
   chengeColumnsCard,
   deleteCard,
   editCard,
+  fetchCards,
 } from './cardsOperations';
 
 export const cardSlice = createSlice({
@@ -24,6 +25,19 @@ export const cardSlice = createSlice({
 
   extraReducers: builder =>
     builder
+      .addCase(fetchCards.pending, state => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchCards.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = null;
+        state.cards = action.payload;
+      })
+      .addCase(fetchCards.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
       .addCase(addCard.pending, state => {
         state.loading = true;
         state.error = null;
@@ -83,7 +97,7 @@ export const cardSlice = createSlice({
         state.loading = false;
         state.error = null;
         const index = state.cards.findIndex(
-          card => card.id === action.payload.id
+          card => card._id === action.payload._id
         );
         state.cards.splice(index, 1);
       })

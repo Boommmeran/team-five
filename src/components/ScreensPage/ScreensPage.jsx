@@ -1,11 +1,11 @@
 import { HeaderDashboard } from 'components/HeaderDashboard';
-import { MainDashboard } from 'components/MainDashboard';
+import { Board } from 'components/Board';
 
 export const ScreensPage = () => {
   return (
     <>
       <HeaderDashboard />
-      <MainDashboard />
+      <Board />
     </>
   );
 };

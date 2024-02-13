@@ -57,10 +57,8 @@ const schema = Yup.object({
   background: Yup.string().oneOf(backgroundsArr).required(),
 });
 
-export const BoardCreatingModal = ({ onClose, title, btnText }) => {
+export const BoardCreatingModal = ({ onClose }) => {
   const dispatch = useDispatch()
-
-
 
   const initialValues = {
     title: '',
@@ -74,7 +72,7 @@ export const BoardCreatingModal = ({ onClose, title, btnText }) => {
   };
   return (
     <ModalWrap>
-      <ModalTitle>{title}</ModalTitle>
+      <ModalTitle>New board</ModalTitle>
       <CloseBtn type="button" onClick={onClose}>
         <Icon name="close" />
       </CloseBtn>
@@ -124,7 +122,7 @@ export const BoardCreatingModal = ({ onClose, title, btnText }) => {
             <IconWrap>
               <Icon name="plus" />
             </IconWrap>{' '}
-            {btnText}
+            Create
           </AddBtn>
         </FormWrap>
       </Formik>
