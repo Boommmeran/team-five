@@ -10,6 +10,7 @@ import { RestrictedRoute } from './RedirectRoute';
 
 import themes from '../styles/themeSchemes.json';
 import { useAuth } from 'hooks';
+import { ScreensPage } from './ScreensPage';
 
 const WelcomePage = lazy(() => import('pages/WelcomePage'));
 const AuthPage = lazy(() => import('pages/AuthPage'));
@@ -32,19 +33,20 @@ export const App = () => {
       ) : (
         <Suspense fallback={<Spinner />}>
           <Routes>
+            <Route
+              path="/welcome"
+              element={
+                <RestrictedRoute component={<WelcomePage />} redirect="/" />
+              }
+            />
+            <Route
+              path="auth/:id"
+              element={
+                <RestrictedRoute component={<AuthPage />} redirect="/" />
+              }
+            />
             <Route path="/" element={<Layout />}>
-              <Route
-                path="/welcome"
-                element={
-                  <RestrictedRoute component={<WelcomePage />} redirect="/" />
-                }
-              />
-              <Route
-                path="auth/:id"
-                element={
-                  <RestrictedRoute component={<AuthPage />} redirect="/" />
-                }
-              />
+              <Route path="/:boardId" element={<HomePage />} />
               <Route
                 index
                 element={

@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// axios.defaults.baseURL = 'http://localhost:9000/api';
-axios.defaults.baseURL = 'https://team-five-backend-v2.onrender.com/api';
+axios.defaults.baseURL = 'http://localhost:9000/api';
+// axios.defaults.baseURL = 'https://team-five-backend-v2.onrender.com/api';
 
 export const fetchColumnsByBoardId = createAsyncThunk(
   'columns/boardId',
@@ -47,7 +47,7 @@ export const deleteColumn = createAsyncThunk(
   'columns/delete',
   async ({ columnId }, thunkAPI) => {
     try {
-      const res = await axios.delete(`/columns/${columnId}`);
+      const res = await axios.delete(`/columns/${columnId}`, { columnId });
 
       return res.data;
     } catch (error) {

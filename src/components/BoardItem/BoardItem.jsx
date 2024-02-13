@@ -2,11 +2,12 @@ import { useState } from 'react';
 import Modal from 'react-modal';
 import { Icon } from 'components/Icon';
 import { BoardItemContainer, ControlIconsContainer } from './BoardItem.styled';
-import { BoardCreatingModal } from 'components/BoardCreatingModal';
+import { BoardEditModal } from 'components/BoardEditModal';
 import { useDispatch } from 'react-redux';
 import { deleteBoard, fetchBoardById } from '../../redux/boards/boardsOperations';
 import { useSelector } from 'react-redux';
 import { selectCurrentBoard } from '../../redux/boards/boardsSelectors';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const customStyles = {
   content: {
@@ -27,6 +28,7 @@ export const BoardItem = ({ board }) => {
   const dispatch = useDispatch();
   const currentBoard = useSelector(selectCurrentBoard);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -36,9 +38,10 @@ export const BoardItem = ({ board }) => {
     setIsModalOpen(false);
   };
 
-  const handleSelectBoard = (event, BoardId) => {
+  const handleSelectBoard = (event, boardId) => {
     if (event.target.tagName !== 'BUTTON') {
-      dispatch(fetchBoardById(BoardId))
+      dispatch(fetchBoardById(boardId))
+      navigate(`/${boardId}`)
     }
   };
 
@@ -46,11 +49,9 @@ export const BoardItem = ({ board }) => {
     dispatch(deleteBoard(BoardId));
   }
 
-console.log(currentBoard)
-
   return (
     <BoardItemContainer
-      onClick={(event) => handleSelectBoard(event, board._id)}
+      onClick={event => handleSelectBoard(event, board._id)}
       selected={currentBoard && currentBoard._id === board._id}
     >
       <Icon name={board.icon} width="18" height="18" style={{ opacity: 0.5 }} />
@@ -69,10 +70,9 @@ console.log(currentBoard)
         style={customStyles}
         contentLabel="Edition board modal"
       >
-        <BoardCreatingModal
+        <BoardEditModal
           onClose={closeModal}
-          title="Edit board"
-          btnText="Edit"
+          board={board}
         />
       </Modal>
     </BoardItemContainer>

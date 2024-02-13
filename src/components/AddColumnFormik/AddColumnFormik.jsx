@@ -14,14 +14,16 @@ import { useDispatch } from 'react-redux';
 import { addColumn } from '../../redux/columns/columnsOperations.js';
 
 const addColumnFormSchema = Yup.object().shape({
-  name: Yup.string().min(2, 'Too short!').required('This field is required!'),
+  title: Yup.string().min(2, 'Too short!').required('This field is required!'),
 });
 
 export const AddColumnFormik = ({ boardId, onClose }) => {
   const dispatch = useDispatch();
+
   const handleSubmit = body => {
     dispatch(addColumn({ body, boardId }));
   };
+
   return (
     <>
       <Label>Add column</Label>

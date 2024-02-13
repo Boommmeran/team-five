@@ -1,5 +1,11 @@
 import { Icon } from 'components/Icon';
-import { HeadWrap, IconedBtn, Title, Wrap } from './ColumnHead.styled';
+import {
+  HeadWrap,
+  IconedBtn,
+  Title,
+  Wrap,
+  customStyles,
+} from './ColumnHead.styled';
 import { useState } from 'react';
 import Modal from 'react-modal';
 import { EditColumnFormik } from 'components/EditColumnFormik';
@@ -9,20 +15,6 @@ import { deleteColumn } from '../../redux/columns/columnsOperations';
 export const ColumnHead = ({ title, columnId }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const dispatch = useDispatch();
-  const customStyles = {
-    content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      transform: 'translate(-50%, -50%)',
-      boxShadow: '0px 4px 16px 0px #1616160D',
-      padding: 0,
-    },
-    overlay: {
-      background: 'rgba(0,0,0,0.5)',
-    },
-  };
 
   const handleModalOpen = () => {
     setIsOpenModal(true);

@@ -15,11 +15,10 @@ import {
   Label,
   LabelPic,
   Div,
-} from './BoardCreatingModal.styled.js';
+} from './BoardEditModal.styled';
 import { Formik } from 'formik';
-import { useDispatch } from "react-redux";
-import { addBoard } from '../../redux/boards/boardsOperations';
-
+import { useDispatch } from 'react-redux';
+import { editBoard } from '../../redux/boards/boardsOperations';
 
 const iconsArr = [
   'four-circles',
@@ -57,24 +56,24 @@ const schema = Yup.object({
   background: Yup.string().oneOf(backgroundsArr).required(),
 });
 
-export const BoardCreatingModal = ({ onClose, title, btnText }) => {
-  const dispatch = useDispatch()
+export const BoardEditModal = ({ onClose, board }) => {
+  const dispatch = useDispatch();
 
-
+  const { _id: boardId, title, icon, background } = board;
 
   const initialValues = {
-    title: '',
-    icon: 'four-circles',
-    background: 'noBack',
+    title,
+    icon,
+    background,
   };
 
-  const onSubmit = (values) => {
-    dispatch(addBoard(values));
+  const onSubmit = board => {
+    dispatch(editBoard({ boardId, board }));
     onClose();
   };
   return (
     <ModalWrap>
-      <ModalTitle>{title}</ModalTitle>
+      <ModalTitle>Edit board</ModalTitle>
       <CloseBtn type="button" onClick={onClose}>
         <Icon name="close" />
       </CloseBtn>
@@ -124,7 +123,7 @@ export const BoardCreatingModal = ({ onClose, title, btnText }) => {
             <IconWrap>
               <Icon name="plus" />
             </IconWrap>{' '}
-            {btnText}
+            Edit
           </AddBtn>
         </FormWrap>
       </Formik>
