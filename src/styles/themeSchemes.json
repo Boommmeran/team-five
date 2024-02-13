@@ -2,7 +2,7 @@
   "dark": {
     "accent": "#bedbb0",
     "hover": "#9dc888",
-    "transition": "300ms cubic-bezier(0.4, 0, 0.2, 1);",
+    "transition": "300ms cubic-bezier(0.4, 0, 0.2, 1)",
 
     "primaryBgColor": "#121212",
     "secondaryBgColor": "#1f1f1f",
@@ -42,12 +42,20 @@
     "priorityWithout": "rgba(255, 255, 255, 0.3)",
     "priorityLow": "rgba(143, 161, 208, 1)",
     "priorityMedium": "rgba(224, 156, 181, 1)",
-    "priorityHigh": "rgba(190, 219, 176, 1)"
+    "priorityHigh": "rgba(190, 219, 176, 1)",
+
+    "calendarBgColor": "#1F1F1F",
+    "activeTextColorCalend": "#1F1F1F",
+    "textColorcalendar": "#fff",
+    "numberCalendar": "#fff",
+    "borderForCalendar": "#BEDBB0",
+    "strokeForCalendar": "rgba(255, 255, 255, 0.2)",
+    "textCalendar": "rgba(255, 255, 255, 0.5)"
   },
   "light": {
     "accent": "#bedbb0",
     "hover": "#9dc888",
-    "transition": "300ms cubic-bezier(0.4, 0, 0.2, 1);",
+    "transition": "300ms cubic-bezier(0.4, 0, 0.2, 1)",
 
     "primaryBgColor": "#fff",
     "secondaryBgColor": "#f6f6f7",
@@ -86,12 +94,20 @@
     "priorityWithout": "rgba(22, 22, 22, 0.3)",
     "priorityLow": "rgba(143, 161, 208, 1)",
     "priorityMedium": "rgba(224, 156, 181, 1)",
-    "priorityHigh": "rgba(190, 219, 176, 1)"
+    "priorityHigh": "rgba(190, 219, 176, 1)",
+
+    "calendarBgColor": "#fff",
+    "activeTextColorCalend": "#161616",
+    "textColorcalendar": "#161616",
+    "numberCalendar": "#161616",
+    "borderForCalendar": "#BEDBB0",
+    "strokeForCalendar": "rgba(22, 22, 22, 0.2)",
+    "textCalendar": "rgba(22, 22, 22, 0.5)"
   },
   "violet": {
     "accent": "#5255bc",
     "hover": "#7b7ede",
-    "transition": "300ms cubic-bezier(0.4, 0, 0.2, 1);",
+    "transition": "300ms cubic-bezier(0.4, 0, 0.2, 1)",
 
     "primaryBgColor": "#5255bc",
     "secondaryBgColor": "#ecedfd",
@@ -130,6 +146,13 @@
     "priorityWithout": "rgba(22, 22, 22, 0.3)",
     "priorityLow": "rgba(143, 161, 208, 1)",
     "priorityMedium": "rgba(224, 156, 181, 1)",
-    "priorityHigh": "rgba(190, 219, 176, 1)"
+    "priorityHigh": "rgba(190, 219, 176, 1)",
+    "calendarBgColor": "#fff",
+    "activeTextColorCalend": "#FCFCFC",
+    "textColorcalendar": "#161616",
+    "numberCalendar": "#161616",
+    "borderForCalendar": "#5255BC",
+    "strokeForCalendar": "rgba(22, 22, 22, 0.2)",
+    "textCalendar": "rgba(22, 22, 22, 0.5)"
   }
 }

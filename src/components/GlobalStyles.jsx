@@ -54,7 +54,16 @@ export const GlobalStyles = createGlobalStyle`
   --priority-low: ${({ theme }) => theme.priorityLow};
   --priority-medium: ${({ theme }) => theme.priorityMedium};
   --priority-high: ${({ theme }) => theme.priorityHigh};
-  }
+  
+  --calendarBgColor:${({ theme }) => theme.calendarBgColor};
+  --activeTextColorCalend:${({ theme }) => theme.activeTextColorCalend};
+  --textColorcalendar: ${({ theme }) => theme.textColorcalendar};
+  --numberCalendar: ${({ theme }) => theme.numberCalendar};
+  --borderForCalendar: ${({ theme }) => theme.borderForCalendar};
+  --strokeForCalendar: ${({ theme }) => theme.strokeForCalendar};
+  --textCalendar: ${({ theme }) => theme.textCalendar};
+
+}
 
 @font-face {
   font-family: 'Poppins-Regular';
