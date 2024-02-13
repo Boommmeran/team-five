@@ -14,11 +14,12 @@ import { useState } from 'react';
 import { AddColumnFormik } from 'components/AddColumnFormik/AddColumnFormik';
 import { useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
+import { useParams } from 'react-router-dom';
 
 export const Board = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const { columns } = useSelector(state => state.columns);
-
+  const { boardId } = useParams();
   const openModal = () => {
     setIsOpen(true);
   };
@@ -54,7 +55,7 @@ export const Board = () => {
         contentLabel="Column Edit Modal"
         ariaHideApp={false}
       >
-        <AddColumnFormik onClose={closeModal} />
+        <AddColumnFormik onClose={closeModal} boardId={boardId} />
       </Modal>
     </>
   );

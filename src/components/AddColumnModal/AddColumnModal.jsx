@@ -30,6 +30,10 @@ const AddColumn = ({ onAdd }) => {
     setIsModalOpen(false);
   };
 
+  const handleSubmit = () => {
+    
+  }
+
   return (
     <>
       <button type="button" onClick={openModal}>
@@ -46,10 +50,7 @@ const AddColumn = ({ onAdd }) => {
             name: '',
           }}
           validationSchema={addColumnFormSchema}
-          onSubmit={(values, action) => {
-            onAdd(values);
-            action.resetForm();
-          }}
+          onSubmit={handleSubmit}
         >
           <StyledForm>
             <Label>Add column</Label>
