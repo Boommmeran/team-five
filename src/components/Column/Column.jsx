@@ -7,13 +7,19 @@ import AddCardModal from 'components/AddCardModal/AddCardModal';
 import { useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import { ColumnHead } from 'components/ColumnHead';
-
-
+import { useSearchParams } from 'react-router-dom';
 
 export const Column = ({ columnId, title }) => {
   const [modalCardIsOpen, setmodalCardIsOpen] = useState(false);
   const { cards } = useSelector(state => state.cards);
-  const filtredCards = cards?.filter(({ column: { _id } }) => _id === columnId);
+  const [searchParams] = useSearchParams();
+  const priority = searchParams.get('priority');
+
+  let filtredCards = cards?.filter(({ column: { _id } }) => _id === columnId);
+
+  if (priority) {
+    filtredCards = filtredCards?.filter(card => card.priority === priority)
+  };
 
   const openCardModal = () => {
     setmodalCardIsOpen(true);

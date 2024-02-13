@@ -1,11 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://team-five-backend-v2.onrender.com/api';
-
 export const fetchCards = createAsyncThunk(
   'cards/getAll',
-  async ({ boardId }, thunkAPI) => {
+  async (boardId, thunkAPI) => {
     try {
       const res = await axios.get(`/cards/${boardId}`);
 

@@ -9,7 +9,7 @@ export function Calendar({ selectedDate, onDateChange }) {
   };
 
   return (
-    <p>
+    <>
       <span className="today"> Today,</span>
       <DatePicker
         selected={selectedDate}
@@ -19,6 +19,6 @@ export function Calendar({ selectedDate, onDateChange }) {
         locale={enGB}
         weekStartsOn={1}
       />
-    </p>
+    </>
   );
 }

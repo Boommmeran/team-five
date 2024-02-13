@@ -5,13 +5,20 @@ import { nanoid } from '@reduxjs/toolkit';
 
 export const MoveCardDropdown = ({ currColumnId, cardId }) => {
   const { columns } = useSelector(state => state.columns);
-  const filteredColumns = columns?.filter(({ _id }) => _id !== currColumnId);
+  
 
   return (
     <MoveList>
-      {filteredColumns.map(item => (
-        <MoveCardItem key={nanoid()} column={item} cardId={cardId} />
-      ))}
+      {columns.map(item => {
+        return (
+          <MoveCardItem
+            currentId={currColumnId}
+            key={nanoid()}
+            column={item}
+            cardId={cardId}
+          />
+        );
+      })}
     </MoveList>
   );
 };

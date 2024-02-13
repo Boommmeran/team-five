@@ -6,16 +6,17 @@ import {
 } from './RadioInputs.styled';
 import { useState } from 'react';
 
-export const RadioInputs = ({ defaultChecked }) => {
+export const RadioInputs = ({ defaultChecked, onPriorityChange }) => {
   const list = ['low', 'medium', 'high', 'without'];
   const [currValue, setCurrValue] = useState(defaultChecked);
 
   const handleInput = ({ target: { value } }) => {
+    onPriorityChange(value);
     setCurrValue(value);
   };
 
   return (
-    <StyledRadioGroup>
+    <StyledRadioGroup role="group" aria-labelledby="my-radio-group">
       {list.map(item => (
         <RadioLabel
           key={nanoid()}

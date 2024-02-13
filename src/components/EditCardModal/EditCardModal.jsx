@@ -88,7 +88,12 @@ export default function EditCardModal({ card, onClose }) {
               <LabelColorStyle id="colorCard-radio-group">
                 Label color
               </LabelColorStyle>
-              <RadioInputs defaultChecked={priority} />
+              <RadioInputs
+                defaultChecked={priority}
+                onPriorityChange={priority => {
+                  setFieldValue('priority', priority);
+                }}
+              />
               <DeadlineStyle>Deadline</DeadlineStyle>
               <Calendar
                 selectedDate={selectedDate}

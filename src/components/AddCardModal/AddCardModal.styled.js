@@ -6,7 +6,6 @@ export const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
 `;
-// comment
 
 export const Container = styled.div`
   border-radius: 8px;
@@ -15,6 +14,9 @@ export const Container = styled.div`
   padding: 24px;
   width: 100%;
   background: var(--primaryBgColor);
+
+  display: flex;
+  flex-direction: column;
 
   @media only screen and (min-width: 375px) {
     width: 335px;
@@ -26,8 +28,7 @@ export const Container = styled.div`
 `;
 
 export const ModalBody = styled.div`
-  display: flex;
-  flex-direction: column;
+  
 `;
 
 export const TitleModal = styled.h2`

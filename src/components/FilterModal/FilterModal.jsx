@@ -11,6 +11,7 @@ import {
 } from './FilterModal.styled';
 
 import { Icon } from 'components/Icon';
+import { RadioFilters } from 'components/RadioFiltres';
 
 export const FilterModal = ({ closeModal }) => {
   return (
@@ -65,6 +66,7 @@ export const FilterModal = ({ closeModal }) => {
           <PickerName>High</PickerName>
         </Picker>
       </PickersList>
+      <RadioFilters/>
     </ModalWrap>
   );
 };

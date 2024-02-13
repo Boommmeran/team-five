@@ -3,11 +3,11 @@ import Modal from 'react-modal';
 import { Icon } from 'components/Icon';
 import { BoardItemContainer, ControlIconsContainer } from './BoardItem.styled';
 import { BoardEditModal } from 'components/BoardEditModal';
-import { useDispatch } from 'react-redux';
-import { deleteBoard, fetchBoardById } from '../../redux/boards/boardsOperations';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteBoard } from '../../redux/boards/boardsOperations';
 import { selectCurrentBoard } from '../../redux/boards/boardsSelectors';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 const customStyles = {
   content: {
@@ -40,13 +40,13 @@ export const BoardItem = ({ board }) => {
 
   const handleSelectBoard = (event, boardId) => {
     if (event.target.tagName !== 'BUTTON') {
-      dispatch(fetchBoardById(boardId))
+      localStorage.setItem('lastBoard', boardId);
       navigate(`/${boardId}`)
     }
   };
 
-  const handleDelete = (BoardId) => {
-    dispatch(deleteBoard(BoardId));
+  const handleDelete = (boardId) => {
+    dispatch(deleteBoard(boardId));
   }
 
   return (
