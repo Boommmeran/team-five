@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/team-five/static/css/main.cd2e038f.css",
-    "main.js": "/team-five/static/js/main.ecca42ee.js",
+    "main.js": "/team-five/static/js/main.ecf583ec.js",
     "static/js/192.317f4d9f.chunk.js": "/team-five/static/js/192.317f4d9f.chunk.js",
     "static/js/717.913664e5.chunk.js": "/team-five/static/js/717.913664e5.chunk.js",
     "static/css/528.a25c8a4c.chunk.css": "/team-five/static/css/528.a25c8a4c.chunk.css",
-    "static/js/528.300032b2.chunk.js": "/team-five/static/js/528.300032b2.chunk.js",
+    "static/js/528.3b67cd6f.chunk.js": "/team-five/static/js/528.3b67cd6f.chunk.js",
     "static/js/734.348ec384.chunk.js": "/team-five/static/js/734.348ec384.chunk.js",
     "static/js/134.bea61d6e.chunk.js": "/team-five/static/js/134.bea61d6e.chunk.js",
     "static/js/323.f63defb4.chunk.js": "/team-five/static/js/323.f63defb4.chunk.js",
@@ -18,17 +18,17 @@
     "static/media/sprite.svg": "/team-five/static/media/sprite.be576fc631066f37cb601184c9c0faee.svg",
     "index.html": "/team-five/index.html",
     "main.cd2e038f.css.map": "/team-five/static/css/main.cd2e038f.css.map",
-    "main.ecca42ee.js.map": "/team-five/static/js/main.ecca42ee.js.map",
+    "main.ecf583ec.js.map": "/team-five/static/js/main.ecf583ec.js.map",
     "192.317f4d9f.chunk.js.map": "/team-five/static/js/192.317f4d9f.chunk.js.map",
     "717.913664e5.chunk.js.map": "/team-five/static/js/717.913664e5.chunk.js.map",
     "528.a25c8a4c.chunk.css.map": "/team-five/static/css/528.a25c8a4c.chunk.css.map",
-    "528.300032b2.chunk.js.map": "/team-five/static/js/528.300032b2.chunk.js.map",
+    "528.3b67cd6f.chunk.js.map": "/team-five/static/js/528.3b67cd6f.chunk.js.map",
     "734.348ec384.chunk.js.map": "/team-five/static/js/734.348ec384.chunk.js.map",
     "134.bea61d6e.chunk.js.map": "/team-five/static/js/134.bea61d6e.chunk.js.map",
     "323.f63defb4.chunk.js.map": "/team-five/static/js/323.f63defb4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cd2e038f.css",
-    "static/js/main.ecca42ee.js"
+    "static/js/main.ecf583ec.js"
   ]
 }
