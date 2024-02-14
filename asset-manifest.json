@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/team-five/static/css/main.cd2e038f.css",
-    "main.js": "/team-five/static/js/main.f7102dfa.js",
+    "main.js": "/team-five/static/js/main.c34660f4.js",
     "static/js/192.317f4d9f.chunk.js": "/team-five/static/js/192.317f4d9f.chunk.js",
     "static/js/717.913664e5.chunk.js": "/team-five/static/js/717.913664e5.chunk.js",
     "static/css/528.a25c8a4c.chunk.css": "/team-five/static/css/528.a25c8a4c.chunk.css",
-    "static/js/528.0fbdeb15.chunk.js": "/team-five/static/js/528.0fbdeb15.chunk.js",
+    "static/js/528.24619482.chunk.js": "/team-five/static/js/528.24619482.chunk.js",
     "static/js/734.348ec384.chunk.js": "/team-five/static/js/734.348ec384.chunk.js",
     "static/js/134.bea61d6e.chunk.js": "/team-five/static/js/134.bea61d6e.chunk.js",
     "static/js/323.3bc9488e.chunk.js": "/team-five/static/js/323.3bc9488e.chunk.js",
@@ -18,17 +18,17 @@
     "static/media/sprite.svg": "/team-five/static/media/sprite.fb9bdc343d0d7a7c31fe5a332e69a355.svg",
     "index.html": "/team-five/index.html",
     "main.cd2e038f.css.map": "/team-five/static/css/main.cd2e038f.css.map",
-    "main.f7102dfa.js.map": "/team-five/static/js/main.f7102dfa.js.map",
+    "main.c34660f4.js.map": "/team-five/static/js/main.c34660f4.js.map",
     "192.317f4d9f.chunk.js.map": "/team-five/static/js/192.317f4d9f.chunk.js.map",
     "717.913664e5.chunk.js.map": "/team-five/static/js/717.913664e5.chunk.js.map",
     "528.a25c8a4c.chunk.css.map": "/team-five/static/css/528.a25c8a4c.chunk.css.map",
-    "528.0fbdeb15.chunk.js.map": "/team-five/static/js/528.0fbdeb15.chunk.js.map",
+    "528.24619482.chunk.js.map": "/team-five/static/js/528.24619482.chunk.js.map",
     "734.348ec384.chunk.js.map": "/team-five/static/js/734.348ec384.chunk.js.map",
     "134.bea61d6e.chunk.js.map": "/team-five/static/js/134.bea61d6e.chunk.js.map",
     "323.3bc9488e.chunk.js.map": "/team-five/static/js/323.3bc9488e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cd2e038f.css",
-    "static/js/main.f7102dfa.js"
+    "static/js/main.c34660f4.js"
   ]
 }
