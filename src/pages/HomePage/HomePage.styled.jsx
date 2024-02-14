@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
 export const SidebarWrapper = styled.aside`
-  @media screen and (max-width: 1179px) {
+  @media screen and (max-width: 1439px) {
     display: none;
   }
 
-  @media screen and (min-width: 1180px) {
-    padding: 14px;
-    display: flex;
+  @media screen and (min-width: 1440px) {
+    /* padding: 14px; */
+    /* display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; */
     grid-column: 1 / 2;
     grid-row-start: 1;
     grid-row-end: 3;

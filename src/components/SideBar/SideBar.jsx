@@ -8,7 +8,7 @@ import { BoardCreation } from 'components/SidebarBoardCreation';
 
 import { BoardItem } from 'components/BoardItem';
 import { Icon } from 'components/Icon';
-import { Logo, BoardContainer, BoardList, LogOut } from './SideBar.styled';
+import { SidebarStylesWrapper, Logo, BoardContainer, BoardList, LogOut, Title } from './SideBar.styled';
 
 export const Sidebar = () => {
   const dispatch = useDispatch();
@@ -23,14 +23,14 @@ export const Sidebar = () => {
   };
 
   return (
-    <>
+    <SidebarStylesWrapper>
       <div>
         <Logo>
           <Icon name="logo" width="32" height="32" />
           <h2>TaskPro</h2>
         </Logo>
         <BoardContainer>
-          <h3>My boards</h3>
+          <Title>My boards</Title>
           <BoardCreation />
           <BoardList>
             {boards.map(board => (
@@ -46,6 +46,6 @@ export const Sidebar = () => {
           <p>Log out</p>
         </LogOut>
       </div>
-    </>
+    </SidebarStylesWrapper>
   );
 };

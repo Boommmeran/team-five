@@ -4,22 +4,20 @@ import { Icon } from 'components/Icon';
 import { SendEmail } from 'components/SendEmail';
 import { NeedHelpBlock, NeedHelpBtn } from './NeedHelp.styled';
 
-const customStyles = {
-  content: {
-    width: 'fit-content',
-    height: 'fit-content',
-    padding: 0,
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    boxShadow: '0px 4px 16px 0px #1616160D',
-  },
-  overlay: {
-    background: 'rgba(0,0,0,0.5)',
-  },
-};
-
-// Modal.setAppElement('#root');
+// const customStyles = {
+//   content: {
+//     width: 'fit-content',
+//     height: 'fit-content',
+//     padding: 0,
+//     top: '50%',
+//     left: '50%',
+//     transform: 'translate(-50%, -50%)',
+//     boxShadow: '0px 4px 16px 0px #1616160D',
+//   },
+//   overlay: {
+//     background: 'rgba(0,0,0,0.5)',
+//   },
+// };
 
 export const NeedHelp = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -65,8 +63,9 @@ export const NeedHelp = () => {
       <Modal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
-        style={customStyles}
         contentLabel="Need help modal"
+        className="modal-content"
+        overlayClassName="modal-overlay"
       >
         <SendEmail onClose={closeModal} />
       </Modal>

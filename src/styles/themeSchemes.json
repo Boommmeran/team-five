@@ -50,7 +50,10 @@
     "numberCalendar": "#fff",
     "borderForCalendar": "#BEDBB0",
     "strokeForCalendar": "rgba(255, 255, 255, 0.2)",
-    "textCalendar": "rgba(255, 255, 255, 0.5)"
+    "textCalendar": "rgba(255, 255, 255, 0.5)",
+
+    "logoBg": "#1f1f1f",
+    "logoLightning": "#fff"
   },
   "light": {
     "accent": "#bedbb0",
@@ -102,7 +105,10 @@
     "numberCalendar": "#161616",
     "borderForCalendar": "#BEDBB0",
     "strokeForCalendar": "rgba(22, 22, 22, 0.2)",
-    "textCalendar": "rgba(22, 22, 22, 0.5)"
+    "textCalendar": "rgba(22, 22, 22, 0.5)",
+
+    "logoBg": "#1f1f1f",
+    "logoLightning": "#fff"
   },
   "violet": {
     "accent": "#5255bc",
@@ -153,6 +159,9 @@
     "numberCalendar": "#161616",
     "borderForCalendar": "#5255BC",
     "strokeForCalendar": "rgba(22, 22, 22, 0.2)",
-    "textCalendar": "rgba(22, 22, 22, 0.5)"
+    "textCalendar": "rgba(22, 22, 22, 0.5)",
+
+    "logoBg": "#ECEDFD",
+    "logoLightning": "#5255BC"
   }
 }

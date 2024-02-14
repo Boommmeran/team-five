@@ -63,6 +63,8 @@ export const GlobalStyles = createGlobalStyle`
   --strokeForCalendar: ${({ theme }) => theme.strokeForCalendar};
   --textCalendar: ${({ theme }) => theme.textCalendar};
 
+  --logoBg: ${({ theme }) => theme.logoBg};
+  --logoLightning: ${({ theme }) => theme.logoLightning};
 }
 
 @font-face {

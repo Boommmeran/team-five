@@ -42,7 +42,8 @@ export const BoardCreation = () => {
       <Modal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
-        style={customStyles}
+        className="modal-content"
+        overlayClassName="modal-overlay"
         contentLabel="Creation board modal"
       >
         <BoardCreatingModal
