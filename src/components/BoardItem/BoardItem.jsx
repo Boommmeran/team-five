@@ -8,22 +8,6 @@ import { deleteBoard } from '../../redux/boards/boardsOperations';
 import { selectCurrentBoard } from '../../redux/boards/boardsSelectors';
 import { useNavigate } from 'react-router-dom';
 
-
-const customStyles = {
-  content: {
-    width: 'fit-content',
-    height: 'fit-content',
-    padding: 0,
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    boxShadow: '0px 4px 16px 0px #1616160D',
-  },
-  overlay: {
-    background: 'rgba(0,0,0,0.5)',
-  },
-};
-
 export const BoardItem = ({ board }) => {
   const dispatch = useDispatch();
   const currentBoard = useSelector(selectCurrentBoard);

@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const SidebarWrapper = styled.aside`
   @media screen and (max-width: 1439px) {
-  @media screen and (max-width: 1439px) {
     display: none;
   }
 

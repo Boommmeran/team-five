@@ -56,13 +56,9 @@ export const customStylesForModal = {
     left: '0',
     right: 'auto',
     bottom: 'auto',
-    // transform: 'translate(-50%, -50%)',
     padding: '0',
-    // boxShadow: '0 0 10px -2px var(--primaryTextColor)',
     border: 'none',
     background: 'var(--primaryBgColor)',
-    // borderRadius: '8px',
-    // overflow: 'scroll',
   },
   overlay: {
     position: 'fixed',
