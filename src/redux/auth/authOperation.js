@@ -21,6 +21,7 @@ export const registerUser = createAsyncThunk(
 
       return res.data;
     } catch (error) {
+      toast.error('User is alredy exist');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -34,6 +35,7 @@ export const logInUser = createAsyncThunk(
       setAuthHeader(res.data.token);
       return res.data;
     } catch (error) {
+      toast.error('Invalid login or password');
       return thunkAPI.rejectWithValue(error.message);
     }
   }

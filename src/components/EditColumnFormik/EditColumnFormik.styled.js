@@ -9,7 +9,6 @@ export const Container = styled.div`
   position: relative;
   padding: 24px;
   min-width: 320px;
-  /* border: 1px solid rgba(190, 219, 176, 0.5); */
   background: var(--modalBgColor);
 
   @media only screen and (max-width: 375px) {
@@ -25,7 +24,6 @@ export const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: 1px solid rgba(190, 219, 176, 0.5); */
   border-radius: 8px;
   background: var(--modalBgColor);
 `;
@@ -71,27 +69,14 @@ export const CloseBtn = styled.button`
   border: none;
   outline: none;
   background-color: inherit;
-
-  /* opacity: 0.5; */
-  /* transition: opacity var(--transition); */
-
-  /* &:hover,
-  &:focus {
-    opacity: 1;
-  } */
-
   cursor: pointer;
 `;
 
 export const Label = styled.h3`
-  /* margin-top: 24px;
-  margin-left: 24px; */
   font-family: 'Poppins-Medium';
-  /* font-family: 'Poppins', sans-serif;
-  font-weight: 500; */
+
   font-size: 18px;
   letter-spacing: -0.02em;
-  /* color: #fff; */
   color: var(--textColorcalendar);
 `;
 
@@ -122,11 +107,10 @@ export const Button = styled.button`
 
 export const ButtonText = styled.span`
   font-family: 'Poppins-Medium';
-  /* font-family: 'Poppins', sans-serif;
-  font-weight: 500; */
+
   font-size: 14px;
   letter-spacing: -0.02em;
-  /* color: #161616; */
+
   color: var(--headerBgColor);
 `;
 

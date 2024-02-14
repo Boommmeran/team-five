@@ -6,6 +6,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 import { persistor, store } from './redux/store.js';
 import Modal from 'react-modal';
+import { Toaster } from 'react-hot-toast';
 
 Modal.setAppElement('#root');
 
@@ -18,5 +19,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </BrowserRouter>
       </PersistGate>
     </Provider>
+    <Toaster position="top-right" reverseOrder={false} />
   </React.StrictMode>
 );

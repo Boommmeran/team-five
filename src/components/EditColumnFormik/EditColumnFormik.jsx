@@ -31,7 +31,6 @@ export const EditColumnFormik = ({ title, columnId, onClose }) => {
       <CloseBtn
         type="button"
         onClick={onClose}
-        // style={{ stroke: 'var(--primaryTextColor)' }}
       >
         <Icon name="close" width="18" height="18" stroke="var(--textColorcalendar)"/>
       </CloseBtn>

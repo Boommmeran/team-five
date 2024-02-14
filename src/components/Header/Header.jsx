@@ -18,12 +18,12 @@ export const Header = () => {
 
   const openMenu = () => {
     setIsOpenMenu(true);
-    // scrollSwitcher(true);
+    scrollSwitcher(true);
   };
 
   const closeMenu = () => {
     setIsOpenMenu(false);
-    // scrollSwitcher(false);
+    scrollSwitcher(false);
   };
 
   return (

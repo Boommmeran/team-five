@@ -33,7 +33,7 @@ export const Board = () => {
     <>
       <Container>
         <Wrap>
-          <ColumnList>
+          {columns.length !== 0 && <ColumnList>
             {columns.map(({ _id, title }) => {
               return (
                 <ColumnItem key={nanoid()}>
@@ -41,7 +41,7 @@ export const Board = () => {
                 </ColumnItem>
               );
             })}
-          </ColumnList>
+          </ColumnList>}
           <AddBtn type="button" onClick={openModal}>
             <IconWrap>
               <Icon name="plus" />

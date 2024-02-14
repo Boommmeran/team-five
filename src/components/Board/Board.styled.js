@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import 'react-perfect-scrollbar/dist/css/styles.css';
 
 export const Container = styled.div`
   /* max-width: 347px; */
@@ -77,15 +76,17 @@ export const Wrap = styled.div`
   align-items: flex-start;
   padding: 0 0 8px;
 `;
+
 export const AddBtn = styled.button`
   display: flex;
   align-items: center;
   gap: 8px;
 
-  min-width: 334px;
-  width: 334px;
+  max-width: 280px;
+  width: 280px;
+  min-width: 280px;
 
-  padding: 14px 78px;
+  padding: 14px 42px;
 
   border: none;
   border-radius: 8px;
@@ -113,8 +114,11 @@ export const AddBtn = styled.button`
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 375px) {
     width: 334px;
+    min-width: 334px;
+    max-width: 334px;
+    padding: 14px 78px;
   }
 `;
 

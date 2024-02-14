@@ -1,4 +1,4 @@
-import toast from 'react-hot-toast';
+import { createSlice } from '@reduxjs/toolkit';
 import {
   registerUser,
   logInUser,
@@ -8,8 +8,6 @@ import {
   updateAvatar,
   changeTheme,
 } from './authOperation';
-
-import { createSlice } from '@reduxjs/toolkit';
 
 export const authSlice = createSlice({
   name: 'auth',
@@ -29,9 +27,7 @@ export const authSlice = createSlice({
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
-        toast.success('Welcome in your Home Page');
       })
-      .addCase(registerUser.rejected, () => toast.error('User is alredy exist'))
       .addCase(logInUser.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
@@ -41,7 +37,6 @@ export const authSlice = createSlice({
         state.user = { name: '', email: '' };
         state.isLoggedIn = false;
         state.token = null;
-        toast.success('Welcome in your Home Page');
       })
       .addCase(refreshing.pending, state => {
         state.isRefreshing = true;

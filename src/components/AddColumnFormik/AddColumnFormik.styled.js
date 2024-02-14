@@ -9,7 +9,6 @@ export const Container = styled.div`
   position: relative;
   padding: 24px;
   min-width: 320px;
-  /* border: 1px solid rgba(190, 219, 176, 0.5); */
   background: var(--modalBgColor);
 
   @media only screen and (max-width: 375px) {

@@ -48,8 +48,7 @@ export const LabelName = styled.p`
   letter-spacing: -0.02em;
   margin-bottom: 14px;
   display: flex;
-justify-content: space-between;
-align-items: center;
-  /* margin-left: 24px; */
+  justify-content: space-between;
+  align-items: center;
   color: var(--primaryTextColor);
 `;

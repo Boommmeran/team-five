@@ -179,7 +179,6 @@ export const AddBtn = styled.button`
   padding: 10px 0 11px 0;
   border: none;
 
-  /* border: 1px solid black; */
   border-radius: 8px;
 
   font-size: 14px;

@@ -6,10 +6,6 @@ export const SidebarWrapper = styled.aside`
   }
 
   @media screen and (min-width: 1440px) {
-    /* padding: 14px; */
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-between; */
     grid-column: 1 / 2;
     grid-row-start: 1;
     grid-row-end: 3;

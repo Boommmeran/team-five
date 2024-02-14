@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { logInUser } from '../../redux/auth/authOperation';
 import { useState } from 'react';
 import { Icon } from 'components/Icon';
+
 import {
   ButtonLogin,
   ErrorLoginMessage,
@@ -24,6 +25,7 @@ export const LoginForm = () => {
     reset,
     formState: { errors, isValid },
   } = useForm({ mode: 'onBlur' });
+
   const onSubmit = data => {
     dispatch(logInUser(data));
     reset();
