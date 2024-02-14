@@ -123,14 +123,7 @@ export const CardButtons = styled.div`
 `;
 export const Bell = styled.button`
   stroke: var(--accent); 
-  display: ${props => {
-    switch (props.bell) {
-      case 'true':
-        return 'block';
-      default:
-        return 'none';
-    }
-  }};
+  display: ${props => (props.bell === 'true' ? 'block' : 'none')};
 `;
 
 export const Button = styled.button`

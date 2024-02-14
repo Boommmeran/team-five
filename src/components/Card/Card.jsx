@@ -90,7 +90,7 @@ export default function Card({ card }) {
           </Deadline>
         </CardInformation>
         <CardButtons>
-          <Bell bell={bell} type="button">
+          <Bell type="button" bell={bell}>
             <Icon name="bell" width="16" height="16" />
           </Bell>
           <Button type="button" onClick={hendleMoveCardModalOpen}>
