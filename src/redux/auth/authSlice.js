@@ -21,8 +21,6 @@ export const authSlice = createSlice({
     token: null,
     isLoggedIn: false,
     isRefreshing: false,
-    showImage: false,
-    showSvg: true,
   },
   extraReducers: builder =>
     builder
@@ -37,8 +35,6 @@ export const authSlice = createSlice({
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
-        state.showImage = true;
-        state.showSvg = false;
       })
       // .addCase(logInUser.rejected, () =>
       //   console.log('Email or password is not correct')
