@@ -122,7 +122,7 @@ export const CardButtons = styled.div`
   }
 `;
 export const Bell = styled.button`
-  stroke: var(--accent); //не змінюється в темах
+  stroke: ${({bell}) => (bell ? 'var(--accent)' : 'none')}
 `;
 
 export const Button = styled.button`
