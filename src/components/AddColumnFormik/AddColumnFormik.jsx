@@ -23,6 +23,7 @@ export const AddColumnFormik = ({ boardId, onClose }) => {
 
   const handleSubmit = body => {
     dispatch(addColumn({ body, boardId }));
+    onClose();
   };
 
   return (

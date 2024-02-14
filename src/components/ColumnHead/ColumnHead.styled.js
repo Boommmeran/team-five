@@ -25,7 +25,7 @@ export const Title = styled.h3`
   font-size: 14px;
   line-height: 1.5;
   letter-spacing: -0.02em;
-  color: var(--primaryTextColor);
+  color: var(--secondaryTextColor);
 `;
 
 export const Wrap = styled.div`

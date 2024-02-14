@@ -5,7 +5,6 @@ export const SidebarStylesWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 225px;
-  height: 100vh;
   padding: 14px;
   color: var(--primaryTextColor);
 
@@ -13,6 +12,10 @@ export const SidebarStylesWrapper = styled.div`
     width: 260px;
     padding: 24px;
   }
+
+  /* @media (max-width: 1439px) {
+    display: none;
+  } */
 `;
 
 export const Logo = styled.div`

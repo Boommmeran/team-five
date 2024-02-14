@@ -22,7 +22,11 @@ export const Main = styled.main`
   padding: 10px 24px;
   min-height: 812px;
   background-color: var(--secondaryBgColor);
-  background-image: url(${props => props.$backgroundImg}_375x812.webp);
+  ${({ isBackground }) => isBackground ? `background-image: url(${props => props.$backgroundImg}_375x812.webp)`
+    : `background-image: none`
+  
+  };
+  
   background-repeat: no-repeat;
   max-width: 375px;
   height: auto;
