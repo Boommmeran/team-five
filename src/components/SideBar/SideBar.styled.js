@@ -6,6 +6,8 @@ export const SidebarStylesWrapper = styled.div`
   justify-content: space-between;
   width: 225px;
   padding: 14px;
+  max-height: 100vh;
+  height: 100vh;
   color: var(--primaryTextColor);
 
   @media only screen and (min-width: 768px) {

@@ -19,14 +19,12 @@ export const SidebarWrapper = styled.aside`
 export const Main = styled.main`
   grid-column: 1 / 2;
   grid-row: 2 / 3;
-  padding: 10px 24px;
+  padding: 10px 20px;
   min-height: 812px;
   background-color: var(--secondaryBgColor);
-  ${({ isBackground }) => isBackground ? `background-image: url(${props => props.$backgroundImg}_375x812.webp)`
-    : `background-image: none`
-  
-  };
-  
+  background-image: ${({ $isBackground, $backgroundImg }) =>
+    $isBackground ? `url(${$backgroundImg}_375x812.webp)` : 'none'};
+
   background-repeat: no-repeat;
   max-width: 375px;
   height: auto;
@@ -36,29 +34,37 @@ export const Main = styled.main`
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-    background-image: url(${props => props.$backgroundImg}_750x1624.webp);
+    background-image: ${({ $isBackground, $backgroundImg }) =>
+      $isBackground ? `url(${$backgroundImg}_750x1624.webp)` : 'none'};
   }
-  @media (min-width: 768px) {
-    background-image: url(${props => props.$backgroundImg}_768x956.webp);
-    max-width: 768px;
 
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      background-image: url(${props => props.$backgroundImg}_1536x1912.webp);
-    }
+  @media (min-width: 768px) {
+    background-image: ${({ $isBackground, $backgroundImg }) =>
+      $isBackground ? `url(${$backgroundImg}_768x956.webp)` : 'none'};
+    max-width: 768px;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: ${({ $isBackground, $backgroundImg }) =>
+      $isBackground ? `url(${$backgroundImg}_1536x1912.webp)` : 'none'};
   }
 
   @media (min-width: 1440px) {
-    background-image: url(${props => props.$backgroundImg}_1180x770.webp);
+    background-image: ${({ $isBackground, $backgroundImg }) =>
+      $isBackground ? `url(${$backgroundImg}_1180x770.webp)` : 'none'};
+
     max-width: 1180px;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+  }
 
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      background-image: url(${props => props.$backgroundImg}_2360x1540.webp);
-    }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: ${({ $isBackground, $backgroundImg }) =>
+      $isBackground ? `url(${$backgroundImg}_2360x1540.webp)` : 'none'};
   }
 `;
+

@@ -85,7 +85,9 @@ export const boardsSlice = createSlice({
         const index = state.boards.findIndex(board => board._id === _id);
         if (index !== -1) {
           state.boards[index] = { ...state.boards[index], ...boardData };
+          state.currentBoard = { ...state.boards[index], ...boardData };
         }
+        
       })
       .addCase(editBoard.rejected, (state, action) => {
         state.loading = false;

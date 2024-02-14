@@ -1,19 +1,22 @@
 import styled from 'styled-components';
 
-export const StartContainer = styled.div`
+export const StartContainer = styled.main`
   height: 80vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-`
+  padding: 15px;
+  background-color: var(--secondaryBgColor);
+`;
 
 export const StartText = styled.p`
   min-width: 280px;
-
+  text-align: center;
   font-size: 14px;
   letter-spacing: -0.02em;
   line-height: 1.33;
+  
 
   color: var(--secondaryTextColor);
 

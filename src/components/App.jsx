@@ -28,7 +28,6 @@ export const App = () => {
   return (
     <>
       <GlobalStyles theme={themes[theme]} />
-
       {isRefreshing ? (
         <Spinner />
       ) : (

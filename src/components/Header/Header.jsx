@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { Sidebar } from 'components/SideBar';
 import { ThemeSwitcher } from 'components/ThemeSwitcher';
 import { Icon } from 'components/Icon';
+import { scrollSwitcher } from 'helpers/scrollSwitcher';
+
 import {
   HeaderStyled,
   HeaderWrapper,
@@ -16,10 +18,12 @@ export const Header = () => {
 
   const openMenu = () => {
     setIsOpenMenu(true);
+    // scrollSwitcher(true);
   };
 
   const closeMenu = () => {
     setIsOpenMenu(false);
+    // scrollSwitcher(false);
   };
 
   return (

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 // import 'react-perfect-scrollbar/dist/css/styles.css';
 
 export const Container = styled.div`
-  max-width: 347px;
+  /* max-width: 347px; */
 
   @media (min-width: 768px) {
     max-width: 718px;
