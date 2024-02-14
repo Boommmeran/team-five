@@ -21,14 +21,16 @@ export default function HomePage() {
   const currBoard = useSelector(selectCurrentBoard);
   console.log(boardId);
 
-  useEffect(() => {
-
+  const firstRender = () => {
     if (!boardFromLS) return;
     if (boardFromLS === boardId) return;
-    // console.log('navigate');
-    // navigate(`/${boardFromLS}`);
+    navigate(`/${boardFromLS}`);
+  }
+
+  useEffect(() => {
+    firstRender();
     return () => {};
-  }, [navigate, boardFromLS, boardId]);
+  }, []);
 
   useEffect(() => {
     if (!boardId) return;

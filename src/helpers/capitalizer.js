@@ -1,5 +1,4 @@
 export const capitalizer = str => {
-  return str === 'without'
-    ? `${str} priority`.charAt(0).toUpperCase() + str.slice(1)
-    : str.charAt(0).toUpperCase() + str.slice(1);
+  const text = str === 'without' ? `${str} priority` : str;
+  return text.charAt(0).toUpperCase() + text.slice(1);  
 };

@@ -47,12 +47,18 @@ export const BoardItem = ({ board }) => {
     }
   };
 
-  const handleDelete = (boardId) => {
-  // dispatch(deleteBoard(boardId));
-  navigate(`/dddddddd`);
+  const handleDelete = (event, boardId) => {
+    // dispatch(deleteBoard(boardId));
+    navigate(`/dddddddd`);
     console.log('sdssdsd');
-    
-  }
+  };
+
+  const handleSelectBoardd = (event, boardId) => {
+    if (event.target.tagName === 'BUTTON') {
+      navigate(`/ffffffff`);
+      localStorage.setItem('lastBoard', boardId);
+    }
+  };
 
   return (
     <BoardItemContainer
@@ -65,7 +71,10 @@ export const BoardItem = ({ board }) => {
         <button type="button" onClick={openModal}>
           <Icon name="pencil" width="16" height="16" />
         </button>
-        <button type="button" onClick={() => handleDelete(board._id)}>
+        <button
+          type="button"
+          onClick={event => handleSelectBoardd(event, board._id)}
+        >
           <Icon name="trash" width="16" height="16" />
         </button>
       </ControlIconsContainer>
@@ -75,10 +84,7 @@ export const BoardItem = ({ board }) => {
         style={customStyles}
         contentLabel="Edition board modal"
       >
-        <BoardEditModal
-          onClose={closeModal}
-          board={board}
-        />
+        <BoardEditModal onClose={closeModal} board={board} />
       </Modal>
     </BoardItemContainer>
   );

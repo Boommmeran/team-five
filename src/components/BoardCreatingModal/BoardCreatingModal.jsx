@@ -70,7 +70,8 @@ export const BoardCreatingModal = ({ onClose }) => {
   };
 
   const onSubmit = async values => {
-    const {payload: {_id}} = await dispatch(addBoard(values));
+    const { payload: { _id } } = await dispatch(addBoard(values));
+    localStorage.setItem('lastBoard', _id);
     navigate(`/${_id}`);
     onClose();
   };
