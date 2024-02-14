@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Column } from 'components/Column';
 import {
   IconWrap,

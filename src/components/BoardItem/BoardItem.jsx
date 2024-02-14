@@ -41,24 +41,29 @@ export const BoardItem = ({ board }) => {
   };
 
   const handleSelectBoard = (event, boardId) => {
-    if (event.target.tagName !== 'BUTTON') {
-      navigate(`/${boardId}`);
-      localStorage.setItem('lastBoard', boardId);
+    if (event.target.tagName === 'BUTTON' || event.target.closest('button')) {
+      return;
     }
+
+    navigate(`/${boardId}`);
+    localStorage.setItem('lastBoard', boardId);
   };
 
-  const handleDelete = (event, boardId) => {
-    // dispatch(deleteBoard(boardId));
-    navigate(`/dddddddd`);
-    console.log('sdssdsd');
+  const handleDelete = boardId => {
+    dispatch(deleteBoard(boardId));
+    const filteredBoards = boards.filter(board => board._id !== boardId);
+    localStorage.removeItem('lastBoard');
+
+    if (filteredBoards.length === 0) {
+      navigate(`/`);
+      return;
+    }
+
+    const lastBoardObj = filteredBoards[filteredBoards.length - 1];
+
+    navigate(`/${lastBoardObj._id}`);
   };
 
-  const handleSelectBoardd = (event, boardId) => {
-    if (event.target.tagName === 'BUTTON') {
-      navigate(`/ffffffff`);
-      localStorage.setItem('lastBoard', boardId);
-    }
-  };
 
   return (
     <BoardItemContainer
@@ -71,10 +76,7 @@ export const BoardItem = ({ board }) => {
         <button type="button" onClick={openModal}>
           <Icon name="pencil" width="16" height="16" />
         </button>
-        <button
-          type="button"
-          onClick={event => handleSelectBoardd(event, board._id)}
-        >
+        <button type="button" onClick={() => handleDelete(board._id)}>
           <Icon name="trash" width="16" height="16" />
         </button>
       </ControlIconsContainer>

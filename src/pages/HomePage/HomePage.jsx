@@ -17,19 +17,15 @@ export default function HomePage() {
   const { boardId } = useParams();
   const { isLoggedIn } = useAuth();
   const navigate = useNavigate();
-  const boardFromLS = localStorage.getItem('lastBoard');
   const currBoard = useSelector(selectCurrentBoard);
-  console.log(boardId);
 
-  const firstRender = () => {
+  useEffect(() => {
+    const boardFromLS = localStorage.getItem('lastBoard');
     if (!boardFromLS) return;
     if (boardFromLS === boardId) return;
     navigate(`/${boardFromLS}`);
-  }
-
-  useEffect(() => {
-    firstRender();
     return () => {};
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {

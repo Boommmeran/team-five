@@ -1,8 +1,7 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Formik } from 'formik';
 import { addBoard } from '../../redux/boards/boardsOperations';
-import { selectCurrentBoard } from '../../redux/boards/boardsSelectors';
 import { Icon } from 'components/Icon';
 import * as Yup from 'yup';
 import {
@@ -71,6 +70,7 @@ export const BoardCreatingModal = ({ onClose }) => {
 
   const onSubmit = async values => {
     const { payload: { _id } } = await dispatch(addBoard(values));
+    
     localStorage.setItem('lastBoard', _id);
     navigate(`/${_id}`);
     onClose();
