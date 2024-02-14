@@ -17,9 +17,8 @@ const customStyles = {
     bottom: 'auto',
     padding: '0',
     transform: 'translate(-50%, -50%)',
-    boxShadow: ' 0 4px 16px 0 rgba(22, 22, 22, 0.05)',
     borderRadius: '8px',
-    border: '0',
+    border: '1 px solid var(--borderModal)',
   },
   overlay: {
     background: 'rgba(0,0,0,0.5)',
@@ -43,25 +42,19 @@ export const UserInfo = () => {
   return (
     <Container>
       <Name>{user.name}</Name>
-        <ButtonSvg onClick={openModal}>
-          {showImage ? (
-            <Avatar
-              src={cloudinaryBaseURL + user.avatarURL}
-              width="32"
-              height="32"
-              alt="user photo"
-              onClick={openModal}
-            />
-          ) : (
-            <Icon
-              name="user"
-              fill="var(--primaryBgColor)"
-              stroke="var(--secondaryTextColor)"
-              width="32px"
-              height="32px"
-            />
-          )}
-        </ButtonSvg>
+      <ButtonSvg onClick={openModal}>
+        {showImage ? (
+          <Avatar
+            src={cloudinaryBaseURL + user.avatarURL}
+            width="32"
+            height="32"
+            alt="user photo"
+            onClick={openModal}
+          />
+        ) : (
+          <Icon name="user" width="32px" height="32px" />
+        )}
+      </ButtonSvg>
 
       <Modal
         isOpen={isModalOpen}

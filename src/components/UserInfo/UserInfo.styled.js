@@ -30,6 +30,7 @@ export const Button = styled.button`
 `;
 
 export const ButtonSvg = styled.button`
+  line-height: 0;
   padding: 0;
   margin: 0;
   border: 0;
