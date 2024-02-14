@@ -121,7 +121,7 @@ export const Label = styled.label`
 
   cursor: pointer;
   > svg {
-    stroke: var(--primaryTextColor);
+    stroke: var(--secondaryTextColor);
   }
 
   &:focus,
