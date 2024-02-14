@@ -34,7 +34,6 @@ export const logInUser = createAsyncThunk(
       setAuthHeader(res.data.token);
       return res.data;
     } catch (error) {
-      toast.error('Email or password is not correct');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -66,14 +65,17 @@ export const refreshing = createAsyncThunk(
   }
 );
 
-export const update = createAsyncThunk('auth/update', async (user, thunkAPI) => {
-  try {
-    const response = await axios.patch('/users/update', user);
-    return response.data;
-  } catch (error) {
-    return thunkAPI.rejectWithValue(error.message);
+export const update = createAsyncThunk(
+  'auth/update',
+  async (user, thunkAPI) => {
+    try {
+      const response = await axios.patch('/users/update', user);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
   }
-});
+);
 
 export const updateAvatar = createAsyncThunk(
   'auth/updateAvatar',
@@ -85,7 +87,6 @@ export const updateAvatar = createAsyncThunk(
 
       return response.data.avatarURL;
     } catch (error) {
-      toast.error('Something went wrong. Please, try again.');
       return thunkAPI.rejectWithValue(error.message);
     }
   }

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 export const LabelStyled = styled.label`
   position: relative;
+  width: 100%;
 `;
 export const RegisterStyledSection = styled.div`
   background: linear-gradient(rgba(255, 255, 255, 1) 30%, #bedbb0 92.19%);
@@ -93,7 +94,7 @@ export const WrapForRegNav = styled.div`
 `;
 export const ButtonRegister = styled.button`
   @media only screen and (max-width: 320px) {
-    width: 100%;
+    max-width: 100%;
   }
   font-family: 'Poppins-medium', sans-serif;
   font-size: 14px;

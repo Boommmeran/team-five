@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export const LabelStyled = styled.label`
   position: relative;
+  width: 100%;
 `;
 export const LoginStyledSection = styled.div`
   background: linear-gradient(rgba(255, 255, 255, 1) 30%, #bedbb0 92.19%);
@@ -106,7 +107,7 @@ export const ButtonLogin = styled.button`
   &:focus {
     background: rgba(157, 200, 136, 1);
   }
-  
+
   @media only screen and (min-width: 768px) {
     width: 344px;
   }
