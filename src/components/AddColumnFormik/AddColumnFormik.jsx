@@ -5,6 +5,7 @@ import {
   Button,
   ButtonText,
   CloseBtn,
+  Container,
   Label,
   StylePlus,
   StyledField,
@@ -25,14 +26,14 @@ export const AddColumnFormik = ({ boardId, onClose }) => {
   };
 
   return (
-    <>
+    <Container>
       <Label>Add column</Label>
       <CloseBtn
         type="button"
         onClick={onClose}
-        style={{ stroke: 'var(--primaryTextColor)' }}
+        // style={{ stroke: 'var(--primaryTextColor)' }}
       >
-        <Icon name="close" width="18" height="18" />
+        <Icon name="close" width="18" height="18" stroke="var(--textColorcalendar)"/>
       </CloseBtn>
       <Formik
         initialValues={{
@@ -51,6 +52,6 @@ export const AddColumnFormik = ({ boardId, onClose }) => {
           </Button>
         </StyledForm>
       </Formik>
-    </>
+    </Container>
   );
 };

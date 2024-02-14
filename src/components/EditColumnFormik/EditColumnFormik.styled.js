@@ -1,50 +1,66 @@
 import styled from 'styled-components';
 import { ErrorMessage, Field, Form } from 'formik';
 
-export const customModalStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    // backgroundColor: '#151515',
-    backgroundColor: 'var(--modalBgColor)',
-  },
-//   overlay: {
-//     backgroundColor: 'rgba(0,0,0,0.5)',
-//   },
-};
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  height: 221px;
+  position: relative;
+  padding: 24px;
+  min-width: 320px;
+  /* border: 1px solid rgba(190, 219, 176, 0.5); */
+  background: var(--modalBgColor);
+
+  @media only screen and (max-width: 375px) {
+    width: 335px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    width: 350px;
+  }
+`;
 
 export const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(190, 219, 176, 0.5);
+  align-items: center;
+  /* border: 1px solid rgba(190, 219, 176, 0.5); */
   border-radius: 8px;
-  width: 350px;
-  height: 221px;
-  /* background: #151515; */
   background: var(--modalBgColor);
-  gap: 24px;
 `;
 
 export const StyledField = styled(Field)`
   font: inherit;
   cursor: pointer;
-  /* font-family: 'Poppins', sans-serif;
-  font-weight: 400; */
-  font-size: 14px;
-  letter-spacing: -0.02em;
-  /* border: 1px solid #bedbb0; */
-  border: 1px solid var(--btnPlus);
+  padding-left: 18px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  width: 287px;
+  outline: transparent;
+  outline-offset: -1px;
+  border: 1px solid var(--accent);
   border-radius: 8px;
-  width: 302px;
   height: 49px;
   box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.08);
-  /* background: #1f1f1f; */
-  background: var(--secondaryBgColor);
   opacity: 0.4;
+  background: var(--modalBgColor);
+  color: var(--textColorcalendar);
+
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 1;
+    &::placeholder {
+      color: transparent;
+    }
+  }
+
+  transition: opacity var(--transition);
+
+  @media only screen and (min-width: 768px) {
+    width: 302px;
+  }
 `;
 
 export const CloseBtn = styled.button`
@@ -57,39 +73,51 @@ export const CloseBtn = styled.button`
   background-color: inherit;
 
   /* opacity: 0.5; */
-  transition: opacity var(--transition);
+  /* transition: opacity var(--transition); */
 
-  > svg {
-    stroke: var(--primaryTextColor);
-  }
-
-  &:hover,
+  /* &:hover,
   &:focus {
     opacity: 1;
-  }
+  } */
 
   cursor: pointer;
 `;
 
-export const Label = styled.label`
+export const Label = styled.h3`
+  /* margin-top: 24px;
+  margin-left: 24px; */
   font-family: 'Poppins-Medium';
   /* font-family: 'Poppins', sans-serif;
   font-weight: 500; */
   font-size: 18px;
   letter-spacing: -0.02em;
   /* color: #fff; */
-  color: var(--primaryTextColor);
+  color: var(--textColorcalendar);
 `;
 
 export const Button = styled.button`
-  font: inherit;
-  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  border: none;
   border-radius: 8px;
-  width: 302px;
+  width: 287px;
   height: 49px;
-  /* background: #bedbb0; */
   background: var(--btnPlus);
-  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition);
+  cursor: pointer;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: var(--btnBgColorHover);
+  }
+
+  @media only screen and (min-width: 768px) {
+    width: 302px;
+  }
 `;
 
 export const ButtonText = styled.span`
@@ -103,7 +131,12 @@ export const ButtonText = styled.span`
 `;
 
 export const ErrMsg = styled(ErrorMessage)`
-  color: #f5530d;
+  position: absolute;
+  top: 2px;
+  right: 8px;
+
+  color: red;
+  font-size: 12px;
 `;
 
 export const StylePlus = styled.div`
@@ -117,5 +150,4 @@ export const StylePlus = styled.div`
   background: black;
   margin-right: 8px;
   stroke: white;
-
 `;
