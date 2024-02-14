@@ -12,7 +12,6 @@ export const HeadWrap = styled.div`
   padding: 17px 20px;
 
   border-radius: 8px;
-
   background-color: var(--extraBgColor);
 
   @media (min-width: 768px) {
@@ -25,7 +24,7 @@ export const Title = styled.h3`
   font-size: 14px;
   line-height: 1.5;
   letter-spacing: -0.02em;
-  color: var(--primaryTextColor);
+  color: var(--textColorcalendar);
 `;
 
 export const Wrap = styled.div`
