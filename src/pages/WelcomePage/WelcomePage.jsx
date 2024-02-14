@@ -3,6 +3,7 @@ import { Icon } from 'components/Icon';
 import {
   LogoStyled,
   StyledNavLink,
+  TextStyledWelcome,
   ThumbWelcomeImg,
   WrapForNav,
   WraperContentWelcome,
@@ -16,24 +17,24 @@ export default function WelcomePage() {
         <ThumbWelcomeImg>
           <picture>
             <source
-              srcSet="http://res.cloudinary.com/dt7u6ic1c/image/upload/v1706799169/avatars/jE_DHXsifaZ7-4NRAsyL3 1x, http://res.cloudinary.com/dt7u6ic1c/image/upload/v1706799169/avatars/RuKeVdzJGSKz9BP0xLfuD 2x"
+              srcSet="https://res.cloudinary.com/dt7u6ic1c/image/upload/v1706799169/avatars/jE_DHXsifaZ7-4NRAsyL3 1x, http://res.cloudinary.com/dt7u6ic1c/image/upload/v1706799169/avatars/RuKeVdzJGSKz9BP0xLfuD 2x"
               media="(min-width: 1200px)"
             />
             <img
-              src="http://res.cloudinary.com/dt7u6ic1c/image/upload/v1706799169/avatars/jE_DHXsifaZ7-4NRAsyL3"
+              src="https://res.cloudinary.com/dt7u6ic1c/image/upload/v1706799169/avatars/jE_DHXsifaZ7-4NRAsyL3"
               alt="Welcome img"
               style={{ mixBlendMode: 'multiply' }}
             />
           </picture>
         </ThumbWelcomeImg>
         <LogoStyled>
-          <Icon name={'logo'} width="48px" height="48px" />
-          <p style={{ fontSize: 40 }}>Task Pro</p>
+          <Icon name={'logo'} />
+          <p>Task Pro</p>
         </LogoStyled>
-        <p style={{ fontSize: 14 }}>
+        <TextStyledWelcome>
           Supercharge your productivity and take control of your tasks with Task
           Pro - Don't wait, start achieving your goals now!
-        </p>
+        </TextStyledWelcome>
         <WrapForNav>
           <StyledNavLink to="/users/register">Registration</StyledNavLink>
           <StyledNavLink to="/users/login">Login</StyledNavLink>

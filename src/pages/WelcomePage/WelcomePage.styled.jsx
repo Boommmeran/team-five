@@ -9,6 +9,17 @@ export const LogoStyled = styled.div`
   font-size: 40px;
   letter-spacing: -2px;
   gap: 15px;
+  svg {
+    width: 48px;
+    height: 48px;
+  }
+  @media only screen and (max-width: 320px) {
+    font-size: 20px;
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
 `;
 export const WrapForNav = styled.div`
   display: flex;
@@ -37,6 +48,9 @@ export const StyledNavLink = styled(NavLink)`
     background-color: black;
     color: white;
   }
+  @media only screen and (max-width: 320px) {
+    width: 100%;
+  }
 `;
 export const WraperWelcomeSection = styled.section`
   background: linear-gradient(rgba(255, 255, 255, 1) 30%, #bedbb0 92.19%);
@@ -47,7 +61,6 @@ export const WraperWelcomeSection = styled.section`
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  
 `;
 export const WraperContentWelcome = styled.div`
   margin-right: auto;
@@ -55,6 +68,9 @@ export const WraperContentWelcome = styled.div`
   width: 335px;
   @media only screen and (min-width: 768px) {
     width: 473px;
+  }
+  @media only screen and (max-width: 320px) {
+    width: 100%;
   }
 `;
 export const ThumbWelcomeImg = styled.div`
@@ -66,5 +82,17 @@ export const ThumbWelcomeImg = styled.div`
   @media only screen and (min-width: 768px) {
     width: 162px;
     height: 162px;
+  }
+`;
+export const TextStyledWelcome = styled.p`
+  font-size: 14px;
+  width: 335px;
+  text-align: center;
+  @media only screen and (min-width: 768px) {
+    width: 473px;
+  }
+  @media only screen and (max-width: 320px) {
+    font-size: 10px;
+    width: 100%;
   }
 `;

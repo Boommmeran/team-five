@@ -1,3 +1,4 @@
+import toast from 'react-hot-toast';
 import {
   registerUser,
   logInUser,
@@ -25,24 +26,25 @@ export const authSlice = createSlice({
   extraReducers: builder =>
     builder
       .addCase(registerUser.fulfilled, (state, action) => {
-        console.log(action.payload);
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
+        toast.success('Welcome in your Home Page');
       })
-      .addCase(registerUser.rejected, () => console.log('s'))
+      .addCase(registerUser.rejected, () => toast.error('User is alredy exist'))
       .addCase(logInUser.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.isLoggedIn = true;
       })
-      // .addCase(logInUser.rejected, () =>
-      //   console.log('Email or password is not correct')
-      // )
+      .addCase(logInUser.rejected, () =>
+        toast.error('Email or password is not correct')
+      )
       .addCase(logOut.fulfilled, state => {
         state.user = { name: '', email: '' };
         state.isLoggedIn = false;
         state.token = null;
+        toast.success('Welcome in your Home Page');
       })
       .addCase(refreshing.pending, state => {
         state.isRefreshing = true;

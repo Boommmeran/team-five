@@ -28,7 +28,7 @@ export const RegisterForm = () => {
     watch,
     reset,
     formState: { errors, isValid },
-  } = useForm({ mode: 'all' });
+  } = useForm({ mode: 'onBlur' });
 
   const onSubmit = data => {
     dispatch(
