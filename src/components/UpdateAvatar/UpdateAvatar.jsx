@@ -38,13 +38,7 @@ export const UpdateAvatar = () => {
           alt="user photo"
         />
       ) : (
-        <Icon
-          name="user"
-          fill="var(--secondaryBgColor)"
-          stroke="var(--secondaryTextColor)"
-          width="68"
-          height="68"
-        />
+        <Icon name="user" width="68" height="68" />
       )}
 
       <Button onClick={handlePick}>
