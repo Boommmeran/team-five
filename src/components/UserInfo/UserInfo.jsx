@@ -19,7 +19,7 @@ const customStyles = {
     transform: 'translate(-50%, -50%)',
     boxShadow: ' 0 4px 16px 0 rgba(22, 22, 22, 0.05)',
     borderRadius: '8px',
-    // border: '1px solid rgba(190, 219, 176, 0.5);',
+    border: '0',
   },
   overlay: {
     background: 'rgba(0,0,0,0.5)',
@@ -48,7 +48,7 @@ export const UserInfo = () => {
         <ButtonSvg onClick={openModal}>
           <Icon
             name="user"
-            fill="var(--secondaryBgColor)"
+            fill="var(--primaryBgColor)"
             stroke="var(--secondaryTextColor)"
             width="32px"
             height="32px"
