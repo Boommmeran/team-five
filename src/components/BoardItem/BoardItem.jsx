@@ -5,7 +5,7 @@ import { BoardItemContainer, ControlIconsContainer } from './BoardItem.styled';
 import { BoardEditModal } from 'components/BoardEditModal';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteBoard } from '../../redux/boards/boardsOperations';
-import { selectCurrentBoard } from '../../redux/boards/boardsSelectors';
+import { selectBoards, selectCurrentBoard } from '../../redux/boards/boardsSelectors';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -29,6 +29,8 @@ export const BoardItem = ({ board }) => {
   const currentBoard = useSelector(selectCurrentBoard);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
+  const boards = useSelector(selectBoards);
+  
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -39,15 +41,29 @@ export const BoardItem = ({ board }) => {
   };
 
   const handleSelectBoard = (event, boardId) => {
-    if (event.target.tagName !== 'BUTTON') {
-      localStorage.setItem('lastBoard', boardId);
-      navigate(`/${boardId}`)
+    if (event.target.tagName === 'BUTTON' || event.target.closest('button')) {
+      return;
     }
+
+    navigate(`/${boardId}`);
+    localStorage.setItem('lastBoard', boardId);
   };
 
-  const handleDelete = (boardId) => {
+  const handleDelete = boardId => {
     dispatch(deleteBoard(boardId));
-  }
+    const filteredBoards = boards.filter(board => board._id !== boardId);
+    localStorage.removeItem('lastBoard');
+
+    if (filteredBoards.length === 0) {
+      navigate(`/`);
+      return;
+    }
+
+    const lastBoardObj = filteredBoards[filteredBoards.length - 1];
+
+    navigate(`/${lastBoardObj._id}`);
+  };
+
 
   return (
     <BoardItemContainer
@@ -70,10 +86,7 @@ export const BoardItem = ({ board }) => {
         style={customStyles}
         contentLabel="Edition board modal"
       >
-        <BoardEditModal
-          onClose={closeModal}
-          board={board}
-        />
+        <BoardEditModal onClose={closeModal} board={board} />
       </Modal>
     </BoardItemContainer>
   );

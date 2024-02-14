@@ -20,6 +20,7 @@ export const Board = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const { columns } = useSelector(state => state.columns);
   const { boardId } = useParams();
+  
   const openModal = () => {
     setIsOpen(true);
   };
@@ -27,6 +28,7 @@ export const Board = () => {
   const closeModal = () => {
     setIsOpen(false);
   };
+
   return (
     <>
       <Container>

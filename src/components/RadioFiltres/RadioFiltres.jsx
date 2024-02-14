@@ -32,8 +32,9 @@ export const RadioFilters = () => {
         </ShowAllBtn>
       </FiltersWrap>
       <StyledRadioGroup role="group" aria-labelledby="my-radio-group">
-        {listParams.map(item => (
-          <RadioLabel
+        {listParams.map(item => {
+          const text = capitalizer(item);
+          return <RadioLabel
             key={nanoid()}
             $priority={item}
             className={currValue === item ? 'checked' : ''}
@@ -45,9 +46,9 @@ export const RadioFilters = () => {
               checked={currValue === item}
               onChange={handleFilter}
             />
-            <FiltersSpan>{capitalizer(item)}</FiltersSpan>
-          </RadioLabel>
-        ))}
+            <FiltersSpan>{text}</FiltersSpan>
+          </RadioLabel>;
+        })}
       </StyledRadioGroup>
     </>
   );
