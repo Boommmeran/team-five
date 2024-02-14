@@ -62,7 +62,7 @@ export const GlobalStyles = createGlobalStyle`
   --borderForCalendar: ${({ theme }) => theme.borderForCalendar};
   --strokeForCalendar: ${({ theme }) => theme.strokeForCalendar};
   --textCalendar: ${({ theme }) => theme.textCalendar};
-
+  --borderModal: ${({ theme }) => theme.borderModal};
 }
 
 @font-face {
@@ -134,8 +134,7 @@ li{
   bottom: auto;
   transform: translate(-50%, -50%);
   padding: 0;
-  box-shadow: 0 0 10px -2px var(--primaryTextColor);
-  border: none;
+  border: var(--borderModal);
   background: transparent;
   border-radius: 8px;
   overflow: hidden;
