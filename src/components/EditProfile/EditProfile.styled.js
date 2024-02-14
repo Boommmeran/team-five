@@ -21,6 +21,7 @@ export const Container = styled.div`
 export const Title = styled.h3`
   margin: 0 0 24px 0;
   font-family: 'Poppins-Medium';
+  font-weight: 500;
   font-size: 18px;
   letter-spacing: -0.02em;
   color: var(--primaryTextColor);
@@ -44,15 +45,13 @@ export const StyledField = styled(Field)`
   border-radius: 8px;
   font-size: 14px;
   letter-spacing: -0.02em;
-  color: var(--primaryTextColor);
-  transition: var(--transition);
+  background-color: var(--modalBgColor);
+  color: var(--secondaryTextColor);
+  transition: opacity var(--transition);
 
   &:focus,
   &:active {
     opacity: 1;
-    &::placeholder {
-      color: transparent;
-    }
   }
 `;
 
@@ -67,16 +66,14 @@ export const LastField = styled(Field)`
   border-radius: 8px;
   font-size: 14px;
   line-height: 1.5;
-  letter-spacing: -2;
-  color: var(--primaryTextColor);
-  transition: var(--transition);
+  letter-spacing: -0.02em;
+  background: var(--modalBgColor);
+  color: var(--secondaryTextColor);
+  transition: opacity var(--transition);
 
   &:focus,
   &:active {
     opacity: 1;
-    &::placeholder {
-      color: transparent;
-    }
   }
 `;
 
@@ -86,13 +83,14 @@ export const Button = styled.button`
   border: 0;
   border-radius: 8px;
   padding: 14px 126px;
-  color: var(--primaryTextColor);
+  color: var(--btnText);
   font-family: 'Poppins-Medium';
   font-weight: 500;
   font-size: 14px;
   letter-spacing: -0, 02em;
-
-  &:hover {
+  transition: background-color var(--transition);
+  &:hover,
+  &:focus {
     background: var(--hover);
   }
 `;
@@ -100,11 +98,11 @@ export const Button = styled.button`
 export const ErrMsg = styled(ErrorMessage)`
   position: absolute;
   top: 2px;
-  right: 4px;
+  right: 8px;
 
-  color: red;
   font-size: 12px;
   font-style: italic;
+  color: red;
 `;
 
 export const Label = styled.label`
@@ -121,6 +119,7 @@ export const StyledLabel = styled.label`
     top: 16px;
     right: 15px;
     opacity: 0, 5;
+
     &:active {
       opacity: 1;
     }

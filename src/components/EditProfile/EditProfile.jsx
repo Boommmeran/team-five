@@ -18,7 +18,7 @@ import { UpdateAvatar } from 'components/UpdateAvatar';
 import { Icon } from 'components/Icon';
 import { EditProfileSchema } from 'schemas/editProfileSchema';
 
-export const EditProfile = ({closeModal}) => {
+export const EditProfile = ({ closeModal }) => {
   const { user } = useAuth();
   const dispatch = useDispatch();
 
@@ -32,15 +32,14 @@ export const EditProfile = ({closeModal}) => {
           name: user.name,
           email: user.email,
           password: '',
-          
         }}
         validationSchema={EditProfileSchema}
         onSubmit={(values, actions) => {
           dispatch(update(values));
+          closeModal();
         }}
       >
         <StyledForm>
-           
           <Label>
             <StyledField id="name" name="name" />
             <ErrMsg name="name" component="p" />
@@ -52,7 +51,7 @@ export const EditProfile = ({closeModal}) => {
           </Label>
 
           <StyledLabel>
-            <Icon name="eye" stroke="var(--primaryTextColor)" />
+            <Icon name="eye" stroke="var(--secondaryTextColor)" />
             <LastField
               id="password"
               name="password"
@@ -61,7 +60,7 @@ export const EditProfile = ({closeModal}) => {
             <ErrMsg name="password" component="p" />
           </StyledLabel>
 
-          <Button type="submit" onClick={closeModal} >Submit</Button>
+          <Button type="submit">Submit</Button>
         </StyledForm>
       </Formik>
     </Container>
