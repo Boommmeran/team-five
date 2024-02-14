@@ -5,7 +5,7 @@ import { BoardItemContainer, ControlIconsContainer } from './BoardItem.styled';
 import { BoardEditModal } from 'components/BoardEditModal';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteBoard } from '../../redux/boards/boardsOperations';
-import { selectCurrentBoard } from '../../redux/boards/boardsSelectors';
+import { selectBoards, selectCurrentBoard } from '../../redux/boards/boardsSelectors';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -29,6 +29,8 @@ export const BoardItem = ({ board }) => {
   const currentBoard = useSelector(selectCurrentBoard);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
+  const boards = useSelector(selectBoards);
+  
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -40,13 +42,16 @@ export const BoardItem = ({ board }) => {
 
   const handleSelectBoard = (event, boardId) => {
     if (event.target.tagName !== 'BUTTON') {
+      navigate(`/${boardId}`);
       localStorage.setItem('lastBoard', boardId);
-      navigate(`/${boardId}`)
     }
   };
 
   const handleDelete = (boardId) => {
-    dispatch(deleteBoard(boardId));
+  // dispatch(deleteBoard(boardId));
+  navigate(`/dddddddd`);
+    console.log('sdssdsd');
+    
   }
 
   return (

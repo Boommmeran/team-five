@@ -20,6 +20,7 @@ export const Sidebar = () => {
 
   const handleLogOut = () => {
     dispatch(logOut());
+    localStorage.removeItem('lastBoard');
   };
 
   return (

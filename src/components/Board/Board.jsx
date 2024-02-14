@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Column } from 'components/Column';
 import {
   IconWrap,
@@ -17,16 +18,22 @@ import { nanoid } from '@reduxjs/toolkit';
 import { useParams } from 'react-router-dom';
 
 export const Board = () => {
+  
   const [modalIsOpen, setIsOpen] = useState(false);
   const { columns } = useSelector(state => state.columns);
   const { boardId } = useParams();
+  
+
   const openModal = () => {
     setIsOpen(true);
   };
 
+  
+
   const closeModal = () => {
     setIsOpen(false);
   };
+
   return (
     <>
       <Container>

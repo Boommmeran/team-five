@@ -62,7 +62,6 @@ const schema = Yup.object({
 export const BoardCreatingModal = ({ onClose }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { _d } = useSelector(selectCurrentBoard);
 
   const initialValues = {
     title: '',
@@ -70,11 +69,12 @@ export const BoardCreatingModal = ({ onClose }) => {
     background: 'noBack',
   };
 
-  const onSubmit = values => {
-    dispatch(addBoard(values));
-    navigate(`/${_d}`);
+  const onSubmit = async values => {
+    const {payload: {_id}} = await dispatch(addBoard(values));
+    navigate(`/${_id}`);
     onClose();
   };
+
   return (
     <ModalWrap>
       <ModalTitle>New board</ModalTitle>
