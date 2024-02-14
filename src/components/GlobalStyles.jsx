@@ -62,6 +62,10 @@ export const GlobalStyles = createGlobalStyle`
   --borderForCalendar: ${({ theme }) => theme.borderForCalendar};
   --strokeForCalendar: ${({ theme }) => theme.strokeForCalendar};
   --textCalendar: ${({ theme }) => theme.textCalendar};
+
+  --logoBg: ${({ theme }) => theme.logoBg};
+  --logoLightning: ${({ theme }) => theme.logoLightning};
+  
   --borderModal: ${({ theme }) => theme.borderModal};
 }
 

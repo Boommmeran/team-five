@@ -52,6 +52,10 @@
     "strokeForCalendar": "rgba(255, 255, 255, 0.2)",
     "textCalendar": "rgba(255, 255, 255, 0.5)",
 
+
+    "logoBg": "#1f1f1f",
+    "logoLightning": "#fff"
+
     "borderModal": "1px solid rgba(190, 219, 176, 0.5)"
   },
   "light": {
@@ -106,6 +110,9 @@
     "strokeForCalendar": "rgba(22, 22, 22, 0.2)",
     "textCalendar": "rgba(22, 22, 22, 0.5)",
 
+    "logoBg": "#1f1f1f",
+    "logoLightning": "#fff"
+
     "borderModal": "none"
   },
   "violet": {
@@ -159,6 +166,9 @@
     "borderForCalendar": "#5255BC",
     "strokeForCalendar": "rgba(22, 22, 22, 0.2)",
     "textCalendar": "rgba(22, 22, 22, 0.5)",
+
+    "logoBg": "#ECEDFD",
+    "logoLightning": "#5255BC"
 
     "borderModal": "none"
   }

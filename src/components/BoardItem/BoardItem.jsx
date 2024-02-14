@@ -8,22 +8,6 @@ import { deleteBoard } from '../../redux/boards/boardsOperations';
 import { selectBoards, selectCurrentBoard } from '../../redux/boards/boardsSelectors';
 import { useNavigate } from 'react-router-dom';
 
-
-const customStyles = {
-  content: {
-    width: 'fit-content',
-    height: 'fit-content',
-    padding: 0,
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    boxShadow: '0px 4px 16px 0px #1616160D',
-  },
-  overlay: {
-    background: 'rgba(0,0,0,0.5)',
-  },
-};
-
 export const BoardItem = ({ board }) => {
   const dispatch = useDispatch();
   const currentBoard = useSelector(selectCurrentBoard);
@@ -73,17 +57,22 @@ export const BoardItem = ({ board }) => {
       <Icon name={board.icon} width="18" height="18" style={{ opacity: 0.5 }} />
       <p>{board.title}</p>
       <ControlIconsContainer>
-        <button type="button" onClick={openModal}>
+        <button type="button" style={{ cursor: 'pointer' }} onClick={openModal}>
           <Icon name="pencil" width="16" height="16" />
         </button>
-        <button type="button" onClick={() => handleDelete(board._id)}>
+        <button
+          type="button"
+          style={{ cursor: 'pointer' }}
+          onClick={() => handleDelete(board._id)}
+        >
           <Icon name="trash" width="16" height="16" />
         </button>
       </ControlIconsContainer>
       <Modal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
-        style={customStyles}
+        className="modal-content"
+        overlayClassName="modal-overlay"
         contentLabel="Edition board modal"
       >
         <BoardEditModal onClose={closeModal} board={board} />

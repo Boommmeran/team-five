@@ -8,6 +8,7 @@ export const BoardCreationBlock = styled.div`
   padding-top: 14px;
   padding-bottom: 14px;
   margin-bottom: 40px;
+  font-family: 'Poppins-Medium';
 `;
 
 export const BtnCreate = styled.button`
@@ -16,8 +17,9 @@ export const BtnCreate = styled.button`
   background-color: var(--btnPlus);
   border: none;
   border-radius: 6px;
-  stroke: var(--primaryBgColor);
   transition: var(--transition);
+  cursor: pointer;
+  stroke: var(--btnText);
 
   &:hover,
   &:focus,
