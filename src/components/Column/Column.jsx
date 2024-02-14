@@ -2,7 +2,7 @@ import { Icon } from 'components/Icon';
 import Modal from 'react-modal';
 import { useState } from 'react';
 import Card from 'components/Card/Card';
-import { AddBtn, CardList, IconWrap, customStyles } from './Column.styled';
+import { AddBtn, CardList, IconWrap } from './Column.styled';
 import AddCardModal from 'components/AddCardModal/AddCardModal';
 import { useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
@@ -46,7 +46,8 @@ export const Column = ({ columnId, title }) => {
       <Modal
         isOpen={modalCardIsOpen}
         onRequestClose={closeCardModal}
-        style={customStyles}
+        className={'modal-content'}
+        overlayClassName={'modal-overlay'}
         contentLabel="Card Add Modal"
         ariaHideApp={false}
       >

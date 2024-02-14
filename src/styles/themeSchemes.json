@@ -50,7 +50,9 @@
     "numberCalendar": "#fff",
     "borderForCalendar": "#BEDBB0",
     "strokeForCalendar": "rgba(255, 255, 255, 0.2)",
-    "textCalendar": "rgba(255, 255, 255, 0.5)"
+    "textCalendar": "rgba(255, 255, 255, 0.5)",
+
+    "borderModal": "1px solid rgba(190, 219, 176, 0.5)"
   },
   "light": {
     "accent": "#bedbb0",
@@ -102,7 +104,9 @@
     "numberCalendar": "#161616",
     "borderForCalendar": "#BEDBB0",
     "strokeForCalendar": "rgba(22, 22, 22, 0.2)",
-    "textCalendar": "rgba(22, 22, 22, 0.5)"
+    "textCalendar": "rgba(22, 22, 22, 0.5)",
+
+    "borderModal": "none"
   },
   "violet": {
     "accent": "#5255bc",
@@ -154,6 +158,8 @@
     "numberCalendar": "#161616",
     "borderForCalendar": "#5255BC",
     "strokeForCalendar": "rgba(22, 22, 22, 0.2)",
-    "textCalendar": "rgba(22, 22, 22, 0.5)"
+    "textCalendar": "rgba(22, 22, 22, 0.5)",
+
+    "borderModal": "none"
   }
 }
