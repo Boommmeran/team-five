@@ -31,7 +31,7 @@ export const RadioLabel = styled.label`
       top: 1px;
       left: 1px;
       border-radius: 50%;
-      border: 2px solid var(--primaryBgColor);
+      border: 2px solid var(--extraBgColor);
     }
   }
 `;
