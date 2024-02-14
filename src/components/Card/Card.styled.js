@@ -122,7 +122,15 @@ export const CardButtons = styled.div`
   }
 `;
 export const Bell = styled.button`
-  stroke: var(--accent); //не змінюється в темах
+  stroke: var(--accent); 
+  display: ${props => {
+    switch (props.bell) {
+      case 'true':
+        return 'block';
+      default:
+        return 'none';
+    }
+  }};
 `;
 
 export const Button = styled.button`
