@@ -72,10 +72,9 @@ export const columnsSlice = createSlice({
       .addCase(deleteColumn.fulfilled, (state, action) => {
         state.loading = false;
         state.error = null;
-        const index = state.columns.findIndex(
-          column => column.id === action.payload.id
+        state.columns = state.columns.filter(
+          column => column._id !== action.payload._id
         );
-        state.columns.splice(index, 1);
       })
       .addCase(deleteColumn.rejected, (state, action) => {
         state.loading = false;

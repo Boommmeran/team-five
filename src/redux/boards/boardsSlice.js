@@ -22,6 +22,9 @@ export const boardsSlice = createSlice({
     setError(state, action) {
       state.error = action.payload;
     },
+    clearCurrentBoard(state) {
+      state.currentBoard = null;
+    }
   },
   extraReducers: builder =>
     builder
@@ -108,7 +111,4 @@ export const boardsSlice = createSlice({
 });
 
 
-// const index = state.boards.findIndex(board => board._id === currentBoard._id);
-// if (index !== -1) {
-//   state.boards[index] = currentBoard;
-// }
+export const { clearCurrentBoard } = boardsSlice.actions;

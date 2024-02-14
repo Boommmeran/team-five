@@ -4,6 +4,7 @@ import { Icon } from 'components/Icon';
 import { BoardCreationBlock, BtnCreate } from "./BoardCreation.styled";
 import { BoardCreatingModal } from "components/BoardCreatingModal";
 
+
 export const BoardCreation = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 

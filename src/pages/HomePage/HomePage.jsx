@@ -44,6 +44,7 @@ export default function HomePage() {
   const baseUrl =
     'https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707115407/pictures/';
   const backgroundImgUrl = baseUrl + background;
+  console.log(background);
 
 
   return (
@@ -53,7 +54,10 @@ export default function HomePage() {
         <Sidebar />
       </SidebarWrapper>
       {currBoard ? (
-        <Main $backgroundImg={backgroundImgUrl}>
+        <Main
+          $backgroundImg={backgroundImgUrl}
+          $isBackground={background !== 'noBack'}
+        >
           <ScreensPage boardTitle={title} />
           <Outlet />
         </Main>

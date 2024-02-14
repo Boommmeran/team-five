@@ -8,13 +8,12 @@ import { deleteBoard } from '../../redux/boards/boardsOperations';
 import { selectBoards, selectCurrentBoard } from '../../redux/boards/boardsSelectors';
 import { useNavigate } from 'react-router-dom';
 
-export const BoardItem = ({ board }) => {
+export const BoardItem = ({ board, isActive }) => {
   const dispatch = useDispatch();
   const currentBoard = useSelector(selectCurrentBoard);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
   const boards = useSelector(selectBoards);
-  
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -48,9 +47,9 @@ export const BoardItem = ({ board }) => {
     navigate(`/${lastBoardObj._id}`);
   };
 
-
   return (
     <BoardItemContainer
+      className={isActive ? 'active' : ''}
       onClick={event => handleSelectBoard(event, board._id)}
       selected={currentBoard && currentBoard._id === board._id}
     >

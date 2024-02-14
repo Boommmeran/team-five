@@ -26,7 +26,7 @@ export const BoardItemContainer = styled.li`
 
   p {
     max-width: 120px;
-    margin-left: 4px;
+    margin-left: 8px;
     font-family: 'Poppins-Medium';
     font-size: 14px;
     word-wrap: break-word;
@@ -50,7 +50,7 @@ export const BoardItemContainer = styled.li`
 
   &:hover,
   &:focus,
-  &:active {
+  &.active {
     background-color: var(--needHelpBg);
     opacity: 1;
 
