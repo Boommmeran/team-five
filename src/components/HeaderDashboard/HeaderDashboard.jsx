@@ -1,18 +1,15 @@
-import { useParams } from 'react-router-dom';
+import { useState } from 'react';
+import Modal from 'react-modal';
+import { Icon } from 'components/Icon';
+import { FilterModal } from 'components/FilterModal';
 import {
   FilterBtn,
-  BoardName,
+  BoardTitle,
   Wrap,
   customStyles,
 } from './HeaderDashboard.styled';
-import { Icon } from 'components/Icon';
-import { useState } from 'react';
-import Modal from 'react-modal';
-import { FilterModal } from 'components/FilterModal/FilterModal';
 
-
-
-export const HeaderDashboard = () => {
+export const HeaderDashboard = ({ boardTitle }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => {
     setIsModalOpen(true);
@@ -21,10 +18,10 @@ export const HeaderDashboard = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-  const { boardName } = useParams();
+
   return (
     <Wrap>
-      <BoardName>{boardName}</BoardName>
+      {boardTitle && <BoardTitle>{boardTitle}</BoardTitle>}
       <FilterBtn type="button" onClick={openModal}>
         <Icon name="filter" />
         Filters{' '}
