@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const SidebarWrapper = styled.aside`
-  @media screen and (max-width: 1179px) {
+  @media screen and (max-width: 1439px) {
     display: none;
   }
 
-  @media screen and (min-width: 1180px) {
+  @media screen and (min-width: 1440px) {
     padding: 14px;
     display: flex;
     flex-direction: column;
@@ -20,7 +20,7 @@ export const Main = styled.main`
   grid-column: 1 / 2;
   grid-row: 2 / 3;
   padding: 10px 24px;
-  height: 100vh;
+  min-height: 812px;
   background-color: var(--secondaryBgColor);
   background-image: url(${props => props.$backgroundImg}_375x812.webp);
   background-repeat: no-repeat;
@@ -45,7 +45,7 @@ export const Main = styled.main`
     }
   }
 
-  @media (min-width: 1180px) {
+  @media (min-width: 1440px) {
     background-image: url(${props => props.$backgroundImg}_1180x770.webp);
     max-width: 1180px;
     grid-column: 2 / 3;
