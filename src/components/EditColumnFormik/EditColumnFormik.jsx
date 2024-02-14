@@ -43,7 +43,7 @@ export const EditColumnFormik = ({ title, columnId, onClose }) => {
         onSubmit={handleSubmit}
       >
         <StyledForm>
-          <StyledField type="text" name="title" placeholder="Title" />
+          <StyledField type="text" name="title" placeholder="To Do" />
           <Button type="submit">
             <StylePlus>
               <Icon name="plus" width="14" height="14" />
