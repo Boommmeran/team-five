@@ -28,7 +28,6 @@ const customStyles = {
 
 export const UserInfo = () => {
   const { user } = useAuth();
-  const { showSvg } = useAuth();
   const { showImage } = useAuth();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -44,29 +43,32 @@ export const UserInfo = () => {
   return (
     <Container>
       <Name>{user.name}</Name>
-      {showSvg && (
         <ButtonSvg onClick={openModal}>
-          <Icon
-            name="user"
-            fill="var(--primaryBgColor)"
-            stroke="var(--secondaryTextColor)"
-            width="32px"
-            height="32px"
-          />
+          {showImage ? (
+            <Avatar
+              src={cloudinaryBaseURL + user.avatarURL}
+              width="32"
+              height="32"
+              alt="user photo"
+              onClick={openModal}
+            />
+          ) : (
+            <Icon
+              name="user"
+              fill="var(--primaryBgColor)"
+              stroke="var(--secondaryTextColor)"
+              width="32px"
+              height="32px"
+            />
+          )}
         </ButtonSvg>
-      )}
 
-      {showImage && (
-        <Avatar
-          src={cloudinaryBaseURL + user.avatarURL}
-          width="32"
-          height="32"
-          alt="user photo"
-          onClick={openModal}
-        />
-      )}
-
-      <Modal isOpen={isModalOpen} style={customStyles} contentLabel="Modal">
+      <Modal
+        isOpen={isModalOpen}
+        style={customStyles}
+        contentLabel="Modal"
+        onRequestClose={closeModal}
+      >
         <EditProfile closeModal={closeModal} />
         <Button onClick={closeModal}>
           <Icon name="close" stroke="var(--secondaryTextColor)" />

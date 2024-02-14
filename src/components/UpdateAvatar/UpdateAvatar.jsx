@@ -31,21 +31,20 @@ export const UpdateAvatar = () => {
 
   return (
     <ContainerAvatar>
-      {showSvg && (
-        <Icon
-          name="user"
-          fill="var(--secondaryBgColor)"
-          stroke="var(--secondaryTextColor)"
-          width="68px"
-          height="68px"
-        />
-      )}
-      {showImage && (
+      {showImage ? (
         <Avatar
           src={cloudinaryBaseURL + user.avatarURL}
           width="68"
           height="68"
           alt="user photo"
+        />
+      ) : (
+        <Icon
+          name="user"
+          fill="var(--secondaryBgColor)"
+          stroke="var(--secondaryTextColor)"
+          width="68"
+          height="68"
         />
       )}
 
