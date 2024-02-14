@@ -12,7 +12,6 @@ const cloudinaryBaseURL =
 
 export const UpdateAvatar = () => {
   const { user } = useAuth();
-  const { showSvg } = useAuth();
   const { showImage } = useAuth();
 
   const dispatch = useDispatch();
