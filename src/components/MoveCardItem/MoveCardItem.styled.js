@@ -1,11 +1,23 @@
 import styled from 'styled-components';
 
 export const MoveCardItemStyled = styled.li`
+  display: flex;
+  justify-content: space-between;
+  padding: 18px;
   &.current {
     color: var(--accent);
 
     &button {
       pointer-events: none;
+    }
+    &.current svg {
+      stroke: var(--accent);
+    }
+  }
+
+  svg {
+    &.current {
+      stroke: var(--accent);
     }
   }
 `;

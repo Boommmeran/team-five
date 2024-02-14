@@ -51,13 +51,21 @@ export const HeaderWrapper = styled.div`
 
 export const customStylesForModal = {
   content: {
-    inset: 0,
-    width: 'fit-content',
-    height: 'fit-content',
-    boxShadow: '0px 4px 16px 0px #1616160D',
-    padding: 0,
+    position: 'absolute',
+    top: '0',
+    left: '0',
+    right: 'auto',
+    bottom: 'auto',
+    padding: '0',
+    border: 'none',
+    background: 'var(--primaryBgColor)',
   },
   overlay: {
+    position: 'fixed',
+    top: '0',
+    left: '0',
+    width: '100%',
+    height: '100vh',
     background: 'rgba(0,0,0,0.5)',
   },
 };

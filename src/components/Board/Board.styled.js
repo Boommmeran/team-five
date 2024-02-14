@@ -107,6 +107,10 @@ export const AddBtn = styled.button`
   &:focus {
     color: var(--btnText);
     background-color: var(--btnBgColor);
+
+    > div {
+      background-color: var(--btnPlusHover);
+    }
   }
 
   @media (min-width: 768px) {
@@ -123,14 +127,15 @@ export const IconWrap = styled.div`
   height: 28px;
   border: 1px solid black;
   border-radius: 8px;
+
   stroke: var(--extraBgColor);
 
-  background-color: var(--squareIconColor);
+  background-color: var(--btnPlus);
   transition: background-color stroke var(--transition);
 
   &:hover,
   &:focus {
-    background-color: var(--btnText);
+    background-color: var(--btnPlusHover);
     stroke: var(--plusInBtn);
   }
   > svg {

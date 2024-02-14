@@ -1,3 +1,7 @@
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { Formik } from 'formik';
+import { addBoard } from '../../redux/boards/boardsOperations';
 import { Icon } from 'components/Icon';
 import * as Yup from 'yup';
 import {
@@ -16,9 +20,6 @@ import {
   LabelPic,
   Div,
 } from './BoardCreatingModal.styled.js';
-import { Formik } from 'formik';
-import { useDispatch } from "react-redux";
-import { addBoard } from '../../redux/boards/boardsOperations';
 
 
 const iconsArr = [
@@ -58,7 +59,8 @@ const schema = Yup.object({
 });
 
 export const BoardCreatingModal = ({ onClose }) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const initialValues = {
     title: '',
@@ -66,10 +68,14 @@ export const BoardCreatingModal = ({ onClose }) => {
     background: 'noBack',
   };
 
-  const onSubmit = (values) => {
-    dispatch(addBoard(values));
+  const onSubmit = async values => {
+    const { payload: { _id } } = await dispatch(addBoard(values));
+    
+    localStorage.setItem('lastBoard', _id);
+    navigate(`/${_id}`);
     onClose();
   };
+
   return (
     <ModalWrap>
       <ModalTitle>New board</ModalTitle>

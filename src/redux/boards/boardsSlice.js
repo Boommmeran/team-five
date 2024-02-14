@@ -11,7 +11,7 @@ export const boardsSlice = createSlice({
   name: 'boards',
   initialState: {
     boards: [],
-    currentBoard: {},
+    currentBoard: null,
     loading: false,
     error: null,
   },
@@ -22,6 +22,9 @@ export const boardsSlice = createSlice({
     setError(state, action) {
       state.error = action.payload;
     },
+    clearCurrentBoard(state) {
+      state.currentBoard = null;
+    }
   },
   extraReducers: builder =>
     builder
@@ -35,10 +38,6 @@ export const boardsSlice = createSlice({
         state.loading = false;
         state.error = null;
         state.boards = payload;
-        if (!payload.length) {
-          return;
-        }
-        state.currentBoard = payload[payload.length - 1];
       })
       .addCase(fetchBoards.rejected, (state, action) => {
         state.loading = false;
@@ -58,6 +57,7 @@ export const boardsSlice = createSlice({
       .addCase(fetchBoardById.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
+        state.currentBoard = null;
       })
       //=================================================================
       .addCase(addBoard.pending, state => {
@@ -99,20 +99,10 @@ export const boardsSlice = createSlice({
       .addCase(deleteBoard.fulfilled, (state, action) => {
         state.loading = false;
         state.error = null;
-        // state.boards = state.boards.filter(
-        //   board => board.id !== action.payload
-        // );
-        const index = state.boards.findIndex(
-          board => board.id === action.payload.id
+        state.boards = state.boards.filter(
+          board => board._id !== action.payload._id
         );
-        state.boards.splice(index, 1);
-
-          if (!state.boards.length) {
-            state.currentBoard = {};
-            return;
-        }
-        
-        state.currentBoard = state.boards[state.boards.length - 1];
+        state.currentBoard = null;
       })
       .addCase(deleteBoard.rejected, (state, action) => {
         state.loading = false;
@@ -121,7 +111,4 @@ export const boardsSlice = createSlice({
 });
 
 
-// const index = state.boards.findIndex(board => board._id === currentBoard._id);
-// if (index !== -1) {
-//   state.boards[index] = currentBoard;
-// }
+export const { clearCurrentBoard } = boardsSlice.actions;

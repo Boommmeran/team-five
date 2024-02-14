@@ -4,12 +4,8 @@ export const Wrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  padding: 14px 0px;
   margin-bottom: 26px;
-
-  @media (max-width: 767px) {
-    padding: 14px 0px;
-  }
 
   @media (min-width: 768px) {
     padding: 26px 0px;
@@ -27,15 +23,16 @@ export const customStyles = {
     right: 'auto',
     bottom: 'auto',
     transform: 'translate(-50%, -50%)',
-    boxShadow: '0px 4px 16px 0px #1616160D',
+    boxShadow: '0 4px 16px 0 rgba(22, 22, 22, 0.05)',
     padding: 0,
+    border: 'none',
   },
   overlay: {
     background: 'rgba(0,0,0,0.5)',
   },
 };
 
-export const BoardName = styled.h3`
+export const BoardTitle = styled.h3`
   font-family: 'Poppins-Medium';
   font-size: 14px;
   line-height: 1.5;

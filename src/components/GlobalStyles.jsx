@@ -38,7 +38,7 @@ export const GlobalStyles = createGlobalStyle`
   --extraBgColor: ${({ theme }) => theme.extraBgColor};
   --squareIconColor: ${({ theme }) => theme.squareIconColor};
 
-  --cards-line: ${({ theme }) => theme.cardsLine};
+  --cardsLine: ${({ theme }) => theme.cardsLine};
 
   --scroll: ${({ theme }) => theme.scroll};
   --scrollBg: ${({ theme }) => theme.scrollBg};
@@ -63,6 +63,10 @@ export const GlobalStyles = createGlobalStyle`
   --strokeForCalendar: ${({ theme }) => theme.strokeForCalendar};
   --textCalendar: ${({ theme }) => theme.textCalendar};
 
+  --logoBg: ${({ theme }) => theme.logoBg};
+  --logoLightning: ${({ theme }) => theme.logoLightning};
+  
+  --borderModal: ${({ theme }) => theme.borderModal};
 }
 
 @font-face {
@@ -134,8 +138,7 @@ li{
   bottom: auto;
   transform: translate(-50%, -50%);
   padding: 0;
-  box-shadow: 0 0 10px -2px var(--primaryTextColor);
-  border: none;
+  border: var(--borderModal);
   background: transparent;
   border-radius: 8px;
   overflow: hidden;

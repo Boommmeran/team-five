@@ -12,7 +12,7 @@ import {
 import { createSlice } from '@reduxjs/toolkit';
 
 export const authSlice = createSlice({
-  name: 'userInfo',
+  name: 'auth',
   initialState: {
     user: {
       name: '',
@@ -37,9 +37,6 @@ export const authSlice = createSlice({
         state.token = action.payload.token;
         state.isLoggedIn = true;
       })
-      .addCase(logInUser.rejected, () =>
-        toast.error('Email or password is not correct')
-      )
       .addCase(logOut.fulfilled, state => {
         state.user = { name: '', email: '' };
         state.isLoggedIn = false;
@@ -53,6 +50,8 @@ export const authSlice = createSlice({
         state.user = action.payload;
         state.isLoggedIn = true;
         state.isRefreshing = false;
+        state.showImage = true;
+        state.showSvg = false;
       })
       .addCase(refreshing.rejected, state => {
         state.isRefreshing = false;
@@ -62,9 +61,13 @@ export const authSlice = createSlice({
       })
       .addCase(updateAvatar.fulfilled, (state, action) => {
         state.user.avatarURL = action.payload;
+        state.showImage = true;
+        state.showSvg = false;
       })
       .addCase(updateAvatar.rejected, (state, action) => {
         state.error = action.payload;
+        state.showImage = false;
+        state.showSvg = true;
       })
       .addCase(changeTheme.fulfilled, (state, action) => {
         state.user = { ...state.user, ...action.payload };

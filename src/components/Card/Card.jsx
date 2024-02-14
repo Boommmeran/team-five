@@ -40,9 +40,11 @@ export default function Card({ card }) {
     column: { _id: columnId },
   } = card;
   const dateDeadline = new Date(deadline);
-  const formatedDate = `${dateDeadline.getDate()}/${
-    dateDeadline.getMonth() + 1
-  }/${dateDeadline.getFullYear()}`;
+  const formatedDate = `${dateDeadline.getUTCDate()}/${(
+    dateDeadline.getUTCMonth() + 1
+  )
+    .toString()
+    .padStart(2, '0')}/${dateDeadline.getFullYear()}`;
   const cardTextDescription = text.substring(0, 90) + '...';
 
   const openCardModal = () => {
