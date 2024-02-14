@@ -1,10 +1,10 @@
 import { HeaderDashboard } from 'components/HeaderDashboard';
 import { Board } from 'components/Board';
 
-export const ScreensPage = () => {
+export const ScreensPage = ({ boardTitle }) => {
   return (
     <>
-      <HeaderDashboard />
+      <HeaderDashboard boardTitle={boardTitle} />
       <Board />
     </>
   );

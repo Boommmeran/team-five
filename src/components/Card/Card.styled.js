@@ -4,7 +4,7 @@ export const CardBody = styled.li`
   border-radius: 8px;
   width: 335px; // змінити на /* width: 100%; */ коли стане у колонкуи
   height: 154px;
-  background: var(--primaryBgColor);
+  background-color: var(--extraBgColor);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -25,7 +25,7 @@ export const CardTitle = styled.h4`
   font-family: 'Poppins-SemiBold';
   font-size: 14px;
   letter-spacing: -0.02em;
-  color: var(--primaryTextColor);
+  color: var(--textColorcalendar);
   margin-bottom: 8px;
 `;
 export const CardDescription = styled.p`
@@ -75,8 +75,8 @@ export const PriorityTitle = styled.p`
 `;
 export const PriorityColor = styled.div`
   border-radius: 100%;
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   margin-right: 4px;
   background-color: var(--priority-${({ $priority }) => $priority});
 `;
@@ -84,7 +84,10 @@ export const PriorityColor = styled.div`
 export const PriorityTipe = styled.p`
   font-size: 10px;
   letter-spacing: -0.02em;
-  color: var(--primaryTextColor);
+  color: var(--textColorcalendar);
+  &:first-letter {
+    text-transform: uppercase;
+}
 `;
 
 export const Deadline = styled.div`
@@ -105,7 +108,7 @@ export const DeadlineDate = styled.p`
   text-align: left;
   font-size: 10px;
   letter-spacing: -0.02em;
-  color: var(--primaryTextColor);
+  color: var(--textColorcalendar);
 `;
 export const CardButtons = styled.div`
   display: flex;

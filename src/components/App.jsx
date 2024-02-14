@@ -19,11 +19,11 @@ export const App = () => {
   const { isLoggedIn, isRefreshing, theme = 'light' } = useAuth();
 
   useEffect(() => {
-    if (!isLoggedIn) {
+    if (isLoggedIn) {
       return;
     }
     dispatch(refreshing());
-  }, [dispatch]);
+  }, [dispatch, isLoggedIn]);
 
   return (
     <>

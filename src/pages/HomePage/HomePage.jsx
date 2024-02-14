@@ -9,6 +9,10 @@ import { Outlet, useNavigate, useParams } from 'react-router-dom';
 import { fetchBoardById } from '../../redux/boards/boardsOperations';
 import { fetchColumnsByBoardId } from '../../redux/columns/columnsOperations';
 import { fetchCards } from '../../redux/cards/cardsOperations';
+import {
+  selectCurrentBoard,
+  selectBoards,
+} from '../../redux/boards/boardsSelectors';
 import { useDispatch } from 'react-redux';
 import { useAuth } from 'hooks';
 
@@ -18,18 +22,26 @@ export default function HomePage() {
   const dispatch = useDispatch();
   const boardFromLS = localStorage.getItem('lastBoard');
   const { isLoggedIn } = useAuth();
+  const boards = useSelector(selectBoards);
 
   useEffect(() => {
     const setLastBoard = () => {
+      if (boards.length === 0) {
+        localStorage.removeItem('lastBoard');
+        navigate(`/`);
+        return;
+      }
+
       if (boardFromLS) {
         navigate(`/${boardFromLS}`);
       }
     };
+    
     setLastBoard();
     return () => {
       setLastBoard();
     };
-  }, [boardFromLS, navigate]);
+  }, [boardFromLS, navigate, boards]);
 
   useEffect(() => {
     if (boardId && isLoggedIn) {
@@ -40,9 +52,7 @@ export default function HomePage() {
     return () => {};
   }, [boardId, dispatch, isLoggedIn]);
 
-  const { background = 'diego' } = useSelector(
-    state => state?.boards?.currentBoard
-  );
+  const { background = 'diego', title } = useSelector(selectCurrentBoard);
   const baseUrl =
     'https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707115407/pictures/';
   const backgroundImgUrl = baseUrl + background;
@@ -54,7 +64,7 @@ export default function HomePage() {
       </SidebarWrapper>
       {boardId ? (
         <Main $backgroundImg={backgroundImgUrl}>
-          <ScreensPage />
+          <ScreensPage boardTitle={title} />
           <Outlet />
         </Main>
       ) : (

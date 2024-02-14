@@ -1,3 +1,8 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { Formik } from 'formik';
+import { addBoard } from '../../redux/boards/boardsOperations';
+import { selectCurrentBoard } from '../../redux/boards/boardsSelectors';
 import { Icon } from 'components/Icon';
 import * as Yup from 'yup';
 import {
@@ -16,9 +21,6 @@ import {
   LabelPic,
   Div,
 } from './BoardCreatingModal.styled.js';
-import { Formik } from 'formik';
-import { useDispatch } from "react-redux";
-import { addBoard } from '../../redux/boards/boardsOperations';
 
 
 const iconsArr = [
@@ -58,7 +60,9 @@ const schema = Yup.object({
 });
 
 export const BoardCreatingModal = ({ onClose }) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { _d } = useSelector(selectCurrentBoard);
 
   const initialValues = {
     title: '',
@@ -66,8 +70,9 @@ export const BoardCreatingModal = ({ onClose }) => {
     background: 'noBack',
   };
 
-  const onSubmit = (values) => {
+  const onSubmit = values => {
     dispatch(addBoard(values));
+    navigate(`/${_d}`);
     onClose();
   };
   return (
