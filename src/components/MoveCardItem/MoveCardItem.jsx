@@ -4,6 +4,7 @@ import {
   MoveCardItemStyled,
 } from './MoveCardItem.styled';
 import { chengeColumnsCard } from '../../redux/cards/cardsOperations';
+import { Icon } from 'components/Icon';
 
 export const MoveCardItem = ({ column, cardId, currentId }) => {
   const dispatch = useDispatch();
@@ -18,6 +19,12 @@ export const MoveCardItem = ({ column, cardId, currentId }) => {
       <MoveCardItemButtonStyled onClick={handleMoveCard}>
         {title}
       </MoveCardItemButtonStyled>
+      <Icon
+        name="arrow-in-circle"
+        width="16px"
+        height="16px"
+        stroke="var(--secondaryTextColor)"
+      />
     </MoveCardItemStyled>
   );
 };
