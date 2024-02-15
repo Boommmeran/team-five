@@ -193,7 +193,7 @@ export const StylePlus = styled.div`
   align-items: center;
   background: var(--btnText);
   margin-right: 8px;
-  stroke: var(--plusInBtn);
+  
 `;
 
 export const AddCardButton = styled.button`
@@ -215,4 +215,14 @@ export const Span = styled.span`
   font-size: 14px;
   letter-spacing: -0.02em;
   color: var(--accent);
+`;
+
+export const ButtonText = styled.span`
+  font-family: 'Poppins-Medium';
+
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+
+  color: var(--btnText);
 `;

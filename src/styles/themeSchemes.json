@@ -17,6 +17,7 @@
     "secondaryOpacity": "0.8",
     "opacityInThemeModal": "0.5",
 
+    "btnBoardBg": "#121212",
     "btnPlus": "#bedbb0",
     "btnPlusHover": "#9dc888",
 
@@ -52,7 +53,6 @@
     "strokeForCalendar": "rgba(255, 255, 255, 0.2)",
     "textCalendar": "rgba(255, 255, 255, 0.5)",
 
-
     "logoBg": "#1f1f1f",
     "logoLightning": "#fff",
 
@@ -65,7 +65,7 @@
 
     "primaryBgColor": "#fff",
     "secondaryBgColor": "#f6f6f7",
-    "headerBgColor": "#fff",
+    "headerBgColor": "#fcfcfc",
     "modalBgColor": "#fcfcfc",
     "extraBgColor": "#fff",
 
@@ -76,6 +76,7 @@
     "secondaryOpacity": "0.8",
     "opacityInThemeModal": "1",
 
+    "btnBoardBg": "#fff",
     "btnPlus": "#bedbb0",
     "btnPlusHover": "#9dc888",
     "btnBgColor": "#bedbb0",
@@ -122,7 +123,7 @@
 
     "primaryBgColor": "#5255bc",
     "secondaryBgColor": "#ecedfd",
-    "headerBgColor": "#fff",
+    "headerBgColor": "#fcfcfc",
     "modalBgColor": "#fcfcfc",
     "extraBgColor": "#fff",
 
@@ -133,6 +134,7 @@
     "secondaryOpacity": "0.8",
     "opacityInThemeModal": "1",
 
+    "btnBoardBg": "#fff",
     "btnPlus": "#b8bcfd",
     "btnPlusHover": "#979cea",
     "btnBgColor": "#5255bc",

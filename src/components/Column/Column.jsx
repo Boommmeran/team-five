@@ -18,8 +18,8 @@ export const Column = ({ columnId, title }) => {
   let filtredCards = cards?.filter(({ column: { _id } }) => _id === columnId);
 
   if (priority) {
-    filtredCards = filtredCards?.filter(card => card.priority === priority)
-  };
+    filtredCards = filtredCards?.filter(card => card.priority === priority);
+  }
 
   const openCardModal = () => {
     setmodalCardIsOpen(true);

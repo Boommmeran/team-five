@@ -18,6 +18,7 @@ import {
   ErrMsg,
   Label,
   Span,
+  ButtonText,
 } from './EditCardModal.styled.js';
 import { useDispatch } from 'react-redux';
 import { editCard } from '../../redux/cards/cardsOperations.js';
@@ -57,7 +58,7 @@ export default function EditCardModal({ card, onClose }) {
             name="close"
             width="18"
             height="18"
-            stroke="var(--primaryTextColor)"
+            stroke="var(--secondaryTextColor)"
           />
         </button>
       </CloseModal>
@@ -106,9 +107,9 @@ export default function EditCardModal({ card, onClose }) {
             </div>
             <AddButton type="submit">
               <StylePlus>
-                <Icon name="plus" width="14" height="14" />
+                <Icon name="plus" width="14" height="14" stroke = "var(--plusInBtn)"/>
               </StylePlus>
-              <p>Edit</p>
+              <ButtonText>Edit</ButtonText>
             </AddButton>
           </StyledForm>
         )}

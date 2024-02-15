@@ -24,7 +24,7 @@ export const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: 1px solid rgba(190, 219, 176, 0.5); */
+
   border-radius: 8px;
   background: var(--modalBgColor);
 `;
@@ -71,26 +71,17 @@ export const CloseBtn = styled.button`
   outline: none;
   background-color: inherit;
 
-  /* opacity: 0.5; */
-  /* transition: opacity var(--transition); */
-
-  /* &:hover,
-  &:focus {
-    opacity: 1;
-  } */
-
   cursor: pointer;
 `;
 
 export const Label = styled.h3`
-  /* margin-top: 24px;
-  margin-left: 24px; */
+  
   font-family: 'Poppins-Medium';
-  /* font-family: 'Poppins', sans-serif;
+ 
   font-weight: 500; */
   font-size: 18px;
   letter-spacing: -0.02em;
-  /* color: #fff; */
+  
   color: var(--textColorcalendar);
 `;
 
@@ -101,7 +92,7 @@ export const Button = styled.button`
   border-radius: 8px;
   width: 287px;
   height: 49px;
-  background: var(--btnPlus);
+  background: var(--accent);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,12 +112,12 @@ export const Button = styled.button`
 
 export const ButtonText = styled.span`
   font-family: 'Poppins-Medium';
-  /* font-family: 'Poppins', sans-serif;
-  font-weight: 500; */
+
+  font-weight: 500;
   font-size: 14px;
   letter-spacing: -0.02em;
-  /* color: #161616; */
-  color: var(--headerBgColor);
+
+  color: var(--btnText);
 `;
 
 export const ErrMsg = styled(ErrorMessage)`
@@ -146,7 +137,7 @@ export const StylePlus = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: black;
+  background: var(--btnText);
   margin-right: 8px;
   stroke: white;
 `;

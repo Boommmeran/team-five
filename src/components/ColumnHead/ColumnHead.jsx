@@ -1,11 +1,5 @@
 import { Icon } from 'components/Icon';
-import {
-  HeadWrap,
-  IconedBtn,
-  Title,
-  Wrap,
-  customStyles,
-} from './ColumnHead.styled';
+import { HeadWrap, IconedBtn, Title, Wrap } from './ColumnHead.styled';
 import { useState } from 'react';
 import Modal from 'react-modal';
 import { EditColumnFormik } from 'components/EditColumnFormik';
@@ -44,7 +38,8 @@ export const ColumnHead = ({ title, columnId }) => {
       <Modal
         isOpen={isOpenModal}
         onRequestClose={handleModalClose}
-        style={customStyles}
+        className="modal-content"
+        overlayClassName="modal-overlay"
         contentLabel="Column Edit Modal"
         ariaHideApp={false}
       >

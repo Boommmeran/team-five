@@ -46,7 +46,7 @@ export const AddColumnFormik = ({ boardId, onClose }) => {
           <StyledField type="text" name="title" placeholder="Title" />
           <Button type="submit">
             <StylePlus>
-              <Icon name="plus" width="14" height="14" />
+              <Icon name="plus" width="14" height="14" stroke= "var(--plusInBtn)"/>
             </StylePlus>
             <ButtonText>Add</ButtonText>
           </Button>

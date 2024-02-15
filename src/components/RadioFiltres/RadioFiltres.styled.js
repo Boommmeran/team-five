@@ -4,7 +4,6 @@ export const FiltersWrap = styled.div`
   position: relative;
   display: flex;
   gap: 119px;
-  margin-bottom: 14px;
 
   &::before {
     content: '';
@@ -18,13 +17,20 @@ export const FiltersWrap = styled.div`
 `;
 
 export const FilterLabel = styled.p`
+  margin-bottom: 14px;
   font-family: 'Poppins-Medium';
   font-size: 14px;
   letter-spacing: -0.02em;
   color: var(--secondaryTextColor);
+  white-space: nowrap;
 `;
 
 export const ShowAllBtn = styled.button`
+  padding: 0;
+  margin: 0;
+  height: 0;
+  width: 0;
+
   border: none;
   background-color: inherit;
   font-size: 12px;
@@ -33,17 +39,18 @@ export const ShowAllBtn = styled.button`
   color: var(--secondaryTextColor);
   opacity: 0.5;
   cursor: pointer;
+  white-space: nowrap;
 `;
 
 export const StyledRadioGroup = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-bottom: 10px;
 `;
 
 export const RadioLabel = styled.label`
   display: flex;
+  
   border-radius: 50%;
   width: 14px;
   height: 14px;
@@ -76,4 +83,5 @@ export const FiltersSpan = styled.span`
   letter-spacing: -0.02em;
   color: var(--secondaryTextColor);
   opacity: 0.5;
+  white-space: nowrap;
 `;

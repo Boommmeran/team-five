@@ -87,7 +87,7 @@ export const Button = styled.button`
   border-radius: 8px;
   width: 287px;
   height: 49px;
-  background: var(--btnPlus);
+  background: var(--accent);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,7 +111,7 @@ export const ButtonText = styled.span`
   font-size: 14px;
   letter-spacing: -0.02em;
 
-  color: var(--headerBgColor);
+  color: var(--btnText);
 `;
 
 export const ErrMsg = styled(ErrorMessage)`
@@ -131,7 +131,7 @@ export const StylePlus = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: black;
+  background: var(--btnText);
   margin-right: 8px;
   stroke: white;
 `;

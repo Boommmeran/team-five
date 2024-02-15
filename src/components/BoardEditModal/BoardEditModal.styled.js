@@ -121,9 +121,7 @@ export const Label = styled.label`
   transition: opacity var(--transition);
 
   cursor: pointer;
-  > svg {
-    stroke: var(--primaryTextColor);
-  }
+  
 
   &:focus,
   &:hover {

@@ -9,22 +9,6 @@ import { useAuth } from 'hooks';
 const cloudinaryBaseURL =
   'https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707503119/';
 
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    padding: '0',
-    transform: 'translate(-50%, -50%)',
-    borderRadius: '8px',
-    border: '1 px solid var(--borderModal)',
-  },
-  overlay: {
-    background: 'rgba(0,0,0,0.5)',
-  },
-};
-
 export const UserInfo = () => {
   const { user } = useAuth();
   const { showImage } = useAuth();
@@ -58,7 +42,8 @@ export const UserInfo = () => {
 
       <Modal
         isOpen={isModalOpen}
-        style={customStyles}
+        className="modal-content"
+        overlayClassName="modal-overlay"
         contentLabel="Modal"
         onRequestClose={closeModal}
       >

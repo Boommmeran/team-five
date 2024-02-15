@@ -90,7 +90,7 @@ export const BoardEditModal = ({ onClose, board }) => {
             {iconsArr.map(el => (
               <li key={el}>
                 <Label>
-                  <Icon name={el} />
+                  <Icon name={el} stroke= "var(--secondaryTextColor)" />
                   <InvisibleInput type="radio" name="icon" value={el} />
                 </Label>
               </li>

@@ -38,3 +38,4 @@ export const ButtonSvg = styled.button`
   background-color: var(--primaryBgColor);
   cursor: pointer;
 `;
+

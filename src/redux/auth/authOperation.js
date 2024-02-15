@@ -86,7 +86,7 @@ export const updateAvatar = createAsyncThunk(
       const formData = new FormData();
       formData.set('avatar', selectedFile);
       const response = await axios.patch('/users/avatars', formData);
-
+      
       return response.data.avatarURL;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

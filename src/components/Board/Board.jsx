@@ -6,7 +6,6 @@ import {
   ColumnItem,
   Container,
   ColumnList,
-  customStyles,
 } from './Board.styled';
 import { Icon } from 'components/Icon';
 import Modal from 'react-modal';
@@ -20,7 +19,7 @@ export const Board = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const { columns } = useSelector(state => state.columns);
   const { boardId } = useParams();
-  
+
   const openModal = () => {
     setIsOpen(true);
   };
@@ -33,18 +32,20 @@ export const Board = () => {
     <>
       <Container>
         <Wrap>
-          {columns.length !== 0 && <ColumnList>
-            {columns.map(({ _id, title }) => {
-              return (
-                <ColumnItem key={nanoid()}>
-                  <Column title={title} columnId={_id} />
-                </ColumnItem>
-              );
-            })}
-          </ColumnList>}
+          {columns.length !== 0 && (
+            <ColumnList>
+              {columns.map(({ _id, title }) => {
+                return (
+                  <ColumnItem key={nanoid()}>
+                    <Column title={title} columnId={_id} />
+                  </ColumnItem>
+                );
+              })}
+            </ColumnList>
+          )}
           <AddBtn type="button" onClick={openModal}>
             <IconWrap>
-              <Icon name="plus" />
+              <Icon name="plus" stroke="var(--btnBoardBg)" />
             </IconWrap>{' '}
             Add another column
           </AddBtn>
@@ -53,7 +54,8 @@ export const Board = () => {
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        style={customStyles}
+        className="modal-content"
+        overlayClassName="modal-overlay"
         contentLabel="Column Edit Modal"
         ariaHideApp={false}
       >

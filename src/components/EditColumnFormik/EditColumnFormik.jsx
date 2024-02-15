@@ -45,7 +45,7 @@ export const EditColumnFormik = ({ title, columnId, onClose }) => {
           <StyledField type="text" name="title" placeholder="To Do" />
           <Button type="submit">
             <StylePlus>
-              <Icon name="plus" width="14" height="14" />
+              <Icon name="plus" width="14" height="14" stroke = "var(--plusInBtn)"/>
             </StylePlus>
             <ButtonText>Edit</ButtonText>
           </Button>
