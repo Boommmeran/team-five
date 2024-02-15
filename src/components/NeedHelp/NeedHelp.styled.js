@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 export const NeedHelpBlock = styled.div`
-  padding: 14px;
   margin-bottom: 24px;
   font-size: 12px;
   border-radius: 8px;
   background-color: var(--needHelpBg);
+  padding: 14px;
+  margin: 0 14px;
 
   p {
     margin-top: 14px;
@@ -16,6 +17,7 @@ export const NeedHelpBlock = styled.div`
 
   @media only screen and (min-width: 768px) {
     padding: 20px;
+    
     p {
       font-size: 14px;
     }

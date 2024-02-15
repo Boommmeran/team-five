@@ -15,14 +15,16 @@ export const ControlIconsContainer = styled.div`
 `;
 
 export const BoardItemContainer = styled.li`
-  height: 61px;
-  margin: 0 -14px 0 -14px;
+  min-height: 61px;
+  max-height: 61px;
   padding: 0 14px 0 14px;
   display: flex;
   align-items: center;
   stroke: var(--primaryTextColor);
   opacity: 0.5;
   transition: var(--transition);
+  width: 100%;
+  cursor: pointer;
 
   p {
     max-width: 120px;

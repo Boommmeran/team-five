@@ -5,19 +5,26 @@ export const SidebarStylesWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 225px;
-  padding: 14px;
-  max-height: 100vh;
-  height: 100vh;
+  padding: 14px 0 0;
   color: var(--primaryTextColor);
+  overflow-y: scroll;
+  max-height: 100vh;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   @media only screen and (min-width: 768px) {
     width: 260px;
-    padding: 24px;
+    padding: 24px 0 0;
   }
 
-  /* @media (max-width: 1439px) {
-    display: none;
-  } */
+  @media only screen and (max-width: 1439px) {
+    padding: 24px 0;
+  }
 `;
 
 export const Logo = styled.div`
@@ -28,6 +35,7 @@ export const Logo = styled.div`
   column-gap: 8px;
   align-items: center;
   margin-bottom: 70px;
+  margin-left: 16px;
 
   @media only screen and (min-width: 768px) {
     margin-bottom: 60px;
@@ -46,8 +54,9 @@ export const BoardContainer = styled.div`
   }
 `;
 
-export const Title = styled.h3`
+export const Title = styled.h2`
   margin-bottom: 8px;
+  margin-left: 16px;
   font-size: 12px;
   opacity: 50%;
 `;
@@ -55,11 +64,23 @@ export const Title = styled.h3`
 export const BoardList = styled.ul`
   margin-bottom: 40px;
   font-family: 'Poppins-Medium';
+  overflow-y: scroll;
+  max-height: 18vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const LogOut = styled.button`
   margin: 0;
-  padding: 0;
+  padding: 16px 0 0 16px;
   border: none;
   background: none;
   display: flex;

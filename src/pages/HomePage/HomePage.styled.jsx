@@ -16,7 +16,7 @@ export const Main = styled.main`
   grid-column: 1 / 2;
   grid-row: 2 / 3;
   padding: 10px 20px;
-  min-height: 812px;
+  min-height: 80vh;
   background-color: var(--secondaryBgColor);
   background-image: ${({ $isBackground, $backgroundImg }) =>
     $isBackground ? `url(${$backgroundImg}_375x812.webp)` : 'none'};

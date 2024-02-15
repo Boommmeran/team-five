@@ -64,7 +64,7 @@ export const ColumnItem = styled.li`
   grid-template-rows: 56px minmax(0, 1fr) 56px;
   gap: 14px;
   width: 347px;
-  height: calc(90vh - 80px);
+  height: calc(83vh - 80px);
   @media (min-width: 768px) {
     width: 350px;
   }

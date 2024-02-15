@@ -1,7 +1,11 @@
 import { useState } from "react";
 import Modal from 'react-modal';
 import { Icon } from 'components/Icon';
-import { BoardCreationBlock, BtnCreate } from "./BoardCreation.styled";
+import {
+  BoardCreationBlock,
+  BtnCreate,
+  BoardText,
+} from './BoardCreation.styled';
 import { BoardCreatingModal } from "components/BoardCreatingModal";
 
 
@@ -18,10 +22,9 @@ export const BoardCreation = () => {
 
   return (
     <BoardCreationBlock>
-      <p>
-        Create a<br />
-        new board
-      </p>
+      <BoardText>
+        Create a{' '}new board
+      </BoardText>
       <BtnCreate type="button" onClick={openModal}>
         <Icon name="plus" width="20" height="20" />
       </BtnCreate>
