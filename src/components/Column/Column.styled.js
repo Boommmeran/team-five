@@ -125,6 +125,7 @@ export const AddBtn = styled.button`
     background-color: var(--btnBgColorHover);
   }
 `;
+
 export const IconWrap = styled.div`
   display: flex;
   align-items: center;

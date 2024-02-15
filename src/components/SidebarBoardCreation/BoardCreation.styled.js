@@ -3,12 +3,19 @@ import styled from 'styled-components';
 export const BoardCreationBlock = styled.div`
   display: flex;
   justify-content: space-between;
-  border-top: rgba(255, 255, 255, 0.1) solid 1px;
-  border-bottom: rgba(255, 255, 255, 0.1) solid 1px;
-  padding-top: 14px;
-  padding-bottom: 14px;
-  margin-bottom: 40px;
+  border-top: 1px solid var(--cardsLine);
+  border-bottom: 1px solid var(--cardsLine);
   font-family: 'Poppins-Medium';
+  padding: 14px;
+  margin-bottom: 40px;
+
+  @media only screen and (min-width: 768px) {
+    padding: 14px 24px 14px 16px;
+  }
+`;
+
+export const BoardText = styled.p`
+  width: 77px;
 `;
 
 export const BtnCreate = styled.button`

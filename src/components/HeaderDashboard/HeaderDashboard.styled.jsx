@@ -37,6 +37,7 @@ export const BoardTitle = styled.h3`
   font-size: 14px;
   line-height: 1.5;
   letter-spacing: -0.02em;
+  filter: drop-shadow(0 0 3px var(--primaryBgColor));
 
   color: var(--secondaryTextColor);
 

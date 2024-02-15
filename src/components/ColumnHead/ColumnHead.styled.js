@@ -22,6 +22,7 @@ export const HeadWrap = styled.div`
 export const Title = styled.h3`
   font-family: 'Poppins-Medium';
   font-size: 14px;
+
   line-height: 1.5;
   letter-spacing: -0.02em;
   color: var(--textColorcalendar);

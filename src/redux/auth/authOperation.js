@@ -3,7 +3,6 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-// axios.defaults.baseURL = 'https://team-five-backend-v2.onrender.com/api';
 axios.defaults.baseURL = 'https://team-five-backend.onrender.com/api';
 
 const setAuthHeader = token => {
