@@ -14,10 +14,11 @@ export const RadioButton = styled(Field)`
 
 export const RadioLabel = styled.label`
   border-radius: 50%;
-  width: 14px;
+  width: 15px;
   height: 14px;
   background-color: var(--priority-${({ $priority }) => $priority});
   transition: var(--transition);
+
   cursor: pointer;
   box-sizing: border-box;
   position: relative;
@@ -28,8 +29,9 @@ export const RadioLabel = styled.label`
       position: absolute;
       width: 12px;
       height: 12px;
-      top: 1px;
-      left: 1px;
+      top: 50%;
+      left: 51%;
+      transform: translate(-47%, -50%);
       border-radius: 50%;
       border: 2px solid var(--extraBgColor);
     }

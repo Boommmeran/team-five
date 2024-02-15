@@ -90,8 +90,8 @@ export const BoardEditModal = ({ onClose, board }) => {
             {iconsArr.map(el => (
               <li key={el}>
                 <Label>
-                  <Icon name={el} stroke= "var(--secondaryTextColor)" />
                   <InvisibleInput type="radio" name="icon" value={el} />
+                  <Icon name={el} stroke="var(--secondaryTextColor)" />
                 </Label>
               </li>
             ))}
@@ -106,13 +106,13 @@ export const BoardEditModal = ({ onClose, board }) => {
               return (
                 <li key={el}>
                   <LabelPic>
+                    <InvisibleInput type="radio" name="background" value={el} />
                     <Div>
                       <picture>
                         <source srcSet={srcSetPath} />
                         <img src={srcDefault} alt="background example" />
                       </picture>
                     </Div>
-                    <InvisibleInput type="radio" name="background" value={el} />
                   </LabelPic>
                 </li>
               );

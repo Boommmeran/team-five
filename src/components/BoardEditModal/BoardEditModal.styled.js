@@ -121,7 +121,10 @@ export const Label = styled.label`
   transition: opacity var(--transition);
 
   cursor: pointer;
-  
+
+  > input:checked + svg {
+    stroke: var(--accent);
+  }
 
   &:focus,
   &:hover {
@@ -151,7 +154,11 @@ export const BackgroundsPallet = styled.ul`
   margin-bottom: 40px;
 `;
 
-export const LabelPic = styled.label``;
+export const LabelPic = styled.label`
+  > input:checked + div {
+    border: 2px solid var(--accent);
+  }
+`;
 
 export const Div = styled.div`
   width: 28px;

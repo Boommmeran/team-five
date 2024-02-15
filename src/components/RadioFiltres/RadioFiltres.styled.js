@@ -50,13 +50,13 @@ export const StyledRadioGroup = styled.div`
 
 export const RadioLabel = styled.label`
   display: flex;
-  
   border-radius: 50%;
-  width: 14px;
+  width: 15px;
   height: 14px;
   background-color: var(--priority-${({ $priority }) => $priority});
   transition: var(--transition);
   cursor: pointer;
+  box-sizing: border-box;
   position: relative;
 
   > input {
@@ -67,12 +67,13 @@ export const RadioLabel = styled.label`
     &::after {
       content: '';
       position: absolute;
-      width: 8px;
-      height: 8px;
-      top: 21%;
-      left: 22%;
+      width: 12px;
+      height: 12px;
+      top: 50%;
+      left: 51%;
+      transform: translate(-50%, -50%);
       border-radius: 50%;
-      border: 2px solid var(--primaryBgColor);
+      border: 2px solid var(--extraBgColor);
     }
   }
 `;

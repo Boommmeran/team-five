@@ -55,6 +55,12 @@ export const StyledField = styled(Field)`
   }
 `;
 
+export const IconStyledEye = styled.i`
+  position: absolute;
+  top: 23%;
+  right: 5%;
+`;
+
 export const LastField = styled(Field)`
   margin-bottom: 24px;
   padding: 14px 18px;
@@ -113,15 +119,4 @@ export const Label = styled.label`
 export const StyledLabel = styled.label`
   position: relative;
   display: block;
-
-  svg {
-    position: absolute;
-    top: 16px;
-    right: 15px;
-    opacity: 0, 5;
-
-    &:active {
-      opacity: 1;
-    }
-  }
 `;

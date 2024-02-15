@@ -95,8 +95,8 @@ export const BoardCreatingModal = ({ onClose }) => {
             {iconsArr.map(el => (
               <li key={el}>
                 <Label>
-                  <Icon name={el} />
                   <InvisibleInput type="radio" name="icon" value={el} />
+                  <Icon name={el} />
                 </Label>
               </li>
             ))}
@@ -111,13 +111,13 @@ export const BoardCreatingModal = ({ onClose }) => {
               return (
                 <li key={el}>
                   <LabelPic>
+                    <InvisibleInput type="radio" name="background" value={el} />
                     <Div>
                       <picture>
                         <source srcSet={srcSetPath} />
                         <img src={srcDefault} alt="background example" />
                       </picture>
                     </Div>
-                    <InvisibleInput type="radio" name="background" value={el} />
                   </LabelPic>
                 </li>
               );
