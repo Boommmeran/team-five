@@ -65,7 +65,8 @@ export const BoardList = styled.ul`
   margin-bottom: 40px;
   font-family: 'Poppins-Medium';
   overflow-y: scroll;
-  max-height: 18vh;
+  min-height: 17vh;
+  max-height: 17vh;
   display: flex;
   flex-direction: column;
   align-items: center;
