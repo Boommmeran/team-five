@@ -48,7 +48,7 @@ export default function Card({ card }) {
   const cardTextDescription = text.substring(0, 90) + '...';
 
   const bell = new Date() > dateDeadline;
-  console.log(bell);
+  
   const openCardModal = () => {
     setmodalCardIsOpen(true);
   };
@@ -90,7 +90,7 @@ export default function Card({ card }) {
           </Deadline>
         </CardInformation>
         <CardButtons>
-          <Bell type="button" bell={bell}>
+          <Bell type="button" $bell={bell}>
             <Icon name="bell" width="16" height="16" />
           </Bell>
           <Button type="button" onClick={hendleMoveCardModalOpen}>

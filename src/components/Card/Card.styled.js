@@ -122,7 +122,7 @@ export const CardButtons = styled.div`
   }
 `;
 export const Bell = styled.button`
-  stroke: ${({bell}) => (bell ? 'var(--accent)' : 'none')}
+  stroke: ${({$bell}) => ($bell ? 'var(--accent)' : 'none')}
 `;
 
 export const Button = styled.button`
