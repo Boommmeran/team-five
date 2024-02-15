@@ -104,7 +104,6 @@ export const boardsSlice = createSlice({
         state.boards = state.boards.filter(
           board => board._id !== action.payload._id
         );
-        state.currentBoard = null;
       })
       .addCase(deleteBoard.rejected, (state, action) => {
         state.loading = false;

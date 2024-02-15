@@ -6,7 +6,8 @@ import { BoardEditModal } from 'components/BoardEditModal';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteBoard } from '../../redux/boards/boardsOperations';
 import { selectBoards, selectCurrentBoard } from '../../redux/boards/boardsSelectors';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { clearCurrentBoard } from '../../redux/boards/boardsSlice';
 
 export const BoardItem = ({ board, isActive }) => {
   const dispatch = useDispatch();
@@ -14,6 +15,7 @@ export const BoardItem = ({ board, isActive }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
   const boards = useSelector(selectBoards);
+  const { boardId: currBoardId } = useParams();
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -34,8 +36,16 @@ export const BoardItem = ({ board, isActive }) => {
 
   const handleDelete = boardId => {
     dispatch(deleteBoard(boardId));
-    const filteredBoards = boards.filter(board => board._id !== boardId);
+
+    if (boardId !== currBoardId) {
+      return;
+    }
+
+    dispatch(clearCurrentBoard());
+    
     localStorage.removeItem('lastBoard');
+
+    const filteredBoards = boards.filter(board => board._id !== boardId);
 
     if (filteredBoards.length === 0) {
       navigate(`/`);

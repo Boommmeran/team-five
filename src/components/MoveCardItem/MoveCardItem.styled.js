@@ -4,6 +4,7 @@ export const MoveCardItemStyled = styled.li`
   display: flex;
   justify-content: space-between;
   padding: 18px;
+  color: var(--secondaryTextColor);
   &.current {
     color: var(--accent);
 
