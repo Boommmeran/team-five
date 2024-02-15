@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { updateAvatar } from '../../redux/auth/authOperation';
 
 import { Icon } from 'components/Icon';
+import { toast } from 'react-hot-toast';
 
 const cloudinaryBaseURL =
   'https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707503119/';
@@ -20,8 +21,11 @@ export const UpdateAvatar = () => {
 
   const handleFileChange = event => {
     const selectedFile = event.target.files[0];
-
-    dispatch(updateAvatar(selectedFile));
+    toast.promise(dispatch(updateAvatar(selectedFile)), {
+      loading: 'Saving...',
+      success: <b>Settings saved!</b>,
+      error: <b>Opps, something went wrong...</b>,
+    });
   };
 
   const handlePick = () => {

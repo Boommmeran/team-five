@@ -69,6 +69,7 @@ export default function AddCardModal({ title, btnText, onClose, columnId }) {
         }}
         validationSchema={formCardSchema}
         onSubmit={onSubmit}
+        
       >
         {({ handleSubmit, setFieldValue }) => (
           <StyledForm onSubmit={handleSubmit}>

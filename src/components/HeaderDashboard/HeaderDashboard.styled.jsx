@@ -22,10 +22,10 @@ export const customStyles = {
     left: '50%',
     right: 'auto',
     bottom: 'auto',
+    padding: '0',
     transform: 'translate(-50%, -50%)',
-    boxShadow: '0 4px 16px 0 rgba(22, 22, 22, 0.05)',
-    padding: 0,
-    border: 'none',
+    borderRadius: '8px',
+    border: '1 px solid var(--borderModal)',
   },
   overlay: {
     background: 'rgba(0,0,0,0.5)',
@@ -38,7 +38,7 @@ export const BoardTitle = styled.h3`
   line-height: 1.5;
   letter-spacing: -0.02em;
 
-  color: var(--primaryTextColor);
+  color: var(--secondaryTextColor);
 
   @media (min-width: 768px) {
     font-size: 18px;

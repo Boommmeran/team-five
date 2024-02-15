@@ -29,6 +29,7 @@ export const GlobalStyles = createGlobalStyle`
   --btnPlus: ${({ theme }) => theme.btnPlus};
   --btnPlusHover: ${({ theme }) => theme.btnPlusHover};
 
+  --btnBoardBg:${({ theme }) => theme.btnBoardBg};
   --modalBgColor: ${({ theme }) => theme.modalBgColor};
   --btnText: ${({ theme }) => theme.btnText};
   --btnBgColor: ${({ theme }) => theme.btnBgColor};

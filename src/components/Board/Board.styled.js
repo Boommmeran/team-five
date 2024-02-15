@@ -39,21 +39,6 @@ export const Container = styled.div`
   }
 `;
 
-export const customStyles = { 
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    transform: 'translate(-50%, -50%)',
-    boxShadow: '0px 4px 16px 0px #1616160D',
-    padding: 0,
-  },
-  overlay: {
-    background: 'rgba(0,0,0,0.5)',
-  },
-};
-
 export const ColumnList = styled.ul`
   display: flex;
   gap: 18px;
@@ -82,10 +67,8 @@ export const AddBtn = styled.button`
   align-items: center;
   gap: 8px;
 
-  max-width: 280px;
-  width: 280px;
-  min-width: 280px;
-
+  max-width: 100%;
+  
   padding: 14px 42px;
 
   border: none;
@@ -97,7 +80,7 @@ export const AddBtn = styled.button`
   letter-spacing: -0.02em;
 
   color: var(--secondaryTextColor);
-  background-color: var(--extraBgColor);
+  background-color: var(--btnBoardBg);
 
   opacity: 1;
   transition: color background-color var(--transition);
@@ -117,7 +100,7 @@ export const AddBtn = styled.button`
   @media (min-width: 375px) {
     width: 334px;
     min-width: 334px;
-    max-width: 334px;
+    max-width: 0;
     padding: 14px 78px;
   }
 `;
@@ -129,12 +112,10 @@ export const IconWrap = styled.div`
 
   width: 28px;
   height: 28px;
-  border: 1px solid black;
+
   border-radius: 8px;
 
-  stroke: var(--extraBgColor);
-
-  background-color: var(--btnPlus);
+  background-color: var(--squareIconColor);
   transition: background-color stroke var(--transition);
 
   &:hover,

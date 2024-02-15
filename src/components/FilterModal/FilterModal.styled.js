@@ -5,7 +5,7 @@ export const ModalWrap = styled.div`
   padding: 24px;
   width: 300px;
   height: 234px;
-
+  border: var(--borderModal);
   border-radius: 8px;
   box-shadow: 0 4px 16px 0 rgba(22, 22, 22, 0.05);
   background: var(--modalBgColor);
@@ -16,7 +16,7 @@ export const FiltersTytle = styled.h3`
   font-size: 18px;
   letter-spacing: -0.02em;
   margin-bottom: 28px;
-  color: var(--primaryTextColor);
+  color: var(--secondaryTextColor);
 `;
 
 export const CloseBtn = styled.button`
@@ -29,10 +29,6 @@ export const CloseBtn = styled.button`
   background-color: inherit;
 
   transition: opacity var(--transition);
-
-  > svg {
-    stroke: var(--primaryTextColor);
-  }
 
   &:hover,
   &:focus {

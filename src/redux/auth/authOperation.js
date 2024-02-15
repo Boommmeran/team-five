@@ -3,7 +3,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-axios.defaults.baseURL = 'https://team-five-backend-v2.onrender.com/api';
+// axios.defaults.baseURL = 'https://team-five-backend-v2.onrender.com/api';
+axios.defaults.baseURL = 'https://team-five-backend.onrender.com/api';
 
 const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -86,7 +87,7 @@ export const updateAvatar = createAsyncThunk(
       const formData = new FormData();
       formData.set('avatar', selectedFile);
       const response = await axios.patch('/users/avatars', formData);
-
+      
       return response.data.avatarURL;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
