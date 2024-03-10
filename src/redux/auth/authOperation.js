@@ -21,7 +21,7 @@ export const registerUser = createAsyncThunk(
 
       return res.data;
     } catch (error) {
-      toast.error('User is alredy exist');
+      toast.error('User is already exist');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -86,7 +86,7 @@ export const updateAvatar = createAsyncThunk(
       const formData = new FormData();
       formData.set('avatar', selectedFile);
       const response = await axios.patch('/users/avatars', formData);
-      
+
       return response.data.avatarURL;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
