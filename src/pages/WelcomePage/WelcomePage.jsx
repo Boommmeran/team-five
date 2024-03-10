@@ -17,7 +17,7 @@ export default function WelcomePage() {
         <ThumbWelcomeImg>
           <picture>
             <source
-              srcSet="https://res.cloudinary.com/dt7u6ic1c/image/upload/v1706799169/avatars/jE_DHXsifaZ7-4NRAsyL3 1x, http://res.cloudinary.com/dt7u6ic1c/image/upload/v1706799169/avatars/RuKeVdzJGSKz9BP0xLfuD 2x"
+              srcSet="https://res.cloudinary.com/dt7u6ic1c/image/upload/v1706799169/avatars/jE_DHXsifaZ7-4NRAsyL3 1x, https://res.cloudinary.com/dt7u6ic1c/image/upload/v1706799169/avatars/RuKeVdzJGSKz9BP0xLfuD 2x"
               media="(min-width: 1200px)"
             />
             <img
