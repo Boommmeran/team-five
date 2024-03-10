@@ -17,13 +17,17 @@ export default function WelcomePage() {
         <ThumbWelcomeImg>
           <picture>
             <source
-              srcSet="https://res.cloudinary.com/dt7u6ic1c/image/upload/v1706799169/avatars/jE_DHXsifaZ7-4NRAsyL3 1x, http://res.cloudinary.com/dt7u6ic1c/image/upload/v1706799169/avatars/RuKeVdzJGSKz9BP0xLfuD 2x"
-              media="(min-width: 1200px)"
+              media="(min-width: 768px)"
+              srcSet="https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707485609/pictures/image-welcome.jpg 1x, https://res.cloudinary.com/dt7u6ic1c/image/upload/v1710085335/pictures/image-welcome-2x.jpg 2x"
+              width="162px"
+              height="162px"
             />
             <img
-              src="https://res.cloudinary.com/dt7u6ic1c/image/upload/v1706799169/avatars/jE_DHXsifaZ7-4NRAsyL3"
+              src="https://res.cloudinary.com/dt7u6ic1c/image/upload/v1707485609/pictures/image-welcome.jpg"
               alt="Welcome img"
               style={{ mixBlendMode: 'multiply' }}
+              width="124px"
+              height="124px"
             />
           </picture>
         </ThumbWelcomeImg>
